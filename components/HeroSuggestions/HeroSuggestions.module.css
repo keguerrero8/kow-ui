@@ -1,0 +1,110 @@
+/* @import '../../styles.css'; */
+
+.sectionTwo {
+    width: 100%;
+    background-color: var(--brand-white);
+    height: fit-content;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0 0;
+    overflow: hidden;
+}
+
+.sectionTwo > h2 {
+    color: var(--brand-primaryblue);
+    font-weight: 900;
+    font-size: var(--font-large);
+    margin-bottom: 40px;
+    align-self: center;
+}
+
+.medGroups {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 60px 60px;
+    overflow-x: scroll;
+}
+
+.cardSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.medCard {
+    background-color: var(--brand-white);
+    border: 2.5px solid var(--brand-primaryblue);
+    width: 180px;
+    height: 240px;
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2.5rem;
+}
+
+.medCard h3 {
+    margin-bottom: 12px;
+}
+
+.cardImg {
+    width: 90px;
+    height: 120px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.cardImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   
+}
+
+@media screen and (max-width: 968px) {
+    .sectionTwo > h2 {
+        font-size: var(--mobile-large);
+        width: 60vw;
+    }
+
+    .medGroups {
+        padding: 0 30px 60px;
+        justify-content: flex-start;
+    }
+
+    .medCard {
+        width: 160px;
+        height: 210px;
+        border-radius: 1.5rem;
+        padding: 12px 8px 4px;
+    }
+
+    .medCard > h3 {
+        margin-bottom: 4px;
+    }
+
+    .cardImg {
+        width: 70px;
+        height: 105px;
+    }
+
+    .medCard .btn {
+        width: fit-content;
+        min-width: 120px;
+        max-width: 140px;
+        font-size: var(--mobile-xsmall);
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .medGroups {
+        padding: 0 30px 60px;
+        justify-content: flex-start;
+    }
+}

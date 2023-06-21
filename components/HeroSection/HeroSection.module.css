@@ -12,17 +12,17 @@
     line-height: 1.5;
 }
 
-.hero-title {
-    width: 30vw;
+.heroTitle {
+    width: 40vw;
     margin: 4rem 0 2rem;
 }
 
-.video-container {
+.videoContainer {
     width: 60vw;
     max-width: 1080px;
 }
 
-.hero-container > h1 {
+.heroContainer > h1 {
     max-width: 80%;
     text-align: center;
     color: var(--brand-darkblue);
@@ -33,71 +33,71 @@
     font-weight: 900;
 }
 
-.hero-container > h2 {
+.heroContainer > h2 {
     color: var(--brand-darkblue);
     font-size: var(--font-large);
     margin-bottom: 8px;
 }
 
-.hero-container > h3 {
+.heroContainer > h3 {
     color: var(--brand-darkblue);
     font-size: var(--font-medium);
 }
 
-.hero-btns {
+.heroBtns {
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
-.hero-btns .btn {
+.heroBtns button {
     margin: 8px 8px 2rem;
 }
 
 @media screen and (max-width: 960px) {
-    .hero-container {
+    .heroContainer {
         height: 100%;
         padding-top: 1rem;
     }
 
-    .hero-title {
+    .heroTitle {
         width: 50vw;
     }
 
-    .hero-container > h1 {
+    .heroContainer > h1 {
         font-size: var(--mobile-large);
         max-width: 90vw;
     }
 
-    .hero-container > h2 {
+    .heroContainer > h2 {
         font-size: var(--mobile-medium);
         text-align: center;
         max-width: 80%;
     }
 
-    .hero-container > h3 {
+    .heroContainer > h3 {
         font-size: 20px;
         text-align: center;
         max-width: 60%;
     }
 
-    .hero-btns {
+    .heroBtns {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 1.5rem;
     }
-    .hero-btns .btn {
+    .hero-btns button {
         margin: 0.5rem
     }
 }
 
 @media screen and (max-width: 768px) {
-    .hero-title {
+    .heroTitle {
         width: 50vw;
         margin: 2rem 0;
     }
     
-    .hero-container > h1 {
+    .heroContainer > h1 {
         font-size: var(--mobile-large);
         margin-top: 2rem;
         text-align: center;
@@ -105,14 +105,14 @@
         margin-bottom: 20px;
     }
 
-    .hero-container > h2 {
+    .heroContainer > h2 {
         font-size: var(--mobile-medium);
         text-align: center;
         max-width: 80%;
         margin-bottom: 16px;
     }
 
-    .hero-container > h3 {
+    .heroContainer > h3 {
         font-size: var(--mobile-small);
         text-align: center;
         max-width: 75%;

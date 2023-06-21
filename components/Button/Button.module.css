@@ -1,0 +1,81 @@
+/* @import '../../styles.css'; */
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btnDefault {
+    padding: 8px 20px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btnPrimary {
+    background-color: var(--brand-darkblue);
+    color: var(--brand-white);
+    border: 2px solid var(--brand-white);
+    border-radius: 0.8rem;
+}
+
+.btnSecondary {
+    background-color: var(--brand-grey);
+    color: var(--brand-darkblue);
+    border: 2px solid var(--brand-darkblue);
+    border-radius: 0.8rem;
+    transition: all 0.3s ease-out;
+}
+
+.btnTertiary {
+    background-color: var(--brand-white);
+    color: var(--brand-primaryblue);
+    border: 2px solid var(--brand-primaryblue);
+    border-radius: 0.8rem;
+}
+
+.btnSmall {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+}
+
+.btnMedium {
+    font-size: var(--font-medium);
+}
+
+.btnLarge {
+    padding: 12px 26px;
+    font-size: var(--font-medium);
+}
+
+.btnMedium:hover, .btnLarge:hover {
+    background: var(--brand-primaryblue);
+    color: var(--brand-white);
+    border-color: var(--brand-primaryblue);
+    border-width: 2px;
+    transition: all 0.3s ease-out;
+}
+
+.btnTertiary:hover {
+    background: var(--brand-primaryblue);
+    border-color: var(--brand-primaryblue);
+    color: var(--brand-white);
+    transition: all 0.3s ease-out;
+}
+
+.btnHow {
+    width: 20vw;
+    min-width: 220px;
+    max-width: 280px;
+    margin: 0 40px;
+}
+
+.btnHome {
+    width: 20vw;
+    min-width: 220px;
+    max-width: 280px;
+}

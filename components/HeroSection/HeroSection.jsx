@@ -1,54 +1,52 @@
-// import React from 'react';
+import Image from 'next/image'
 
 import styles from './HeroSection.module.css'
-// import '../Button/Button.css';
+import stylesButton from '../Button/Button.module.css'
 
-// import HeroSuggestions from '../HeroSuggestions/HeroSuggestions';
+import HeroSuggestions from '@/components/HeroSuggestions/HeroSuggestions';
 // import FrequentRequests from '../FrequentRequests/FrequentRequests';
 // import HomePageCards from '../Blog/HomePageCards';
-// import { Button } from '../Button/Button';
+import Button from '@/components/Button/Button'
 
-// import kindlyobligewith_title_text from '../../images/kindlyobligewith_text_image.png';
+import kindlyobligewith_title_text from '../../public/images/kindlyobligewith_text_image.jpg';
 
-// import welcome from "../../videos/welcome.mp4"
+// import welcome from "../../public/videos/welcome.mp4"
 
-function HeroSection() {
-    return (
-        // <div className='hero-container'>
+export default function HeroSection() {
+    return ( 
         <div className={styles.heroContainer}>
-            {/* <img className='hero-title' alt='kindle oblige with' src={kindlyobligewith_title_text}/> */}
+            <Image alt='kindle oblige with' src={kindlyobligewith_title_text} className={styles.heroTitle}/>
             <h1>Find and Fill your prescription TODAY.</h1>
             <h2>Don't risk delaying your medication.</h2>
             <h3>If you need your medication today, we'll help you find a pharmacy that has it.</h3>
-            {/* <div className='hero-btns'>
+            <div className={styles.heroBtns}>
                 <Button 
-                className='btn' 
-                buttonStyle='btn--secondary' 
-                buttonSize='btn--large' 
-                buttonPage='btn--home'
+                className={stylesButton.btn} 
+                buttonStyle={stylesButton.btnSecondary}
+                buttonSize={stylesButton.btnLarge} 
+                buttonPage={stylesButton.btnHome} 
                 path='/how-it-works'>
                     Learn More
                 </Button>
                 <Button 
-                className='btn' 
-                buttonStyle='btn--outline' 
-                buttonSize='btn--large' 
-                buttonPage='btn--home'
+                className={stylesButton.btn}
+                buttonStyle={stylesButton.btnPrimary} 
+                buttonSize={stylesButton.btnLarge} 
+                buttonPage={stylesButton.btnHome} 
                 path='/find-medication'>
                     Find Medication
                 </Button>
-            </div> */}
-            {/* <div className="video-container">
+            </div>
+            {/* <div className={styles.videoContainer}>
                 <video controls style={{ maxWidth:'100%' }}>
                     <source src={welcome} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>                 */}
-            {/* <HeroSuggestions/>
+            <HeroSuggestions/>
+            {/*
             <FrequentRequests/>
             <HomePageCards/> */}
         </div>
     );
 }
-
-export default HeroSection;
