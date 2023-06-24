@@ -1,0 +1,57 @@
+  /* @import '../../styles.css'; */
+
+  .blogSection {
+    background-color: var(--brand-white);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+  }
+  .blogSection > h2 {
+    font-size: var(--font-large);
+    margin-bottom: 2rem;
+  }
+  .blogSection > h3 {
+    font-size: var(--font-medium);
+    margin: 2rem;
+  }
+
+  .sectionLink {
+    color: var(--brand-primaryblue);
+    text-decoration: none;
+  }
+  .sectionLink:hover {
+    color: var(--brand-darkblue);
+  }
+  
+  .heroCardContainer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .blogCard {
+    background-color: var(--brand-grey);
+    padding: 20px;
+    border-radius: 20px;
+    width: 30vw;
+  }
+  
+  .blogCard h3 {
+    font-size: var(--font-small);
+    margin-top: 10px;
+    color: var(--brand-darkblue);
+  }
+  .blogCard p {
+    font-size: var(--font-xsmall);
+    margin-top: 10px;
+    line-height: 1.5;
+    font-weight: 900;
+  }
+  .blogCard img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }

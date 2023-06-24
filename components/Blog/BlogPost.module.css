@@ -1,0 +1,89 @@
+.documentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* this was changed from start to flex-start */
+    align-items: flex-start;
+    padding: 10vh 10vw;
+}
+
+.title {
+    align-self: center;
+    margin-bottom: 24px;
+    max-width: 720px;
+}
+.title > h1 {
+    font-size: var(--font-large);
+}
+.title > h2 {
+    font-size: var(--font-medium);
+}
+.title > p {
+    font-size: var(--font-xsmall);
+    margin: 1rem 0 0 1rem;
+}
+
+.bannerImg {
+    margin-top: 1rem;
+    max-height: 120px;
+    max-width: 80vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.bannerImg > img {
+    object-position: center;
+    width: 100%;
+}
+
+.section {
+    align-self: center;
+    max-width: 720px;
+    width: 100%;
+}
+.section > h2 {
+    font-size: var(--font-medium);
+    font-weight: 100;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section > h3 {
+    font-size: var(--font-small);
+    font-weight: 100;
+    margin-bottom: 12px;
+    margin-left: 1rem;
+}
+.section > p {
+    font-size: var(--font-small);
+    margin-bottom: 12px;
+    text-align: start;
+    text-indent: 2rem;
+    margin-left: 1rem;
+}
+
+.subsection {
+    margin-left: 2rem;
+}
+.subsection > h3 {
+    font-size: var(--font-small);
+    font-weight: 100;
+    margin: 12px 0 6px 1rem;
+}
+.subsection > p {
+    font-size: var(--font-small);
+    margin-left: 2.5rem;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: 900;
+    color: black;
+}
+
+.footnote {
+    font-size: var(--font-xsmall);
+    font-style: italic;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}

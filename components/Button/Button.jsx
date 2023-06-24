@@ -16,7 +16,7 @@ export default function Button ({children, type, onClick, buttonStyle, buttonSiz
     return (
         <Link href={path}>
             <button
-            className={`btn ${checkButtonStyle} ${checkButtonSize} ${checkButtonPage}`}
+            className={`${styles.btn} ${checkButtonStyle} ${checkButtonSize} ${checkButtonPage}`}
             onClick={onClick}
             type={type}
             >

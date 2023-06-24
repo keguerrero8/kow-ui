@@ -4,8 +4,8 @@ import styles from './HeroSection.module.css'
 import stylesButton from '../Button/Button.module.css'
 
 import HeroSuggestions from '@/components/HeroSuggestions/HeroSuggestions';
-// import FrequentRequests from '../FrequentRequests/FrequentRequests';
-// import HomePageCards from '../Blog/HomePageCards';
+import FrequentRequests from '@/components/FrequentRequests/FrequentRequests';
+import HomePageCards from '@/components/Blog/HomePageCards';
 import Button from '@/components/Button/Button'
 
 import kindlyobligewith_title_text from '../../public/images/kindlyobligewith_text_image.jpg';
@@ -44,9 +44,8 @@ export default function HeroSection() {
                 </video>
             </div>                 */}
             <HeroSuggestions/>
-            {/*
             <FrequentRequests/>
-            <HomePageCards/> */}
+            <HomePageCards/>
         </div>
     );
 }

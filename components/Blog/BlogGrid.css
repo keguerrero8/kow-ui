@@ -1,0 +1,61 @@
+  @import '../../styles.css';
+  
+  .blog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .blog-container h2 {
+    margin-top: 2rem;
+    font-size: var(--font-large);
+    color: var(--brand-darkblue);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
+    gap: 20px;
+    margin: 2rem;
+    max-width: 92vw;
+  }
+  
+  .blog-card {
+    background-color: var(--brand-grey);
+    border-radius: 20px;
+  }
+  
+  .blog-card h3 {
+    font-size: var(--font-small);
+    margin-top: 10px;
+    color: var(--brand-darkblue);
+  }
+  .blog-card p {
+    font-size: var(--font-xsmall);
+    margin-top: 10px;
+    line-height: 1.5;
+    font-weight: 900;
+  }
+    .blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  @media screen and (max-width: 560px) {
+    .blog-grid {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-card-container { 
+      flex-direction: column;
+    }
+    
+    .blog-card {
+        width: 80vw;
+    }
+    .blog-card img {
+      height: 100px;
+    }
+  }

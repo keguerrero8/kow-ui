@@ -1,0 +1,93 @@
+.recentContainer {
+    width: 100%;
+    background-color: var(--brand-grey);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.recentContainer > h2 {
+    color: var(--brand-darkblue);
+    font-weight: 900;
+    font-size: var(--font-large);
+    margin-bottom: 12px;
+}
+
+.recentContainer > h3 {
+    color: var(--brand-darkblue);
+    margin-bottom: 40px;
+    font-size: var(--font-medium);
+}
+
+.requestGroups {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 75%;
+}
+
+.requestList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 4px 32px;
+        color: var(--brand-darkblue);
+    font-size: var(--font-small);
+    font-weight: 300;
+}
+
+.pharmacyReach {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.pharmacyReach > h3 {
+    font-style: italic;
+    font-size: var(--font-small);
+    color: var(--brand-darkblue);
+}
+
+.contactLink {
+    padding-left: 28px;
+    font-weight: 900;
+    font-size: var(--font-small);
+    color: var(--brand-primaryblue);
+}
+
+.contactLink:hover {
+    color: var(--brand-darkblue);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 968px) {
+    .recentcontainer {
+        padding: 60px 32px;
+    }
+
+    .recentContainer > h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .requestGroups {
+        flex-direction: column;
+    }
+
+    .pharmacyReach {
+        flex-direction: column;
+    }
+
+    .pharmacyReach > h3 {
+        margin: 0 32px 12px;
+        align-self: center;
+    }
+
+    .contactLink {
+        align-self: center;
+    }
+}
