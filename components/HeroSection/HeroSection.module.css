@@ -13,7 +13,8 @@
 }
 
 .heroTitle {
-    width: 40vw;
+    width: 30vw;
+    height: auto;
     margin: 4rem 0 2rem;
 }
 

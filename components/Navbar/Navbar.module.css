@@ -1,0 +1,152 @@
+.navbar {
+    background: var(--brand-white);
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-medium);
+    position: sticky;
+    top: 32px;
+    z-index: 999;
+    font-size: 900;
+    border-bottom: 0.15rem solid var(--brand-darkgrey);
+
+  }
+  
+  .navbarContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 80px;
+    max-width: max-content;
+  }
+  
+  .navbarLogo {
+    color: var(--brand-black);
+    justify-self: start;
+    margin-left: 12px;
+    margin-right: 40px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: var(--font-large);
+    display: flex;
+    align-items: center;
+  }
+  
+  .homeLogo {
+    margin-right: 0.5rem;
+    width: 60px;
+    height: auto;
+  }
+
+  .navMenu {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 8px;
+    list-style: none;
+    text-align: center;
+    width: 60vw;
+    justify-content: flex-end;
+  }
+  
+  .navItem {
+    height: 80px;
+  }
+
+  .mobileItem {
+    display: none;
+  }
+  
+  .navLinks {
+    color: var(--brand-black);
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
+  }
+  
+  .navLinks:hover {
+    border-bottom: 4px solid var(--brand-black);
+    transition: all 0.2s ease-out;
+  }
+  
+  .menuIcon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 1160px) {
+    .NavbarItems {
+      position: relative;
+    }
+  
+    .navMenu {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 90vh;
+      position: absolute;
+      top: 80px;
+      left: -100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+  
+    .navMenuActive {
+      background: var(--brand-white);
+      justify-content: flex-start;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+      max-width: 60%;
+      border-right: 0.15rem solid var(--brand-darkgrey)
+      ;
+    }
+  
+    .navLinks {
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+      display: table;
+      font-size: var(--font-medium);
+      color: var(--brand-black);
+    }
+  
+    .navLinks:hover {
+      background-color: var(--brand-darkblue);
+      color: var(--brand-white);
+      border-radius: 0;
+    }
+  
+    .navbarLogo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(10%, 36%);
+    }
+
+    .homeLogo {
+      margin-right: 0.5rem;
+      width: 60px;
+      color: var(--brand-black);
+    }
+  
+    .menuIcon {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 60%);
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .mobileItem {
+      display: block;
+      height: 80px;
+    }
+  }

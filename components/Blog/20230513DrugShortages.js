@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from "./BlogPost.module.css"
 
 import televisit from "../../public/images/televisit1.jpg"

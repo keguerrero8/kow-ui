@@ -1,0 +1,41 @@
+/* @import '../../styles.css'; */
+
+.banner {
+    background: var(--brand-primaryblue);
+    height: 32px;
+    max-width: 100%;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    overflow-x: hidden;
+    }
+
+  .textContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: var(--font-small);
+    animation: roll 30s linear infinite;
+    padding-left: 100%;
+  }
+
+  @keyframes roll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+
+  .textContainer > h3 {
+    color: var(--brand-white);
+    font-weight: 500;
+    margin: 0 80px;
+    white-space: nowrap;
+  }
+
+  .bannerLink {
+    text-decoration: none;
+    margin-left: 4px;
+    color: var(--brand-white);
+    font-weight: 900;
+  }

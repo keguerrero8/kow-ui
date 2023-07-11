@@ -52,7 +52,7 @@ export default function AdherenceArticle(props) {
                 effective communication, and personalized support to empower patients to properly manage their 
                 treatment.  Kindly Oblige With (KOW) wants to eliminate the risk of anyone being without medication.  
                 In the event your pharmacy doesn’t have your medication when you need it, you can use our Fillable 
-                search tool {<Link className='link' href="/find-medication"> here </Link>} to find a nearby pharmacy 
+                search tool {<Link className={styles.link} href="/find-medication"> here </Link>} to find a nearby pharmacy 
                 that does.  </p>
         </div>
         <div className={styles.section}>
@@ -73,7 +73,7 @@ export default function AdherenceArticle(props) {
                 between healthcare teams and pharmacists can optimize medication management and provide ongoing support 
                 for patients.  If you need to reach a pharmacist, you can request one of KOW’s pharmacist’s to contact 
                 you and hopefully answer all of your medication questions.  Just fill out our 
-                {<Link className='link' href="/contact-us"> Contact Us </Link>} form.</p>
+                {<Link className={styles.link} href="/contact-us"> Contact Us </Link>} form.</p>
         </div>
         <div className={styles.section}>
             <h2>Advancing Patient-Centered Adherence</h2>
