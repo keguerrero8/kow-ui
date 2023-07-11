@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 // import Cookies from "js-cookie"
-// import MenuIcon from '@mui/icons-material/Menu';
-// import CloseIcon from '@mui/icons-material/Close';
-// import { useMediaQuery } from '@mui/material';
-
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import { useMediaQuery } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 import Button from '../Button/Button';
@@ -19,8 +18,7 @@ function Navbar({ user, setUser }) {
     const handleClick =() => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
-    // const isMobile = useMediaQuery('(max-width: 1160px)');
-    const isMobile = false
+    const isMobile = useMediaQuery('(max-width: 1160px)');
 
     const showButton = () => {
         if(window.innerWidth <= 1160) {
@@ -67,9 +65,9 @@ function Navbar({ user, setUser }) {
                     <Image className={styles.homeLogo} src={image} alt="KOW logo"/>
                     KOW
                 </Link>
-                {/* <div className={styles.menuIcon} onClick={handleClick}>
+                <div className={styles.menuIcon} onClick={handleClick}>
                     {click? <CloseIcon /> : <MenuIcon/>}
-                </div> */}
+                </div>
                 <ul className={click ? styles.navMenuActive : styles.navMenu}>
                     {isMobile && (
                         <li className={styles.mobileItem}>
