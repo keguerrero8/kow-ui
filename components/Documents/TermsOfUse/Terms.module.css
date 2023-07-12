@@ -1,0 +1,62 @@
+.documentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 10vh 10vw;
+}
+
+.bodyText {
+    align-self: center;
+    max-width: 720px;
+}
+.bodyText > h1 {
+    font-size: var(--font-medium);
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+.bodyText > h3 {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.bodyText > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.linkPrivacy {
+    text-decoration: none;
+    font-weight: 900;
+    color: var(--brand-black);
+    font-size: var(--font-xsmall);
+}
+.linkPrivacy:hover {
+    color: var(--brand-primaryblue);
+}
+
+.linkExhibit {
+    text-decoration: none;
+    font-weight: 900;
+    color: var(--brand-black);
+    font-size: var(--font-xsmall);
+}
+
+.rightsList {
+    padding-left: 3vw;
+}
+.rightsList > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.subtextFee {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}

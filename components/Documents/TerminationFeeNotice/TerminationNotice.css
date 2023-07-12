@@ -1,0 +1,25 @@
+@import '../../../styles.css';
+
+.document-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 10vh 10vw;
+}
+
+.body-text {
+    align-self: center;
+    max-width: 720px;
+}
+.body-text > h1 {
+    font-size: var(--font-medium);
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+.body-text > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+}

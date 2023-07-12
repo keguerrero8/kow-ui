@@ -1,0 +1,110 @@
+.buttonStyle {
+    background-color: var(--brand-white);
+    border-width: 0;
+    font-weight: 900;
+    font-size: var(--font-xsmall);
+    margin: 0 4px;
+    cursor: pointer;
+}
+.buttonStyle:hover {
+    color: var(--brand-primaryblue);
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--brand-grey);
+    padding: 0 12px 12px;
+    margin: 6px
+}
+.modalContent > h2 {
+    font-size: var(--font-small);
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 900;
+}
+.modalContent > h3{
+    font-size: var(--font-xsmall);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 100;
+    margin-bottom: 12px;
+}
+
+.close {
+    align-self: flex-end;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.feeFreq {
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    min-width: 300px;
+    justify-content: space-between;
+}
+
+.tier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tier > h3 {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.tier > p {
+    font-size: var(--font-xsmall);
+    font-weight: 100;
+    text-decoration: none;
+    text-align: center;
+}
+
+.fee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fee > h3 {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.fee > p {
+    font-size: var(--font-xsmall);
+    font-weight: 100;
+    text-decoration: none;
+    text-align: center;
+}
+
+.freq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.freq > h3 {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+    text-decoration: underline;
+    margin-bottom: 4px;
+    text-align: center;
+}
+.freq > p {
+    font-size: var(--font-xsmall);
+    font-weight: 100;
+    text-decoration: none;
+    text-align: center;
+}

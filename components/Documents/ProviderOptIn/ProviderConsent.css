@@ -1,0 +1,74 @@
+@import '../../../styles.css';
+
+.document-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 10vh 10vw;
+}
+
+.intro {
+    align-self: center;
+    margin-bottom: 24px;
+    max-width: 720px;
+}
+.intro > h2 {
+    font-size: var(--font-medium);
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-decoration: underline;
+    text-align: center;
+}
+.intro > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+}
+
+.section-1 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-1 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+.section-1 > h3 {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-transform: none;
+}
+.section-1 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+}
+
+.section-2 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-2 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+}
+
+.section-3 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-3 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+}
+
+.section-4 {
+    align-self: center;
+    max-width: 720px;
+    width: 100%;
+}
+.section-4 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+}

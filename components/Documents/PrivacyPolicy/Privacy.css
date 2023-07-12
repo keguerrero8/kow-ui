@@ -1,0 +1,297 @@
+@import '../../../styles.css';
+
+.document-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 10vh 10vw;
+}
+
+.intro {
+    align-self: center;
+    margin-bottom: 24px;
+    max-width: 720px;
+}
+.intro > h3 {
+    font-size: var(--font-medium);
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-decoration: underline;
+    text-align: center;
+}
+.intro > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-1 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-1 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-1 > h3 {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-1 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.subtext-1-0 {
+    /* margin-left: 6vw; */
+}
+.subtext-1-0 > h3 {
+    font-size: var(--font-xsmall);
+    text-align: start;
+}
+.subtext-1-0 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.subtext-1b {
+    /* margin-left: 6vw; */
+}
+.subtext-1b > h3 {
+    font-size: var(--font-xsmall);
+    text-align: start;
+}
+.subtext-1b > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.subtext-1c {
+    /* margin-left: 6vw; */
+}
+.subtext-1c > h3 {
+    font-size: var(--font-xsmall);
+    text-align: start;
+}
+.subtext-1c > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-2 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-2 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-2 > h3 {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-2 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.subtext-2 {
+    /* margin-left: 6vw; */
+}
+.subtext-2 > h3 {
+    font-size: var(--font-xsmall);
+    text-align: start;
+}
+.subtext-2 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-3 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-3 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-3 > h3 {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-3 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.subtext-3 {
+    /* margin-left: 6vw; */
+}
+.subtext-3 > h3 {
+    font-size: var(--font-xsmall);
+    text-align: start;
+}
+.subtext-3 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-4 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-4 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-4 > h3 {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-4 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.subtext-4b {
+    /* margin-left: 6vw; */
+}
+.subtext-4b > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-5 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-5 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-5 > h3 {
+    font-size: var(--font-xsmall);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-5 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-6 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-6 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-6 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-7 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-7 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-7 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-8 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-8 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-8 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-9 {
+    align-self: center;
+    max-width: 720px;
+}
+.section-9 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-9 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-10 {
+    align-self: center;
+    width: 100%;
+    max-width: 720px;
+}
+.section-10 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-align: start;
+}
+.section-10 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.subtext-10 {
+    font-size: var(--font-xsmall);
+    text-align: start;
+}

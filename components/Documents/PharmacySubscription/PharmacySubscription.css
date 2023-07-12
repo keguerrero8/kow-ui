@@ -1,0 +1,209 @@
+
+@import '../../../styles.css';
+
+.document-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 10vh 10vw;
+}
+
+.parties {
+    align-self: center;
+    margin-bottom: 36px;
+    max-width: 720px;
+}
+.parties > h3 {
+    font-size: var(--font-medium);
+    text-decoration: underline;
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.parties > p {
+    font-size: var(--font-xsmall);
+    text-align: start;
+}
+
+.recitals {
+    align-self: center;
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+.recitals > h3 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+.recitals > p {
+    font-size: var(--font-xsmall);
+    text-indent: 3vw;
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-1 {
+    align-self: center;
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+.section-1 > h3 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+.section-1 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.subtext-b {
+    margin-bottom: 12px;
+    margin-left: 3vw;
+    text-align: start;
+}
+
+.subtext-b > p {
+    font-size: var(--font-xsmall);
+}
+
+.subtext-h {
+    margin-bottom: 12px;
+    text-align: start;
+}
+.subtext-h > h3 {
+    font-size: var(--font-small);
+    font-weight: 100;
+    margin: 8px 0;
+}
+.subtext-h > p {
+    font-size: var(--font-xsmall);
+    margin-left: 15vw;
+}
+
+.section-2 {
+    align-self: center;
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+.section-2 > h3 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+.section-2 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-3 {
+    align-self: center;
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+.section-3 > h3 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+.section-3 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.section-4 {
+    align-self: center;
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+.section-4 > h3 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+.section-4 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.link-privacy {
+    text-decoration: none;
+    font-weight: 900;
+    color: var(--brand-black);
+    font-size: var(--font-xsmall);
+}
+.link-privacy:hover {
+    color: var(--brand-primaryblue);
+}
+
+.section-5 {
+    align-self: center;
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+.section-5 > h3 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+.section-5 > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.signatures {
+    align-self: center;
+    max-width: 720px;
+    margin-bottom: 24px;
+    text-align: start;
+}
+.signatures > h3 {
+    font-size: var(--font-Xsmall);
+    font-weight: 100;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.signatures > p {
+    font-size: var(--font-xsmall);
+    margin-bottom: 12px;
+}
+
+.subtext-sig > h2 {
+    font-size: var(--font-small);
+    font-weight: 100;
+    margin: 40px 0 8px;
+}
+.subtext-sig > h3 {
+    font-size: var(--font-small);
+    font-weight: 100;
+    margin-left: 50px;
+}
+.subtext-sig > p {
+    font-size: var(--font-xsmall);
+    margin-left: 50px;
+}
+
+.sig-timestamp {
+    font-weight: bolder;
+    color: blue;
+}
+
+.larry-sig {
+    width: 10rem;
+    margin-left: 2rem;
+}
