@@ -1,6 +1,5 @@
 import Layout from '@/components/layout'
 import '@/styles/globals.css'
-import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
@@ -14,7 +13,6 @@ const clientSideEmotionCache = createEmotionCache();
 
 export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  const [user, setUser] = useState(null)
 
   return (
     <CacheProvider value={emotionCache}>
@@ -24,7 +22,7 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Layout user={user} setUser={setUser}>
+        <Layout>
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>

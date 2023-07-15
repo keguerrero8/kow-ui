@@ -1,9 +1,9 @@
-import React from 'react'
+import styles from "@/components/Documents/ProviderOptIn/ProviderConsent.module.css"
 
-function ProviderOptInText({ isModal = false }) {
+export default function ProviderOptInText({ isModal = false }) {
   return (
     <>
-        <div className='intro'>
+        <div className={styles.intro}>
             {isModal? null : <h2>Provider User Opt-In Agreement</h2>}
             <p>Effective Date: January 1, 2023</p>
             <p>Welcome to KOW, an online prescription management and intermediary company (the
@@ -26,7 +26,7 @@ function ProviderOptInText({ isModal = false }) {
                 of New York law. You represent and warrant that You are at least eighteen (18) years old and
                 possess the legal right to agree to these terms.</p>
         </div>
-        <div className='section-1'>
+        <div className={styles.section1}>
             <h2>1. Representations and Warranties</h2>
             <h3>(a)  Licensed Medical Provider</h3>
             <p>You hereby represent and warrant that You are a licensed medical provider, in good standing
@@ -47,7 +47,7 @@ function ProviderOptInText({ isModal = false }) {
                 with access and use of the Services. By using the Services, and clicking below, You hereby so
                 represent.</p>
         </div>
-        <div className='section-2'>
+        <div className={styles.section2}>
             <h2>2. Indemnity</h2>
             <p>You hereby agree to indemnify, defend and hold harmless KOW and its officers, directors,
                 employees and agents, from and against any claims, disputes, demands, liabilities, damages,
@@ -59,7 +59,7 @@ function ProviderOptInText({ isModal = false }) {
                 this indemnification obligation clause shall be interpreted to provide the Company the maximum
                 amount of indemnification permitted under the law of the applicable State.</p>
         </div>
-        <div className='section-3'>
+        <div className={styles.section3}>
             <h2>3. Proprietary Rights and Licenses</h2>
             <p>KOW, its affiliates, and licensors, if any, exclusively own all right, title and interest in and to the
                 Services, including all associated intellectual property rights (hereinafter, the “KOW Brand
@@ -71,12 +71,10 @@ function ProviderOptInText({ isModal = false }) {
                 interest in the Services, the of the Services, or intellectual property rights to You, and KOW and
                 its third-party licensors, if any, retain all respective right, title, and interest to the Services.</p>
         </div>
-        <div className='section-4'>
+        <div className={styles.section4}>
             <h2>4. Contact Information</h2>
             <p>Please contact KOW at help@KOWmeds.com with any questions regarding this Agreement.</p>
         </div>
     </>
   )
 }
-
-export default ProviderOptInText

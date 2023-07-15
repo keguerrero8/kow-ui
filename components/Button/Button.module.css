@@ -79,3 +79,9 @@
     min-width: 220px;
     max-width: 280px;
 }
+
+.btnCancel {
+    width: 100px;
+    min-width: 100px;
+    max-width: 150px;
+}

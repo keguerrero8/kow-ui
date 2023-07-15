@@ -11,7 +11,7 @@ import styles from './Navbar.module.css';
 import image from "../../public/images/icon-only-black.jpg"
 
 
-function Navbar({ user, setUser }) {
+function Navbar({ user }) {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 

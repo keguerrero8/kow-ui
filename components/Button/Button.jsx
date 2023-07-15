@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const STYLES = [styles.btnPrimary, styles.btnSecondary, styles.btnTertiary]
 const SIZES = [styles.btnSmall, styles.btnMedium, styles.btnLarge]
-const PAGES = [styles.btnDefault, styles.btnHome, styles.btnHow, styles.btnFind, styles.btnContact, styles.btnOther]
+const PAGES = [styles.btnDefault, styles.btnHome, styles.btnHow, styles.btnFind, styles.btnContact, styles.btnOther, styles.btnCancel]
 
 export default function Button ({children, type, onClick, buttonStyle, buttonSize, buttonPage, path}) {
 

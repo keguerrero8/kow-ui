@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 // import Cookies from "js-cookie"
 
 import RequestFormInput from '@/components/RequestFormInput/RequestFormInput.jsx'
@@ -21,7 +21,7 @@ import {
     Link
 } from '@mui/material'
 
-export default function RequestForm({ user }) {
+export default function RequestForm({ medications }) {
   const defaultRequestData = {
     phone_number: "",
     med_name: "",
@@ -36,7 +36,6 @@ export default function RequestForm({ user }) {
   }
   const [checked, setChecked] = useState(false)
   const [medication, setMedication] = useState({})
-  const [medications, setMedications] = useState([])
   const [value, setValue] = useState("insurance")
   const [status, setRequestStatus] = useState([])
   const [isDisabled, setDisabled] = useState(true)
@@ -48,12 +47,6 @@ export default function RequestForm({ user }) {
   const [isPrivacyAcknowledged, setisPrivacyAcknowledged] = useState(false)
   const [isOptInAcknowledged, setisOptInAcknowledged] = useState(false)
   const [showHelp, setShowHelp] = useState(false)
-
-//   useEffect(() => {
-//     fetch("http://localhost:8000/api/medications")
-//     .then(res => res.json())
-//     .then(r => setMedications(r))
-//   }, [])
 
   const handleAgreementCheck = (e) => {
     if (e.target.checked) {
@@ -364,7 +357,9 @@ export default function RequestForm({ user }) {
                 <Typography key={index} sx={{color: status[0] === "Request successfully sent!"? "green" : "red"}}>{e}</Typography>)}
         </Box>
         <Box sx={styles.ButtonsContainer}>
-            <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={user? false : (!isDisabled || !checked)}>
+            {/* add the below back in when we figure out authentication */}
+            {/* <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={user? false : (!isDisabled || !checked)}> */}
+            <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={!isDisabled || !checked}>
                 Send Request
             </Button>
             <Button variant='text' sx={{color: "#154161"}} size="medium" onClick={handleClear} >
