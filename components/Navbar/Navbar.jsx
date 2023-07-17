@@ -91,6 +91,11 @@ function Navbar({ user }) {
                             Contact Us
                         </Link>
                     </li>
+                    <li className={styles.navItem}>
+                        <Link href='/dashboard' className={styles.navLinks} onClick={closeMobileMenu}>
+                            Dashboard
+                        </Link>
+                    </li>
                     {
                         user ? 
                             <li className={styles.navItem}>

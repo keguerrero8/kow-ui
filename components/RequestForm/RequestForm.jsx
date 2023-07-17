@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-// import Cookies from "js-cookie"
+import Cookies from "js-cookie"
 
 import RequestFormInput from '@/components/RequestFormInput/RequestFormInput.jsx'
 import MedNameRequestInput from '@/components/MedNameRequestInput/MedNameRequestInput.jsx'
 import MedStrengthRequestInput from '@/components/MedStrengthRequestInput/MedStrengthRequestInput.jsx'
 import RequestAgreementModal from '@/components/RequestAgreementModal/RequestAgreementModal'
-// import CSRFToken from '../CSRFToken/CSRFToken'
+import CSRFToken from '@/components/CSRFToken/CSRFToken'
 import { styles } from './RequestForm-styles'
 
 import { 
@@ -123,45 +123,44 @@ export default function RequestForm({ medications }) {
   // sure its correct
   function handleSubmit (e) {
     e.preventDefault()
-    console.log(e)
+    const payload = {
+        ...requestData, 
+        phone_number: "+1" + requestData["phone_number"], 
+        // isAdmin: user? true : false
+        isAdmin: true
+    }
 
-    // const payload = {
-    //     ...requestData, 
-    //     phone_number: "+1" + requestData["phone_number"], 
-    //     isAdmin: user? true : false
-    // }
-
-    // fetch("/api/requests", {
-    //     credentials: "include",
-    //     method: "POST",
-    //     headers: { 
-    //         "Content-Type": "application/json",
-    //         "X-CSRFToken": Cookies.get("csrftoken")
-    //     },
-    //     body: JSON.stringify(payload)
-    // })
-    // .then(r => {
-    //     if (r.ok) {
-    //         r.json().then(res => {
-    //             if (res.error) {
-    //                 setRequestStatus([res.error])
-    //             } else {
-    //                 setRequestStatus(["Request successfully sent!"])
-    //                 setDisabled(false)
-    //             }
-    //         })
-    //     }
-    //     else {
-    //         r.json().then(res => {
-    //             const errors = Object.entries(res.errors).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
-    //             if (res.errors && r.status === 400) {
-    //                 setRequestStatus(errors)
-    //             } else {
-    //                 setRequestStatus([res.errors])
-    //             }
-    //         })
-    //     }
-    // })
+    fetch("http://127.0.0.1:8000/api/requests", {
+        credentials: "include",
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/json",
+            "X-CSRFToken": Cookies.get("csrftoken")
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(r => {
+        if (r.ok) {
+            r.json().then(res => {
+                if (res.error) {
+                    setRequestStatus([res.error])
+                } else {
+                    setRequestStatus(["Request successfully sent!"])
+                    setDisabled(false)
+                }
+            })
+        }
+        else {
+            r.json().then(res => {
+                const errors = Object.entries(res.errors).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
+                if (res.errors && r.status === 400) {
+                    setRequestStatus(errors)
+                } else {
+                    setRequestStatus([res.errors])
+                }
+            })
+        }
+    })
   }
 
     function handleHelp() {
@@ -182,7 +181,7 @@ export default function RequestForm({ medications }) {
             isOptInAcknowledged={isOptInAcknowledged}
             setisOptInAcknowledged={setisOptInAcknowledged}
         />
-        {/* <CSRFToken /> */}
+        <CSRFToken />
         <Box sx={{...styles.InputContainer, mb: "1rem"}}>
             <Typography color="black" sx={styles.FillableTitle}>
                 FILLABLE
