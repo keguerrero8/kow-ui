@@ -1,0 +1,120 @@
+.howContainer {
+    background-color: var(--brand-grey);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6% 0 10% 0;
+}
+
+.howContainer > h1 {
+    color: var(--brand-darkblue);
+    font-size: var(--mobile-large);
+    margin-bottom: 20px;
+    max-width: 80%;
+}
+
+.howBody {
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+    justify-content: center;
+}
+
+.howStep {
+    display: flex;
+    flex-direction: column;
+    max-width: 25vw;
+    margin: 0 32px;
+}
+
+.imgWrap {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    align-self: center;
+    margin: 16px 0;
+    border: 2px solid var(--brand-white);
+}
+
+.imgWrap > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   
+}
+
+.stepText {
+    font-size: var(--font-medium);
+    font-weight: 900;
+    color: var(--brand-darkblue);
+}
+
+.stepSubtext {
+    font-size: var(--font-small);
+    font-weight: 100;
+    color: var(--brand-darkblue);
+    margin-top: 8px;
+}
+
+.howButtons {
+    margin-top: 80px;
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.videoTitle {
+    font-size: var(--font-medium);
+    color: var(--brand-darkblue);
+    text-align: center;
+    margin: 4rem 0 2rem;
+}
+.videoContainer {
+    width: 70vw;
+    max-width: 1080px;
+}
+
+@media screen and (max-width: 960px) {
+    .howContainer > h1 {
+        text-align: center;
+        margin: 20px 0 0;
+    }
+
+    .howBody {
+        flex-direction: column;
+    }
+
+    .howStep {
+        max-width: 75vw;
+        margin: 12px 0;
+    }
+
+    .stepText {
+        font-size: var(--mobile-medium);
+    }
+
+    .stepSubtext {
+        font-size: var(--mobile-small);
+    }
+
+    .howButtons {
+        flex-direction: column;
+        justify-content: center;
+        margin: 40px 0;
+        padding: 0;
+        align-items: center;
+    }
+
+    .btn {
+        margin: 8px 0;
+        width: 60vw;
+        max-width: 320px;
+    }
+
+    .videoTitle {
+        font-size: var(--font-small);
+        margin: 2rem 0;
+    }
+}
