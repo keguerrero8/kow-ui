@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router'
 import { styles } from './LoginForm-styles';
 
 import { Box, TextField, Button, Typography } from '@mui/material';
@@ -9,7 +9,7 @@ import CSRFToken from '@/components/CSRFToken/CSRFToken.jsx';
 
 // export default function LoginPage({setUser}) {
 export default function LoginPage() {
-    // const history = useNavigate()
+    const router = useRouter()
     const [errors, setErrors] = useState([])
     const [formData, setFormData] = useState({
         username: "",
@@ -34,7 +34,7 @@ export default function LoginPage() {
                     if (res.success) {
                         // setUser(res.success)
                         console.log(res.success)
-                        // history("/dashboard")
+                        router.push("/dashboard")
                     } else {
                         setErrors([res.error])
                     }
