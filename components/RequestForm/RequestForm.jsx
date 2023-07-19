@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
-// import Cookies from "js-cookie"
+import React, { useState } from 'react'
+import Cookies from "js-cookie"
 
 import RequestFormInput from '@/components/RequestFormInput/RequestFormInput.jsx'
 import MedNameRequestInput from '@/components/MedNameRequestInput/MedNameRequestInput.jsx'
 import MedStrengthRequestInput from '@/components/MedStrengthRequestInput/MedStrengthRequestInput.jsx'
 import RequestAgreementModal from '@/components/RequestAgreementModal/RequestAgreementModal'
-// import CSRFToken from '../CSRFToken/CSRFToken'
+import CSRFToken from '@/components/CSRFToken/CSRFToken'
 import { styles } from './RequestForm-styles'
 
 import { 
@@ -21,7 +21,7 @@ import {
     Link
 } from '@mui/material'
 
-export default function RequestForm({ user }) {
+export default function RequestForm({ medications }) {
   const defaultRequestData = {
     phone_number: "",
     med_name: "",
@@ -36,7 +36,6 @@ export default function RequestForm({ user }) {
   }
   const [checked, setChecked] = useState(false)
   const [medication, setMedication] = useState({})
-  const [medications, setMedications] = useState([])
   const [value, setValue] = useState("insurance")
   const [status, setRequestStatus] = useState([])
   const [isDisabled, setDisabled] = useState(true)
@@ -48,12 +47,6 @@ export default function RequestForm({ user }) {
   const [isPrivacyAcknowledged, setisPrivacyAcknowledged] = useState(false)
   const [isOptInAcknowledged, setisOptInAcknowledged] = useState(false)
   const [showHelp, setShowHelp] = useState(false)
-
-//   useEffect(() => {
-//     fetch("http://localhost:8000/api/medications")
-//     .then(res => res.json())
-//     .then(r => setMedications(r))
-//   }, [])
 
   const handleAgreementCheck = (e) => {
     if (e.target.checked) {
@@ -130,45 +123,44 @@ export default function RequestForm({ user }) {
   // sure its correct
   function handleSubmit (e) {
     e.preventDefault()
-    console.log(e)
+    const payload = {
+        ...requestData, 
+        phone_number: "+1" + requestData["phone_number"], 
+        // isAdmin: user? true : false
+        isAdmin: true
+    }
 
-    // const payload = {
-    //     ...requestData, 
-    //     phone_number: "+1" + requestData["phone_number"], 
-    //     isAdmin: user? true : false
-    // }
-
-    // fetch("/api/requests", {
-    //     credentials: "include",
-    //     method: "POST",
-    //     headers: { 
-    //         "Content-Type": "application/json",
-    //         "X-CSRFToken": Cookies.get("csrftoken")
-    //     },
-    //     body: JSON.stringify(payload)
-    // })
-    // .then(r => {
-    //     if (r.ok) {
-    //         r.json().then(res => {
-    //             if (res.error) {
-    //                 setRequestStatus([res.error])
-    //             } else {
-    //                 setRequestStatus(["Request successfully sent!"])
-    //                 setDisabled(false)
-    //             }
-    //         })
-    //     }
-    //     else {
-    //         r.json().then(res => {
-    //             const errors = Object.entries(res.errors).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
-    //             if (res.errors && r.status === 400) {
-    //                 setRequestStatus(errors)
-    //             } else {
-    //                 setRequestStatus([res.errors])
-    //             }
-    //         })
-    //     }
-    // })
+    fetch("http://127.0.0.1:8000/api/requests", {
+        credentials: "include",
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/json",
+            "X-CSRFToken": Cookies.get("csrftoken")
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(r => {
+        if (r.ok) {
+            r.json().then(res => {
+                if (res.error) {
+                    setRequestStatus([res.error])
+                } else {
+                    setRequestStatus(["Request successfully sent!"])
+                    setDisabled(false)
+                }
+            })
+        }
+        else {
+            r.json().then(res => {
+                const errors = Object.entries(res.errors).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
+                if (res.errors && r.status === 400) {
+                    setRequestStatus(errors)
+                } else {
+                    setRequestStatus([res.errors])
+                }
+            })
+        }
+    })
   }
 
     function handleHelp() {
@@ -189,7 +181,7 @@ export default function RequestForm({ user }) {
             isOptInAcknowledged={isOptInAcknowledged}
             setisOptInAcknowledged={setisOptInAcknowledged}
         />
-        {/* <CSRFToken /> */}
+        <CSRFToken />
         <Box sx={{...styles.InputContainer, mb: "1rem"}}>
             <Typography color="black" sx={styles.FillableTitle}>
                 FILLABLE
@@ -364,7 +356,9 @@ export default function RequestForm({ user }) {
                 <Typography key={index} sx={{color: status[0] === "Request successfully sent!"? "green" : "red"}}>{e}</Typography>)}
         </Box>
         <Box sx={styles.ButtonsContainer}>
-            <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={user? false : (!isDisabled || !checked)}>
+            {/* add the below back in when we figure out authentication */}
+            {/* <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={user? false : (!isDisabled || !checked)}> */}
+            <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={!isDisabled || !checked}>
                 Send Request
             </Button>
             <Button variant='text' sx={{color: "#154161"}} size="medium" onClick={handleClear} >

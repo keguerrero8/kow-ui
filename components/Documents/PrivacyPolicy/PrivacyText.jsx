@@ -1,9 +1,9 @@
-import React from 'react'
+import styles from './Privacy.module.css';
 
-function PrivacyText({ isModal = false }) {
+export default function PrivacyText({ isModal = false }) {
   return (
     <>  
-        <div className='intro'>
+        <div className={styles.intro}>
             {isModal? null : <h3>Privacy Policy</h3>}
             <p>Effective Date: January 1, 2023</p>
             <p>This Privacy Policy applies to information collected by Fillable, LLC, d/b/a FillableRx, a/k/a
@@ -23,7 +23,7 @@ function PrivacyText({ isModal = false }) {
                 for direct marketing purposes, have it deleted, and opt-out of such information being sold to third
                 parties. Send such requests to PO Box 505, Valley Stream, New York 11582.</p>
         </div>
-        <div className='section-1'>
+        <div className={styles.section1}>
             <h2>1. What information do we collect about You?</h2>
             <p>The information we collect about You does not include PII, except Your phone number,
                 protected health information (“PHI”) or electronic protected health information (“ePHI”). To the
@@ -31,7 +31,7 @@ function PrivacyText({ isModal = false }) {
                 set forth in applicable laws, including the Health Insurance Portability and Accountability Act’s
                 Privacy Law (“HIPAA”).</p>
             <p>The information may include the following categories:</p>
-            <div className='subtext-1-0'>
+            <div className={styles.subtext1_0}>
                 <h3>Personal Identifier and Other Information:</h3>
                 <p>Your name, date of birth, postal and
                     email address, phone number, driver’s license or other government identification
@@ -102,7 +102,7 @@ function PrivacyText({ isModal = false }) {
                 users’ web page, email, and mobile application movements/activities, help identify or gather
                 demographic and interest information, and target and retarget online and mobile advertisements
                 to You across computers or devices You may use.</p>
-            <div className='subtext-1b'>
+            <div className={styles.subtext1b}>
                 <h3>Third-Party Technologies:</h3>
                 <p>We may use other companies’ analytics, tracking and
                     provided tools that receive information when You use our Services, including
@@ -120,7 +120,7 @@ function PrivacyText({ isModal = false }) {
                 enhance our Services, either due to our intentional acquisition of such information, or as a result
                 of a third party’s automatic collection and storage of such information, to the extent such
                 information is stored, and/or interacts with our server.</p>
-            <div className='subtext-1c'>
+            <div className={styles.subtext1c}>
                 <h3>Third-Party API:</h3>
                 <p>The KOW server interfaces with a third-party application
                     programming interface company (“API”) in order to translate Your queries to enrolled
@@ -149,11 +149,11 @@ function PrivacyText({ isModal = false }) {
                 information, usage information, internet information, as well as information collected offline,
                 across other computers or devices that You may use, and from third-party sources.</p>
         </div>
-        <div className='section-2'>
+        <div className={styles.section2}>
             <h2>2. How do we use information about You?</h2>
             <p>We may use Your information to provide our Services and for a variety of related business
                 activities, which may include:</p>
-            <div className='subtext-2'>
+            <div className={styles.subtext2}>
                 <h3>Creating, Updating or Managing User Profiles and Accounts:</h3>
                 <p>We may use Your
                     information to create user profiles and accounts, or otherwise manage Your account.</p>
@@ -182,7 +182,7 @@ function PrivacyText({ isModal = false }) {
                 companies may use internet or electronic information about our Services and other websites and
                 mobile applications in order to provide advertisements about goods and services of interest to
                 You.</p>
-            <div className='subtext-2'>
+            <div className={styles.subtext2}>
                 <h3>Business Operations:</h3>
                 <p>We may use Your information to understand Your use of our
                     Services in order to consider improving them, including to provide, change, market, or
@@ -203,7 +203,7 @@ function PrivacyText({ isModal = false }) {
             <p>We may also use Your information for other purposes as disclosed at the time You provide Your
                 information, or otherwise with Your consent.</p>
         </div>
-        <div className='section-3'>
+        <div className={styles.section3}>
             <h2>3. How do we share information with others?</h2>
             <p>We may share or sell Your information to companies that work for or provide services to us,
                 only in the ways described below.</p>
@@ -213,7 +213,7 @@ function PrivacyText({ isModal = false }) {
             <h3>B. Service Providers and Third Parties</h3>
             <p>We may share Your information with the following service providers and third parties to perform
                 services on our behalf such as:</p>
-            <div className='subtext-3'>
+            <div className={styles.subtext3}>
                 <p>Data warehouses, servers, and storage providers</p>
                 <p>Data analytic, data connectivity and customer data providers and platforms</p>
                 <p>Customer engagement or relationship management platforms</p>
@@ -261,7 +261,7 @@ function PrivacyText({ isModal = false }) {
                 suspected illegal activity, fraud, or other wrongdoing; and to enforce our rights under our terms
                 of service and policies, in court or elsewhere.</p>
         </div>
-        <div className='section-4'>
+        <div className={styles.section4}>
             <h2>4. What choices do You have?</h2>
             <h3>A. Cookies and Do Not Track</h3>
             <p>We, or other parties we do business with, may place or recognize unique cookies or other similar
@@ -278,21 +278,21 @@ function PrivacyText({ isModal = false }) {
             <p>At this time, we do not respond to browser “Do Not Track” signals.</p>
             <h3>B. Your Privacy Rights</h3>
             <p>You may choose to limit certain collection or disclosure of Your information as follows:</p>
-            <div className='subtext-4b'>
+            <div className={styles.subtext4b}>
                 <p>To have Your information deleted, You can submit a verifiable consumer request by
                     emailing help@KOWmeds.com. Please note that prior to fulfilling Your request, we
                     will need to verify Your identity, which may require additional pieces of information.
                     This information is strictly used for verification purposes.</p>
             </div>
         </div>
-        <div className='section-5'>
+        <div className={styles.section5}>
             <h2>5. Additional privacy disclosures</h2>
             <h3>A. European Union Visitors</h3>
             <p>Please do not use the Services if You are not a resident of the United States. The Services are
                 intended for use only by residents of the United States. Use by visitors from the European
                 Economic Area (“EEA”) is prohibited.</p>
         </div>
-        <div className='section-6'>
+        <div className={styles.section6}>
             <h2>6. Children’s privacy</h2>
             <p>The Services are only for users of the age of 18 or older. If You are under the age of 18, please
                 do not attempt to register with us or provide any personal or other information about Yourself to
@@ -300,7 +300,7 @@ function PrivacyText({ isModal = false }) {
                 individuals under the age of 13 and we do not direct our services to individuals under the age of
                 13.</p>
         </div>
-        <div className='section-7'>
+        <div className={styles.section7}>
             <h2>7. Third-party services and websites</h2>
             <p>When You access or engage with a third-party service, application, or website, even when doing
                 so through KOW equipment or applications, You are entering that service, application, or
@@ -309,7 +309,7 @@ function PrivacyText({ isModal = false }) {
                 parties. KOW may also collect usage information related to those third-party products, services,
                 applications, or websites if they are accessed through KOW equipment, websites, or applications.</p>
         </div>
-        <div className='section-8'>
+        <div className={styles.section8}>
             <h2>8. How do we protect Your information?</h2>
             <p>KOW takes information security seriously. We use commercially reasonable efforts to prevent
                 unauthorized third-party access to Your information. However, we cannot guarantee that these
@@ -319,15 +319,15 @@ function PrivacyText({ isModal = false }) {
                 Services and provide us with Your information at Your own risk, and we accept no liability for
                 unintentional disclosure.</p>
         </div>
-        <div className='section-9'>
+        <div className={styles.section9}>
             <h2>9. What about changes to this notice?</h2>
             <p>We may modify this Privacy Policy at any time. When we do so, we will post the revised Privacy
                 Policy on our website.</p>
         </div>
-        <div className='section-10'>
+        <div className={styles.section10}>
             <h2>10. Who can You contact with questions or concerns?</h2>
             <p>Please address comments or questions to us about this Privacy Policy to:</p>
-            <div className='subtext-10'>
+            <div className={styles.subtext10}>
                 <p>KOW</p>
                 <p>P.O. Box 505</p>
                 <p>Valley Stream, New York 11582</p>
@@ -337,5 +337,3 @@ function PrivacyText({ isModal = false }) {
     </>
   )
 }
-
-export default PrivacyText

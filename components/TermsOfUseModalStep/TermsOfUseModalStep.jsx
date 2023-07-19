@@ -1,15 +1,14 @@
 import { useState } from 'react';
-// import { useNavigate } from "react-router-dom";
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 
 import { styles } from './TermsOfUseModalStep-styles.js';
+import stylesButton from '../Button/Button.module.css'
+import Button from '@/components/Button/Button'
 
-import { Button, Box, Typography } from '@mui/material'
+import { Button as MuiButton, Box, Typography } from '@mui/material'
 import TermsText from '@/components/Documents/TermsOfUse/TermsText.jsx';
-// import '../Documents/TermsOfUse/Terms.module.css'
 
 export default function TermsOfServiceModalStep({ setStep }) {
-    // const navigate = useNavigate()
     const [isDisabled, setDisabled] = useState(true)
     const scrollRef = useBottomScrollListener(() => setDisabled(false))
 
@@ -20,11 +19,20 @@ export default function TermsOfServiceModalStep({ setStep }) {
                 <TermsText isModal={true}/>
             </Box>
             <Box sx={styles.buttonsContainer}>
-                <Button variant='contained' disabled={isDisabled} sx={{color: "white"}} size="large" onClick={() => setStep((val) => val + 1)} >
+                <MuiButton variant='contained' disabled={isDisabled} sx={{color: "white"}} size="large" onClick={() => setStep((val) => val + 1)} >
                     Agree & Continue
+                </MuiButton>
+            </Box>
+            <Box sx={{position: "absolute", left: "5px", bottom: "5px"}}>
+                <Button 
+                className={stylesButton.btn}
+                buttonStyle={stylesButton.btnTertiary} 
+                buttonSize={stylesButton.btnSmall} 
+                buttonPage={stylesButton.btnCancel} 
+                path='/'>
+                    CANCEL
                 </Button>
             </Box>
-            {/* <Button sx={{position: "absolute", left: "5px", bottom: "0px"}} size="large" onClick={() => navigate("/")}>CANCEL</Button> */}
         </Box>
     );
 }

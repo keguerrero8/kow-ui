@@ -1,14 +1,14 @@
 import { useState } from 'react';
-// import { useNavigate } from "react-router-dom";
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 
 import {styles} from './PrivacyPolicyModalStep-styles.js';
+import stylesButton from '../Button/Button.module.css'
+import Button from '@/components/Button/Button'
 
-import { Button, Box, Typography } from '@mui/material'
-// import PrivacyText from '../Documents/PrivacyPolicy/PrivacyText.js';
+import { Button as MuiButton, Box, Typography } from '@mui/material'
+import PrivacyText from '@/components/Documents/PrivacyPolicy/PrivacyText.jsx';
 
 export default function PrivacyPolicyModalStep({ setStep, userType, setIsAcknowledged, setIsAgreementModal }) {
-    // const navigate = useNavigate()
     const [disabled, setDisabled] = useState(true)
     const scrollRef = useBottomScrollListener(() => setDisabled(false))
 
@@ -27,21 +27,30 @@ export default function PrivacyPolicyModalStep({ setStep, userType, setIsAcknowl
         <Box sx={styles.MainContainer}>
             <Typography variant='h3' sx={{fontWeight: "bold", fontSize: {xs: "2rem", sm: "2.5rem", md:"3rem"}}}>Privacy Policy</Typography>
             <Box ref={scrollRef} sx={styles.scrollContainer}>
-                {/* <PrivacyText isModal={true}/> */}
+                <PrivacyText isModal={true}/>
             </Box>
             <Box sx={styles.buttonsContainer}>
                 {userType === "health_care_provider"? (
-                        <Button variant='contained' disabled={disabled} sx={{color: "white"}} size="medium" onClick={handleAgreementContinue} >
+                        <MuiButton variant='contained' disabled={disabled} sx={{color: "white"}} size="medium" onClick={handleAgreementContinue} >
                             Agree & Continue
-                        </Button>
+                        </MuiButton>
                     ) : (
-                        <Button variant='contained' disabled={disabled} sx={{color: "white"}} size="medium" onClick={handleAgreementExit} >
+                        <MuiButton variant='contained' disabled={disabled} sx={{color: "white"}} size="medium" onClick={handleAgreementExit} >
                             Agree & Close
-                        </Button>
+                        </MuiButton>
                     )
                 }
             </Box>
-            {/* <Button sx={{position: "absolute", left: "5px", bottom: "0px"}} size="large" onClick={() => navigate("/")}>CANCEL</Button> */}
+            <Box sx={{position: "absolute", left: "5px", bottom: "5px"}}>
+                <Button 
+                className={stylesButton.btn}
+                buttonStyle={stylesButton.btnTertiary} 
+                buttonSize={stylesButton.btnSmall} 
+                buttonPage={stylesButton.btnCancel} 
+                path='/'>
+                    CANCEL
+                </Button>
+            </Box>
         </Box>
     );
 }

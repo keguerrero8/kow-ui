@@ -11,7 +11,7 @@ import styles from './Navbar.module.css';
 import image from "../../public/images/icon-only-black.jpg"
 
 
-function Navbar({ user, setUser }) {
+function Navbar({ user }) {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -89,6 +89,11 @@ function Navbar({ user, setUser }) {
                     <li className={styles.navItem}>
                         <Link href='/contact-us' className={styles.navLinks} onClick={closeMobileMenu}>
                             Contact Us
+                        </Link>
+                    </li>
+                    <li className={styles.navItem}>
+                        <Link href='/dashboard' className={styles.navLinks} onClick={closeMobileMenu}>
+                            Dashboard
                         </Link>
                     </li>
                     {
