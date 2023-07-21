@@ -3,10 +3,9 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 // import BasicModal from '../BasicModal/BasicModal'
-// import PharmacistRow from '../PharmacistRow/PharmacistRow'
+import PharmacistRow from '@/components/PharmacistRow/PharmacistRow.jsx'
 // import Page404 from '../../Pages/Page404';
-// import pharmacyService from '../../Services/pharmacyService'
-// import pharmacistService from '../../Services/pharmacistService'
+import pharmacistService from '@/lib/pharmacistService'
 
 import { Box, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Paper, Typography, Button, Card, CardContent } from '@mui/material'
 import { styles } from './PharmacySection-styles'
@@ -17,18 +16,18 @@ export default function PharmacyPage({ pharmacy }) {
     const [pharmacistsUpdate, setPharmacistsUpdate] = useState(false)
     const router = useRouter()
     
-    // const loadPharmacist = async () => {
-    //     const loadedPharmacists = await pharmacistService.getPharmacists(pharmacy.id)
-    //     setPharmacists(loadedPharmacists)
-    // }
+    const loadPharmacist = async () => {
+        const loadedPharmacists = await pharmacistService.getPharmacists(pharmacy.id)
+        setPharmacists(loadedPharmacists)
+    }
     
     // useEffect(() => {
     //     window.scrollTo(0, 0);
     // }, []);
     
-    // useEffect(() => {
-    //     loadPharmacist()
-    // }, [pharmacistsUpdate])
+    useEffect(() => {
+        loadPharmacist()
+    }, [pharmacistsUpdate])
     
     // if (!user) return <Page404 isAuthFailure={true} />
     
@@ -88,7 +87,7 @@ export default function PharmacyPage({ pharmacy }) {
                         <TableCell align="center">Delete?</TableCell>
                     </TableRow>
                     </TableHead>
-                    {/* <TableBody>
+                    <TableBody>
                         {
                             pharmacists.map((p) => 
                                 <PharmacistRow 
@@ -98,7 +97,7 @@ export default function PharmacyPage({ pharmacy }) {
                                     pharmacistsUpdate={pharmacistsUpdate}
                                 /> )
                         }
-                    </TableBody> */}
+                    </TableBody>
                 </Table>
             </TableContainer>
         </Box>
