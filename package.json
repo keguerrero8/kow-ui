@@ -21,6 +21,7 @@
     "react-bottom-scroll-listener": "^5.1.0",
     "react-dom": "18.2.0",
     "react-outside-click-handler": "^1.3.0",
+    "react-to-print": "^2.14.13",
     "swr": "^2.2.0"
   }
 }

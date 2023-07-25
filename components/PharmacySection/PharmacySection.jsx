@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-// import BasicModal from '../BasicModal/BasicModal'
+import PharmacistCreationModal from '@/components/PharmacistCreationModal/PharmacistCreationModal.jsx'
 import PharmacistRow from '@/components/PharmacistRow/PharmacistRow.jsx'
 // import Page404 from '../../Pages/Page404';
 import pharmacistService from '@/lib/pharmacistService'
@@ -75,7 +75,7 @@ export default function PharmacyPage({ pharmacy }) {
                 <Typography variant="h6" gutterBottom component="div">
                     Pharmacists registered: {pharmacists.length}
                 </Typography>
-                {/* <BasicModal pharmacyId={pharmacy.id} setPharmacistsUpdate={setPharmacistsUpdate} pharmacistsUpdate={pharmacistsUpdate}/> */}
+                <PharmacistCreationModal pharmacyId={pharmacy.id} setPharmacistsUpdate={setPharmacistsUpdate} pharmacistsUpdate={pharmacistsUpdate}/>
             </Box>
             <TableContainer component={Paper}>
                 <Table size="small">

@@ -1,8 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image'
 
-import ExhibitModal from '../ExhibitModal/ExhibitModal'
-import larry_signature from '../../../images/larry_signature.png'
+import styles from './PharmacySubscription.module.css'
+import ExhibitModal from '@/components/Documents/ExhibitModal/ExhibitModal.jsx'
+import larry_signature from '@/public/images/larry_signature.png'
 
 function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData }) {
     const today = new Date();
@@ -13,12 +14,12 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
 
   return (
     <>
-        <div className='parties'>
+        <div className={styles.parties}>
             {isModal? null : <h3>ENROLLED PHARMACY SUBSCRIPTION AGREEMENT</h3>}
             <p>THIS SUBSCRIPTION AGREEMENT (this "Agreement") is made as of {isModal? formattedDateToday: formattedDatePharmacySigned} ("the Effective Date") between Fillable, 
              LLC, d/b/a FillableRx, a/k/a Kindly Oblige With (KOW) (hereinafter referred to as "KOW") on the one hand, and you, an enrolled pharmacy (hereinafter referred to as "You", "Your", or "Enrolled Pharmacy", together with KOW, the "Parties", each being a "Party"), on the other.</p>
         </div>
-        <div className='recitals'>
+        <div className={styles.recitals}>
             <h3>RECITALS:</h3>
             <p>Whereas, KOW serves as an online referral service and prescription management
                 company, through www.KOWmeds.com, (the “Site”), that enables its users to locate pharmacies
@@ -33,7 +34,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 promises and conditions, the Parties agree as follows:</p>
             <p> The above recitals are hereby incorporated herein by reference.</p>
         </div>
-        <div className='section-1'>
+        <div className={styles.section1}>
             <h3>1. SUBSCRIPTION AND PRICING TERMS</h3>
             <p>a. As part of this subscription and in exchange and consideration for the agreed-upon
                 subscription fee payable to KOW (the “Fee”), Enrolled Pharmacy becomes, so long as this
@@ -67,7 +68,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 The duration of the Initial Testing Period shall be fixed by KOW in its sole and absolute 
                 discretion. Upon termination of the Initial Testing Period, KOW shall serve You with a notice 
                 advising You of the following:</p>
-                <div className='subtext-b'>
+                <div className={styles.subtextb}>
                     <p>(i) the Initial Testing Period has ended; and</p>
                     <p>(ii) the Fee Schedule in the Agreement, will now be going into full force and effect (the
                         “Termination and Fee Schedule Notice”).</p>
@@ -166,7 +167,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 requested; (ii) nationally recognized overnight mail delivery service, with tracking information
                 provided; (iii) personal delivery; or (iv) electronic mail transmission to the email addresses
                 below-listed:</p>
-                <div className='subtext-h'>
+                <div className={styles.subtexth}>
                     <h3>If to KOW:</h3>
                     <p>KOW</p>
                     <p>Attn: Larry Chen</p>
@@ -186,7 +187,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                     <p>{enrollmentData["contact_email"]}</p>
                 </div>
         </div>
-        <div className='section-2'>
+        <div className={styles.section2}>
             <h3>2. LICENSE GRANT AND TERMS</h3>
             <p>a. During either the Initial Term or any subsequent Renewal Term of this Agreement, but subject
                 to continuing and uninterrupted payment of the Fee, as set forth herein, and compliance with the
@@ -232,7 +233,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 remedies at law or equity, including injunctive relief. The provisions and obligations in this
                 paragraph shall survive the termination of this Agreement.</p>
         </div>
-        <div className='section-3'>
+        <div className={styles.section3}>
             <h3>3. DISCLAIMERS, LIMITAITONS, AND INDEMNITIES</h3>
             <p>a. TO THE EXTENT ALLOWED BY LAW, THESE SERVICES ARE PROVIDED TO YOU
                 "AS IS" WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, WHETHER ORAL
@@ -273,15 +274,15 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 INTERPRETED TO PROVIDE THE COMPANY THE MAXIMUM AMOUNT OF
                 INDEMNIFICATION PERMITTED UNDER THE LAW OF THE APPLICABLE STATE.</p>
         </div>
-        <div className='section-4'>
+        <div className={styles.section4}>
             <h3>4. PRIVACY POLICY</h3>
             <p>KOW takes information security seriously. KOW in no way guarantees that its reasonable efforts
                 to prevent unauthorized third-party access to Your information will prevent every unauthorized
                 attempt to access, use, or disclosure of Your information, including information of others stored
                 and maintained by you, personal, protected health information (“PHI”), or otherwise. The terms
-                of KOW’s {<Link className='link-privacy' to='/privacy-policy'>Privacy Policy</Link>} are incorporated herein by reference and made a part hereof.</p>
+                of KOW’s {<Link className={styles.linkPrivacy} href='/privacy-policy'>Privacy Policy</Link>} are incorporated herein by reference and made a part hereof.</p>
         </div>
-        <div className='section-5'>
+        <div className={styles.section5}>
             <h3>5. GENERAL PROVISIONS</h3>
             <p>a. This Agreement and any disputes arising hereunder shall be governed by the laws of the State
                 of New York, United States of America, without regard to conflicts of laws principles. Enrolled
@@ -322,15 +323,15 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 this Agreement signed by either Party transmitted to the other, DocuSign, or electronic .pdf
                 signature shall constitute a binding signature.</p>
         </div>
-        <div className='signatures'>
+        <div className={styles.signatures}>
             <h3>[SIGNATURE PAGE FOLLOWS]</h3>
             <p>IN WITNESS WHEREOF, the Parties have duly executed this Agreement as of the date
                 first above written. By signing below, You acknowledge that you have read the Company’s
                 Privacy Policy and agree to the terms contained therein.</p>
-            <div className='subtext-sig'>
+            <div className={styles.subtextSig}>
                 <h2>FILLABLE, LLC A/K/A KOW:</h2>
                 <h3>By:
-                    <img className='larry-sig' alt='larry chens signature' src={larry_signature}/>
+                    <Image alt='larry chens signature' className={styles.larrySig} src={larry_signature}/>
                 </h3>
                 <p>Name: Larry Chen</p>
                 <p>Title: Managing Member</p>
@@ -338,7 +339,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 <h3>By: </h3>
                 <p>Name: {enrollmentData["contact_name"]}</p>
                 <p>Title: {enrollmentData["contact_title"]}</p>
-                {isModal? null : <p className='sig-timestamp'>Electronically Signed: {formattedDatePharmacySigned}</p>}
+                {isModal? null : <p className={styles.sigTimestamp}>Electronically Signed: {formattedDatePharmacySigned}</p>}
             </div>
         </div> 
     </>
