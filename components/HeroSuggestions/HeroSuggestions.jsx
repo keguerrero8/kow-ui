@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from './HeroSuggestions.module.css'
 import stylesButton from '../Button/Button.module.css'
 
-import Button from '@/components/Button/Button'
+import Button from '@/components/Button/Button.jsx'
 
 import image1 from "../../public/images/cold2.jpg"
 import image2 from "../../public/images/av2.jpg"
