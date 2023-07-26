@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import styles from './HomePageCards.module.css'
 
-import BlogCard from './BlogCard';
+import BlogCard from './BlogCard.jsx';
 
 import UrgentCareArticle from '@/components/Blog/20230506UrgentCareCost';
 import DrugShortagesArticle from '@/components/Blog/20230513DrugShortages';

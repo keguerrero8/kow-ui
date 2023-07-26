@@ -7,7 +7,7 @@ const BlogCard = ({ title, subtitle, image, postId }) => {
   return (
     <div className={styles.blogCard}>
       <Link href={`/blog/${postId}`}>
-        <Image src={image}/>
+        <Image src={image} alt='blog cover photo'/>
       </Link>
       <Link href={`/blog/${postId}`}>
         <h3>{title}</h3>

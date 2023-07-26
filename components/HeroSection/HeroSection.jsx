@@ -3,10 +3,10 @@ import Image from 'next/image'
 import styles from './HeroSection.module.css'
 import stylesButton from '../Button/Button.module.css'
 
-import HeroSuggestions from '@/components/HeroSuggestions/HeroSuggestions';
-import FrequentRequests from '@/components/FrequentRequests/FrequentRequests';
-import HomePageCards from '@/components/Blog/HomePageCards';
-import Button from '@/components/Button/Button'
+import HeroSuggestions from '@/components/HeroSuggestions/HeroSuggestions.jsx';
+import FrequentRequests from '@/components/FrequentRequests/FrequentRequests.jsx';
+import HomePageCards from '@/components/Blog/HomePageCards.jsx';
+import Button from '@/components/Button/Button.jsx'
 
 import kindlyobligewith_title_text from '../../public/images/kindlyobligewith_text_image.jpg';
 
