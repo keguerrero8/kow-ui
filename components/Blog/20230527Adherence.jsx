@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from "./BlogPost.module.css"
 
-import pillbox from "../../public/images/pillbox1.jpg"
+import pillbox from "@/public/images/pillbox1.jpg"
 
 export default function AdherenceArticle(props) {
     return (
@@ -12,9 +12,13 @@ export default function AdherenceArticle(props) {
             <h2>Paving the Way for Healthier Lives</h2>
             <p>Date: May 27, 2023</p>
             <div className={styles.bannerImg}>
-                <Image 
-                    src={pillbox}
-                    alt="open pill box and glass of water on white tabletop"/> 
+                <div className={styles.imageContainer}>
+                    <Image 
+                        fill
+                        style={{objectFit:'contain'}}
+                        src={pillbox}
+                        alt="open pill box and glass of water on white tabletop"/> 
+                </div>
             </div>
         </div>
         <div className={styles.section}>

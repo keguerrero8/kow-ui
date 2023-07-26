@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from "./BlogPost.module.css"
 
-import weightloss from "../../public/images/weightloss1.jpg"
+import weightloss from "@/public/images/weightloss1.jpg"
 
 export default function OzempicArticle(props) {
     return (
@@ -11,9 +11,13 @@ export default function OzempicArticle(props) {
             <h2>Ozempic, Wegovy, and the Hype Surrounding These Weight Loss Drugs</h2>
             <p>Date: June 3, 2023</p>
             <div className={styles.bannerImg}>
-                <Image 
-                    src={weightloss}
-                    alt="tape measure wrapped around woman's waist"/> 
+                <div className={styles.imageContainer}>
+                    <Image 
+                        fill
+                        style={{objectFit:'contain'}}
+                        src={weightloss}
+                        alt="tape measure wrapped around woman's waist"/> 
+                </div>
             </div>
         </div>
         <div className={styles.section}>

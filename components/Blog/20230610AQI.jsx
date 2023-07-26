@@ -2,8 +2,7 @@ import Image from 'next/image'
 
 import styles from './BlogPost.module.css'
 
-
-import hazecity from "../../public/images/haze1.jpg"
+import hazecity from "@/public/images/haze1.jpg"
 
 export default function AqiArticle(props) {
     return (
@@ -13,9 +12,13 @@ export default function AqiArticle(props) {
             <h2>The Significance of Poor Air Quality</h2>
             <p>Date: June 10, 2023</p>
             <div className={styles.bannerImg}>
-                <Image 
-                    src={hazecity}
-                    alt="view of dubai from afar with a foggy haze under the sunlight"/> 
+               <div className={styles.imageContainer}>
+                    <Image 
+                        fill
+                        style={{objectFit:'contain'}}
+                        src={hazecity}
+                        alt="view of dubai from afar with a foggy haze under the sunlight"/> 
+                </div>
             </div>
         </div>
         <div className={styles.section}>

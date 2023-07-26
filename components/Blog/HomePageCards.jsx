@@ -4,13 +4,18 @@ import styles from './HomePageCards.module.css'
 
 import BlogCard from './BlogCard';
 
-import SpecialtyDrugsArticle from './20230520SpecialtyDrugs';
-import DrugShortagesArticle from './20230513DrugShortages';
-import UrgentCareArticle from './20230506UrgentCareCost';
-import AdherenceArticle from './20230527Adherence';
-import OzempicArticle from './20230603Ozempic';
-import AqiArticle from './20230610AQI';
-import RsvArticle from './20230617RSV';
+import UrgentCareArticle from '@/components/Blog/20230506UrgentCareCost';
+import DrugShortagesArticle from '@/components/Blog/20230513DrugShortages';
+import SpecialtyDrugsArticle from '@/components/Blog/20230520SpecialtyDrugs';
+import AdherenceArticle from '@/components/Blog/20230527Adherence';
+import OzempicArticle from '@/components/Blog/20230603Ozempic';
+import AqiArticle from '@/components/Blog/20230610AQI';
+import RsvArticle from '@/components/Blog/20230617RSV';
+import NurseStrikeArticle from '@/components/Blog/20230624NurseStrike';
+import EndCovidArticle from '@/components/Blog/20230701EndCovid';
+import HeatWaveArticle from '@/components/Blog/20230708HeatWave';
+import OtcBirthControlArticle from '@/components/Blog/20230715OtcBirthControl';
+import LeqembiArticle from '@/components/Blog/20230722Leqembi';
 
 export default function HomePage() {
   const blogArticles = [
@@ -55,6 +60,36 @@ export default function HomePage() {
         subtitle: RsvArticle.subtitle,
         image: RsvArticle.image,
         postId: RsvArticle.postId,
+    },
+    {
+      title: NurseStrikeArticle.title,
+      subtitle: NurseStrikeArticle.subtitle,
+      image: NurseStrikeArticle.image,
+      postId: NurseStrikeArticle.postId,
+    },
+    {
+      title: EndCovidArticle.title,
+      subtitle: EndCovidArticle.subtitle,
+      image: EndCovidArticle.image,
+      postId: EndCovidArticle.postId,
+    },
+    {
+      title: HeatWaveArticle.title,
+      subtitle: HeatWaveArticle.subtitle,
+      image: HeatWaveArticle.image,
+      postId: HeatWaveArticle.postId,
+    },
+    {
+      title: OtcBirthControlArticle.title,
+      subtitle: OtcBirthControlArticle.subtitle,
+      image: OtcBirthControlArticle.image,
+      postId: OtcBirthControlArticle.postId,
+    },
+    {
+      title: LeqembiArticle.title,
+      subtitle: LeqembiArticle.subtitle,
+      image: LeqembiArticle.image,
+      postId: LeqembiArticle.postId,
     },
   ];
 
