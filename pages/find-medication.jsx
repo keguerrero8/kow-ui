@@ -12,9 +12,9 @@ export const getStaticProps = async () => {
 }
 
 export default function FindMedicationPage({ medications }) {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

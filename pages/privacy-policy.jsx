@@ -4,7 +4,7 @@ import styles from '@/components/Documents/PrivacyPolicy/Privacy.module.css'
 
 import PrivacyText from '@/components/Documents/PrivacyPolicy/PrivacyText.jsx';
 
-function Privacy(props) {
+function Privacy() {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);

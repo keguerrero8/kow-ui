@@ -17,7 +17,7 @@ import HeatWaveArticle from '@/components/Blog/20230708HeatWave';
 import OtcBirthControlArticle from '@/components/Blog/20230715OtcBirthControl';
 import LeqembiArticle from '@/components/Blog/20230722Leqembi';
 
-const BlogGrid = () => {
+export default function BlogGrid() {
 
     const blogArticles = [
     {
@@ -119,4 +119,3 @@ const BlogGrid = () => {
   );
 };
 
-export default BlogGrid;

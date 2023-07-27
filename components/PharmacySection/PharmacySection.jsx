@@ -21,9 +21,9 @@ export default function PharmacyPage({ pharmacy }) {
         setPharmacists(loadedPharmacists)
     }
     
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     
     useEffect(() => {
         loadPharmacist()
