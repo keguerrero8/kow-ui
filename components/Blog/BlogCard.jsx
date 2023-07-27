@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import styles from "./HomePageCards.module.css"
 
-export default function BlogCard({ title, subtitle, image, postId }) {
+const BlogCard = ({ title, subtitle, image, postId }) => {
   return (
     <div className={styles.blogCard}>
       <Link href={`/blog/${postId}`}>
@@ -17,3 +17,4 @@ export default function BlogCard({ title, subtitle, image, postId }) {
   );
 };
 
+export default BlogCard;

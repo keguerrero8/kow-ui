@@ -1,7 +1,8 @@
 import Image from 'next/image'
+
 import styles from "./BlogPost.module.css"
 
-import checkbp from "../../public/images/checkbp1.jpg"
+import checkbp from "@/public/images/checkbp1.jpg"
 
 export default function UrgentCareArticle(props) {
     return (
@@ -11,9 +12,13 @@ export default function UrgentCareArticle(props) {
             <h2>Exploring the Cost of Urgent Care</h2>
             <p>Date: May 06, 2023</p>
             <div className={styles.bannerImg}>
-                <Image 
-                    src={checkbp}
-                    alt="crying baby in hospital bed receiving injection from female doctor"/> 
+                <div className={styles.imageContainer}>
+                    <Image 
+                        fill
+                        style={{objectFit:'contain'}}
+                        src={checkbp}
+                        alt="crying baby in hospital bed receiving injection from female doctor"/> 
+                </div>
             </div>
         </div>
         <div className={styles.section}>

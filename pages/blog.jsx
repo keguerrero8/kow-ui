@@ -1,8 +1,8 @@
-import Link from 'next/link'
+import { useEffect } from 'react';
 
-import styles from './HomePageCards.module.css'
+import styles from '@/components/Blog/BlogGrid.module.css'
 
-import BlogCard from './BlogCard.jsx';
+import BlogCard from '@/components/Blog/BlogCard';
 
 import UrgentCareArticle from '@/components/Blog/20230506UrgentCareCost';
 import DrugShortagesArticle from '@/components/Blog/20230513DrugShortages';
@@ -17,8 +17,9 @@ import HeatWaveArticle from '@/components/Blog/20230708HeatWave';
 import OtcBirthControlArticle from '@/components/Blog/20230715OtcBirthControl';
 import LeqembiArticle from '@/components/Blog/20230722Leqembi';
 
-export default function HomePage() {
-  const blogArticles = [
+const BlogGrid = () => {
+
+    const blogArticles = [
     {
         title: SpecialtyDrugsArticle.title,
         subtitle: SpecialtyDrugsArticle.subtitle,
@@ -62,57 +63,60 @@ export default function HomePage() {
         postId: RsvArticle.postId,
     },
     {
-      title: NurseStrikeArticle.title,
-      subtitle: NurseStrikeArticle.subtitle,
-      image: NurseStrikeArticle.image,
-      postId: NurseStrikeArticle.postId,
+        title: NurseStrikeArticle.title,
+        subtitle: NurseStrikeArticle.subtitle,
+        image: NurseStrikeArticle.image,
+        postId: NurseStrikeArticle.postId,
     },
     {
-      title: EndCovidArticle.title,
-      subtitle: EndCovidArticle.subtitle,
-      image: EndCovidArticle.image,
-      postId: EndCovidArticle.postId,
+        title: EndCovidArticle.title,
+        subtitle: EndCovidArticle.subtitle,
+        image: EndCovidArticle.image,
+        postId: EndCovidArticle.postId,
     },
     {
-      title: HeatWaveArticle.title,
-      subtitle: HeatWaveArticle.subtitle,
-      image: HeatWaveArticle.image,
-      postId: HeatWaveArticle.postId,
+        title: HeatWaveArticle.title,
+        subtitle: HeatWaveArticle.subtitle,
+        image: HeatWaveArticle.image,
+        postId: HeatWaveArticle.postId,
     },
     {
-      title: OtcBirthControlArticle.title,
-      subtitle: OtcBirthControlArticle.subtitle,
-      image: OtcBirthControlArticle.image,
-      postId: OtcBirthControlArticle.postId,
+        title: OtcBirthControlArticle.title,
+        subtitle: OtcBirthControlArticle.subtitle,
+        image: OtcBirthControlArticle.image,
+        postId: OtcBirthControlArticle.postId,
     },
     {
-      title: LeqembiArticle.title,
-      subtitle: LeqembiArticle.subtitle,
-      image: LeqembiArticle.image,
-      postId: LeqembiArticle.postId,
+        title: LeqembiArticle.title,
+        subtitle: LeqembiArticle.subtitle,
+        image: LeqembiArticle.image,
+        postId: LeqembiArticle.postId,
     },
   ];
 
   const sortedArticles = blogArticles.sort((a, b) => b.postId - a.postId);
 
-  const recentArticles = sortedArticles.slice(0, 3);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div className={styles.blogSection}>
-      <h2>{<Link className={styles.sectionLink} href="/blog">Latest Articles</Link>}</h2>
-      <div className={styles.heroCardContainer}>
-        {recentArticles.map((article, index) => (
+    <div className={styles.blogContainer}>
+        <h2>Blog Articles</h2>
+        <div className={styles.blogGrid}>
+        {sortedArticles.map((article, index) => (
             <BlogCard 
-            key={index} 
-            title={article.title}
-            subtitle={article.subtitle}
-            image={article.image}
-            postId={article.postId}
-        />
+                key={index} 
+                title={article.title}
+                subtitle={article.subtitle}
+                image={article.image}
+                postId={article.postId}
+            />
         ))}
-      </div>
-      <h3>{<Link className={styles.sectionLink} href="/blog">View All</Link>}</h3>
+        </div>
     </div>
+
   );
 };
 
+export default BlogGrid;

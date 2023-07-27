@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from "./BlogPost.module.css"
 
-import sickboy from "../../public/images/sickboy1.jpg"
+import sickboy from "@/public/images/sickboy1.jpg"
 
 export default function RsvArticle(props) {
     return (
@@ -11,9 +11,13 @@ export default function RsvArticle(props) {
             <h2>Understanding the Risks and Available Resources</h2>
             <p>Date: June 17, 2023</p>
             <div className={styles.bannerImg}>
-                <Image 
-                    src={sickboy}
-                    alt="sick boy laying under the blankets feeling his head for a fever"/> 
+                <div className={styles.imageContainer}>
+                    <Image 
+                        fill
+                        style={{objectFit:'contain'}}
+                        src={sickboy}
+                        alt="sick boy laying under the blankets feeling his head for a fever"/> 
+                </div>
             </div>
         </div>
         <div className={styles.section}>

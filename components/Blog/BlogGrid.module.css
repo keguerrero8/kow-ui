@@ -1,17 +1,16 @@
-  @import '../../styles.css';
   
-  .blog-container {
+  .blogContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .blog-container h2 {
+  .blogContainer h2 {
     margin-top: 2rem;
     font-size: var(--font-large);
     color: var(--brand-darkblue);
   }
 
-  .blog-grid {
+  .blogGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
     gap: 20px;
@@ -19,23 +18,23 @@
     max-width: 92vw;
   }
   
-  .blog-card {
+  .blogCard {
     background-color: var(--brand-grey);
     border-radius: 20px;
   }
   
-  .blog-card h3 {
+  .blogCard h3 {
     font-size: var(--font-small);
     margin-top: 10px;
     color: var(--brand-darkblue);
   }
-  .blog-card p {
+  .blogCard p {
     font-size: var(--font-xsmall);
     margin-top: 10px;
     line-height: 1.5;
     font-weight: 900;
   }
-    .blog-card img {
+    .blogCard img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -43,19 +42,19 @@
   }
 
   @media screen and (max-width: 560px) {
-    .blog-grid {
+    .blogGrid {
       display: flex;
       flex-direction: column;
     }
 
-    .hero-card-container { 
+    .heroCardContainer { 
       flex-direction: column;
     }
     
-    .blog-card {
+    .blogCard {
         width: 80vw;
     }
-    .blog-card img {
+    .blogCard img {
       height: 100px;
     }
   }

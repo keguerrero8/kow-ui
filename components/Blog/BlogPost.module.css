@@ -25,15 +25,18 @@
 
 .bannerImg {
     margin-top: 1rem;
-    max-height: 120px;
+    max-height: 150px;
     max-width: 80vw;
     overflow: hidden;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
-.bannerImg > img {
-    object-position: center;
-    width: 100%;
+
+.imageContainer {
+    position: relative;
+    width: 1000px;
+    height: 750px;
 }
 
 .section {

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from "./BlogPost.module.css"
 
-import televisit from "../../public/images/televisit1.jpg"
+import televisit from "@/public/images/televisit1.jpg"
 
 export default function DrugShortagesArticle(props) {
     return (
@@ -12,9 +12,13 @@ export default function DrugShortagesArticle(props) {
             <h2>How Drug Shortages Jeopardize Patient Treatment</h2>
             <p>Date: May 13, 2023</p>
             <div className={styles.bannerImg}>
-                <Image 
-                    src={televisit}
-                    alt="woman in a facemask having a virtual meeting with a doctor on her laptop"/> 
+                <div className={styles.imageContainer}>
+                    <Image 
+                        fill
+                        style={{objectFit:'contain'}}
+                        src={televisit}
+                        alt="woman in a facemask having a virtual meeting with a doctor on her laptop"/> 
+                </div>
             </div>
         </div>
         <div className={styles.section}>

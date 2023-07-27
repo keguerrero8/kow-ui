@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from "./BlogPost.module.css"
 
-import specialtybanner from "../../public/images/specialtybanner1.jpg"
+import specialtybanner from "@/public/images/specialtybanner1.jpg"
 
 export default function SpecialtyDrugsArticle(props) {
     return (
@@ -12,9 +12,13 @@ export default function SpecialtyDrugsArticle(props) {
             <h2>What They Are and How to Access Them</h2>
             <p>Date: May 20, 2023</p>
             <div className={styles.bannerImg}>
-                <Image 
-                    src={specialtybanner}
-                    alt="view from above, looking at man holding tablet and glass of water"/> 
+                <div className={styles.imageContainer}>
+                    <Image 
+                        fill
+                        style={{objectFit:'contain'}}
+                        src={specialtybanner}
+                        alt="view from above, looking at man holding tablet and glass of water"/> 
+                </div>
             </div>
         </div>
         <div className={styles.section}>
