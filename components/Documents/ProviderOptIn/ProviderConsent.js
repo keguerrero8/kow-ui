@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
 import './ProviderConsent.css'
 import ProviderOptInText from './ProviderOptInText';
 
-function ProviderConsent(props) {
+function ProviderConsent() {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);

@@ -1,0 +1,134 @@
+.contactContainer {
+    background-color: var(--brand-grey);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    position: static;
+    padding: 10vh 10vw;
+}
+
+.contactMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 580px;
+    margin-top: 48px;
+    margin-right: 40px;
+}
+
+.contactMessage > h1 {
+    color: var(--brand-darkblue);
+    width: 100%;
+    font-size: var(--font-large);
+    margin-bottom: 28px;
+}
+
+.contactMessage > h3 {
+    color: var(--brand-darkblue);
+    width: 100%;
+    font-size: var(--font-medium);
+    font-weight: 100;
+}
+
+.contactForm {
+    display: flex;
+    width: 100%;
+    max-width: 580px;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.contactForm > h2 {
+    color: var(--brand-darkblue);
+    font-size: var(--font-medium);
+    align-self: flex-start;
+}
+
+.contactInput {
+    padding: 8px 20px;
+    border-radius: 2px;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    border: 1px solid var(--brand-darkgrey);
+    margin-top: 8px;
+    font-size: var(--font-small);
+    color: var(--brand-darkblue);
+    width: 100%;
+}
+
+.contactInput::placeholder {
+    color: var(--brand-darkergrey);
+}
+
+.contactInputComment {
+    padding: 8px 20px;
+    border-radius: 2px;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    border: 1px solid var(--brand-darkgrey);
+    margin: 8px 0;
+    font-size: var(--font-small);
+    color: var(--brand-darkblue);
+    width: 100%;
+}
+
+.contactInputComment::placeholder {
+    color: var(--brand-darkergrey);
+}
+
+.btnSend {
+    align-self: flex-end;
+    background-color: var(--brand-darkblue);
+    color: var(--brand-white);
+    border-radius: 0.8rem;
+    font-size: var(--font-small);
+    margin: 12px 0;
+    padding: 8px 20px;
+    text-transform: none;
+}
+
+.sendMessage {
+    align-self: flex-end;
+}
+
+@media screen and (max-width: 960px) {
+    .contactContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 3vh;
+        align-items: center;
+    }
+    
+    .contactMessage {
+        align-items: center;
+        margin-bottom: 6vh;
+        margin-right: 0;
+        max-width: 75vw;
+    }
+
+    .contactMessage > h1 {
+        font-size: var(--mobile-medium);
+    }
+
+    .contactMessage > h3 {
+        font-size: var(--font-small);
+        text-align: flex-start;
+        max-width: 70vh;
+    }
+
+    .contactForm {
+        margin: auto;
+        max-width: 75vw;
+    }
+
+    .contactForm > h2 {
+        font-size: var(--mobile-xsmall);
+    }
+}

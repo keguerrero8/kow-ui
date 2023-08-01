@@ -4,7 +4,7 @@ import styles from '@/components/Documents/TermsOfUse/Terms.module.css'
 
 import TermsText from '@/components/Documents/TermsOfUse/TermsText.jsx';
 
-function Terms(props) {
+function Terms() {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);

@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 import ExhibitModal from '../ExhibitModal/ExhibitModal'
 
 import './TerminationNotice.css';
 
-function TerminationNotice(props) {
+function TerminationNotice() {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
