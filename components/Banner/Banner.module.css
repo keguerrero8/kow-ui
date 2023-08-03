@@ -1,5 +1,3 @@
-/* @import '../../styles.css'; */
-
 .banner {
     background: var(--brand-primaryblue);
     height: 32px;
@@ -39,3 +37,9 @@
     color: var(--brand-white);
     font-weight: 900;
   }
+
+@media screen and (max-width: 1160px) {
+  .banner {
+    position: fixed;
+  }
+}

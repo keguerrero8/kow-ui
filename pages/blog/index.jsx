@@ -16,6 +16,7 @@ import EndCovidArticle from '@/components/Blog/20230701EndCovid';
 import HeatWaveArticle from '@/components/Blog/20230708HeatWave';
 import OtcBirthControlArticle from '@/components/Blog/20230715OtcBirthControl';
 import LeqembiArticle from '@/components/Blog/20230722Leqembi';
+import SunVitaminArticle from '@/components/Blog/20230729SunVitamin';
 
 export default function BlogGrid() {
 
@@ -91,6 +92,12 @@ export default function BlogGrid() {
         subtitle: LeqembiArticle.subtitle,
         image: LeqembiArticle.image,
         postId: LeqembiArticle.postId,
+    },
+    {
+        title: SunVitaminArticle.title,
+        subtitle: SunVitaminArticle.subtitle,
+        image: SunVitaminArticle.image,
+        postId: SunVitaminArticle.postId,
     },
   ];
 
