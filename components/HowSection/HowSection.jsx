@@ -5,9 +5,9 @@ import stylesButton from '../Button/Button.module.css'
 
 import Button from '@/components/Button/Button'
 
-import image1 from "../../public/images/how-img-one-v3.webp"
-import image2 from "../../public/images/how-img-two-v3.webp"
-import image3 from "../../public/images/how-img-three-v3.webp"
+import image1 from "../../public/images/how-img-one-v3.jpg"
+import image2 from "../../public/images/how-img-two-v3.jpg"
+import image3 from "../../public/images/how-img-three-v3.jpg"
 
 /**import tutorial from "../../public/videos/tutorial.mp4"**/
 
