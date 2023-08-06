@@ -8,6 +8,7 @@ import { CacheProvider } from '@emotion/react';
 import theme from '../styles/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import { Figtree } from 'next/font/google'
+import ContextProvider from '@/context/user';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -24,11 +25,13 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Layout>
-          <main className={figtree.className}>
-            <Component {...pageProps} />
-          </main>
-        </Layout>
+        <ContextProvider>
+          <Layout>
+            <main className={figtree.className}>
+              <Component {...pageProps} />
+            </main>
+          </Layout>
+        </ContextProvider>
       </ThemeProvider>
     </CacheProvider>
   );

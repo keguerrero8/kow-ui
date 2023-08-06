@@ -21,7 +21,7 @@ export default function CSRFToken(){
     useEffect(() => {
         const fetchData = async () => {
             try {
-                await fetch(`http://127.0.0.1:8000/auth-sessions/csrf_cookie`, { credentials: 'include' })
+                await fetch(`http://127.0.0.1:8000/auth-jwt/csrf_cookie`, { credentials: 'include' })
             } catch (err) {
 
             }
