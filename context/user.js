@@ -10,7 +10,8 @@ const ContextProvider = ({ children }) => {
     const [loginErrors, setLoginErrors] = useState([])
 
     useEffect(() => {
-        // this fetch request still needs to be implemented correctly but here we send our credentials to get the user info
+        // this fetch request can be its own function and then maybe use it when we login, 
+        // does this need to be used everytime we refresh?
         fetch(`${process.env.NEXT_PUBLIC_NEXT_API_URL}/api/user`).then(r => {
             if (r.ok) {
                 r.json().then(res => {

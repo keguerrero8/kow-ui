@@ -20,7 +20,6 @@ export default async (req, res) => {
             });
 
             const data = await apiRes.json();
-            console.log(data)
 
             if (apiRes.status === 200) {
                 res.setHeader('Set-Cookie', [
@@ -30,7 +29,7 @@ export default async (req, res) => {
                             secure: process.env.ENVIRONMENT !== 'dev',
                             maxAge: 60 * 30,
                             sameSite: 'strict',
-                            path: '/auth-jwt/'
+                            path: '/api/'
                         }
                     ),
                     cookie.serialize(
@@ -39,7 +38,7 @@ export default async (req, res) => {
                             secure: process.env.ENVIRONMENT !== 'dev',
                             maxAge: 60 * 60 * 24,
                             sameSite: 'strict',
-                            path: '/auth-jwt/'
+                            path: '/api/'
                         }
                     )
                 ]);

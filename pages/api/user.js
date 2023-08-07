@@ -4,8 +4,7 @@ export default async (req, res) => {
     if (req.method === 'GET') {
         const cookies = cookie.parse(req.headers.cookie ?? '');
         const access = cookies.access ?? false;
-        console.log("cookies: ", cookies)
-        console.log("access: ", access)
+
         if (access === false) {
             return res.status(401).json({
                 error: 'User unauthorized to make this request'
@@ -13,7 +12,7 @@ export default async (req, res) => {
         }
 
         try {
-            const apiRes = await fetch(`${process.env.NEXT_API_URL}/auth-jwt/user`, {
+            const apiRes = await fetch(`${process.env.DJANGO_API_URL}/auth-jwt/user`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
