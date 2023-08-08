@@ -10,8 +10,27 @@ const ContextProvider = ({ children }) => {
     const [loginErrors, setLoginErrors] = useState([])
 
     useEffect(() => {
-        // this fetch request can be its own function and then maybe use it when we login, 
-        // does this need to be used everytime we refresh?
+        // perhaps only run the refresh token request for admin pages and not for every refresh?
+        // also why do we make this call twice? seems unnecessary
+        refreshToken()
+        console.log("the user is: ", user)
+    }, [])
+
+    const refreshToken = () => {
+        fetch(`${process.env.NEXT_PUBLIC_NEXT_API_URL}/api/refresh`).then(r => {
+            if (r.ok) {
+                r.json().then(res => {
+                    getAuthenticatedUser()
+                })
+            }
+            else {
+                setUser(null)
+                setIsAuthenticated(false)
+            }
+        })
+    }
+
+    const getAuthenticatedUser = () => {
         fetch(`${process.env.NEXT_PUBLIC_NEXT_API_URL}/api/user`).then(r => {
             if (r.ok) {
                 r.json().then(res => {
@@ -24,11 +43,10 @@ const ContextProvider = ({ children }) => {
                 setIsAuthenticated(false)
             }
         })
-        console.log("the user is: ", user)
-      }, [])
+    }
 
-      const login = (formData) => {
-        // this post request is to get us logged in and authenticated
+    const login = (formData) => {
+    // this post request is to get us logged in and authenticated
         fetch(`${process.env.NEXT_PUBLIC_NEXT_API_URL}/api/login`, {
             method: "POST",
             headers: {
@@ -41,7 +59,7 @@ const ContextProvider = ({ children }) => {
             if (r.ok) {
                 r.json().then(res => {
                     if (res.success) {
-                        setIsAuthenticated(true)
+                        getAuthenticatedUser()
                         router.push("/dashboard")
                         setLoginErrors([])
                     } else {
@@ -55,9 +73,9 @@ const ContextProvider = ({ children }) => {
                 setLoginErrors(["Something went wrong, please try again or contact the administrator"])
             }
         })
-      }
+    }
 
-      const logout = (closeMobileMenu) => {
+    const logout = (closeMobileMenu) => {
         fetch(`${process.env.NEXT_PUBLIC_NEXT_API_URL}/api/logout`, {
             method: "POST",
             headers: {
@@ -66,21 +84,21 @@ const ContextProvider = ({ children }) => {
             }
         })
         .then(r => {
-          if (r.ok) {
+            if (r.ok) {
             closeMobileMenu()
             setIsAuthenticated(false)
             setUser(null)
-          }
+            }
         })
-      }
+    }
 
-      const value = {
+    const value = {
         user,
         login,
         logout,
         loginErrors,
         isAuthenticated,
-      }
+    }
 
     return <UserContext.Provider value={value}>{children}</UserContext.Provider>
 }

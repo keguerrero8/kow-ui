@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
-import Cookies from "js-cookie"
+import { useState } from 'react'
 
 import RequestFormInput from '@/components/RequestFormInput/RequestFormInput.jsx'
 import MedNameRequestInput from '@/components/MedNameRequestInput/MedNameRequestInput.jsx'
 import MedStrengthRequestInput from '@/components/MedStrengthRequestInput/MedStrengthRequestInput.jsx'
 import RequestAgreementModal from '@/components/RequestAgreementModal/RequestAgreementModal'
-import CSRFToken from '@/components/CSRFToken/CSRFToken'
 import { styles } from './RequestForm-styles'
 
 import { 
@@ -92,7 +90,6 @@ export default function RequestForm({ medications }) {
 
 
   function handleChange (e, isAuto = false, name) {
-    console.log(name)
     if (isAuto) {
         if (name === "med_name") {
             setRequestData({
@@ -130,12 +127,10 @@ export default function RequestForm({ medications }) {
         isAdmin: true
     }
 
-    fetch("http://127.0.0.1:8000/api/requests", {
-        credentials: "include",
+    fetch(`${process.env.NEXT_PUBLIC_DJANGO_API_URL}/api/requests`, {
         method: "POST",
         headers: { 
             "Content-Type": "application/json",
-            "X-CSRFToken": Cookies.get("csrftoken")
         },
         body: JSON.stringify(payload)
     })
@@ -181,7 +176,6 @@ export default function RequestForm({ medications }) {
             isOptInAcknowledged={isOptInAcknowledged}
             setisOptInAcknowledged={setisOptInAcknowledged}
         />
-        <CSRFToken />
         <Box sx={{...styles.InputContainer, mb: "1rem"}}>
             <Typography color="black" sx={styles.FillableTitle}>
                 FILLABLE
@@ -358,6 +352,7 @@ export default function RequestForm({ medications }) {
         <Box sx={styles.ButtonsContainer}>
             {/* add the below back in when we figure out authentication */}
             {/* <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={user? false : (!isDisabled || !checked)}> */}
+            {/* <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={false}> */}
             <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={!isDisabled || !checked}>
                 Send Request
             </Button>

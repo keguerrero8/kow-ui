@@ -18,6 +18,7 @@ export default function PharmacyPage({ pharmacy }) {
     
     const loadPharmacist = async () => {
         const loadedPharmacists = await pharmacistService.getPharmacists(pharmacy.id)
+        // can add a check to see if loaded pharmacist
         setPharmacists(loadedPharmacists)
     }
     
