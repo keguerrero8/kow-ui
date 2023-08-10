@@ -1,16 +1,11 @@
 import pharmacyService from '@/lib/pharmacyService';
 import PharmacySection from '@/components/PharmacySection/PharmacySection.jsx';
 
-export async function getStaticPaths() {
-    const pharmacies = await pharmacyService.getPharmacies()
-    const paths = pharmacies.map((pharmacy) => (
-        { params: { id: pharmacy.id.toString() } }
-    ))
-    return { paths, fallback: false }
-}
+import * as cookie from 'cookie'
 
-export async function getStaticProps({ params }) {
-    const pharmacy = await pharmacyService.getPharmacy(params.id)
+export async function getServerSideProps(context) {
+    const parsedCookies = cookie.parse(context.req.headers.cookie);
+    const pharmacy = await pharmacyService.getPharmacy(context.params.id, parsedCookies.access)
     return { props: { pharmacy  } }
 }
  
