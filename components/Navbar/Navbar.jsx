@@ -65,57 +65,60 @@ function Navbar({ user }) {
                 <div className={styles.menuIcon} onClick={handleClick}>
                     {click? <CloseIcon /> : <MenuIcon/>}
                 </div>
-                <ul className={click ? styles.navMenuActive : styles.navMenu}>
-                    <li className={styles.mobileItem}>
-                        <Link href='/' className={styles.navLinks} onClick={closeMobileMenu}>
-                            Home
-                        </Link>
-                    </li>
-                    <li className={styles.navItem}>
-                        <Link href='/how-it-works' className={styles.navLinks} onClick={closeMobileMenu}>
-                            How It Works
-                        </Link>
-                    </li>
-                    <li className={styles.navItem}>
-                        <Link href='/find-medication' className={styles.navLinks} onClick={closeMobileMenu}>
-                            Find Medication
-                        </Link>
-                    </li>
-                    <li className={styles.navItem}>
-                        <Link href='/contact-us' className={styles.navLinks} onClick={closeMobileMenu}>
-                            Contact Us
-                        </Link>
-                    </li>
-                    <li className={styles.navItem}>
-                        <Link href='/dashboard' className={styles.navLinks} onClick={closeMobileMenu}>
-                            Dashboard
-                        </Link>
-                    </li>
-                    {
-                        user ? 
+                <div>
+                    <div className={click ? styles.menuActiveBackground : 0} onClick={closeMobileMenu}/>
+                    <ul className={click ? styles.navMenuActive : styles.navMenu}>
+                        <li className={styles.mobileItem}>
+                            <Link href='/' className={styles.navLinks} onClick={closeMobileMenu}>
+                                Home
+                            </Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link href='/how-it-works' className={styles.navLinks} onClick={closeMobileMenu}>
+                                How It Works
+                            </Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link href='/find-medication' className={styles.navLinks} onClick={closeMobileMenu}>
+                                Find Medication
+                            </Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link href='/contact-us' className={styles.navLinks} onClick={closeMobileMenu}>
+                                Contact Us
+                            </Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link href='/dashboard' className={styles.navLinks} onClick={closeMobileMenu}>
+                                Dashboard
+                            </Link>
+                        </li>
+                        {
+                            user ? 
                             <li className={styles.navItem}>
-                                <Link href='/dashboard' className={styles.navLinks} onClick={closeMobileMenu}>
-                                    Dashboard
+                                    <Link href='/dashboard' className={styles.navLinks} onClick={closeMobileMenu}>
+                                        Dashboard
+                                    </Link>
+                                </li>
+                                :
+                                null
+                            }
+                    {/* {!user && !button? <li className={styles.navItem}>
+                            <Link to='/login' className={styles.navLinks} onClick={closeMobileMenu}>
+                                Sign In
                                 </Link>
-                            </li>
-                            :
-                            null
-                    }
-                {/* {!user && !button? <li className={styles.navItem}>
-                        <Link to='/login' className={styles.navLinks} onClick={closeMobileMenu}>
-                            Sign In
-                        </Link>
-                    </li>: null} */}
-                {user && !button && <li className={styles.navItem}>
-                        <Link href='/' className={styles.navLinks} onClick={handleLogOut}>
-                            Sign Out
-                        </Link>
-                    </li>}
-                </ul>
-                {/* {button && !user ? <Button path='/login'>Sign In
-                    </Button> : null} */}
-                {user && button? <Button path='/' onClick={handleLogOut}>Sign Out
-                    </Button> : null}
+                            </li>: null} */}
+                    {user && !button && <li className={styles.navItem}>
+                            <Link href='/' className={styles.navLinks} onClick={handleLogOut}>
+                                Sign Out
+                            </Link>
+                        </li>}
+                    </ul>
+                </div>
+                    {/* {button && !user ? <Button path='/login'>Sign In
+                        </Button> : null} */}
+                    {user && button? <Button path='/' onClick={handleLogOut}>Sign Out
+                        </Button> : null}
             </div>
         </nav>
         </>

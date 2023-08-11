@@ -10,42 +10,40 @@ import Button from '@/components/Button/Button.jsx'
 import FillableSearchDropdown from '../SearchBar/FillableSearchDropdown';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
-import kindlyobligewith_title_text from '../../public/images/kindlyobligewith_text_image.jpg';
-
 import welcome from "../../public/videos/welcome.mp4"
 
 export default function HeroSection() {
     return ( 
         <div className={styles.heroContainer}>
-            <Image alt='kindle oblige with' src={kindlyobligewith_title_text} className={styles.heroTitle}/>
-            <h1>Find and Fill your prescription TODAY.</h1>
-            <h2>Don't risk delaying your medication.</h2>
-            <h3>If you need your medication today, we'll help you find a pharmacy that has it.</h3>
-            <FillableSearchDropdown/>
-            <div className={styles.heroBtns}>
-                <Button 
-                className={stylesButton.btn} 
-                buttonStyle={stylesButton.btnSecondary}
-                buttonSize={stylesButton.btnLarge} 
-                buttonPage={stylesButton.btnHome} 
-                path='/how-it-works'>
-                    Learn More
-                </Button>
-                <Button 
-                className={stylesButton.btn}
-                buttonStyle={stylesButton.btnPrimary} 
-                buttonSize={stylesButton.btnLarge} 
-                buttonPage={stylesButton.btnHome} 
-                path='/find-medication'>
-                    Find Medication
-                </Button>
-            </div>
-            <div className={styles.videoContainer}>
-                <VideoPlayer 
-                    src={welcome}
-                    alt="Welcome Video Player" 
-                    width='100%'
-                />
+            <div className={styles.cta}>
+                <h1>Find and fill your prescription today.</h1>
+                <h3>Don't delay taking your medication. If it's available at one of our pharmacies, you can receive it today.</h3>
+                <FillableSearchDropdown/>
+                <div className={styles.heroBtns}>
+                    <Button 
+                    className={stylesButton.btn} 
+                    buttonStyle={stylesButton.btnSecondary}
+                    buttonSize={stylesButton.btnLarge} 
+                    buttonPage={stylesButton.btnHome} 
+                    path='/how-it-works'>
+                        Learn More
+                    </Button>
+                    <Button 
+                    className={stylesButton.btn}
+                    buttonStyle={stylesButton.btnPrimary} 
+                    buttonSize={stylesButton.btnLarge} 
+                    buttonPage={stylesButton.btnHome} 
+                    path='/find-medication'>
+                        Find Medication
+                    </Button>
+                </div>
+                <div className={styles.videoContainer}>
+                    <VideoPlayer 
+                        src={welcome}
+                        alt="Welcome Video Player" 
+                        width='100%'
+                    />
+                </div>
             </div>
             <HeroSuggestions/>
             <FrequentRequests/>

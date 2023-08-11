@@ -106,7 +106,7 @@ export default function HomePage() {
 
   return (
     <div className={styles.blogSection}>
-      <h2>{<Link className={styles.sectionLink} href="/blog">Latest Articles</Link>}</h2>
+      <h2>Latest Insights</h2>
       <div className={styles.heroCardContainer}>
         {recentArticles.map((article, index) => (
             <BlogCard 

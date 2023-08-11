@@ -36,7 +36,7 @@ export default function Footer({ user }) {
                             </p>
                             {!user? (
                                 <p className={styles.footerTermsText}>
-                                    <Link className={styles.navLink} href="/login">For Admins</Link>
+                                    <Link className={styles.navLink} href="/login">Admin Login</Link>
                                 </p>
                             ) : null}
                             {/*<p className={styles.footerTermsText}>

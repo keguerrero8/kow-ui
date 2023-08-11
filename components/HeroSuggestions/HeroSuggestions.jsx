@@ -15,7 +15,7 @@ import image6 from "../../public/images/vacc3.jpg"
 export default function HeroSuggestions() {
     return (
             <div className={styles.sectionTwo}>
-                <h2>Some medication can't wait...</h2>                
+                <h2>Search for:</h2>                
                 <div className={styles.medGroups}>
                     <div className={styles.cardSection}>
                         <div className={styles.medCard}>

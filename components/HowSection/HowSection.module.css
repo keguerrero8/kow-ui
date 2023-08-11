@@ -5,36 +5,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6% 0 10% 0;
+    padding-top: 3rem;
 }
 
 .howContainer > h1 {
     color: var(--brand-darkblue);
-    font-size: var(--mobile-large);
-    margin-bottom: 20px;
-    max-width: 80%;
+    font-size: var(--font-large);
 }
 
 .howBody {
     display: flex;
     flex-direction: row;
-    max-width: 80%;
     justify-content: center;
+    padding: 3rem 3rem;
+    width: 100%;
 }
 
 .howStep {
     display: flex;
     flex-direction: column;
-    max-width: 25vw;
-    margin: 0 32px;
+    max-width: 25%;
+    margin: 0 1.5rem;
 }
 
 .imgWrap {
-    width: 300px;
-    height: 200px;
-    overflow: hidden;
+    width: auto;
+    height: auto;
     align-self: center;
-    margin: 16px 0;
     border: 2px solid var(--brand-white);
 }
 
@@ -54,12 +51,9 @@
     font-size: var(--font-small);
     font-weight: 100;
     color: var(--brand-darkblue);
-    margin-top: 8px;
 }
 
 .howButtons {
-    margin-top: 80px;
-    width: 50vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -69,36 +63,46 @@
     font-size: var(--font-medium);
     color: var(--brand-darkblue);
     text-align: center;
-    margin: 4rem 0 2rem;
+    margin: 2rem 0;
 }
 .videoContainer {
-    width: 70vw;
-    max-width: 1080px;
+    max-width: 968px;
 }
 
-@media screen and (max-width: 1160px) {
-    .howContainer > h1 {
-        padding-top: 132px;
+@media screen and (max-width: 1080px) {
+    .howContainer {
+        padding: 6rem 3rem 3rem;
+    }
+
+    .howContainer h1 {
+        margin-top: 2rem;
+    }
+
+    .videoContainer {
+        max-width: 75%;
     }
 }
 
 @media screen and (max-width: 960px) {
-    .howContainer > h1 {
-        text-align: center;
-        margin: 20px 0 0;
-    }
-
     .howBody {
         flex-direction: column;
+        align-items: center;
+        padding: 0;
     }
 
     .howStep {
-        max-width: 75vw;
-        margin: 12px 0;
+        margin: 1.5rem 0;
+        max-width: 70%;
+    }
+
+    .imgWrap {
+        width: auto;
+        height: auto;
     }
 
     .stepText {
         font-size: var(--mobile-medium);
+        margin: 0.5rem 0;
     }
 
     .stepSubtext {
@@ -108,19 +112,34 @@
     .howButtons {
         flex-direction: column;
         justify-content: center;
-        margin: 40px 0;
-        padding: 0;
         align-items: center;
+        margin: 1rem 0;
     }
-
-    .btn {
-        margin: 8px 0;
-        width: 60vw;
-        max-width: 320px;
+    
+    .videoContainer {
+        margin-top: 1.5rem;
     }
 
     .videoTitle {
         font-size: var(--font-small);
-        margin: 2rem 0;
+        text-align: left;
+        margin-bottom: 1.5rem;
     }
+}
+
+@media screen and (max-width: 760px) {
+    .howContainer > h1 {
+        font-size: var(--mobile-large);
+        text-align: left;
+        margin-top: 1.5rem;
+    }
+
+    .howStep {
+        max-width: 100%;
+    }
+
+    .videoContainer {
+        max-width: 100%;
+    }
+
 }
