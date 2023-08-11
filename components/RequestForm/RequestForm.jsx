@@ -5,6 +5,7 @@ import MedNameRequestInput from '@/components/MedNameRequestInput/MedNameRequest
 import MedStrengthRequestInput from '@/components/MedStrengthRequestInput/MedStrengthRequestInput.jsx'
 import RequestAgreementModal from '@/components/RequestAgreementModal/RequestAgreementModal'
 import { styles } from './RequestForm-styles'
+import { useUser } from '@/context/user'
 
 import { 
     Box, 
@@ -20,6 +21,7 @@ import {
 } from '@mui/material'
 
 export default function RequestForm({ medications }) {
+  const { isAuthenticated } = useUser()
   const defaultRequestData = {
     phone_number: "",
     med_name: "",
@@ -123,8 +125,7 @@ export default function RequestForm({ medications }) {
     const payload = {
         ...requestData, 
         phone_number: "+1" + requestData["phone_number"], 
-        // isAdmin: user? true : false
-        isAdmin: true
+        isAdmin: isAuthenticated
     }
 
     fetch(`${process.env.NEXT_PUBLIC_DJANGO_API_URL}/api/requests`, {
@@ -350,10 +351,7 @@ export default function RequestForm({ medications }) {
                 <Typography key={index} sx={{color: status[0] === "Request successfully sent!"? "green" : "red"}}>{e}</Typography>)}
         </Box>
         <Box sx={styles.ButtonsContainer}>
-            {/* add the below back in when we figure out authentication */}
-            {/* <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={user? false : (!isDisabled || !checked)}> */}
-            {/* <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={false}> */}
-            <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={!isDisabled || !checked}>
+            <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={isAuthenticated? false : (!isDisabled || !checked)}>
                 Send Request
             </Button>
             <Button variant='text' sx={{color: "#154161"}} size="medium" onClick={handleClear} >

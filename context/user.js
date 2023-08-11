@@ -10,10 +10,7 @@ const ContextProvider = ({ children }) => {
     const [loginErrors, setLoginErrors] = useState([])
 
     useEffect(() => {
-        // perhaps only run the refresh token request for admin pages and not for every refresh?
-        // also why do we make this call twice? seems unnecessary
         refreshToken()
-        console.log("the user is: ", user)
     }, [])
 
     const refreshToken = () => {
