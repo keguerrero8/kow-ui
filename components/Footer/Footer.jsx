@@ -1,7 +1,10 @@
 import Link from 'next/link'
 import styles from './Footer.module.css';
 
-export default function Footer({ user }) {
+import { useUser } from '@/context/user';
+
+export default function Footer() {
+    const { isAuthenticated } = useUser()
     return (
         <div className={styles.footerContainer}>
             <section className={styles.footerLinks}>
@@ -34,7 +37,7 @@ export default function Footer({ user }) {
                             <p className={styles.footerTermsText}>
                                 <Link className={styles.navLink} href="/privacy-policy">Privacy Policy</Link>
                             </p>
-                            {!user? (
+                            {!isAuthenticated? (
                                 <p className={styles.footerTermsText}>
                                     <Link className={styles.navLink} href="/login">For Admins</Link>
                                 </p>

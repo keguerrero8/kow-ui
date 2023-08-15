@@ -2,22 +2,25 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
+import { useUser } from '@/context/user';
+import Page404 from '@/pages/404';
 import PharmacistCreationModal from '@/components/PharmacistCreationModal/PharmacistCreationModal.jsx'
 import PharmacistRow from '@/components/PharmacistRow/PharmacistRow.jsx'
-// import Page404 from '../../Pages/Page404';
 import pharmacistService from '@/lib/pharmacistService'
 
 import { Box, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Paper, Typography, Button, Card, CardContent } from '@mui/material'
 import { styles } from './PharmacySection-styles'
 
-// export default function PharmacyPage({user}) {
 export default function PharmacyPage({ pharmacy }) {    
+    const { isAuthenticated } = useUser()
     const [pharmacists, setPharmacists] = useState([])
     const [pharmacistsUpdate, setPharmacistsUpdate] = useState(false)
     const router = useRouter()
+    if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated} />
     
     const loadPharmacist = async () => {
         const loadedPharmacists = await pharmacistService.getPharmacists(pharmacy.id)
+        // can add a check to see if loaded pharmacist
         setPharmacists(loadedPharmacists)
     }
     
@@ -29,7 +32,6 @@ export default function PharmacyPage({ pharmacy }) {
         loadPharmacist()
     }, [pharmacistsUpdate])
     
-    // if (!user) return <Page404 isAuthFailure={true} />
     
     const handleViewAgreement = () => {
         router.push(`/dashboard/pharmacies/view-agreement/${pharmacy.id}`)

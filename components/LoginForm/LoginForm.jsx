@@ -1,50 +1,24 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router'
 import { styles } from './LoginForm-styles';
+import { useUser } from '@/context/user';
 
 import { Box, TextField, Button, Typography } from '@mui/material';
-import Cookies from "js-cookie"
+import Page404 from '@/pages/404';
 
-import CSRFToken from '@/components/CSRFToken/CSRFToken.jsx';
-
-// export default function LoginPage({setUser}) {
 export default function LoginPage() {
-    const router = useRouter()
-    const [errors, setErrors] = useState([])
+    const { login, loginErrors, isAuthenticated } = useUser()
     const [formData, setFormData] = useState({
         username: "",
         password: ""
     })
 
+    if (isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated}/>
+
     function handleSubmit (e) {
         e.preventDefault()
-        fetch("http://127.0.0.1:8000/auth-sessions/login", {
-            credentials: "include",
-            method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json",
-                "X-CSRFToken": Cookies.get("csrftoken")
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(r => {
-            if (r.ok) {
-                r.json().then(res => {
-                    if (res.success) {
-                        // setUser(res.success)
-                        console.log(res.success)
-                        router.push("/dashboard")
-                    } else {
-                        setErrors([res.error])
-                    }
-                })
-            }
-            else {
-                setErrors(["Something went wrong, please try again or contact the administrator"])
-            }
-        })
+        login(formData)
     }
+
     function handleChange (e) {
         setFormData({
             ...formData,
@@ -55,7 +29,6 @@ export default function LoginPage() {
   return (
     <Box sx={styles.MainContainer}>
         <Box component="form" onSubmit={handleSubmit} sx={styles.Container}>
-            <CSRFToken />
             <Typography component="div" variant="h5" color="primary" sx={styles.SignInText}>
                 Sign In
             </Typography>
@@ -78,7 +51,7 @@ export default function LoginPage() {
                 variant="outlined" 
                 sx={styles.TextFieldPassword}
             />
-            {errors.map(e => <Typography sx={{color: "red"}} key={e}>{e}</Typography>)}
+            {loginErrors.map(e => <Typography sx={{color: "red"}} key={e}>{e}</Typography>)}
             <Button type="submit" variant="contained" sx={{color: "white"}} size="large">sign in</Button>
         </Box>
     </Box>
