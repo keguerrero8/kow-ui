@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import styles from "./BlogPost.module.css"
 
-import leqembi from "@/public/images/providerandelderly1.webp"
+import leqembi from "@/public/images/providerandelderly1.jpg"
 
 function LeqembiArticle(props) {
     return (

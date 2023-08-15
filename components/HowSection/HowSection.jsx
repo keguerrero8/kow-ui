@@ -4,10 +4,13 @@ import styles from './HowSection.module.css'
 import stylesButton from '../Button/Button.module.css'
 
 import Button from '@/components/Button/Button'
+import VideoPlayer from '../VideoPlayer/VideoPlayer'
 
-import image1 from "../../public/images/how-img-one-v3.webp"
-import image2 from "../../public/images/how-img-two-v3.webp"
-import image3 from "../../public/images/how-img-three-v3.webp"
+import image1 from "../../public/images/how-img-one-v3.jpg"
+import image2 from "../../public/images/how-img-two-v3.jpg"
+import image3 from "../../public/images/how-img-three-v3.jpg"
+
+import tutorialvideo from "../../public/videos/tutorial.mp4"
 
 /**import tutorial from "../../public/videos/tutorial.mp4"**/
 
@@ -57,7 +60,11 @@ function HowSection() {
                 <div className={styles.videoTitle}>
                     <h2>Here's a Tutorial:</h2>
                 </div>
-
+                <VideoPlayer 
+                    src={tutorialvideo}
+                    alt="Tutorial Video Player" 
+                    width='100%'
+                />
             </div>
         </div>
     );

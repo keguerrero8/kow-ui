@@ -15,6 +15,7 @@ import EndCovidArticle from '@/components/Blog/20230701EndCovid';
 import HeatWaveArticle from '@/components/Blog/20230708HeatWave';
 import OtcBirthControlArticle from '@/components/Blog/20230715OtcBirthControl';
 import LeqembiArticle from '@/components/Blog/20230722Leqembi';
+import SunVitaminArticle from '@/components/Blog/20230729SunVitamin';
 
 
 const ViewPost = () => {
@@ -39,6 +40,7 @@ const ViewPost = () => {
             {postId === '20230708' && <HeatWaveArticle />}
             {postId === '20230715' && <OtcBirthControlArticle />}
             {postId === '20230722' && <LeqembiArticle />}
+            {postId === '20230729' && <SunVitaminArticle />}
         </div>
     );
 }

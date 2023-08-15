@@ -1,6 +1,7 @@
 .navbar {
     background: var(--brand-white);
-    height: 80px;
+    height: 100px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -11,7 +12,6 @@
     z-index: 999;
     font-size: 900;
     border-bottom: 0.15rem solid var(--brand-darkgrey);
-
   }
   
   .navbarContainer {
@@ -27,7 +27,7 @@
     color: var(--brand-black);
     justify-self: start;
     margin-left: 12px;
-    margin-right: 40px;
+    margin-right: 120px;
     cursor: pointer;
     text-decoration: none;
     font-size: var(--font-large);
@@ -37,7 +37,7 @@
   
   .homeLogo {
     margin-right: 0.5rem;
-    width: 60px;
+    width: 80px;
     height: auto;
   }
 
@@ -52,7 +52,8 @@
   }
   
   .navItem {
-    height: 80px;
+    height: 100px;
+    width: 100%;
   }
 
   .mobileItem {
@@ -79,32 +80,37 @@
   }
   
   @media screen and (max-width: 1160px) {
-    .NavbarItems {
-      position: relative;
+    .navbarContainer {
+      align-items: flex-start;
     }
-  
+
+    .navbar {
+      position: fixed;
+    }
+
     .navMenu {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      justify-content: flex-start;
+      position: fixed;
       height: 90vh;
-      position: absolute;
-      top: 80px;
+      top: 100px;
       left: -100%;
-      opacity: 1;
       transition: all 0.5s ease;
     }
   
     .navMenuActive {
       background: var(--brand-white);
       justify-content: flex-start;
+      position: fixed;
+      width: 40vw;
+      height: 90vh;
+      top: 132px;
       left: 0;
       opacity: 1;
       transition: all 0.5s ease;
       z-index: 1;
-      max-width: 60%;
-      border-right: 0.15rem solid var(--brand-darkgrey)
-      ;
+      border-right: 0.15rem solid var(--brand-darkgrey);
     }
   
     .navLinks {
@@ -134,6 +140,15 @@
       width: 60px;
       color: var(--brand-black);
     }
+
+    .mobileItem {
+      display: flex;
+      height: 80px;
+    }
+
+    .navItem {
+      height: 80px;
+    }
   
     .menuIcon {
       display: block;
@@ -144,9 +159,10 @@
       font-size: 2rem;
       cursor: pointer;
     }
+  }
 
-    .mobileItem {
-      display: block;
-      height: 80px;
+  @media screen and (max-width: 560px) {
+    .navMenuActive {
+      width: 60vw;
     }
   }

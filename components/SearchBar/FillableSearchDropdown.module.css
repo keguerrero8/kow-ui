@@ -1,0 +1,22 @@
+    .inputContainer {
+        width: 75vw;
+    }
+
+    .textInput {
+        width: 100%;
+        height: 3rem;
+        margin-top: 1.5rem;
+        border-color: var(--brand-primaryblue);
+        border-radius: 0.75rem;
+        padding: 0 2rem;
+        font-size: var(--font-medium);
+        text-align: center;
+    }
+
+    .dropdown {
+        background-color: var(--brand-white);
+        font-size: var(--font-medium);
+        border-radius: 0.75rem;
+        padding-left: 2rem;
+        color: var(--brand-primaryblue);
+    }

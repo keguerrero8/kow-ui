@@ -13,7 +13,7 @@
 }
 
 .heroTitle {
-    width: 30vw;
+    width: 40vw;
     height: auto;
     margin: 4rem 0 2rem;
 }
@@ -52,6 +52,12 @@
 
 .heroBtns button {
     margin: 8px 8px 2rem;
+}
+
+@media screen and (max-width: 1160px) {
+.heroTitle {
+    padding-top: 132px;
+}
 }
 
 @media screen and (max-width: 960px) {

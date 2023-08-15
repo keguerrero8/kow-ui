@@ -19,7 +19,7 @@ function Navbar({ user }) {
     const closeMobileMenu = () => setClick(false);
 
     const isMobile = useMediaQuery('(max-width: 1160px)');
-
+    
     const showButton = () => {
         if(window.innerWidth <= 1160) {
             setButton(false)

@@ -7,10 +7,12 @@ import HeroSuggestions from '@/components/HeroSuggestions/HeroSuggestions.jsx';
 import FrequentRequests from '@/components/FrequentRequests/FrequentRequests.jsx';
 import HomePageCards from '@/components/Blog/HomePageCards.jsx';
 import Button from '@/components/Button/Button.jsx'
+// import FillableSearchDropdown from '../SearchBar/FillableSearchDropdown';
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
 import kindlyobligewith_title_text from '../../public/images/kindlyobligewith_text_image.jpg';
 
-// import welcome from "../../public/videos/welcome.mp4"
+import welcome from "../../public/videos/welcome.mp4"
 
 export default function HeroSection() {
     return ( 
@@ -19,6 +21,7 @@ export default function HeroSection() {
             <h1>Find and Fill your prescription TODAY.</h1>
             <h2>Don't risk delaying your medication.</h2>
             <h3>If you need your medication today, we'll help you find a pharmacy that has it.</h3>
+            {/* <FillableSearchDropdown/> */}
             <div className={styles.heroBtns}>
                 <Button 
                 className={stylesButton.btn} 
@@ -37,12 +40,13 @@ export default function HeroSection() {
                     Find Medication
                 </Button>
             </div>
-            {/* <div className={styles.videoContainer}>
-                <video controls style={{ maxWidth:'100%' }}>
-                    <source src={welcome} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            </div>                 */}
+            <div className={styles.videoContainer}>
+                <VideoPlayer 
+                    src={welcome}
+                    alt="Welcome Video Player" 
+                    width='100%'
+                />
+            </div>
             <HeroSuggestions/>
             <FrequentRequests/>
             <HomePageCards/>
