@@ -3,6 +3,7 @@ import Image from 'next/image'
 // import Cookies from "js-cookie"
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { useMediaQuery } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 import Button from '../Button/Button';
@@ -17,6 +18,8 @@ function Navbar({ user }) {
     const handleClick =() => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
+    const isMobile = useMediaQuery('(max-width: 1160px)');
+    
     const showButton = () => {
         if(window.innerWidth <= 1160) {
             setButton(false)
@@ -66,11 +69,13 @@ function Navbar({ user }) {
                     {click? <CloseIcon /> : <MenuIcon/>}
                 </div>
                 <ul className={click ? styles.navMenuActive : styles.navMenu}>
-                    <li className={styles.mobileItem}>
-                        <Link href='/' className={styles.navLinks} onClick={closeMobileMenu}>
-                            Home
-                        </Link>
-                    </li>
+                    {isMobile && (
+                        <li className={styles.mobileItem}>
+                            <Link href='/' className={styles.navLinks} onClick={closeMobileMenu}>
+                                Home
+                            </Link>
+                        </li>
+                    )}
                     <li className={styles.navItem}>
                         <Link href='/how-it-works' className={styles.navLinks} onClick={closeMobileMenu}>
                             How It Works

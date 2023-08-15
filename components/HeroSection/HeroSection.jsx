@@ -7,7 +7,7 @@ import HeroSuggestions from '@/components/HeroSuggestions/HeroSuggestions.jsx';
 import FrequentRequests from '@/components/FrequentRequests/FrequentRequests.jsx';
 import HomePageCards from '@/components/Blog/HomePageCards.jsx';
 import Button from '@/components/Button/Button.jsx'
-import FillableSearchDropdown from '../SearchBar/FillableSearchDropdown';
+// import FillableSearchDropdown from '../SearchBar/FillableSearchDropdown';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
 import kindlyobligewith_title_text from '../../public/images/kindlyobligewith_text_image.jpg';
@@ -21,7 +21,7 @@ export default function HeroSection() {
             <h1>Find and Fill your prescription TODAY.</h1>
             <h2>Don't risk delaying your medication.</h2>
             <h3>If you need your medication today, we'll help you find a pharmacy that has it.</h3>
-            <FillableSearchDropdown/>
+            {/* <FillableSearchDropdown/> */}
             <div className={styles.heroBtns}>
                 <Button 
                 className={stylesButton.btn} 
