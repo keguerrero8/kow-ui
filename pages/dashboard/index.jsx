@@ -4,9 +4,13 @@ import DashboardSection from '@/components/DashboardSection/DashboardSection.jsx
 import * as cookie from 'cookie'
 
 export const getServerSideProps = async (context) => {
-  const parsedCookies = cookie.parse(context.req.headers.cookie);
-  const pharmacies = await pharmacyService.getPharmacies(parsedCookies.access)
-  return { props: { pharmacies } }
+  try {
+    const parsedCookies = cookie.parse(context.req.headers.cookie);
+    const pharmacies = await pharmacyService.getPharmacies(parsedCookies.access)
+    return { props: { pharmacies } }
+  } catch (error) {
+    return { props: { pharmacies: []}}
+  }
 }
 
 export default function DashboardPage({ pharmacies }) {

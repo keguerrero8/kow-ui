@@ -3,13 +3,16 @@ import { styles } from './LoginForm-styles';
 import { useUser } from '@/context/user';
 
 import { Box, TextField, Button, Typography } from '@mui/material';
+import Page404 from '@/pages/404';
 
 export default function LoginPage() {
-    const { login, loginErrors } = useUser()
+    const { login, loginErrors, isAuthenticated } = useUser()
     const [formData, setFormData] = useState({
         username: "",
         password: ""
     })
+
+    if (isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated}/>
 
     function handleSubmit (e) {
         e.preventDefault()

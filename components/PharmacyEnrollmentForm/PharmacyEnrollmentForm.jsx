@@ -8,7 +8,7 @@ import FormGenericDropDown from '@/components/FormGenericDropDown/FormGenericDro
 import PharmacyEnrollmentTermsModal from '@/components/PharmacyEnrollmentTermsModal/PharmacyEnrollmentTermsModal.jsx';
 import PharmacyEnrollmentOptInModal from '@/components/PharmacyEnrollmentOptInModal/PharmacyEnrollmentOptInModal.jsx';
 import { useUser } from '@/context/user';
-// import Page404 from '../../Pages/Page404';
+import Page404 from '@/pages/404';
 
 import { Box, Typography, TextField, Button, FormControlLabel, FormControl, FormLabel, RadioGroup, Radio, Checkbox } from '@mui/material'
 import { styles } from './PharmacyEnrollmentForm-styles'
@@ -42,6 +42,8 @@ export default function PharmacyEnrollment({ pharmacy }) {
     const [isOptInAcknowledged, setisOptInAcknowledged] = useState(false)
     const [networkSearchValue, setNetworkSearchValue] = useState("")
     const [languageSearchValue, setLanguageSearchValue] = useState("")
+
+    if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated} />
 
     const networkMap = {
         "Local Community ($30 Monthly)": "Local Community",
@@ -82,9 +84,6 @@ export default function PharmacyEnrollment({ pharmacy }) {
             setStatus(error_messages)
         }
     }
-
-    // if (!isAuthenticated) return <Page404 isAuthFailure={true} />
-    if (!isAuthenticated) return <h1>unauthorized</h1>
 
     function handleChange (e, dropDownKey = null) {
         if (dropDownKey) {
