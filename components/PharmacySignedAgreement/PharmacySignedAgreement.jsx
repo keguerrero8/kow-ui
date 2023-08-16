@@ -13,11 +13,12 @@ export default function PharmacySignedAgreement({ pharmacy }) {
     const { isAuthenticated } = useUser()
     const printableComponent = useRef();
 
-    if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated} />
-
+    
     const handlePrint = useReactToPrint({
         content: () => printableComponent.current,
     });
+    
+    if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated} />
     
   return (
         <Box sx={styles.MainContainer}>

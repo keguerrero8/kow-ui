@@ -1,6 +1,5 @@
 import cookie from 'cookie';
 
-// can definitely refactor this code
 export default async (req, res) => {
     if (req.method === 'PUT') {
         const { isEnrolled } = req.body;
@@ -71,7 +70,6 @@ export default async (req, res) => {
                 });
             }
         } catch(err) {
-            console.log("oops something broke: ", err)
             return res.status(500).json({
                 error: 'Something went wrong when retrieving user'
             });

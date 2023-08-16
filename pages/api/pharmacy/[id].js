@@ -15,6 +15,7 @@ export default async (req, res) => {
             initial_rate,
             isDelivery
         } = req.body;
+        
         const { id } = req.query
         const cookies = cookie.parse(req.headers.cookie ?? '');
         const access = cookies.access ?? false;

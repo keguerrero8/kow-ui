@@ -16,11 +16,9 @@ export default function PharmacyPage({ pharmacy }) {
     const [pharmacists, setPharmacists] = useState([])
     const [pharmacistsUpdate, setPharmacistsUpdate] = useState(false)
     const router = useRouter()
-    if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated} />
     
-    const loadPharmacist = async () => {
+    const loadPharmacists = async () => {
         const loadedPharmacists = await pharmacistService.getPharmacists(pharmacy.id)
-        // can add a check to see if loaded pharmacist
         setPharmacists(loadedPharmacists)
     }
     
@@ -29,17 +27,19 @@ export default function PharmacyPage({ pharmacy }) {
     }, []);
     
     useEffect(() => {
-        loadPharmacist()
+        loadPharmacists()
     }, [pharmacistsUpdate])
     
+    if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated} />
     
     const handleViewAgreement = () => {
         router.push(`/dashboard/pharmacies/view-agreement/${pharmacy.id}`)
     }
-
+    
     const pharmacySignedDate = new Date(pharmacy.signed_agreement_stamp)
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-
+    
+    
     return (
         <Box sx={styles.MainContainer}>
             <Box sx={{mt: "70px", mb: "70px"}}>

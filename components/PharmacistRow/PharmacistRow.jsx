@@ -10,8 +10,10 @@ export default function PharmacistRow({ pharmacist, pharmacistsUpdate, setPharma
     const [checked, setChecked] = useState(isEnrolled)
 
     const updatePharmacist = async (obj) => {
-        const updatePharmacist = await pharmacistService.updatePharmacist(id, obj)
-        setChecked(updatePharmacist.isEnrolled)
+        const updatedPharmacist = await pharmacistService.updatePharmacist(id, obj)
+        // FIXME add some logic here for error handling if the updatePharmacist call failed
+        // and display an error message about the failure
+        setChecked(updatedPharmacist.isEnrolled)
     }
 
     function handleChange (e) {
@@ -20,6 +22,8 @@ export default function PharmacistRow({ pharmacist, pharmacistsUpdate, setPharma
 
     const deletePharmacist = async (pharmacist_id) => {
         const isDeleted = await pharmacistService.deletePharmacist(pharmacist_id)
+        // FIXME add some logic here for error handling if the updatePharmacist call failed
+        // and display an error message about the failure
         if (isDeleted) setPharmacistsUpdate(!pharmacistsUpdate)
     }
 

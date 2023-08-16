@@ -16,9 +16,7 @@ const ContextProvider = ({ children }) => {
     const refreshToken = () => {
         fetch(`${process.env.NEXT_PUBLIC_NEXT_API_URL}/api/refresh`).then(r => {
             if (r.ok) {
-                r.json().then(res => {
-                    getAuthenticatedUser()
-                })
+                getAuthenticatedUser()
             }
             else {
                 setUser(null)
@@ -43,7 +41,6 @@ const ContextProvider = ({ children }) => {
     }
 
     const login = (formData) => {
-    // this post request is to get us logged in and authenticated
         fetch(`${process.env.NEXT_PUBLIC_NEXT_API_URL}/api/login`, {
             method: "POST",
             headers: {
@@ -55,19 +52,15 @@ const ContextProvider = ({ children }) => {
         .then(r => {
             if (r.ok) {
                 r.json().then(res => {
-                    if (res.success) {
-                        getAuthenticatedUser()
-                        router.push("/dashboard")
-                        setLoginErrors([])
-                    } else {
-                        setIsAuthenticated(false)
-                        setLoginErrors([res.error])
-                    }
+                    getAuthenticatedUser()
+                    router.push("/dashboard")
+                    setLoginErrors([])
                 })
-            }
-            else {
-                setIsAuthenticated(false)
-                setLoginErrors(["Something went wrong, please try again or contact the administrator"])
+            } else {
+                r.json().then(res => {
+                    setIsAuthenticated(false)
+                    setLoginErrors([res.error])
+                })
             }
         })
     }
@@ -82,9 +75,12 @@ const ContextProvider = ({ children }) => {
         })
         .then(r => {
             if (r.ok) {
-            closeMobileMenu()
-            setIsAuthenticated(false)
-            setUser(null)
+                closeMobileMenu()
+                setIsAuthenticated(false)
+                setUser(null)
+            } else {
+                closeMobileMenu()
+                router.push('/505')
             }
         })
     }
