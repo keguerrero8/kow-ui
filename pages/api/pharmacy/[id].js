@@ -52,8 +52,6 @@ export default async (req, res) => {
             });
             const data = await apiRes.json();
 
-            console.log("data response for nxt server ", data)
-
             if (apiRes.status === 200) {
                 return res.status(200).json(data);
             } else {
@@ -73,11 +71,3 @@ export default async (req, res) => {
         });
     }
 };
-
-// {
-//     contact_title: [ 'A contact title must be provided' ],
-//     contact_phone_number: [ 'The phone number entered is not valid.' ],
-//     npi: [ 'A valid npi must be provided' ],
-//     network: [ 'A Network must be provided' ]
-//   }
-  
