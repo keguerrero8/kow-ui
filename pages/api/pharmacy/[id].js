@@ -52,22 +52,32 @@ export default async (req, res) => {
             });
             const data = await apiRes.json();
 
+            console.log("data response for nxt server ", data)
+
             if (apiRes.status === 200) {
                 return res.status(200).json(data);
             } else {
                 return res.status(apiRes.status).json({
-                    error: data.error
+                    error: data
                 });
             }
         } catch(err) {
             return res.status(500).json({
-                error: 'Something went wrong when retrieving user'
+                error: {internal_error: 'Something went wrong submitting the enrollment request'}
             });
         }
     } else {
         res.setHeader('Allow', ['GET']);
         return res.status(405).json({
-            error: `Method ${req.method} not allowed`
+            error: {internal_error: `Method ${req.method} not allowed`}
         });
     }
 };
+
+// {
+//     contact_title: [ 'A contact title must be provided' ],
+//     contact_phone_number: [ 'The phone number entered is not valid.' ],
+//     npi: [ 'A valid npi must be provided' ],
+//     network: [ 'A Network must be provided' ]
+//   }
+  

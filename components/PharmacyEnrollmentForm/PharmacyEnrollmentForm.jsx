@@ -68,19 +68,18 @@ export default function PharmacyEnrollment({ pharmacy }) {
     const updatePharmacy = async (obj) => {
         const finalEnrollmentData = {
             ...obj, 
-            signed_agreement_admin: "Kevin Guerrero", 
-            // signed_agreement_admin: `${user.first_name} ${user.last_name}`, 
+            signed_agreement_admin: `${user.first_name} ${user.last_name}`, 
             contact_phone_number: "+1" + enrollmentData["contact_phone_number"],
             additional_language: languageSearchValue === "" ? "none" : enrollmentData["additional_language"]
         }
         const response = await pharmacyService.updateEnrolledPharmacy(pharmacy.id, finalEnrollmentData)
-
-        if (!response.errors) {
+        
+        if (!response.error) {
             setStatus(["Successfully enrolled the pharmacist!"])
             setIsDisabled(true)
             setTimeout(() => router.push("/pharmacy-enrolled"), 1000)
           } else {
-            const error_messages = Object.entries(response.errors).map(e => `${e[0].replaceAll("_", " ")}: ${e[1]}`)
+            const error_messages = Object.entries(response.error).map(e => `${e[0].replaceAll("_", " ")}: ${e[1]}`)
             setStatus(error_messages)
         }
     }
