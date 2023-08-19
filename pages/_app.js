@@ -1,5 +1,5 @@
 import Layout from '@/components/layout'
-import '@/styles/globals.css'
+import '@/styles/global.css'
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
@@ -12,7 +12,7 @@ import ContextProvider from '@/context/user';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
-const figtree = Figtree({ subsets: ['latin'] })
+const figtree = Figtree({weight: '400', subsets: ['latin']})
 
 export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
