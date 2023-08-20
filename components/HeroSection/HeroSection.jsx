@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import styles from './HeroSection.module.css'
 import stylesButton from '../Button/Button.module.css'
 
@@ -9,6 +7,8 @@ import HomePageCards from '@/components/Blog/HomePageCards.jsx';
 import Button from '@/components/Button/Button.jsx'
 import FillableSearchDropdown from '../SearchBar/FillableSearchDropdown';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
+import PrivacyCheckbox from '../RequestForm/PrivacyCheckbox';
+import TermsOnlyCheckbox from '../RequestForm/TermsCheckbox';
 
 import welcome from "../../public/videos/welcome.mp4"
 
@@ -19,6 +19,8 @@ export default function HeroSection() {
                 <h1>Find and fill your prescription today.</h1>
                 <h3>Don't delay taking your medication. If it's available at one of our pharmacies, you can receive it today.</h3>
                 <FillableSearchDropdown/>
+                <PrivacyCheckbox/>
+                <TermsOnlyCheckbox/>
                 <div className={styles.heroBtns}>
                     <Button 
                     className={stylesButton.btn} 

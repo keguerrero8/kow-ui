@@ -6,9 +6,9 @@ import RequestForm from '@/components/RequestForm/RequestForm.jsx';
 import { Box } from '@mui/material';
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://127.0.0.1:8000/api/medications')
-  const medications = await res.json()
-  return { props: { medications } }
+  // const res = await fetch('http://127.0.0.1:8000/api/medications')
+  // const medications = await res.json()
+  return { props: {medications: []} }
 }
 
 export default function FindMedicationPage({ medications }) {
