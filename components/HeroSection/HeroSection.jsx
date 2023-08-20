@@ -5,10 +5,7 @@ import HeroSuggestions from '@/components/HeroSuggestions/HeroSuggestions.jsx';
 import FrequentRequests from '@/components/FrequentRequests/FrequentRequests.jsx';
 import HomePageCards from '@/components/Blog/HomePageCards.jsx';
 import Button from '@/components/Button/Button.jsx'
-import FillableSearchDropdown from '../SearchBar/FillableSearchDropdown';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
-import PrivacyCheckbox from '../RequestForm/PrivacyCheckbox';
-import TermsOnlyCheckbox from '../RequestForm/TermsCheckbox';
 
 import welcome from "../../public/videos/welcome.mp4"
 
@@ -16,11 +13,9 @@ export default function HeroSection() {
     return ( 
         <div className={styles.heroContainer}>
             <div className={styles.cta}>
-                <h1>Find and fill your prescription today.</h1>
-                <h3>Don't delay taking your medication. If it's available at one of our pharmacies, you can receive it today.</h3>
-                <FillableSearchDropdown/>
-                <PrivacyCheckbox/>
-                <TermsOnlyCheckbox/>
+                <h1>Find and Fill your prescription TODAY.</h1>
+                <h2>Don't risk delaying your medication.</h2>
+                <h3>If you need your medication today, we'll help you find a pharmacy that has it.</h3>
                 <div className={styles.heroBtns}>
                     <Button 
                     className={stylesButton.btn} 

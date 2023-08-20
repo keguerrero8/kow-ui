@@ -37,3 +37,9 @@
     color: var(--brand-white);
     font-weight: 900;
   }
+
+@media screen and (max-width: 1160px) {
+  .banner {
+    position: fixed;
+  }
+}

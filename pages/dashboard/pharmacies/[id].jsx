@@ -1,17 +1,22 @@
 import pharmacyService from '@/lib/pharmacyService';
 import PharmacySection from '@/components/PharmacySection/PharmacySection.jsx';
 
-export async function getStaticPaths() {
-    const pharmacies = await pharmacyService.getPharmacies()
-    const paths = pharmacies.map((pharmacy) => (
-        { params: { id: pharmacy.id.toString() } }
-    ))
-    return { paths, fallback: false }
-}
+import * as cookie from 'cookie'
 
-export async function getStaticProps({ params }) {
-    const pharmacy = await pharmacyService.getPharmacy(params.id)
-    return { props: { pharmacy  } }
+export async function getServerSideProps(context) {
+  try {
+    const parsedCookies = cookie.parse(context.req.headers.cookie ?? '');
+    const access = parsedCookies.access ?? false
+
+    if (!access) {
+      throw new Error('access token not found');
+    }
+
+    const pharmacy = await pharmacyService.getPharmacy(context.params.id, access)
+    return { props: { pharmacy } }
+  } catch (error) {
+    return { props: { pharmacy: {}}}
+  }
 }
  
 export default function PharmacyPage({ pharmacy }) {

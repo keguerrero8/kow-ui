@@ -1,5 +1,5 @@
 import Layout from '@/components/layout'
-import '@/styles/globals.css'
+import '@/styles/global.css'
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
@@ -8,10 +8,11 @@ import { CacheProvider } from '@emotion/react';
 import theme from '../styles/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import { Figtree } from 'next/font/google'
+import ContextProvider from '@/context/user';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
-const figtree = Figtree({ subsets: ['latin'] })
+const figtree = Figtree({weight: '400', subsets: ['latin']})
 
 export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
@@ -24,11 +25,13 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Layout>
-          <main className={figtree.className}>
-            <Component {...pageProps} />
-          </main>
-        </Layout>
+        <ContextProvider>
+          <Layout>
+            <main className={figtree.className}>
+              <Component {...pageProps} />
+            </main>
+          </Layout>
+        </ContextProvider>
       </ThemeProvider>
     </CacheProvider>
   );

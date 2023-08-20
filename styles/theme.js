@@ -1,11 +1,10 @@
-import { Roboto } from 'next/font/google';
+import { Figtree } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
 
-export const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Helvetica', 'Arial', 'sans-serif'],
+export const figtree = Figtree({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
 });
 
 
@@ -20,7 +19,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Figtree",
+    fontFamily: figtree.style.fontFamily,
   },
 });
 

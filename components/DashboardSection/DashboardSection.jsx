@@ -2,14 +2,16 @@ import React, { useState } from 'react'
 
 import SearchBar from '@/components/SearchBar/SearchBar.jsx';
 import PharmacyTable from '@/components/PharmacyTable/PharmacyTable.jsx';
-// import Page404 from './Page404';
+import { useUser } from '@/context/user';
 
 import { Box } from '@mui/material';
+import Page404 from '@/pages/404';
   
 export default function DashboardSection({ pharmacies }) {
     const [search, setSearch] = useState("")
+    const { isAuthenticated } = useUser()
 
-    // if (!user) return <Page404 isAuthFailure={true} />
+    if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated}/>
 
     const filteredPharmacies = pharmacies.filter(p => 
         p.name.toLocaleLowerCase().startsWith(search.toLocaleLowerCase()) || p.zipcode.startsWith(search))

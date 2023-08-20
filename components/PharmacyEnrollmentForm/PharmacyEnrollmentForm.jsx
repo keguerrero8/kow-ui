@@ -5,16 +5,17 @@ import Link from 'next/link';
 import pharmacyService from '@/lib/pharmacyService';
 import RequestFormInput from '@/components/RequestFormInput/RequestFormInput.jsx'
 import FormGenericDropDown from '@/components/FormGenericDropDown/FormGenericDropDown.jsx';
-import CSRFToken from '@/components/CSRFToken/CSRFToken.jsx';
 import PharmacyEnrollmentTermsModal from '@/components/PharmacyEnrollmentTermsModal/PharmacyEnrollmentTermsModal.jsx';
 import PharmacyEnrollmentOptInModal from '@/components/PharmacyEnrollmentOptInModal/PharmacyEnrollmentOptInModal.jsx';
-// import Page404 from '../../Pages/Page404';
+import { useUser } from '@/context/user';
+import Page404 from '@/pages/404';
 
 import { Box, Typography, TextField, Button, FormControlLabel, FormControl, FormLabel, RadioGroup, Radio, Checkbox } from '@mui/material'
 import { styles } from './PharmacyEnrollmentForm-styles'
 
-// export default function PharmacyEnrollment({ user }) {
 export default function PharmacyEnrollment({ pharmacy }) {
+    const { isAuthenticated, user } = useUser()
+    const router = useRouter()
     const defaultEnrollmentData = {
         additional_language: "none",
         contact_name: "",
@@ -27,8 +28,6 @@ export default function PharmacyEnrollment({ pharmacy }) {
         initial_rate: "",
         isDelivery: false
     }
-
-    const router = useRouter()
 
     const [checkedPrivacy, setCheckedPrivacy] = useState(false)
     const [checkedOptIn, setCheckedOptIn] = useState(false)
@@ -43,6 +42,8 @@ export default function PharmacyEnrollment({ pharmacy }) {
     const [isOptInAcknowledged, setisOptInAcknowledged] = useState(false)
     const [networkSearchValue, setNetworkSearchValue] = useState("")
     const [languageSearchValue, setLanguageSearchValue] = useState("")
+
+    if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated} />
 
     const networkMap = {
         "Local Community ($30 Monthly)": "Local Community",
@@ -67,24 +68,21 @@ export default function PharmacyEnrollment({ pharmacy }) {
     const updatePharmacy = async (obj) => {
         const finalEnrollmentData = {
             ...obj, 
-            signed_agreement_admin: "Kevin Guerrero", 
-            // signed_agreement_admin: `${user.first_name} ${user.last_name}`, 
+            signed_agreement_admin: `${user.first_name} ${user.last_name}`, 
             contact_phone_number: "+1" + enrollmentData["contact_phone_number"],
             additional_language: languageSearchValue === "" ? "none" : enrollmentData["additional_language"]
         }
         const response = await pharmacyService.updateEnrolledPharmacy(pharmacy.id, finalEnrollmentData)
-
-        if (!response.errors) {
+        
+        if (!response.error) {
             setStatus(["Successfully enrolled the pharmacist!"])
             setIsDisabled(true)
             setTimeout(() => router.push("/pharmacy-enrolled"), 1000)
           } else {
-            const error_messages = Object.entries(response.errors).map(e => `${e[0].replaceAll("_", " ")}: ${e[1]}`)
+            const error_messages = Object.entries(response.error).map(e => `${e[0].replaceAll("_", " ")}: ${e[1]}`)
             setStatus(error_messages)
         }
     }
-
-    // if (!user) return <Page404 isAuthFailure={true} />
 
     function handleChange (e, dropDownKey = null) {
         if (dropDownKey) {
@@ -163,7 +161,6 @@ export default function PharmacyEnrollment({ pharmacy }) {
                 pharmacy={pharmacy}
                 enrollmentData={enrollmentData}
             />
-            <CSRFToken />
             <Box sx={{my: "40px"}}>
                 <Link href={`/dashboard/pharmacies/${pharmacy.id}`} style={{color: "#154161"}}>
                 Return to Pharmacy Page
@@ -188,7 +185,7 @@ export default function PharmacyEnrollment({ pharmacy }) {
                     />
                     <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", gap: "0.5rem", mt: "10px"}}>
                         <Typography color="black" component="h6">KOW member:</Typography>
-                        {/* <TextField sx={{width: "40%"}} value={`${user.first_name} ${user.last_name}`} variant="standard"/> */}
+                        <TextField sx={{width: "40%"}} value={`${user.first_name} ${user.last_name}`} variant="standard"/>
                     </Box> 
                 </Box>
                 {
@@ -282,7 +279,8 @@ export default function PharmacyEnrollment({ pharmacy }) {
                 <Typography key={index} sx={{color: status[0] === "Successfully enrolled the pharmacist!"? "green" : "red"}}>{e}</Typography>)}
             </Box>
             <Box sx={styles.ButtonsContainer}>
-                <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={isDisabled || enrollmentData["signature"] === "" || !isPrivacyAcknowledged || !isOptInAcknowledged || !checkedPrivacy || !checkedOptIn}>
+                {/* <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={isDisabled || enrollmentData["signature"] === "" || !isPrivacyAcknowledged || !isOptInAcknowledged || !checkedPrivacy || !checkedOptIn}> */}
+                <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={enrollmentData["signature"] === ""}>    
                     Submit
                 </Button>
                 <Button variant='text' sx={{color: "#154161", width: "40%"}} size="large" onClick={handleClear} >

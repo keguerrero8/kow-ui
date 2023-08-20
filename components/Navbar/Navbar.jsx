@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-// import Cookies from "js-cookie"
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useEffect, useState } from 'react';
@@ -8,15 +7,19 @@ import { useEffect, useState } from 'react';
 import Button from '../Button/Button';
 import styles from './Navbar.module.css';
 import image from "../../public/images/icon-only-black.jpg"
+import { useUser } from '@/context/user'
 
 
-function Navbar({ user }) {
+function Navbar() {
+    const { isAuthenticated, logout } = useUser()
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
     const handleClick =() => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
+    const isMobile = useMediaQuery('(max-width: 1160px)');
+    
     const showButton = () => {
         if(window.innerWidth <= 1160) {
             setButton(false)
@@ -26,33 +29,15 @@ function Navbar({ user }) {
     };
 
     function handleLogOut () {
-        console.log("log out to be implemented!")
-        // fetch("/auth-sessions/logout", {
-        //   credentials: "include",
-        //   method: "POST",
-        //   headers: {
-        //       "Accept": "application/json",
-        //       "Content-Type": "application/json",
-        //       "X-CSRFToken": Cookies.get("csrftoken")
-        //   },
-        // })
-        // .then(r => {
-        //   if (r.ok) {
-        //     closeMobileMenu()
-        //     setUser(null)
-        //   }
-        // })
+        logout(closeMobileMenu)
     }
 
-    // useEffect(() => {showButton();}, []);
     useEffect(() => {
         if (typeof window !== "undefined") {
             window.addEventListener('resize', showButton);
             showButton()   
          }
     }, [])
-
-    // window.addEventListener('resize', showButton);
 
     return (
         <>
@@ -88,37 +73,30 @@ function Navbar({ user }) {
                                 Contact Us
                             </Link>
                         </li>
-                        <li className={styles.navItem}>
-                            <Link href='/dashboard' className={styles.navLinks} onClick={closeMobileMenu}>
-                                Dashboard
-                            </Link>
-                        </li>
-                        {
-                            user ? 
+                        {isAuthenticated ? 
                             <li className={styles.navItem}>
-                                    <Link href='/dashboard' className={styles.navLinks} onClick={closeMobileMenu}>
-                                        Dashboard
-                                    </Link>
-                                </li>
-                                :
-                                null
-                            }
-                    {/* {!user && !button? <li className={styles.navItem}>
+                                <Link href='/dashboard' className={styles.navLinks} onClick={closeMobileMenu}>
+                                    Dashboard
+                                </Link>
+                            </li>
+                            :
+                            null}
+                        {/* {!user && !button? <li className={styles.navItem}>
                             <Link to='/login' className={styles.navLinks} onClick={closeMobileMenu}>
                                 Sign In
                                 </Link>
                             </li>: null} */}
-                    {user && !button && <li className={styles.navItem}>
+                        {/* {button && !user ? <Button path='/login'>Sign In
+                            </Button> : null} */}
+                        {isAuthenticated && !button && <li className={styles.navItem}>
                             <Link href='/' className={styles.navLinks} onClick={handleLogOut}>
                                 Sign Out
                             </Link>
                         </li>}
                     </ul>
-                </div>
-                    {/* {button && !user ? <Button path='/login'>Sign In
-                        </Button> : null} */}
-                    {user && button? <Button path='/' onClick={handleLogOut}>Sign Out
+                    {isAuthenticated && button? <Button path='/' onClick={handleLogOut}>Sign Out
                         </Button> : null}
+                </div>
             </div>
         </nav>
         </>

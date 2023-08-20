@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Box, Button, Typography } from '@mui/material';
 
-// import '../styles.css'
+import { useUser } from '@/context/user';
+import Page404 from '@/pages/404';
 
 const styles = {
   MainContainer: {
@@ -20,6 +21,10 @@ const styles = {
 }
 
 export default function SplashPage() {
+  const { isAuthenticated } = useUser()
+
+  if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated}/>
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

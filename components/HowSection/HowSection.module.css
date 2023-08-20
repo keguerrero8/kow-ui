@@ -83,6 +83,12 @@
     }
 }
 
+@media screen and (max-width: 1160px) {
+    .howContainer > h1 {
+        padding-top: 132px;
+    }
+}
+
 @media screen and (max-width: 960px) {
     .howBody {
         flex-direction: column;

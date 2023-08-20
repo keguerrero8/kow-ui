@@ -1,0 +1,48 @@
+:root {
+    /*brand color palette*/
+    --brand-darkblue: #050533;
+    --brand-primaryblue: #009ffb;
+    --brand-green: #00d0c1;
+    --brand-black: #111;
+    --brand-white: #fff;
+    --brand-grey: #f2f2f2;
+    --brand-darkgrey: #d9d9d9;
+    --brand-darkergrey: #b1b1b1;
+
+    /*font sizes*/
+    --font-xsmall: 0.9rem;
+    --font-small: 1.1rem;
+    --font-medium: 1.4rem;
+    --font-large: 2.4rem;
+    --font-xlarge: 4rem;
+    --font-xxlarge: 8rem;
+
+    /*mobile font sizes*/
+    --mobile-xsmall: 0.9rem;
+    --mobile-small: 1.25rem;
+    --mobile-medium: 1.75rem;
+    --mobile-large: 2.3rem;
+    --mobile-xlarge: 4rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.home,
+.how-it-works,
+.find-medication,
+.contact-us,
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
