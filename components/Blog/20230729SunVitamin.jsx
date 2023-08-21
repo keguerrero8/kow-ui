@@ -55,7 +55,7 @@ function SunVitaminArticle(props) {
         </div>
         <div className={styles.section}>
             <h2>In summary,</h2>
-            <p>The FDA&apos;s approval of Leqembi marks a momentous step forward in the treatment of Alzheimer&apos;s disease. This revolutionary medication offers hope for patients and families, providing the potential to slow disease progression and preserve cognitive function. As we eagerly await the availability of Leqembi, it is essential to stay informed about updates and consult with healthcare providers to understand how this medication can benefit individual patients. With Leqembi paving the way for more advanced Alzheimer's treatments, there is newfound optimism in the fight against this devastating condition.</p>
+            <p>The FDA&apos;s approval of Leqembi marks a momentous step forward in the treatment of Alzheimer&apos;s disease. This revolutionary medication offers hope for patients and families, providing the potential to slow disease progression and preserve cognitive function. As we eagerly await the availability of Leqembi, it is essential to stay informed about updates and consult with healthcare providers to understand how this medication can benefit individual patients. With Leqembi paving the way for more advanced Alzheimer&apos;s treatments, there is newfound optimism in the fight against this devastating condition.</p>
         </div>
     </>
   )

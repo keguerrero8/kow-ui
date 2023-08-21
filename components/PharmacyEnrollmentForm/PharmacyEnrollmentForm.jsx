@@ -249,7 +249,7 @@ export default function PharmacyEnrollment({ pharmacy }) {
                     <FormControlLabel
                         labelPlacement='end'
                         control={<Checkbox checked={checkedPrivacy} onChange={handlePrivacyCheck}/>} 
-                        label={<Typography variant='h5' sx={{fontSize: "1.1rem", fontWeight: "bolder", textAlign: "start"}}>I AGREE TO KOW'S TERMS OF USE AND PRIVACY POLICY</Typography>} 
+                        label={<Typography variant='h5' sx={{fontSize: "1.1rem", fontWeight: "bolder", textAlign: "start"}}>I AGREE TO KOW&apos;S TERMS OF USE AND PRIVACY POLICY</Typography>} 
                     />
                 </Box>
                 <Box sx={{textAlign: "center", width: "100%", marginTop: "-1rem", marginX: "auto", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
@@ -257,7 +257,7 @@ export default function PharmacyEnrollment({ pharmacy }) {
                         disabled={enrollmentData["contact_name"] === "" || enrollmentData["contact_title"] === ""}
                         labelPlacement='end'
                         control={<Checkbox checked={checkedOptIn} onChange={handleOptInCheck}/>} 
-                        label={<Typography variant='h5' sx={{fontSize: "1.1rem", fontWeight: "bolder", textAlign: "start"}}>I AGREE TO KOW'S PHARMACY SUBSCRIPTION AND OPT-IN AGREEMENTS</Typography>} 
+                        label={<Typography variant='h5' sx={{fontSize: "1.1rem", fontWeight: "bolder", textAlign: "start"}}>I AGREE TO KOW&apos;S PHARMACY SUBSCRIPTION AND OPT-IN AGREEMENTS</Typography>} 
                     />
                 </Box>
                 <Box sx={{flex: 1, mt: "50px"}}>

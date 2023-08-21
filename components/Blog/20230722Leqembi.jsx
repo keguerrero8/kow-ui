@@ -22,7 +22,7 @@ function LeqembiArticle(props) {
             </div>
         </div>
         <div className={styles.section}>
-            <p>In a landmark decision, the U.S. Food and Drug Administration (FDA) recently granted full approval for the novel Alzheimer's drug, Leqembi. This approval is a significant milestone in the field of Alzheimer's treatment and has far-reaching implications for patients, caregivers, and the medical community. Leqembi, developed by Eisai and Biogen, offers new hope for those living with Alzheimer&apos;s disease, a condition that has long been challenging to treat effectively. </p>
+            <p>In a landmark decision, the U.S. Food and Drug Administration (FDA) recently granted full approval for the novel Alzheimer&apos;s drug, Leqembi. This approval is a significant milestone in the field of Alzheimer&apos;s treatment and has far-reaching implications for patients, caregivers, and the medical community. Leqembi, developed by Eisai and Biogen, offers new hope for those living with Alzheimer&apos;s disease, a condition that has long been challenging to treat effectively. </p>
         </div>
         <div className={styles.section}>
             <h2>A Breakthrough Treatment</h2>
