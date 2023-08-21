@@ -19,8 +19,8 @@ export default function HeroSection() {
         <div className={styles.heroContainer}>
             <Image alt='kindle oblige with' src={kindlyobligewith_title_text} className={styles.heroTitle}/>
             <h1>Find and Fill your prescription TODAY.</h1>
-            <h2>Don't risk delaying your medication.</h2>
-            <h3>If you need your medication today, we'll help you find a pharmacy that has it.</h3>
+            <h2>Don&apos;t risk delaying your medication.</h2>
+            <h3>If you need your medication today, we&apos;ll help you find a pharmacy that has it.</h3>
             {/* <FillableSearchDropdown/> */}
             <div className={styles.heroBtns}>
                 <Button 

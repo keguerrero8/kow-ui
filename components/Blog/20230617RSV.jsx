@@ -29,7 +29,7 @@ export default function RsvArticle(props) {
             <p>RSV is transmitted through respiratory droplets when an infected person coughs or sneezes. The virus can survive on surfaces for several hours, making it easy to spread in environments such as daycare centers and hospitals.</p>
         </div>
         <div className={styles.section}>
-            <h2>Who's at Risk?</h2>
+            <h2>Who&apos;s at Risk?</h2>
             <p>RSV poses the greatest risks to infants, particularly premature babies, and young children under the age of two. Their immature immune systems and smaller airways make them more susceptible to severe RSV infections. Older adults, especially those over the age of 65, and individuals with underlying health conditions, such as lung disease or heart problems, are also at higher risk of developing severe complications from RSV.</p>
         </div>
         <div className={styles.section}>

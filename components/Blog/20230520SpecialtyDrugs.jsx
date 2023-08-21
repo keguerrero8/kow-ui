@@ -75,7 +75,7 @@ export default function SpecialtyDrugsArticle(props) {
             <h2>How Do I Contact the Specialty Pharmacy?</h2>
             <p>Most Specialty Pharmacies can be reached by phone.  Your pharmacy insurance card often has a Member 
                 Services phone number which you can call to find out what Specialty Pharmacy to use.  Your insurance 
-                company can provide the pharmacy's phone number for you to call or the pharmacy's address for where 
+                company can provide the pharmacy&apos;s phone number for you to call or the pharmacy&apos;s address for where 
                 your prescriber can send your prescription.  The contact information is also available for the 
                 following Specialty Pharmacies:</p>
             <div className={styles.subsection}>
@@ -118,7 +118,7 @@ export default function SpecialtyDrugsArticle(props) {
         <div className={styles.section}>
             <h2>Patient Education and Support:</h2>
             <p>Specialty pharmacies often offer personalized support and education to patients. They help explain 
-                the medication's administration, potential side effects, and provide guidance on managing the 
+                the medication&apos;s administration, potential side effects, and provide guidance on managing the 
                 treatment plan.</p>
         </div>
         <div className={styles.section}>

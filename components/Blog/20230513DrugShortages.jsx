@@ -8,7 +8,7 @@ export default function DrugShortagesArticle(props) {
     return (
     <>  
         <div className={styles.title}>
-            <h1>"Backordered": The Silent Crisis</h1>
+            <h1>&quot;Backordered&quot;: The Silent Crisis</h1>
             <h2>How Drug Shortages Jeopardize Patient Treatment</h2>
             <p>Date: May 13, 2023</p>
             <div className={styles.bannerImg}>

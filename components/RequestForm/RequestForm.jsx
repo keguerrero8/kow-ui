@@ -298,7 +298,7 @@ export default function RequestForm({ medications }) {
                 )}
                 {showHelp && (
                     <Typography sx={styles.InsuranceHelp}>
-                        If your card does not have a RxGroup or Group, type "N/A".
+                        If your card does not have a RxGroup or Group, type &quot;N/A&quot;.
                     </Typography>
                 )}
                 <Box sx={styles.InsuranceFields}>
@@ -343,7 +343,7 @@ export default function RequestForm({ medications }) {
                 disabled={!(userType === "patient" || userType === "health_care_provider")}
                 labelPlacement='end'
                 control={<Checkbox checked={checked} onChange={handleAgreementCheck}/>} 
-                label={<Typography variant='h5' sx={{fontSize: "1.3rem", fontWeight: "bolder"}}>I AGREE TO KOW'S TERMS OF USE AND PRIVACY POLICY</Typography>} 
+                label={<Typography variant='h5' sx={{fontSize: "1.3rem", fontWeight: "bolder"}}>I AGREE TO KOW&apos;S TERMS OF USE AND PRIVACY POLICY</Typography>} 
             />
         </Box>
         <Box sx={{textAlign: "center", width: "90%", margin: "0 auto"}}>
