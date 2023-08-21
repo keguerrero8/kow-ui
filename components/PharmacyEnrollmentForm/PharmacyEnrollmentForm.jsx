@@ -279,8 +279,8 @@ export default function PharmacyEnrollment({ pharmacy }) {
                 <Typography key={index} sx={{color: status[0] === "Successfully enrolled the pharmacist!"? "green" : "red"}}>{e}</Typography>)}
             </Box>
             <Box sx={styles.ButtonsContainer}>
-                {/* <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={isDisabled || enrollmentData["signature"] === "" || !isPrivacyAcknowledged || !isOptInAcknowledged || !checkedPrivacy || !checkedOptIn}> */}
-                <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={enrollmentData["signature"] === ""}>    
+                <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={isDisabled || enrollmentData["signature"] === "" || !isPrivacyAcknowledged || !isOptInAcknowledged || !checkedPrivacy || !checkedOptIn}>
+                {/* <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={enrollmentData["signature"] === ""}>     */}
                     Submit
                 </Button>
                 <Button variant='text' sx={{color: "#154161", width: "40%"}} size="large" onClick={handleClear} >
