@@ -16,7 +16,8 @@ import HeatWaveArticle from '@/components/Blog/20230708HeatWave';
 import OtcBirthControlArticle from '@/components/Blog/20230715OtcBirthControl';
 import LeqembiArticle from '@/components/Blog/20230722Leqembi';
 import SunVitaminArticle from '@/components/Blog/20230729SunVitamin';
-
+import MentalAppsArticle from '@/components/Blog/20230805MentalAppsArticle';
+import FluVaccineArticle from '@/components/Blog/20230819FluVaccineArticle';
 
 const ViewPost = () => {
     const router = useRouter();
@@ -41,6 +42,9 @@ const ViewPost = () => {
             {postId === '20230715' && <OtcBirthControlArticle />}
             {postId === '20230722' && <LeqembiArticle />}
             {postId === '20230729' && <SunVitaminArticle />}
+            {postId === '20230805' && <MentalAppsArticle />}
+            {postId === '20230819' && <FluVaccineArticle />}
+
         </div>
     );
 }

@@ -18,7 +18,7 @@ function Navbar() {
     const handleClick =() => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
-    const isMobile = useMediaQuery('(max-width: 1160px)');
+    // const isMobile = useMediaQuery('(max-width: 1160px)');
     
     const showButton = () => {
         if(window.innerWidth <= 1160) {
