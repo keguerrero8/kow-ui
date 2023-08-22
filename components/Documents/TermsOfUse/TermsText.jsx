@@ -256,8 +256,8 @@ export default function TermsText({ isModal = false }) {
                 the Subscription Agreement and ending on Your receipt of the Termination and Fee Schedule 
                 Notice (as therein defined) (the “Initial Testing Period”), KOW will permit access to and 
                 enrollment in its Services at the agreed upon monthly rate of ($______) which shall be the 
-                Initial Rate. The Initial Rate represents a promotional rate based on the Enrolled Pharmacy's 
-                network selection at the time of enrollment and offered by KOW during KOW's Initial Testing 
+                Initial Rate. The Initial Rate represents a promotional rate based on the Enrolled Pharmacy&apos;s 
+                network selection at the time of enrollment and offered by KOW during KOW&apos;s Initial Testing 
                 Period. The duration of the Initial Testing Period shall be fixed by KOW in its sole and absolute 
                 discretion. Upon termination of the Initial Testing Period, KOW shall serve You with a notice 
                 advising You of the following:</p>
@@ -417,8 +417,8 @@ export default function TermsText({ isModal = false }) {
                 the Company the maximum amount of indemnification permitted under the law of the applicable
                 State.</p>
             <h3>No Warranties; No Support</h3>
-            <p>THE API, KOW BRAND FEATURES AND KOW SERVICES ARE PROVIDED "AS IS",
-                "WITH ALL FAULTS" AND "AS AVAILABLE" WITHOUT WARRANTY, OF ANY KIND
+            <p>THE API, KOW BRAND FEATURES AND KOW SERVICES ARE PROVIDED &quot;AS IS&quot;,
+                &quot;WITH ALL FAULTS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTY, OF ANY KIND
                 AND AT YOUR SOLE RISK. EXCEPT TO THE MINIMUM EXTENT REQUIRED BY
                 APPLICABLE LAW, KOW DISCLAIMS ALL WARRANTIES, REPRESENTATIONS,
                 CONDITIONS, AND DUTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,

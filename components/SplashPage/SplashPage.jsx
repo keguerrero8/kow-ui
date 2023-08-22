@@ -23,13 +23,13 @@ const styles = {
 export default function SplashPage() {
   const { isAuthenticated } = useUser()
 
-  if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated}/>
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  
   const router = useRouter();
+
+  if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated}/>
   
   return (
     <Box sx={styles.MainContainer}>

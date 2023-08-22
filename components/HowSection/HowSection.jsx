@@ -23,7 +23,7 @@ function HowSection() {
                     <div className={styles.imgWrap}>
                        <Image src={image1} alt="computer monitor with the mouse cursor clicking a button in the middle of the screen"/>
                     </div>
-                    <h3 className={styles.stepText}>Select the medication you're looking for.</h3>
+                    <h3 className={styles.stepText}>Select the medication you&apos;re looking for.</h3>
                     <h3 className={styles.stepSubtext}>Specify the strength, quantity, and what insurance you have.</h3>
                 </div>
                 <div className={styles.howStep}>
@@ -37,7 +37,7 @@ function HowSection() {
                     <div className={styles.imgWrap}>
                         <Image src={image3} alt="cell phone positioned upright, depicting a hand emerging from the screen holding a medical shopping bag as a representation of an order transaction"/>
                     </div>
-                    <h3 className={styles.stepText}>You're notified of which pharmacy has the medication.</h3>
+                    <h3 className={styles.stepText}>You&apos;re notified of which pharmacy has the medication.</h3>
                     <h3 className={styles.stepSubtext}>Contact the pharmacy to pick up your prescription or schedule a delivery.</h3>
                 </div>
             </div>
@@ -58,7 +58,7 @@ function HowSection() {
             </div>
             <div className={styles.videoContainer}>
                 <div className={styles.videoTitle}>
-                    <h2>Here's a Tutorial:</h2>
+                    <h2>Here&apos;s a Tutorial:</h2>
                 </div>
                 <VideoPlayer 
                     src={tutorialvideo}

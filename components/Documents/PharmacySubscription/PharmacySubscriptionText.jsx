@@ -16,8 +16,8 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
     <>
         <div className={styles.parties}>
             {isModal? null : <h3>ENROLLED PHARMACY SUBSCRIPTION AGREEMENT</h3>}
-            <p>THIS SUBSCRIPTION AGREEMENT (this "Agreement") is made as of {isModal? formattedDateToday: formattedDatePharmacySigned} ("the Effective Date") between Fillable, 
-             LLC, d/b/a FillableRx, a/k/a Kindly Oblige With (KOW) (hereinafter referred to as "KOW") on the one hand, and you, an enrolled pharmacy (hereinafter referred to as "You", "Your", or "Enrolled Pharmacy", together with KOW, the "Parties", each being a "Party"), on the other.</p>
+            <p>THIS SUBSCRIPTION AGREEMENT (this &quot;Agreement&quot;) is made as of {isModal? formattedDateToday: formattedDatePharmacySigned} (&quot;the Effective Date&quot;) between Fillable, 
+             LLC, d/b/a FillableRx, a/k/a Kindly Oblige With (KOW) (hereinafter referred to as &quot;KOW&quot;) on the one hand, and you, an enrolled pharmacy (hereinafter referred to as &quot;You&quot;, &quot;Your&quot;, or &quot;Enrolled Pharmacy&quot;, together with KOW, the &quot;Parties&quot;, each being a &quot;Party&quot;), on the other.</p>
         </div>
         <div className={styles.recitals}>
             <h3>RECITALS:</h3>
@@ -63,8 +63,8 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 Effective Date and ending on Your receipt of the Termination and Fee Schedule Notice (as
                 hereinafter defined) (the “Initial Testing Period”), KOW will permit access to and enrollment in
                 its Services at the agreed upon monthly rate of ${isModal? enrollmentData["initial_rate"] : pharmacy.initial_rate} which shall be the Initial Rate. 
-                The Initial Rate represents a promotional rate based on the Enrolled Pharmacy's network 
-                selection at the time of enrollment and offered by KOW during KOW's Initial Testing Period. 
+                The Initial Rate represents a promotional rate based on the Enrolled Pharmacy&apos;s network 
+                selection at the time of enrollment and offered by KOW during KOW&apos;s Initial Testing Period. 
                 The duration of the Initial Testing Period shall be fixed by KOW in its sole and absolute 
                 discretion. Upon termination of the Initial Testing Period, KOW shall serve You with a notice 
                 advising You of the following:</p>
@@ -102,7 +102,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 shall be renewed automatically on an annual basis in accordance with the terms in the Fee
                 Schedule and this Agreement.</p>
             <p>KOW shall have the right (but not the obligation) to amend or modify the Fee Schedule, from
-                time to time, in its sole yet reasonable discretion. KOW shall provide You thirty (30) days'
+                time to time, in its sole yet reasonable discretion. KOW shall provide You thirty (30) days&apos;
                 written notice of any such amendment or modification. Upon receipt of any such notice, You
                 will have ten (10) days to deliver written notice to KOW rejecting the Fee Schedule amendment
                 or modification and terminating this Agreement, which termination shall not cause You to incur
@@ -236,7 +236,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
         <div className={styles.section3}>
             <h3>3. DISCLAIMERS, LIMITAITONS, AND INDEMNITIES</h3>
             <p>a. TO THE EXTENT ALLOWED BY LAW, THESE SERVICES ARE PROVIDED TO YOU
-                "AS IS" WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, WHETHER ORAL
+                &quot;AS IS&quot; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, WHETHER ORAL
                 OR WRITTEN, EXPRESS OR IMPLIED. KOW SPECIFICALLY DISCLAIMS ANY
                 IMPLIED WARRANTIES, NON-INFRINGEMENT, TITLE, ACCURACY OF
                 INFORMATIONAL CONTENT. NO ORAL OR WRITTEN INFORMATION OR ADVICE

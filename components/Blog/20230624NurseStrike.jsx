@@ -29,7 +29,7 @@ function NurseStrikeArticle(props) {
             <p>Nurses are striking across the country due to concerns about nurse burnout, understaffing, inadequate resources, and unsafe patient-to-nurse ratios. They are demanding improvements in working conditions, increased staffing levels, fair wages, and protections against union-busting tactics by healthcare organizations.</p>
         </div>
         <div className={styles.section}>
-            <h2>Nurses' Struggles Reflecting Larger Issues:</h2>
+            <h2>Nurses&apos; Struggles Reflecting Larger Issues:</h2>
             <p>The nationwide nurse strikes underscore the challenges faced by healthcare workers in the United States. These strikes highlight issues such as inadequate staffing, insufficient resources, long working hours, and limited support for mental health. They reflect the need for systemic changes within the healthcare industry to ensure better working conditions and quality patient care.</p>
         </div>
         <div className={styles.section}>

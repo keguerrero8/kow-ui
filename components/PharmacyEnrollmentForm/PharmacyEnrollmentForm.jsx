@@ -249,7 +249,7 @@ export default function PharmacyEnrollment({ pharmacy }) {
                     <FormControlLabel
                         labelPlacement='end'
                         control={<Checkbox checked={checkedPrivacy} onChange={handlePrivacyCheck}/>} 
-                        label={<Typography variant='h5' sx={{fontSize: "1.1rem", fontWeight: "bolder", textAlign: "start"}}>I AGREE TO KOW'S TERMS OF USE AND PRIVACY POLICY</Typography>} 
+                        label={<Typography variant='h5' sx={{fontSize: "1.1rem", fontWeight: "bolder", textAlign: "start"}}>I AGREE TO KOW&apos;S TERMS OF USE AND PRIVACY POLICY</Typography>} 
                     />
                 </Box>
                 <Box sx={{textAlign: "center", width: "100%", marginTop: "-1rem", marginX: "auto", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
@@ -257,7 +257,7 @@ export default function PharmacyEnrollment({ pharmacy }) {
                         disabled={enrollmentData["contact_name"] === "" || enrollmentData["contact_title"] === ""}
                         labelPlacement='end'
                         control={<Checkbox checked={checkedOptIn} onChange={handleOptInCheck}/>} 
-                        label={<Typography variant='h5' sx={{fontSize: "1.1rem", fontWeight: "bolder", textAlign: "start"}}>I AGREE TO KOW'S PHARMACY SUBSCRIPTION AND OPT-IN AGREEMENTS</Typography>} 
+                        label={<Typography variant='h5' sx={{fontSize: "1.1rem", fontWeight: "bolder", textAlign: "start"}}>I AGREE TO KOW&apos;S PHARMACY SUBSCRIPTION AND OPT-IN AGREEMENTS</Typography>} 
                     />
                 </Box>
                 <Box sx={{flex: 1, mt: "50px"}}>
@@ -279,8 +279,8 @@ export default function PharmacyEnrollment({ pharmacy }) {
                 <Typography key={index} sx={{color: status[0] === "Successfully enrolled the pharmacist!"? "green" : "red"}}>{e}</Typography>)}
             </Box>
             <Box sx={styles.ButtonsContainer}>
-                {/* <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={isDisabled || enrollmentData["signature"] === "" || !isPrivacyAcknowledged || !isOptInAcknowledged || !checkedPrivacy || !checkedOptIn}> */}
-                <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={enrollmentData["signature"] === ""}>    
+                <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={isDisabled || enrollmentData["signature"] === "" || !isPrivacyAcknowledged || !isOptInAcknowledged || !checkedPrivacy || !checkedOptIn}>
+                {/* <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={enrollmentData["signature"] === ""}>     */}
                     Submit
                 </Button>
                 <Button variant='text' sx={{color: "#154161", width: "40%"}} size="large" onClick={handleClear} >

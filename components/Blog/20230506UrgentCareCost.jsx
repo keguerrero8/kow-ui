@@ -24,10 +24,10 @@ export default function UrgentCareArticle(props) {
         <div className={styles.section}>
             <h2>The Financial Implications of Urgent Care Visits</h2>
             <p>When it comes to the cost of an urgent care visit, several factors come into play. While specific 
-                prices may vary depending on location and services offered, it's important to consider some 
+                prices may vary depending on location and services offered, it&apos;s important to consider some 
                 general estimates. Without insurance coverage, the average cost of an urgent care visit typically 
                 ranges from $100 to $200. However, the complexity of the medical issue and any additional services 
-                required may impact the final cost. It's worth noting that prices can differ significantly between 
+                required may impact the final cost. It&apos;s worth noting that prices can differ significantly between 
                 different regions and individual urgent care centers.  By comparison, the cost of seeing an urgent 
                 care provider is usually more than seeing a primary care physician because urgent cares are 
                 considered specialist providers.  Nevertheless, approximately 3 million patients across the nation 
