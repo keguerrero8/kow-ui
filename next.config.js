@@ -22,4 +22,15 @@ module.exports = {
 
     return config;
   },
+  headers: () => [
+    {
+      source: '/api/refresh',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'no-store',
+        },
+      ],
+    },
+  ],
 };
