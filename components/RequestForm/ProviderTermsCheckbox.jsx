@@ -2,7 +2,7 @@ import CheckboxModal from './CheckboxModal';
 import TermsText from '../Documents/TermsOfUse/TermsText';
 import ProviderOptInText from '../Documents/ProviderOptIn/ProviderOptInText';
 
-const TermsOnlyCheckbox = () => {
+const ProviderTermsCheckbox = () => {
 
   return (
     <CheckboxModal
@@ -14,4 +14,4 @@ const TermsOnlyCheckbox = () => {
   );
 };
 
-export default TermsOnlyCheckbox;
+export default ProviderTermsCheckbox;

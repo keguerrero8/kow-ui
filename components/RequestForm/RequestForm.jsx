@@ -4,6 +4,10 @@ import RequestFormInput from '@/components/RequestFormInput/RequestFormInput.jsx
 import MedNameRequestInput from '@/components/MedNameRequestInput/MedNameRequestInput.jsx'
 import MedStrengthRequestInput from '@/components/MedStrengthRequestInput/MedStrengthRequestInput.jsx'
 import RequestAgreementModal from '@/components/RequestAgreementModal/RequestAgreementModal'
+import PrivacyCheckbox from './PrivacyCheckbox'
+import ProviderTermsCheckbox from './ProviderTermsCheckbox'
+import TermsOnlyCheckbox from './TermsOnlyCheckbox.jsx'
+
 import { styles } from './RequestForm-styles'
 import { useUser } from '@/context/user'
 
@@ -178,11 +182,8 @@ export default function RequestForm({ medications }) {
             setisOptInAcknowledged={setisOptInAcknowledged}
         />
         <Box sx={{...styles.InputContainer, mb: "1rem"}}>
-            <Typography color="black" sx={styles.FillableTitle}>
-                FILLABLE
-            </Typography>
             <Typography color="black" sx={styles.FillableSubtitle}>
-                Medication Request Form
+                Submit Medication Request Form
             </Typography>
             <Typography sx={styles.FillableHours}>
                 Service Hours: 9:00 am (EST) to 6:00 pm (EST)
@@ -338,6 +339,9 @@ export default function RequestForm({ medications }) {
                 </Typography>
             )}
         </Box>
+        <PrivacyCheckbox/>
+        <TermsOnlyCheckbox/>
+        <ProviderTermsCheckbox/>
         <Box sx={{textAlign: "center", width: "90%", marginTop: "2rem", marginBottom: "-2rem", marginX: "auto", display: "flex", flexDirection: "row", justifyContent: "center"}}>
             <FormControlLabel
                 disabled={!(userType === "patient" || userType === "health_care_provider")}

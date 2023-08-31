@@ -46,7 +46,7 @@ export const styles = {
         flexDirection: {xs: "column", sm: "column", md: "row"}
     },
     FillableTitle: {
-        textAlign: "center",
+        paddingLeft: "3rem",
         fontWeight: "900",
         fontSize: {xs: "1rem", sm: "1rem", md: "1.4rem", lg: "3rem"},
         margin: "-2rem",
