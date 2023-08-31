@@ -18,7 +18,7 @@ export default async (req, res) => {
         });
 
         try {
-            const apiRes = await fetch(`${process.env.DJANGO_API_URL}/api/pharmacists/${pharmacistId}`, {
+            const apiRes = await fetch(`${process.env.DJANGO_API_URL}/core/pharmacists/${pharmacistId}`, {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',
@@ -53,7 +53,7 @@ export default async (req, res) => {
         }
 
         try {
-            const apiRes = await fetch(`${process.env.DJANGO_API_URL}/api/pharmacists/${pharmacistId}`, {
+            const apiRes = await fetch(`${process.env.DJANGO_API_URL}/core/pharmacists/${pharmacistId}`, {
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',

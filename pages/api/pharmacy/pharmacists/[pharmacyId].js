@@ -13,7 +13,7 @@ export default async (req, res) => {
         }
 
         try {
-            const apiRes = await fetch(`${process.env.DJANGO_API_URL}/api/pharmacies/${pharmacyId}/pharmacists`, {
+            const apiRes = await fetch(`${process.env.DJANGO_API_URL}/core/pharmacies/${pharmacyId}/pharmacists`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',

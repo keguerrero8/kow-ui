@@ -7,7 +7,7 @@ import { Box } from '@mui/material';
 
 export const getStaticProps = async () => {
   try {
-    const res = await fetch(`${process.env.DJANGO_API_URL}/api/medications`)
+    const res = await fetch(`${process.env.DJANGO_API_URL}/core/medications`)
     const medications = await res.json()
     return { props: { medications } }
   } catch (error) {

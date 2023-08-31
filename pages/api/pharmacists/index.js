@@ -20,7 +20,7 @@ export default async (req, res) => {
         });
 
         try {
-            const apiRes = await fetch(`${process.env.DJANGO_API_URL}/api/pharmacists`, {
+            const apiRes = await fetch(`${process.env.DJANGO_API_URL}/core/pharmacists`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

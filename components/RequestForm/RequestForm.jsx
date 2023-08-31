@@ -132,7 +132,7 @@ export default function RequestForm({ medications }) {
         isAdmin: isAuthenticated
     }
 
-    fetch(`${process.env.NEXT_PUBLIC_DJANGO_API_URL}/api/requests`, {
+    fetch(`${process.env.NEXT_PUBLIC_DJANGO_API_URL}/core/requests`, {
         method: "POST",
         headers: { 
             "Content-Type": "application/json",
