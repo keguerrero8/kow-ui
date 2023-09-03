@@ -17,16 +17,16 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
         <div className={styles.parties}>
             {isModal? null : <h3>ENROLLED PHARMACY SUBSCRIPTION AGREEMENT</h3>}
             <p>THIS SUBSCRIPTION AGREEMENT (this &quot;Agreement&quot;) is made as of {isModal? formattedDateToday: formattedDatePharmacySigned} (&quot;the Effective Date&quot;) between Fillable, 
-             LLC, d/b/a FillableRx, a/k/a Kindly Oblige With (KOW) (hereinafter referred to as &quot;KOW&quot;) on the one hand, and you, an enrolled pharmacy (hereinafter referred to as &quot;You&quot;, &quot;Your&quot;, or &quot;Enrolled Pharmacy&quot;, together with KOW, the &quot;Parties&quot;, each being a &quot;Party&quot;), on the other.</p>
+             LLC, d/b/a FillableRx, a/k/a Kindly Oblige With (KOW)&trade; (hereinafter referred to as &quot;KOW&quot;) on the one hand, and you, an enrolled pharmacy (hereinafter referred to as &quot;You&quot;, &quot;Your&quot;, or &quot;Enrolled Pharmacy&quot;, together with KOW, the &quot;Parties&quot;, each being a &quot;Party&quot;), on the other.</p>
         </div>
         <div className={styles.recitals}>
             <h3>RECITALS:</h3>
             <p>Whereas, KOW serves as an online referral service and prescription management
-                company, through www.KOWmeds.com, (the “Site”), that enables its users to locate pharmacies
-                in their area that carry certain medications in their inventory (the “Services”); and</p>
+                company, through www.KOWmeds.com, (the &quot;Site&quot;), that enables its users to locate pharmacies
+                in their area that carry certain medications in their inventory (the &quot;Services&quot;); and</p>
             <p> Whereas, Enrolled Pharmacy is a duly licensed pharmacy and/or pharmacy and
                 prescription services provider in the State of New York; and</p>
-            <p> Whereas, Enrolled Pharmacy desires to become part of and subscribe to KOW’s network
+            <p> Whereas, Enrolled Pharmacy desires to become part of and subscribe to KOW&apos;s network
                 of pharmacies and prescription holders to obtain the benefits thereof and, in return for which, is
                 willing to abide by the obligations, licenses, and fee agreements, which are more thoroughly set
                 forth below.</p>
@@ -37,8 +37,8 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
         <div className={styles.section1}>
             <h3>1. SUBSCRIPTION AND PRICING TERMS</h3>
             <p>a. As part of this subscription and in exchange and consideration for the agreed-upon
-                subscription fee payable to KOW (the “Fee”), Enrolled Pharmacy becomes, so long as this
-                Agreement is in full force and effect, part of KOW’s network of pharmacies and may utilize the
+                subscription fee payable to KOW (the &quot;Fee&quot;), Enrolled Pharmacy becomes, so long as this
+                Agreement is in full force and effect, part of KOW&apos;s network of pharmacies and may utilize the
                 Services. KOW in no way guarantees Enrolled Pharmacy a profit for use of its Services.</p>
             <p>b. The Enrolled Pharmacy is charged pursuant to the Fee Schedule, which is annexed hereto as
                 <ExhibitModal
@@ -61,7 +61,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 and incorporated herein by reference, which Fee Schedule was negotiated and agreed
                 to between the Parties for good and valuable consideration. For a specified term beginning on the
                 Effective Date and ending on Your receipt of the Termination and Fee Schedule Notice (as
-                hereinafter defined) (the “Initial Testing Period”), KOW will permit access to and enrollment in
+                hereinafter defined) (the &quot;Initial Testing Period&quot;), KOW will permit access to and enrollment in
                 its Services at the agreed upon monthly rate of ${isModal? enrollmentData["initial_rate"] : pharmacy.initial_rate} which shall be the Initial Rate. 
                 The Initial Rate represents a promotional rate based on the Enrolled Pharmacy&apos;s network 
                 selection at the time of enrollment and offered by KOW during KOW&apos;s Initial Testing Period. 
@@ -71,12 +71,12 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 <div className={styles.subtextb}>
                     <p>(i) the Initial Testing Period has ended; and</p>
                     <p>(ii) the Fee Schedule in the Agreement, will now be going into full force and effect (the
-                        “Termination and Fee Schedule Notice”).</p>
+                        &quot;Termination and Fee Schedule Notice&quot;).</p>
                 </div>
             <p>You will have ten (10) days from receipt of the Termination and Fee Schedule Notice to provide
                 KOW written notice to legal@KOWmeds.com, that You will be opting-out of and terminating
                 this Agreement (the period of time to respond being the “Opt-Out Noticing Period” and the
-                notice sent being the “Opt-Out Notice”). If You do not properly deliver and KOW does not
+                notice sent being the &quot;Opt-Out Notice&quot;). If You do not properly deliver and KOW does not
                 receive the Opt-Out Notice within the Opt-Out Notice Period, the Initial Rate will no longer be
                 in effect and Your network selection at the time of Your enrollment pursuant to the Fee Schedule 
                 annexed hereto as
@@ -117,11 +117,11 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 modification or amendment of billing instructions and/or if you cancel or wish to change the
                 notification method and/or address for our billing purposes.</p>
             <p>c. Either Party may terminate this Agreement for failure to comply with its terms, conditions, or
-                obligations upon thirty (30) days’ written notice to the other, non-terminating Party.
-                Additionally, either Party may terminate this Agreement for convenience upon ninety (90) days’
+                obligations upon thirty (30) days&apos; written notice to the other, non-terminating Party.
+                Additionally, either Party may terminate this Agreement for convenience upon ninety (90) days&apos;
                 written notice to the other, non-terminating Party. In the event the Enrolled Pharmacy wishes to
                 terminate this Agreement for convenience or if KOW terminates this Agreement due to Enrolled
-                Pharmacy’s failure to comply with the terms of the Agreement, it shall pay to KOW, as
+                Pharmacy&apos;s failure to comply with the terms of the Agreement, it shall pay to KOW, as
                 liquidated damages, an amount equal to six (6) months of the Fee. Lastly, either Party may
                 terminate this Agreement by giving written notice of the intent to terminate the Agreement no
                 more than one hundred twenty (120) and no less than thirty (30) days before the expiration of the
@@ -133,7 +133,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 termination of this Agreement. The provisions of this paragraph shall survive the termination of
                 this Agreement.</p>
             <p>d. Enrolled Pharmacy may not assign or transfer this Agreement, whatsoever, without the prior
-                written consent of KOW, which shall be in KOW’s sole and absolute discretion. Any such
+                written consent of KOW, which shall be in KOW&apos;s sole and absolute discretion. Any such
                 attempted assignment or transfer will be null and void. KOW may terminate this Agreement for
                 cause in the event of any such attempted assignment or transfer.</p>
             <p>e. By accepting this Agreement and purchasing this subscription, Enrolled Pharmacy represents
@@ -150,14 +150,14 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 to which Enrolled Pharmacy is bound, whether arising out of contract, operation of law, court
                 order, decree, or otherwise.</p>
             <p>You further represent and warrant that to the extent applicable, if any, and to the extent the
-                information which You disclose is identified as an individual’s protected health information
-                (“PHI”) as defined under the Health Insurance Portability and Accountability Act’s Privacy Law
-                (“HIPAA”), that You have full and express authority to disclose such information in connection
+                information which You disclose is identified as an individual&apos;s protected health information
+                (&quot;PHI&quot;) as defined under the Health Insurance Portability and Accountability Act&apos;s Privacy Law
+                (&quot;HIPAA&quot;), that You have full and express authority to disclose such information in connection
                 with access and use of the Services.</p>
             <p>f. The initial term of this Agreement and the corresponding subscription and/or license to utilize
                 the Services granted hereunder will be for a period of one (1) year from the Effective Date (the
-                “Initial Term”). This Agreement will automatically renew for successive one (1) year renewal
-                terms (each being a “Renewal Term”), unless the Agreement is terminated pursuant to its terms.
+                &quot;Initial Term&quot;). This Agreement will automatically renew for successive one (1) year renewal
+                terms (each being a &quot;Renewal Term&quot;), unless the Agreement is terminated pursuant to its terms.
                 Any annual increase in the Fee shall not exceed [7%] of the Fee paid during the immediately
                 preceding term, be it the Initial Term or any Renewal Term. Any proposed increase of the Fee
                 shall be delivered in accordance with the provisions of this Agreement.</p>
@@ -191,10 +191,10 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
             <h3>2. LICENSE GRANT AND TERMS</h3>
             <p>a. During either the Initial Term or any subsequent Renewal Term of this Agreement, but subject
                 to continuing and uninterrupted payment of the Fee, as set forth herein, and compliance with the
-                terms of use (‘Terms of Use”) and privacy policy (“Privacy Policy”), which are herein
+                terms of use (&quot;Terms of Use&quot;) and privacy policy (&quot;Privacy Policy&quot;), which are herein
                 incorporated and made a part hereof, and to the extent Enrolled Pharmacy becomes a user of
-                KOW’s Services as therein described, Enrolled Pharmacy will have a limited, non-exclusive,
-                revocable, non-transferrable, and non-sublicensable license to use and access to KOW’s
+                KOW&apos;s Services as therein described, Enrolled Pharmacy will have a limited, non-exclusive,
+                revocable, non-transferrable, and non-sublicensable license to use and access to KOW&apos;s
                 Services.</p>
             <p>b. KOW grants and Enrolled Pharmacy accepts a limited, non-exclusive, revocable, non-
                 transferable and non-sublicensable license for use solely in connection with enrollment and
@@ -204,10 +204,10 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 any rights in or to the Services.</p>
             <p>c. KOW, its affiliates, subsidiaries, if any, and licensors, if any, exclusively own all right, title
                 and interest in and to the Services, including all associated intellectual property rights
-                (hereinafter, the “KOW Brand Features”). You acknowledge that the Services and KOW Brand
+                (hereinafter, the &quot;KOW Brand Features&quot;). You acknowledge that the Services and KOW Brand
                 Features are protected by the laws of the United States and any and all applicable jurisdictions.
                 You agree not to remove, alter, damage, or obscure any copyright, trademark, service mark, any
-                other proprietary rights notice, or any notice which demonstrates KOW’s ownership of
+                other proprietary rights notice, or any notice which demonstrates KOW&apos;s ownership of
                 proprietary information, incorporated into or accompanying the Services. Neither this Agreement
                 nor Your use of the Services shall transfer any right, title or interest in the Services, or
                 intellectual property rights to You. KOW and its third-party licensors, if any, retain all
@@ -223,12 +223,12 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 Terms, and at all times after its termination, Enrolled Pharmacy and its employees and agents
                 shall maintain the confidentiality of this information and not sell, license, publish, display,
                 distribute, disclose or otherwise make available this information to any third party nor use such
-                proprietary information concerning the Services and Application Program Interfaces (“API”s) to
+                proprietary information concerning the Services and Application Program Interfaces (&quot;API&aquot;s) to
                 persons not an employee of Enrolled Pharmacy without the prior written consent of KOW. If
                 Enrolled Pharmacy breaches any of these terms:(i) this Agreement and the license granted to
                 Enrolled Pharmacy hereunder, automatically terminates without notice; (ii) the Enrolled
                 Pharmacy shall indemnify and hold KOW harmless from any and all claims, losses, damages,
-                fees, and costs, including attorney’s fees, KOW incurs as a result of the Enrolled Pharmacy’s
+                fees, and costs, including attorney&apos;s fees, KOW incurs as a result of the Enrolled Pharmacy&apos;s
                 breach of the provisions of this paragraph; and (iii) KOW shall have available to it all legal
                 remedies at law or equity, including injunctive relief. The provisions and obligations in this
                 paragraph shall survive the termination of this Agreement.</p>
@@ -240,7 +240,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 OR WRITTEN, EXPRESS OR IMPLIED. KOW SPECIFICALLY DISCLAIMS ANY
                 IMPLIED WARRANTIES, NON-INFRINGEMENT, TITLE, ACCURACY OF
                 INFORMATIONAL CONTENT. NO ORAL OR WRITTEN INFORMATION OR ADVICE
-                GIVEN BY KOW OR KOW’S AUTHORIZED REPRESENTATIVES SHALL CREATE A
+                GIVEN BY KOW OR KOW&apos;S AUTHORIZED REPRESENTATIVES SHALL CREATE A
                 WARRANTY. KOW DOES NOT REPRESENT THAT THE SERVICES WILL BE
                 OPERATIONAL AT ALL TIMES OR WILL BE FUNCTIONING PROPERLY WHEN YOU
                 OR OTHERS WISH TO ACCESS THE FUNCTIONALITY OF THE SERVICES. THE
@@ -269,7 +269,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 AND WARRANTIES, AND YOUR FAILURE TO COMPLY WITH YOUR OBLIGATIONS
                 UNDER ANY AND ALL LAWS, RULES OR REGULATIONS, AND APPLICABLE
                 GOVERNING AND REGULATORY BODIES, INCLUDING WITHOUT LIMITATION, THE
-                DRUG ENFORCEMENT ADMINISTRATION (“DEA”) . YOU AND THE COMPANY
+                DRUG ENFORCEMENT ADMINISTRATION (&quot;DEA&quot;) . YOU AND THE COMPANY
                 AGREE THAT THIS INDEMNIFICATION OBLIGATION CLAUSE SHALL BE
                 INTERPRETED TO PROVIDE THE COMPANY THE MAXIMUM AMOUNT OF
                 INDEMNIFICATION PERMITTED UNDER THE LAW OF THE APPLICABLE STATE.</p>
@@ -279,8 +279,8 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
             <p>KOW takes information security seriously. KOW in no way guarantees that its reasonable efforts
                 to prevent unauthorized third-party access to Your information will prevent every unauthorized
                 attempt to access, use, or disclosure of Your information, including information of others stored
-                and maintained by you, personal, protected health information (“PHI”), or otherwise. The terms
-                of KOW’s {<Link className={styles.linkPrivacy} href='/privacy-policy'>Privacy Policy</Link>} are incorporated herein by reference and made a part hereof.</p>
+                and maintained by you, personal, protected health information (&quot;PHI&quot;), or otherwise. The terms
+                of KOW&apos;s {<Link className={styles.linkPrivacy} href='/privacy-policy'>Privacy Policy</Link>} are incorporated herein by reference and made a part hereof.</p>
         </div>
         <div className={styles.section5}>
             <h3>5. GENERAL PROVISIONS</h3>
@@ -296,10 +296,10 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
             <p>c. This Agreement, including the annexed Exhibit(s), is the final, complete and exclusive
                 agreement between the Parties relating to the subject matter hereof, and supersedes any previous
                 communications, representations or agreements between the Parties, whether oral or written,
-                regarding transactions hereunder. Enrolled Pharmacy’s additional or different terms and
+                regarding transactions hereunder. Enrolled Pharmacy&apos;s additional or different terms and
                 conditions will not apply. This Agreement may not be changed except by an amendment signed
                 by an authorized representative of each party.</p>
-            <p>d. Because KOW’s granting of the Subscription Agreement to Enrolled Pharmacy is unique, and
+            <p>d. Because KOW&apos;s granting of the Subscription Agreement to Enrolled Pharmacy is unique, and
                 because Enrolled Pharmacy had access to and has or will become by virtue of this Agreement,
                 acquainted with the Proprietary Information of KOW, and because any breach by Enrolled
                 Pharmacy of any of the restrictive covenants contained in this Agreement would result in
@@ -311,7 +311,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
                 specific performance or other equitable relief, Enrolled Pharmacy will not assert or contend that
                 any of the provisions of this Agreement are unreasonable or otherwise unenforceable. In the
                 event of a dispute between the Parties, KOW as prevailing party, shall be entitled to collect
-                attorneys’ fees from Enrolled Pharmacy. In the event Enrolled Pharmacy breaches any of the
+                attorneys&apos; fees from Enrolled Pharmacy. In the event Enrolled Pharmacy breaches any of the
                 confidentiality provisions of section 2, it shall pay to KOW, as liquidated damages, an amount
                 equal to five hundred thousand dollars and no cents ($500,000.00).</p>
             <p>e. Except as otherwise provided in this Agreement, in the event any provision of this Agreement
@@ -326,7 +326,7 @@ function PharmacySubscriptionText({ isModal = false, pharmacy, enrollmentData })
         <div className={styles.signatures}>
             <h3>[SIGNATURE PAGE FOLLOWS]</h3>
             <p>IN WITNESS WHEREOF, the Parties have duly executed this Agreement as of the date
-                first above written. By signing below, You acknowledge that you have read the Company’s
+                first above written. By signing below, You acknowledge that you have read the Company&apos;s
                 Privacy Policy and agree to the terms contained therein.</p>
             <div className={styles.subtextSig}>
                 <h2>FILLABLE, LLC A/K/A KOW:</h2>

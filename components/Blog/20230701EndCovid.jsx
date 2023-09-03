@@ -45,7 +45,7 @@ function EndCovidArticle(props) {
             <h2>What Can Patients Do?</h2>
             <p>As the COVID-19 state of emergency ends, patients can take several proactive steps to navigate these changes. Firstly, patients should stay informed about updates from their healthcare providers, insurers, and government agencies regarding policy changes and healthcare benefits. Understanding any modifications to telemedicine services and insurance coverage will help patients plan their future healthcare needs effectively.</p>
             <p>Patients can also reach out to their healthcare providers to discuss alternative options if in-person visits become challenging. Exploring available resources and support services, such as community health clinics and telehealth platforms, can provide valuable alternatives for patients seeking medical care.</p>
-            <p>Individuals enrolled in Medicaid should also remain proactive in seeking information and guidance from local resources to ensure they have continued access to their benefits.  How patients will be affected by changes to Medicaid will vary by state so it’s important to understand what next steps can be taken when their Medicaid policies change.</p>
+            <p>Individuals enrolled in Medicaid should also remain proactive in seeking information and guidance from local resources to ensure they have continued access to their benefits.  How patients will be affected by changes to Medicaid will vary by state so it&apos;s important to understand what next steps can be taken when their Medicaid policies change.</p>
         </div>
         <div className={styles.section}>
             <h2>In summary,</h2>

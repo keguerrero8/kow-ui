@@ -46,7 +46,7 @@ function NurseStrikeArticle(props) {
         </div>
         <div className={styles.section}>
             <h2>Patient Empowerment:</h2>
-            <p>Although most persons who are not in a facility or hospital aren’t affected, patients can still take proactive steps to address their situation and prevent any complications. It is crucial to stay informed by contacting healthcare providers and hospitals for updates on services and potential disruptions. Patients should discuss any concerns or explore alternative care arrangements with healthcare professionals to ensure continuity of care.</p>
+            <p>Although most persons who are not in a facility or hospital aren&apos;t affected, patients can still take proactive steps to address their situation and prevent any complications. It is crucial to stay informed by contacting healthcare providers and hospitals for updates on services and potential disruptions. Patients should discuss any concerns or explore alternative care arrangements with healthcare professionals to ensure continuity of care.</p>
         </div>
         <div className={styles.section}>
             <h2>In summary,</h2>

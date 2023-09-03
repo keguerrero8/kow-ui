@@ -443,7 +443,7 @@ export default function RequestForm({ medications }) {
                         required
                         onChange={handleChange}
                         />
-                    <p>If your card does not have a RxGroup or GRP, type "N/A".</p>
+                    <p>If your card does not have a RxGroup or GRP, type &quot;N/A&quot;.</p>
                 </form>
             ) : null}
             <form className={styles.sectionForm}>

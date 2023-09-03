@@ -60,11 +60,11 @@ export default function SpecialtyDrugsArticle(props) {
         </div>
         <div className={styles.section}>
             <h2>Can Kindly Oblige With (KOW)&trade; Help Me Find My Specialty Drug?</h2>
-            <p>Kindly Oblige With (KOW)&trade;’s Fillable search tool will notify you if the medication you selected is considered a Specialty 
-                Drug.  Most of these medications aren’t available at community pharmacies because their insurance 
-                agreements won’t cover the high cost of ordering these drugs.  However, there are some exceptions; 
+            <p>Kindly Oblige With (KOW)&trade;&apos;s Fillable search tool will notify you if the medication you selected is considered a Specialty 
+                Drug.  Most of these medications aren&apos;t available at community pharmacies because their insurance 
+                agreements won&apos;t cover the high cost of ordering these drugs.  However, there are some exceptions; 
                 there are some Specialty Drugs that you can pick up or have delivered by your local pharmacy.  
-                Whether you can or cannot is entirely dependent on the medication and your insurance, so everyone’s 
+                Whether you can or cannot is entirely dependent on the medication and your insurance, so everyone&apos;s 
                 situation is different.</p>  
             <p>You can still continue to request the Specialty Drug in the Fillable search tool, however, the 
                 pharmacies that have the medication may be very few.  If your results are very limited, Kindly Oblige With (KOW)&trade; has 

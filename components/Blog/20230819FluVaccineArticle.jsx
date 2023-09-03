@@ -23,7 +23,7 @@ function FluVaccineArticle(props) {
             </div>
         </div>
         <div className={styles.section}>
-            <p>As flu season approaches this fall, staying informed about the benefits of receiving an annual flu vaccine is crucial for maintaining your health and well-being. While considerable attention has been on staying up-to-date with COVID vaccines in recent years, the risk posed by the flu is still a concern and shouldn’t be ignored.</p>
+            <p>As flu season approaches this fall, staying informed about the benefits of receiving an annual flu vaccine is crucial for maintaining your health and well-being. While considerable attention has been on staying up-to-date with COVID vaccines in recent years, the risk posed by the flu is still a concern and shouldn&apos;t be ignored.</p>
         </div>
         <div className={styles.section}>
             <h2>The Importance of Yearly Flu Shots</h2>
@@ -45,7 +45,7 @@ function FluVaccineArticle(props) {
         <div className={styles.section}>
             <h2>Find Reliable Resources for More Information</h2>
             <p>To learn more about the flu vaccine, its benefits, and how to receive it, several reliable resources are available. The CDC provides comprehensive information about the flu vaccine, including recommended schedules and guidelines for different populations. Additionally, healthcare providers, pharmacies, and official health department websites offer valuable information and vaccine availability updates.</p>
-            <p>Here at KOW, we always have a pharmacist available to answer any questions you have about the flu vaccine.  Our team will also work with you to find a KOW pharmacy that has the vaccine you desire so you can protect yourself when it’s most convenient for you! You can use our {<Link className={styles.link} href="/contact-us"> Contact Us </Link>} form to reach our team for assistance.</p>
+            <p>Here at KOW, we always have a pharmacist available to answer any questions you have about the flu vaccine.  Our team will also work with you to find a KOW pharmacy that has the vaccine you desire so you can protect yourself when it&apos;s most convenient for you! You can use our {<Link className={styles.link} href="/contact-us"> Contact Us </Link>} form to reach our team for assistance.</p>
         </div>
         <div className={styles.section}>
             <h2>In summary,</h2>

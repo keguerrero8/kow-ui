@@ -30,10 +30,10 @@ function LeqembiArticle(props) {
         </div>
         <div className={styles.section}>
             <h2>Potential for More Medications to Follow</h2>
-            <p>Leqembi&apos;s approval opens the door for other potential Alzheimer&apos;s medications in the pipeline. Researchers and pharmaceutical companies are actively exploring various treatment approaches, including targeting tau protein tangles and inflammation. According to experts, more promising drugs are currently undergoing clinical trials and may receive approval in the near future. For example, Eli Lilly has also been conducting their clinical studies and trials for their drug donanemab to show it can also slow worsening Alzheimer’s. This bodes well for patients and families, providing hope for additional options to combat this devastating disease.</p>
+            <p>Leqembi&apos;s approval opens the door for other potential Alzheimer&apos;s medications in the pipeline. Researchers and pharmaceutical companies are actively exploring various treatment approaches, including targeting tau protein tangles and inflammation. According to experts, more promising drugs are currently undergoing clinical trials and may receive approval in the near future. For example, Eli Lilly has also been conducting their clinical studies and trials for their drug donanemab to show it can also slow worsening Alzheimer&apos;s. This bodes well for patients and families, providing hope for additional options to combat this devastating disease.</p>
         </div>
         <div className={styles.section}>
-            <h2>Leqembi’s Role in Alzheimer’s Care</h2>
+            <h2>Leqembi&apos;s Role in Alzheimer&apos;s Care</h2>
             <p>For patients living with Alzheimer&apos;s, Leqembi offers the potential to slow disease progression and preserve cognitive function. By targeting amyloid plaques, the drug aims to reduce their accumulation in the brain, thereby preventing further damage and cognitive decline. Clinical trials have shown promising results, demonstrating that Leqembi can help patients maintain their cognitive abilities for longer periods. This translates to enhanced independence, improved quality of life, and reduced burden on caregivers.</p>
         </div>
         <div className={styles.section}>
