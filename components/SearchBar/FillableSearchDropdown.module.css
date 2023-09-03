@@ -1,5 +1,5 @@
     .inputContainer {
-        width: 75vw;
+        width: 60vw;
     }
 
     .textInput {
@@ -19,4 +19,10 @@
         border-radius: 0.75rem;
         padding-left: 2rem;
         color: var(--brand-primaryblue);
+    }
+
+    @media screen and (max-width:1020px) {
+        .inputContainer {
+            width: 100%;
+        }
     }

@@ -61,7 +61,7 @@ export default function DrugShortagesArticle(props) {
                 inventory issues or to prevent a delay in your treatment, using another pharmacy can be a 
                 resourceful solution.  If you need to speak to a pharmacist, one of our KOW pharmacists can contact 
                 you and help answer any questions you may have.  Just leave a message with us in our 
-                {<Link className='link' href="/contact-us"> Contact Us </Link>} form.</p>
+                {<Link className={styles.link} href="/contact-us"> Contact Us </Link>} form.</p>
         </div>
         <div className={styles.section}>
             <h2>In summary,</h2>

@@ -39,7 +39,7 @@ export default function Footer() {
                             </p>
                             {!isAuthenticated? (
                                 <p className={styles.footerTermsText}>
-                                    <Link className={styles.navLink} href="/login">For Admins</Link>
+                                    <Link className={styles.navLink} href="/login">Admin Login</Link>
                                 </p>
                             ) : null}
                             {/*<p className={styles.footerTermsText}>

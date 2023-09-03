@@ -1,0 +1,24 @@
+.checkboxFont {
+  font-size: var(--font-small);
+}
+
+.checkbox {
+  margin-right: 0.75rem;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: 900;
+  color: var(--brand-darkblue);
+  font-size: var(--font-small);
+}
+
+@media screen and (max-width: 660px) {
+  .checkboxFont {
+    font-size: var(--mobile-small);
+  }
+
+  .link {
+    font-size: var(--mobile-small);
+  }
+}

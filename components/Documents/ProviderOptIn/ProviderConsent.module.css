@@ -47,6 +47,11 @@
     align-self: center;
     max-width: 720px;
 }
+.section2 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
+}
 .section2 > p {
     font-size: var(--font-xsmall);
     margin-bottom: 12px;
@@ -55,6 +60,11 @@
 .section3 {
     align-self: center;
     max-width: 720px;
+}
+.section3 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
 }
 .section3 > p {
     font-size: var(--font-xsmall);
@@ -65,6 +75,11 @@
     align-self: center;
     max-width: 720px;
     width: 100%;
+}
+.section4 > h2 {
+    font-size: var(--font-small);
+    font-weight: 900;
+    margin-bottom: 12px;
 }
 .section4 > p {
     font-size: var(--font-xsmall);
