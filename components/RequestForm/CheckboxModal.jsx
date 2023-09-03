@@ -24,7 +24,7 @@ const CheckboxModal = ({ checkboxText, linkText, modalContent1, modalContent2 })
 
   return (
     <div>
-        <label>
+        <label className={styles.checkboxFont}>
             <input 
                 className={styles.checkbox} 
                 type="checkbox" 

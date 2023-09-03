@@ -50,7 +50,6 @@
     border-radius: 2px;
     margin-right: 20px;
     outline: none;
-    border: none;
     border: 1px solid var(--brand-darkgrey);
     margin-top: 8px;
     font-size: var(--font-small);

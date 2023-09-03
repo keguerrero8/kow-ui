@@ -9,7 +9,6 @@ const TermsOnlyCheckbox = () => {
         checkboxText="I agree to KOW's "
         linkText='Terms and Conditions'
         modalContent1={<TermsText/>}
-        modalContent2={<ProviderOptInText/>}
     />
   );
 };

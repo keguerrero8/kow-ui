@@ -1,0 +1,276 @@
+.background {
+    background-color: var(--brand-grey);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem 3rem;
+    max-width: 660px;
+}
+
+.formInfo {
+    display: flex;
+    flex-direction: column;
+}
+.formInfo > h2 {
+    margin: 2rem 0 1rem;
+    font-size: var(--font-medium);
+}
+.formInfo > p {
+    font-size: var(--font-xsmall);
+    font-style: italic;
+    font-weight: 300;
+    margin-left: 3rem;
+}
+
+.iconInfo {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+.iconInfo > h3 {
+    margin-left: 1rem;
+    font-size: var(--font-small);
+    font-weight: 100;
+}
+
+.icon {
+    align-self: center;
+    font-size: 2rem;
+}
+
+.sectionRadio {
+    margin-top: 2rem;
+}
+.sectionRadio > p {
+    font-size: var(--font-xsmall);
+    font-weight: 100;
+    font-style: italic;
+    margin: 0.5rem 3rem;
+}
+
+.radioButtonsContainer {
+    display: flex;
+    flex-direction: row;
+    padding-left: 2rem;
+}
+
+.sectionHeader {
+    display: flex;
+    flex-direction: row;
+}
+.sectionHeader > h3 {
+    font-size: var(--font-small);
+    margin: 0 0 0.5rem 1rem;
+}
+
+.radioOption {
+    display: flex;
+    flex-direction: row;
+    margin: 0 1rem;
+}
+.radioOption > h3 {
+    margin-left: 1rem;
+    font-size: var(--font-small);
+    font-weight: 100;
+}
+
+.radioIcon {
+    align-self: center;
+    font-size: 1.25rem;
+}
+
+.linkContainer {
+    margin: 0.5rem 0;
+}
+
+.helpLink {
+    text-decoration: none;
+    color: var(--brand-black);
+    font-weight: 900;
+    font-size: var(--font-small);
+}
+.helpLink:hover {
+    color: var(--brand-primaryblue);
+}
+
+.sectionForm {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.sectionForm > h3 {
+    font-size: var(--font-small);
+    font-weight: 100;
+    margin: 0.5rem 0 0.25rem;
+}
+.sectionForm > p {
+    font-size: var(--font-xsmall);
+    font-weight: 100;
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+.iconToggle {
+    border: none;
+}
+.iconToggle:hover {
+    cursor: pointer;
+}
+
+.inputField {
+    width: 100%;
+    height: fit-content;
+    border-radius: 2px;
+    border: 1px solid var(--brand-darkgrey);
+    padding: 6px 12px;
+    font-size: var(--font-small);
+    overflow-x: hidden;
+}
+.inputField::placeholder {
+    color: var(--brand-darkergrey);
+}
+
+.optional {
+    align-self: flex-end;
+}
+
+.inputDescription {
+    width: 100%;
+    min-height: 180px;
+    height: fit-content;
+    border-radius: 2px;
+    border: 1px solid var(--brand-darkgrey);
+    padding: 6px 12px;
+    font-size: var(--font-small);
+    overflow-x: hidden;
+}
+.inputDescription::placeholder {
+    color: var(--brand-darkergrey);
+}
+
+.agreements {
+    margin: 2rem 3rem;
+}
+
+.checkbox {
+    margin: 0.5rem 0;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.submitButton {
+    border-radius: 1rem;
+    margin-right: 2rem;
+    padding: 0.5rem 2rem;
+    font-size: var(--font-medium);
+}
+
+.resetButton {
+    border: none;
+    text-decoration: underline;
+    font-size: var(--font-small);
+    color: var(--brand-darkergrey);
+}
+.resetButton:hover {
+    cursor: pointer;
+    color: var(--brand-darkblue);
+}
+
+@media screen and (max-width: 960px) {
+    .container {
+        padding-top: 6rem;
+    }
+
+    .formInfo > h2 {
+        font-size: var(--mobile-medium);
+    }
+    .formInfo > p {
+        font-size: var(--mobile-xsmall);
+    }
+
+    .radioButtonsContainer {
+        flex-direction: column;
+    }
+
+    .iconInfo > h3 {
+        font-size: var(--mobile-small);
+    }
+
+    .sectionRadio > p {
+        font-size: var(--mobile-xsmall);
+    }
+
+    .sectionHeader > h3 {
+        font-size: var(--mobile-small);
+    }
+
+    .radioOption {
+        margin-top: 0.25rem;
+    }
+    .radioOption > h3 {
+        font-size: var(--mobile-small);
+    }
+
+    .helpLink {
+        font-size: var(--mobile-small);
+    }
+
+    .sectionForm > h3 {
+        font-size: var(--mobile-small);
+    }
+    .sectionForm > p {
+        font-size: var(--mobile-xsmall);
+    }
+
+    .inputField {
+        font-size: var(--mobile-small);
+    }
+
+    .inputDescription {
+        font-size: var(--mobile-small);
+    }
+
+    .agreements {
+        margin: 2rem 3rem;
+    }
+
+    .buttonContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .submitButton {
+        font-size: var(--mobile-medium);
+        margin: 0 0 1rem 0;
+        width: 80%;
+    }
+
+    .resetButton {
+        font-size: var(--mobile-small);
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .agreements {
+        margin: 1rem 0 2rem;
+    }
+    
+    .submitButton {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .submitButton {
+        font-size: var(--mobile-small);
+    }
+}

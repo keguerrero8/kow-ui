@@ -23,9 +23,9 @@
   .helpLink {
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-top: 3rem;
   }
-
   .helpLink > p {
     font-size: var(--font-medium);
     color: var(--brand-white);
@@ -34,7 +34,7 @@
   
   .contactUs {
     color: var(--brand-white);
-    font-size: var(--font-medium);
+    font-size: var(--font-large);
     font-weight: 900;
     text-decoration: none;
     margin-left: 1rem;
@@ -82,17 +82,22 @@
 
     .helpLink {
       flex-direction: column;
+      align-items: flex-start;
       margin-bottom: 1.5rem;
       margin-top: 0;
     }
+    .helpLink > p {
+      font-size: var(--mobile-small);
+    }
 
     .contactUs {
-      font-size: var(--mobile-medium);
+      font-size: var(--mobile-large);
       margin-top: 1rem;
       margin-left: 0;
     }
 
     .footerTermsText {
+      font-size: var(--mobile-xsmall);
       text-align: left;
     }
   
@@ -102,7 +107,7 @@
     }
 
     .linkColumn {
-      margin: 0 1.5rem 0 0 ;
+      margin: 0 2rem 0 0 ;
     }
 
     .socialMedia {
@@ -111,5 +116,9 @@
       flex-direction: row;
       justify-content: center;
       margin: 0;
+    }
+
+    .websiteRights {
+      font-size: var(--mobile-xsmall);
     }
   }
