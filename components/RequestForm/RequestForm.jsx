@@ -5,6 +5,7 @@ import MedNameRequestInput from '@/components/MedNameRequestInput/MedNameRequest
 import MedStrengthRequestInput from '@/components/MedStrengthRequestInput/MedStrengthRequestInput.jsx'
 import RequestAgreementModal from '@/components/RequestAgreementModal/RequestAgreementModal'
 import { styles } from './RequestForm-styles'
+import messagingService from '@/lib/messagingService'
 import { useUser } from '@/context/user'
 
 import { 
@@ -118,45 +119,23 @@ export default function RequestForm({ medications }) {
     }
   }
 
-  // can always ask chatGPT to refactor this logic but will need to take time to make
-  // sure its correct
-  function handleSubmit (e) {
+  async function handleSubmit (e) {
     e.preventDefault()
     const payload = {
         ...requestData, 
         phone_number: "+1" + requestData["phone_number"], 
         isAdmin: isAuthenticated
     }
+    
+    const response = await messagingService.createRequest(payload)
+    if (!response.error) {
+        setRequestStatus(["Request successfully sent!"])
+        setDisabled(false)
+    } else {
+        const errors = Object.entries(response.error).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
+        setRequestStatus(errors)
+    }
 
-    fetch(`${process.env.NEXT_PUBLIC_DJANGO_API_URL}/core/requests`, {
-        method: "POST",
-        headers: { 
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload)
-    })
-    .then(r => {
-        if (r.ok) {
-            r.json().then(res => {
-                if (res.error) {
-                    setRequestStatus([res.error])
-                } else {
-                    setRequestStatus(["Request successfully sent!"])
-                    setDisabled(false)
-                }
-            })
-        }
-        else {
-            r.json().then(res => {
-                const errors = Object.entries(res.errors).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
-                if (res.errors && r.status === 400) {
-                    setRequestStatus(errors)
-                } else {
-                    setRequestStatus([res.errors])
-                }
-            })
-        }
-    })
   }
 
     function handleHelp() {
