@@ -1,28 +1,16 @@
-.buttonStyle {
-    background-color: var(--brand-white);
-    border-width: 0;
-    font-weight: 900;
-    font-size: var(--font-xsmall);
-    margin: 0 4px;
-    cursor: pointer;
-}
-.buttonStyle:hover {
-    color: var(--brand-primaryblue);
-}
-
 .modal {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
 .modalContent {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: fit-content;
     border: 1px solid var(--brand-grey);
     padding: 0 12px 12px;
-    margin: 6px
 }
 .modalContent > h2 {
     font-size: var(--font-small);
@@ -42,69 +30,77 @@
     align-self: flex-end;
     font-size: 20px;
     cursor: pointer;
+    margin-bottom: -1rem;
 }
 
 .feeFreq {
     display: flex;
     flex-direction: row;
-    width: 30vw;
+    width: fit-content;
     min-width: 300px;
     justify-content: space-between;
 }
+.feeFreqRow {
+    display: none;
+}
 
-.tier {
+.column {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 3rem;
 }
-.tier > h3 {
+.column > h3 {
     font-size: var(--font-xsmall);
     font-weight: 900;
     text-decoration: underline;
-    text-align: center;
-    margin-bottom: 4px;
+    text-align: start;
+    margin-bottom: 0.25rem;
+    width: 100%;
 }
-.tier > p {
+.column > p {
     font-size: var(--font-xsmall);
     font-weight: 100;
     text-decoration: none;
-    text-align: center;
+    text-align: start;
+    width: 100%;
 }
 
-.fee {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.fee > h3 {
-    font-size: var(--font-xsmall);
-    font-weight: 900;
-    text-decoration: underline;
-    text-align: center;
-    margin-bottom: 4px;
-}
-.fee > p {
-    font-size: var(--font-xsmall);
-    font-weight: 100;
-    text-decoration: none;
-    text-align: center;
-}
+@media screen and (max-width: 760px) {
+    .modal {
+        width: 100%;
+    }
 
-.freq {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.freq > h3 {
-    font-size: var(--font-xsmall);
-    font-weight: 900;
-    text-decoration: underline;
-    margin-bottom: 4px;
-    text-align: center;
-}
-.freq > p {
-    font-size: var(--font-xsmall);
-    font-weight: 100;
-    text-decoration: none;
-    text-align: center;
-}
+    .modalContent {
+        padding: 0 1rem 1rem;
+    }
+    .modalContent > h2 {
+        font-size: var(--mobile-small);
+    }
+    .modalContent > h3 {
+        font-size: var(--mobile-xsmall);
+    }
+
+    .feeFreq {
+        display: none;
+    }
+
+    .feeFreqRow {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+     
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
+    .row > h3 {
+        font-size: var(--mobile-xsmall);
+    }
+    .row > p {
+        font-size: var(--mobile-xsmall);
+    }
+}   

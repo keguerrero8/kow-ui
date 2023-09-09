@@ -1,9 +1,25 @@
+import { useState } from 'react';
 import Link from 'next/link'
 import styles from './Terms.module.css';
 
 import ExhibitModal from '@/components/Documents/ExhibitModal/ExhibitModal.jsx'
 
 export default function TermsText({ isModal = false }) {
+    const [isModalOneOpen, setIsModalOneOpen] = useState(false);
+    const openModalOne = () => {
+        setIsModalOneOpen(true);
+    };
+    const closeModalOne = () => {
+        setIsModalOneOpen(false);
+    };
+    
+    const [isModalTwoOpen, setIsModalTwoOpen] = useState(false);
+    const openModalTwo = () => {
+      setIsModalTwoOpen(true);
+    };
+    const closeModalTwo = () => {
+      setIsModalTwoOpen(false);
+    };
 
     return (
         <div className={styles.bodyText}>
@@ -231,27 +247,31 @@ export default function TermsText({ isModal = false }) {
                 other actions that may be taken at law or equity.</p>
             <h3>Fee Schedule and Pricing Terms</h3>
             <p>Enrolled Pharmacy. You are charged pursuant to the Fee Schedule, which is annexed hereto as
-                <ExhibitModal
-                    modalName=" Exhibit A "
-                    title="Exhibit A"
-                    subtitle="Fee Schedule"
-                    tier1="Local Community"
-                    amount1="30"
-                    frequency1="Monthly"
-                    tier2="Expanded Delivery"
-                    amount2="50"
-                    frequency2="Monthly"
-                    tier3="DME Limited"
-                    amount3="60"
-                    frequency3="Monthly"
-                    tier4="Specialty"
-                    amount4="400"
-                    frequency4="Monthly"
-                />
+                {' '}<span className={styles.modalTrigger} onClick={openModalOne}>
+                    Exhibit A
+                </span>{' '}
                 and incorporated herein by reference, which Fee Schedule was negotiated and agreed
                 to between the Parties for good and valuable consideration pursuant to the terms of the
                 subscription agreement (&quot;Subscription Agreement&quot;) entered into by and between You and KOW,
                 which is incorporated herein by reference.</p>
+                {isModalOneOpen && (
+                    <div className={styles.modalShow}>
+                        <ExhibitModal
+                            title="Exhibit A"
+                            onClick={closeModalOne}
+                            subtitle="Fee Schedule"
+                            tier1="Single Rx Requests"
+                            amount1="0.25 per request"
+                            frequency1="Billed Monthly"
+                            tier2="Batch Rx Requests"
+                            amount2="1 per request"
+                            frequency2="Billed Monthly"
+                            tier3="Compound Requests"
+                            amount3="3 per request"
+                            frequency3="Billed Monthly"
+                        />
+                    </div>
+                )}
             <p>Pursuant to the Subscription Agreement, for a specified term beginning on the Effective Date of 
                 the Subscription Agreement and ending on Your receipt of the Termination and Fee Schedule 
                 Notice (as therein defined) (the &quot;Initial Testing Period&quot;), KOW will permit access to and 
@@ -272,28 +292,32 @@ export default function TermsText({ isModal = false }) {
                 Out Noticing Period&quot; and the notice sent being the &quot;Opt-Out Notice&quot;). If You do not properly
                 deliver and KOW does not receive the Opt-Out Notice within the Opt-Out Notice Period, the
                 Initial Rate will no longer be in effect and the Fee Schedule annexed hereto as
-                <ExhibitModal
-                    modalName=" Exhibit A "
-                    title="Exhibit A"
-                    subtitle="Fee Schedule"
-                    tier1="Local Community"
-                    amount1="30"
-                    frequency1="Monthly"
-                    tier2="Expanded Delivery"
-                    amount2="50"
-                    frequency2="Monthly"
-                    tier3="DME Limited"
-                    amount3="60"
-                    frequency3="Monthly"
-                    tier4="Specialty"
-                    amount4="400"
-                    frequency4="Monthly"
-                />
+                {' '}<span className={styles.modalTrigger} onClick={openModalTwo}>
+                    Exhibit A
+                </span>{' '}
                 and additionally annexed to the Subscription Agreement as Exhibit A, which are one and the same,
                 (collectively, the &quot;Fee Schedule&quot;), shall immediately become operative. Any subsequent fees
                 that become due and owing, by way of Your subscription, or otherwise, shall be renewed
                 automatically on an annual basis in accordance with the terms in the Fee Schedule, this
                 Agreement and the Subscription Agreement.</p>
+                {isModalTwoOpen && (
+                    <div className={styles.modalShow}>
+                        <ExhibitModal
+                            title="Exhibit A"
+                            onClick={closeModalTwo}
+                            subtitle="Fee Schedule"
+                            tier1="Single Rx Requests"
+                            amount1="0.25 per request"
+                            frequency1="Billed Monthly"
+                            tier2="Batch Rx Requests"
+                            amount2="1 per request"
+                            frequency2="Billed Monthly"
+                            tier3="Compound Requests"
+                            amount3="3 per request"
+                            frequency3="Billed Monthly"
+                        />
+                    </div>
+                )}
             <p>KOW shall have the right (but not the obligation) to amend or modify the Fee Schedule, from
                 time to time, in its sole yet reasonable discretion. KOW shall provide You thirty (30) days&apos;
                 written notice of any such amendment or modification. Upon receipt of any such notice, You

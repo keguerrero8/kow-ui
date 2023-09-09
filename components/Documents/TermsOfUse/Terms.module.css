@@ -60,3 +60,16 @@
     margin-bottom: 12px;
     text-align: start;
 }
+
+.modalShow {
+    display: flex;
+    justify-content: center;
+}
+
+.modalTrigger {
+    font-weight: 900;
+}
+.modalTrigger:hover {
+    cursor: pointer;
+    color: var(--brand-primaryblue);
+}
