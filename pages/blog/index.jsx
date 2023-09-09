@@ -18,6 +18,7 @@ import OtcBirthControlArticle from '@/components/Blog/20230715OtcBirthControl';
 import LeqembiArticle from '@/components/Blog/20230722Leqembi';
 import SunVitaminArticle from '@/components/Blog/20230729SunVitamin';
 import MentalAppsArticle from '@/components/Blog/20230805MentalAppsArticle';
+import FluVaccineArticle from '@/components/Blog/20230819FluVaccineArticle';
 
 export default function BlogGrid() {
 

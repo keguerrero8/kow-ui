@@ -10,9 +10,7 @@ import image1 from "../../public/images/how-img-one-v3.jpg"
 import image2 from "../../public/images/how-img-two-v3.jpg"
 import image3 from "../../public/images/how-img-three-v3.jpg"
 
-import tutorialvideo from "../../public/videos/tutorial.mp4"
-
-/**import tutorial from "../../public/videos/tutorial.mp4"**/
+import tutorialvideo from "../../public/videos/tutorialv3.mp4"
 
 function HowSection() {
     return (
