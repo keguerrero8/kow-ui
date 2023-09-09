@@ -55,7 +55,7 @@
 
 .radioButtonsContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-left: 2rem;
 }
 
@@ -71,7 +71,7 @@
 .radioOption {
     display: flex;
     flex-direction: row;
-    margin: 0 1rem;
+    margin-top: 0.5rem;
 }
 .radioOption > h3 {
     margin-left: 1rem;
@@ -195,10 +195,6 @@
     }
     .formInfo > p {
         font-size: var(--mobile-xsmall);
-    }
-
-    .radioButtonsContainer {
-        flex-direction: column;
     }
 
     .iconInfo > h3 {
