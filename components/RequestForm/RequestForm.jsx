@@ -5,6 +5,7 @@ import RequestFormInput from '@/components/RequestFormInput/RequestFormInput.jsx
 import MedNameRequestInput from '@/components/MedNameRequestInput/MedNameRequestInput.jsx'
 import MedStrengthRequestInput from '@/components/MedStrengthRequestInput/MedStrengthRequestInput.jsx'
 import RequestAgreementModal from '@/components/RequestAgreementModal/RequestAgreementModal'
+<<<<<<< HEAD
 import PrivacyCheckbox from './PrivacyCheckbox'
 import ProviderTermsCheckbox from './ProviderTermsCheckbox'
 import TermsOnlyCheckbox from './TermsOnlyCheckbox.jsx'
@@ -12,6 +13,9 @@ import TermsOnlyCheckbox from './TermsOnlyCheckbox.jsx'
 import styles from './RequestForm.module.css'
 
 // import { styles } from './RequestForm-styles'
+=======
+import { styles } from './RequestForm-styles'
+>>>>>>> efa9a31c30b58717ba1fdcdb270297933b626e6e
 import messagingService from '@/lib/messagingService'
 import { useUser } from '@/context/user'
 
@@ -188,6 +192,11 @@ export default function RequestForm({ medications }) {
     }
 
   }
+
+    function handleHelp() {
+        setShowHelp(!showHelp);
+    }
+
 
   return (
     <div className={styles.background}>
