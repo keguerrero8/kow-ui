@@ -39,7 +39,7 @@ export default function RequestForm({ medications }) {
   const [medication, setMedication] = useState({})
   const [insuranceValue, setInsuranceValue] = useState("insurance")
   const [status, setRequestStatus] = useState([])
-  const [isDisabled, setDisabled] = useState(true)
+  const [isRequestSuccessful, setisRequestSuccessful] = useState(false)
   const [searchValue, setSearchValue] = useState("")
   const [requestData, setRequestData] = useState(defaultRequestData)
   const [userType, setUserType] = useState("")
@@ -99,7 +99,7 @@ export default function RequestForm({ medications }) {
   function handleClear () {
     setRequestData(defaultRequestData)
     setInsuranceValue("insurance")
-    setDisabled(true)
+    setisRequestSuccessful(false)
     setRequestStatus([])
     setMedication({})
     setSearchValue("")
@@ -147,7 +147,7 @@ export default function RequestForm({ medications }) {
     const response = await messagingService.createRequest(payload)
     if (!response.error) {
         setRequestStatus(["Request successfully sent!"])
-        setDisabled(false)
+        setisRequestSuccessful(true)
     } else {
         const errors = Object.entries(response.error).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
         setRequestStatus(errors)
@@ -155,6 +155,7 @@ export default function RequestForm({ medications }) {
 
   }
 
+  const isSubmitButtonDisabled = isAuthenticated? false : (isRequestSuccessful || (!isPrivacyAcknowledged || !isOptInAcknowledged))
 
   return (
     <div className={styles.background}>
@@ -378,10 +379,10 @@ export default function RequestForm({ medications }) {
                     <p key={index} className={status[0] === "Request successfully sent!"? `${styles.statusSuccess}` : `${styles.statusFail}`}>{e}</p>)}
             </div>
             <div className={styles.buttonContainer}>
-                <button type='submit' className={styles.submitButton} disabled={isAuthenticated? false : (!isDisabled || (!isPrivacyAcknowledged || !isOptInAcknowledged))}>
+                <button type='submit' disabled={isSubmitButtonDisabled} className={isSubmitButtonDisabled? `${styles.submitButtonDisabled}` : `${styles.submitButtonEnabled}`}>
                     Submit Request
                 </button>
-                <button className={styles.resetButton} onClick={handleClear}>
+                <button type='button' className={styles.resetButton} onClick={handleClear}>
                     Reset Request
                 </button>
             </div>
