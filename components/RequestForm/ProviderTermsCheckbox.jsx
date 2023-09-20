@@ -2,7 +2,7 @@ import CheckboxModal from './CheckboxModal';
 import TermsText from '../Documents/TermsOfUse/TermsText';
 import ProviderOptInText from '../Documents/ProviderOptIn/ProviderOptInText';
 
-const ProviderTermsCheckbox = () => {
+const ProviderTermsCheckbox = ({ setisOptInAcknowledged, isOptInAcknowledged }) => {
 
   return (
     <CheckboxModal
@@ -10,6 +10,8 @@ const ProviderTermsCheckbox = () => {
         linkText='Terms and Conditions'
         modalContent1={<TermsText/>}
         modalContent2={<ProviderOptInText/>}
+        setisAcknowledged={setisOptInAcknowledged}
+        isAcknowledged={isOptInAcknowledged}
     />
   );
 };

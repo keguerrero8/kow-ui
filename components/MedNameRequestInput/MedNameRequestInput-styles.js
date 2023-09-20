@@ -1,4 +1,4 @@
-export const styles = {
+export const stylesMui = {
   MainContainter: {
     display: "flex", 
     flexDirection: "column", 

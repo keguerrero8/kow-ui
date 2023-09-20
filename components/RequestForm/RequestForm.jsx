@@ -1,28 +1,17 @@
 import { useState } from 'react'
 import Link from 'next/link';
 
-import RequestFormInput from '@/components/RequestFormInput/RequestFormInput.jsx'
 import MedNameRequestInput from '@/components/MedNameRequestInput/MedNameRequestInput.jsx'
 import MedStrengthRequestInput from '@/components/MedStrengthRequestInput/MedStrengthRequestInput.jsx'
-import RequestAgreementModal from '@/components/RequestAgreementModal/RequestAgreementModal'
+
+import styles from './RequestForm.module.css'
+import messagingService from '@/lib/messagingService'
+import { useUser } from '@/context/user'
+
 import PrivacyCheckbox from './PrivacyCheckbox'
 import ProviderTermsCheckbox from './ProviderTermsCheckbox'
 import TermsOnlyCheckbox from './TermsOnlyCheckbox.jsx'
-
-import styles from './RequestForm.module.css'
-import { useUser } from '@/context/user'
-
-import { 
-    Box, 
-    Button, 
-    Typography,
-    Radio, 
-    RadioGroup, 
-    FormControl, 
-    FormControlLabel,
-    FormLabel, 
-    Checkbox,
-} from '@mui/material'
+// Icons
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
@@ -47,97 +36,78 @@ export default function RequestForm({ medications }) {
     user_type: "",
     isAdmin: false
   }
-  const [checked, setChecked] = useState(false)
   const [medication, setMedication] = useState({})
-  const [value, setValue] = useState("insurance")
+  const [insuranceValue, setInsuranceValue] = useState("insurance")
   const [status, setRequestStatus] = useState([])
   const [isDisabled, setDisabled] = useState(true)
   const [searchValue, setSearchValue] = useState("")
   const [requestData, setRequestData] = useState(defaultRequestData)
-  const [isAgreementModal, setIsAgreementModal] = useState(false)
-  const [step, setStep] = useState(1)
   const [userType, setUserType] = useState("")
   const [isPrivacyAcknowledged, setisPrivacyAcknowledged] = useState(false)
   const [isOptInAcknowledged, setisOptInAcknowledged] = useState(false)
-  const [showHelp, setShowHelp] = useState(false)
-  
+  // new stuff below
   const [providerToggled, setProviderToggled] = useState(false)
   const [patientToggled, setPatientToggled] = useState(false)
-  const [singleMedToggled, setSingleMedToggled] = useState(true)
-  const [compoundToggled, setCompoundToggled] = useState(false)
-  const [noInsuranceToggled, setNoInsuranceToggled] = useState(false)
-  const [yesInsuranceToggled, setYesInsuranceToggled] = useState(false)
+//   const [singleMedToggled, setSingleMedToggled] = useState(true)
+//   const [compoundToggled, setCompoundToggled] = useState(false)
+
 
   const handleProviderClick = () => {
+    setisPrivacyAcknowledged(false)
+    setisOptInAcknowledged(false)
+    setRequestData({
+        ...requestData,
+        user_type: "health_care_provider"
+    })
     setProviderToggled(true);
     setPatientToggled(false);
-    setUserType('Healthcare Provider');
+    setUserType("health_care_provider");
   }
   const handlePatientClick = () => {
+    setisPrivacyAcknowledged(false)
+    setisOptInAcknowledged(false)
+    setRequestData({
+        ...requestData,
+        user_type: "patient"
+    })
     setPatientToggled(true);
     setProviderToggled(false);
-    setUserType('Patient/Caregiver');
+    setUserType("patient");
   }
-  const handleSingleMedClick = () => {
-    setSingleMedToggled(true);
-    setCompoundToggled(false);
-  }
-  const handleCompoundClick = () => {
-    setCompoundToggled(true);
-    setSingleMedToggled(false);
-  }
+//   const handleSingleMedClick = () => {
+//     setSingleMedToggled(true);
+//     setCompoundToggled(false);
+//   }
+//   const handleCompoundClick = () => {
+//     setCompoundToggled(true);
+//     setSingleMedToggled(false);
+//   }
   const handleNoInsuranceClick = () => {
-    setNoInsuranceToggled(true);
-    setYesInsuranceToggled(false);
-    setValue('cash');
+    setInsuranceValue('cash');
+    setRequestData({
+        ...requestData,
+        isInsurance: false
+    })
   }
   const handleYesInsuranceClick = () => {
-    setYesInsuranceToggled(true);
-    setNoInsuranceToggled(false);
-    setValue('insurance');
-  }
-
-  const handleAgreementCheck = (e) => {
-    if (e.target.checked) {
-        setIsAgreementModal(true)
-    }
-
-    setChecked(e.target.checked)
+    setInsuranceValue('insurance');
+    setRequestData({
+        ...requestData,
+        isInsurance: true
+    })
   }
 
   function handleClear () {
-    setChecked(false)
     setRequestData(defaultRequestData)
-    setValue("insurance")
+    setInsuranceValue("insurance")
     setDisabled(true)
     setRequestStatus([])
     setMedication({})
     setSearchValue("")
-    setStep(1)
     setisPrivacyAcknowledged(false)
     setisOptInAcknowledged(false)
     setUserType("")
   }
-
-  function handlePaymentRadioChange (e) {
-    setValue(e.target.value)
-    setRequestData({
-        ...requestData,
-        isInsurance: e.target.value === "insurance"? true : false
-    })
-  }
-
-  function handleUserTypeRadioChange (e) {
-    setStep(1)
-    setisPrivacyAcknowledged(false)
-    setisOptInAcknowledged(false)
-    setUserType(e.target.value)
-    setChecked(false)
-    setRequestData({
-        ...requestData,
-        user_type: e.target.value
-    })
-  } 
 
 
   function handleChange (e, isAuto = false, name) {
@@ -167,62 +137,29 @@ export default function RequestForm({ medications }) {
     }
   }
 
-  // can always ask chatGPT to refactor this logic but will need to take time to make
-  // sure its correct
-  function handleSubmit (e) {
+  async function handleSubmit (e) {
     e.preventDefault()
+    console.log("submitting")
     const payload = {
         ...requestData, 
         phone_number: "+1" + requestData["phone_number"], 
         isAdmin: isAuthenticated
     }
 
-    fetch(`${process.env.NEXT_PUBLIC_DJANGO_API_URL}/core/requests`, {
-        method: "POST",
-        headers: { 
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload)
-    })
-    .then(r => {
-        if (r.ok) {
-            r.json().then(res => {
-                if (res.error) {
-                    setRequestStatus([res.error])
-                } else {
-                    setRequestStatus(["Request successfully sent!"])
-                    setDisabled(false)
-                }
-            })
-        }
-        else {
-            r.json().then(res => {
-                const errors = Object.entries(res.errors).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
-                if (res.errors && r.status === 400) {
-                    setRequestStatus(errors)
-                } else {
-                    setRequestStatus([res.errors])
-                }
-            })
-        }
-    })
+    const response = await messagingService.createRequest(payload)
+    if (!response.error) {
+        setRequestStatus(["Request successfully sent!"])
+        setDisabled(false)
+    } else {
+        const errors = Object.entries(response.error).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
+        setRequestStatus(errors)
+    }
   }
 
+  console.log(requestData)
   return (
     <div className={styles.background}>
-        <div className={styles.container} onSubmit={handleSubmit}>
-            <RequestAgreementModal 
-                setIsAgreementModal={setIsAgreementModal} 
-                isAgreementModal={isAgreementModal} 
-                step={step} 
-                setStep={setStep} 
-                userType={userType}
-                setUserType={setUserType}
-                isPrivacyAcknowledged={isPrivacyAcknowledged}
-                setisPrivacyAcknowledged={setisPrivacyAcknowledged}
-                isOptInAcknowledged={isOptInAcknowledged}
-                setisOptInAcknowledged={setisOptInAcknowledged}
-            />
+        <form className={styles.container} onSubmit={handleSubmit}>
             <div className={styles.formInfo}>
                 <h2>Submit Medication Request Form</h2>
                 <div className={styles.iconInfo}>
@@ -251,7 +188,7 @@ export default function RequestForm({ medications }) {
                         >
                             {providerToggled ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
                         </button>
-                        <h3 onClick={handleProviderClick}>Healthcare Provider</h3>
+                        <h3>Healthcare Provider</h3>
                     </div>
                     <div className={styles.radioOption}>
                         <button 
@@ -261,12 +198,12 @@ export default function RequestForm({ medications }) {
                         >
                             {patientToggled ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
                         </button>
-                        <h3 onClick={handlePatientClick}>Patient/Caregiver</h3>
+                        <h3>Patient/Caregiver</h3>
                     </div>
                 </div>
             </div>
-            <form className={styles.sectionForm}>
-                <div className={styles.sectionHeader}>
+            <div className={styles.sectionForm}>
+                {/* <div className={styles.sectionHeader}>
                     <MedicationOutlinedIcon className={styles.icon}/>
                     <h3>Requested Medication:</h3>
                 </div>
@@ -275,394 +212,183 @@ export default function RequestForm({ medications }) {
                         <button className={styles.iconToggle} onClick={handleSingleMedClick}>
                             {singleMedToggled ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
                         </button>                    
-                        <h3 onClick={handleSingleMedClick}>Single Medication</h3>
+                        <h3>Single Medication</h3>
                     </div>
                     <div className={styles.radioOption}>
                         <button className={styles.iconToggle} onClick={handleCompoundClick}>
                             {compoundToggled ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
                         </button>
-                        <h3 onClick={handleCompoundClick}>Compounded Product</h3>
+                        <h3>Compounded Product</h3>
                     </div>
+                </div> */}
+                {/* <div className={styles.sectionForm}>
+                    <h3>Product Description<span style={{color: "red"}}> &#42;</span></h3>
+                        <textarea
+                            type='text'
+                            name='cmpnd_description'
+                            placeholder='(e.g., Lidocaine and Triamcinolone 1:1 cream 30 grams; Maalox and Lidocaine 2:1 mouthwash 240mL)'
+                            className={styles.inputDescription}
+                            required
+                            onChange={handleChange}
+                        />  
+                    <h3>Medication Reference(s)</h3>
+                        <input
+                            name='cmpnd_reference'
+                            className={styles.inputField}
+                            onChange={handleChange}
+                        />  
+                    <p className={styles.optional}>Optional</p>
+                </div> */}
+                <div className={styles.sectionForm}>
+                    <MedNameRequestInput 
+                        requestData={requestData} 
+                        label="Medication Name" 
+                        name="med_name" 
+                        handleChange={handleChange} 
+                        isRequired={true} 
+                        medications={medications} 
+                        setMedication={setMedication}
+                        setRequestData={setRequestData}
+                        searchValue={searchValue}
+                        setSearchValue={setSearchValue}
+                    />
+                    <MedStrengthRequestInput 
+                        requestData={requestData} 
+                        flex={0.5} 
+                        label="Medication Dose/Strength"
+                        name="med_strength"
+                        handleChange={handleChange} 
+                        key="Strength"
+                        isRequired={medication.strength && medication.strength.length > 0? true : false} 
+                        strengths={medication.strength? medication.strength : []} 
+                    />
+                    {/* <h3>Medication Strength<span style={{color: "red"}}> &#42;</span></h3>
+                        <input
+                            name='med_strength'
+                            className={styles.inputField}
+                            required
+                            onChange={handleChange}
+                        />                 */}
+                    <h3>Prescribed Quantity<span style={{color: "red"}}> &#42;</span></h3>
+                        <input
+                            // type='text'
+                            name='quantity'
+                            className={styles.inputField}
+                            required
+                            onChange={handleChange}
+                            value={requestData["quantity"]}
+                            placeholder='Number values only'
+                        />
+                    <p>Type the number of units (e.g., tablets, capsules, packs, tubes, boxes, inhalers, pens, grams, milliliters, etc.) prescribed.</p>
                 </div>
-                {singleMedToggled ? (
-                    <div className={styles.sectionForm}>
-                        {/* <MedNameRequestInput 
-                            requestData={requestData} 
-                            label="Medication Name" 
-                            name="med_name" 
-                            handleChange={handleChange} 
-                            isRequired={true} 
-                            medications={medications} 
-                            setMedication={setMedication}
-                            setRequestData={setRequestData}
-                            searchValue={searchValue}
-                            setSearchValue={setSearchValue}
-                        /> */}
-                        <h3>Medication Name<span style={{color: "red"}}> &#42;</span></h3>
-                            <input
-                                name='med_name'
-                                className={styles.inputField}
-                                required
-                                onChange={handleChange}
-                            />  
-                        {/* <MedStrengthRequestInput 
-                            requestData={requestData} 
-                            flex={0.5} 
-                            label="Medication Dose/Strength"
-                            name="med_strength"
-                            handleChange={handleChange} 
-                            key="Strength"
-                            isRequired={medication.strength && medication.strength.length > 0? true : false} 
-                            strengths={medication.strength? medication.strength : []} 
-                        /> */}
-                        <h3>Medication Strength<span style={{color: "red"}}> &#42;</span></h3>
-                            <input
-                                name='med_strength'
-                                className={styles.inputField}
-                                required
-                                onChange={handleChange}
-                            />                
-                        {/* <RequestFormInput 
-                            requestData={requestData} 
-                            flex={0.3} 
-                            label="Quantity to Dispense" 
-                            name="quantity"
-                            handleChange={handleChange} 
-                            key="Quantity" 
-                            isRequired={true}
-                            placeholder="Number values only"
-                        /> */}
-                        <h3>Prescribed Quantity<span style={{color: "red"}}> &#42;</span></h3>
-                            <input
-                                type='number'
-                                name='quantity'
-                                className={styles.inputField}
-                                required
-                                onChange={handleChange}
-                            />
-                        <p>Type the number of units (e.g., tablets, capsules, packs, tubes, boxes, inhalers, pens, grams, milliliters, etc.) prescribed.</p>
-                    </div>
-                ) : compoundToggled ? (
-                    <div className={styles.sectionForm}>
-                        <h3>Product Description<span style={{color: "red"}}> &#42;</span></h3>
-                            <textarea
-                                type='text'
-                                name='cmpnd_description'
-                                placeholder='(e.g., Lidocaine and Triamcinolone 1:1 cream 30 grams; Maalox and Lidocaine 2:1 mouthwash 240mL)'
-                                className={styles.inputDescription}
-                                required
-                                onChange={handleChange}
-                            />  
-                        <h3>Medication Reference(s)</h3>
-                            <input
-                                name='cmpnd_reference'
-                                className={styles.inputField}
-                                onChange={handleChange}
-                            />  
-                        <p className={styles.optional}>Optional</p>
-                    </div>
-                ) : null}
-            </form>
+            </div>
             <div className={styles.sectionRadio}>
                 <div className={styles.sectionHeader}>
                     <AddCardOutlinedIcon className={styles.icon}/>
                     <h3>Payment Method:</h3>
                 </div>
                 <p>Select how the pharmacy will bill your prescription.</p>
-                {compoundToggled ? (
-                    <h3>** Most insurances do not cover compounded products. Please follow up with the dispensing pharmacy for the out-of-pocket cost.</h3>
-                ) : (
-                    // {
-                    //     [
-                    //         {flex: 0.33, label: "BIN", name: "bin"}, 
-                    //         {flex: 0.33, label: "PCN", name: "pcn"}, 
-                    //         {flex: 0.33, label: "RxGroup", name: "rxgroup"}
-                    //     ]
-                    //     .map(i => 
-                    //         <RequestFormInput 
-                    //             requestData={requestData} 
-                    //             flex={i.flex} 
-                    //             label={i.label} 
-                    //             name={i.name} 
-                    //             handleChange={handleChange} 
-                    //             key={i.label} 
-                    //             isRequired={true}
-                    //         />)
-                    // }
-                    <div className={styles.radioButtonsContainer}>
+                <div className={styles.radioButtonsContainer}>
                         <div className={styles.radioOption}>
-                            <button 
-                                value={value} 
+                            <button
                                 className={styles.iconToggle} 
                                 onClick={handleNoInsuranceClick}
                             >
-                                {noInsuranceToggled ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
+                                {insuranceValue !== "insurance" ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
                             </button>                    
-                            <h3 onClick={handleNoInsuranceClick}>Without Insurance</h3>
+                            <h3>Without Insurance</h3>
                         </div>
                         <div className={styles.radioOption}>
-                            <button 
-                                value={value} 
+                            <button
                                 className={styles.iconToggle} 
                                 onClick={handleYesInsuranceClick}
                             >
-                                {yesInsuranceToggled ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
+                                {insuranceValue === "insurance" ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
                             </button>                    
-                            <h3 onClick={handleYesInsuranceClick}>With Insurance</h3>
+                            <h3>With Insurance</h3>
                         </div>
-                    </div>                
-                )}
+                </div>  
             </div>
-            {yesInsuranceToggled ? (
-                <form className={styles.sectionForm}>
+            {insuranceValue === "insurance" ? (
+                <div className={styles.sectionForm}>
                     <div className={styles.sectionHeader}>
                         <MedicalInformationOutlinedIcon className={styles.icon}/>
                         <h3>Pharmacy Insurance Card:</h3>
                     </div>
                     <h3>BIN<span style={{color: "red"}}> &#42;</span></h3>
                         <input
-                        type='number'
-                        name='ins_bin'
+                        type='text'
+                        name='bin'
                         className={styles.inputField}
                         required
                         onChange={handleChange}
+                        value={requestData["bin"]}
                         />
                     <h3>PCN<span style={{color: "red"}}> &#42;</span></h3>
                         <input
-                        type='number'
-                        name='ins_pcn'
+                        type='text'
+                        name='pcn'
                         className={styles.inputField}
                         required
                         onChange={handleChange}
+                        value={requestData["pcn"]}
                         />
                     <h3>RxGroup<span style={{color: "red"}}> &#42;</span></h3>
                         <input
                         type='text'
-                        name='ins_group'
+                        name='rxgroup'
                         className={styles.inputField}
                         required
                         onChange={handleChange}
+                        value={requestData["rxgroup"]}
                         />
                     <p>If your card does not have a RxGroup or GRP, type &quot;N/A&quot;.</p>
-                </form>
+                </div>
             ) : null}
-            <form className={styles.sectionForm}>
-                {/* <RequestFormInput 
-                    requestData={requestData} 
-                    flex={0.8} 
-                    label="Mobile Number"
-                    name="phone_number" 
-                    handleChange={handleChange} 
-                    isRequired={true}
-                    placeholder="Please enter 10 digits"
-                /> */}
+            <div className={styles.sectionForm}>
                 <div className={styles.sectionHeader}>
                     <PhoneOutlinedIcon className={styles.icon}/>
                     <h3>Contact Information:</h3>
                 </div>
                 <h3>Mobile Number<span style={{color: "red"}}> &#42;</span></h3>
                     <input
-                    type='number'
+                    type='text'
                     name='phone_number'
                     className={styles.inputField}
                     required
                     onChange={handleChange}
+                    placeholder='Please enter 10 digits'
+                    value={requestData["phone_number"]}
                     />
                 <p>Provide your Mobile Number to receive SMS text notifications if a pharmacy has the requested medication available.</p>
-            </form>
+            </div>
             <div className={styles.agreements}>
                 <div className={styles.checkbox}>
-                    <PrivacyCheckbox/>
+                    <PrivacyCheckbox setisPrivacyAcknowledged={setisPrivacyAcknowledged} isPrivacyAcknowledged={isPrivacyAcknowledged}/>
                 </div>
                 {providerToggled ? (
                     <div className={styles.checkbox}>
-                        <ProviderTermsCheckbox/>
+                        <ProviderTermsCheckbox setisOptInAcknowledged={setisOptInAcknowledged} isOptInAcknowledged={isOptInAcknowledged}/>
                     </div> 
                 ) : (
                     <div className={styles.checkbox}>
-                        <TermsOnlyCheckbox/>
+                        <TermsOnlyCheckbox setisOptInAcknowledged={setisOptInAcknowledged} isOptInAcknowledged={isOptInAcknowledged}/>
                     </div>
                 )}
             </div>
+            <div className={styles.statusContainer}>
+                {status.map((e, index) => 
+                    <p key={index} className={status[0] === "Request successfully sent!"? `${styles.statusSuccess}` : `${styles.statusFail}`}>{e}</p>)}
+            </div>
             <div className={styles.buttonContainer}>
-                <button type='submit' className={styles.submitButton}>
+                <button type='submit' className={styles.submitButton} disabled={isAuthenticated? false : (!isDisabled || (!isPrivacyAcknowledged || !isOptInAcknowledged))}>
                     Submit Request
                 </button>
                 <button className={styles.resetButton} onClick={handleClear}>
                     Reset Request
                 </button>
             </div>
-            {/* <Box sx={{...styles.InputContainer, mb: "1rem"}}>
-                <FormControl sx={{margin: "40px auto", textAlign: "center"}}>
-                    <FormLabel >
-                        <Typography color="black" component="h6" sx={styles.UserType}>
-                            Are you a healthcare provider or patient/caregiver?<span style={{color: "red"}}> &#42;</span>
-                        </Typography>
-                    </FormLabel>
-                    <RadioGroup
-                        value={userType}
-                        onChange={handleUserTypeRadioChange}
-                        row
-                    >
-                        <Box sx={{margin: "auto"}}>                        
-                            <FormControlLabel value="health_care_provider" control={<Radio />} label="Healthcare Provider" />
-                            <FormControlLabel value="patient" control={<Radio />} label="Patient/Caregiver" />
-                        </Box>
-                    </RadioGroup>
-                </FormControl>
-                {showHelp && (
-                    <Typography sx={styles.HelpSubtitle}>
-                        For an easier experience, request a printed copy of your prescription to reference.
-                    </Typography>
-                )}
-                <Link 
-                    sx={styles.HelpToggle}
-                    underline='hover'
-                    color='black'
-                    href="#" onClick={handleHelp}> 
-                    {showHelp ? 'Hide Help' : 'Need Help?'}
-                </Link>
-                <MedNameRequestInput 
-                    requestData={requestData} 
-                    label="Medication Name" 
-                    name="med_name" 
-                    handleChange={handleChange} 
-                    isRequired={true} 
-                    medications={medications} 
-                    setMedication={setMedication}
-                    setRequestData={setRequestData}
-                    searchValue={searchValue}
-                    setSearchValue={setSearchValue}
-                />
-                {showHelp && (
-                    <Typography sx={styles.MedDetails}>
-                        Type and select the Medication Name on the prescription.
-                    </Typography>
-                )}
-                <MedStrengthRequestInput 
-                    requestData={requestData} 
-                    flex={0.5} 
-                    label="Medication Dose/Strength"
-                    name="med_strength"
-                    handleChange={handleChange} 
-                    key="Strength"
-                    isRequired={medication.strength && medication.strength.length > 0? true : false} 
-                    strengths={medication.strength? medication.strength : []} 
-                />
-                {showHelp && (
-                    <Typography sx={styles.MedDetails}>
-                        If applicable, select the Dose or Strength of the selected medication.
-                    </Typography>
-                )}
-                <RequestFormInput 
-                    requestData={requestData} 
-                    flex={0.3} 
-                    label="Quantity to Dispense" 
-                    name="quantity"
-                    handleChange={handleChange} 
-                    key="Quantity" 
-                    isRequired={true}
-                    placeholder="Number values only"
-                />
-                {showHelp && (
-                    <Typography sx={styles.MedDetails}>
-                        Type the number of units (e.g., tablets, capsules, packs, milliliters, grams, tubes, boxes, inhalers, pens, etc.) prescribed. 
-                        Number values only.
-                    </Typography>
-                )}
-                <FormControl sx={{margin: "auto", textAlign: "center", alignItems: "center"}}>
-                    <FormLabel sx={{my: "20px"}}>
-                        <Typography color="black" component="h6" sx={styles.PaymentMethodText}>
-                            Payment Method<span style={{color: "red"}}> &#42;</span>
-                        </Typography>
-                        {showHelp && (
-                            <Typography sx={styles.PayHelp}>
-                                Select how the pharmacy will bill your prescription.
-                            </Typography>
-                        )}
-                    </FormLabel>
-                    <RadioGroup
-                        value={value}
-                        onChange={handlePaymentRadioChange}
-                        row
-                    >
-                        <FormControlLabel value="insurance" control={<Radio />} label="With Insurance" />
-                        <FormControlLabel value="cash" control={<Radio />} label="Without Insurance" />
-                    </RadioGroup>
-                </FormControl>
-            </Box>
-            {value === "insurance"? (
-                <Box sx={{...styles.InputContainer, gap: "2rem"}}>
-                    <Typography sx={styles.PharmacyInsuranceText}>Pharmacy Insurance Card:</Typography>
-                    {showHelp && (
-                        <Typography sx={styles.InsuranceHelp}>
-                            Copy the following information from your PHARMACY Insurance Card.
-                        </Typography>
-                    )}
-                    {showHelp && (
-                        <Typography sx={styles.InsuranceHelp}>
-                            If your card does not have a RxGroup or Group, type &quot;N/A&quot;.
-                        </Typography>
-                    )}
-                    <Box sx={styles.InsuranceFields}>
-                        {
-                            [
-                                {flex: 0.33, label: "BIN", name: "bin"}, 
-                                {flex: 0.33, label: "PCN", name: "pcn"}, 
-                                {flex: 0.33, label: "RxGroup", name: "rxgroup"}
-                            ]
-                            .map(i => 
-                                <RequestFormInput 
-                                    requestData={requestData} 
-                                    flex={i.flex} 
-                                    label={i.label} 
-                                    name={i.name} 
-                                    handleChange={handleChange} 
-                                    key={i.label} 
-                                    isRequired={true}
-                                />)
-                        }
-                    </Box>
-                </Box>
-            ) : null}
-            <Box sx={{...styles.InputContainer, mt: "1rem"}}>
-                <RequestFormInput 
-                    requestData={requestData} 
-                    flex={0.8} 
-                    label="Mobile Number"
-                    name="phone_number" 
-                    handleChange={handleChange} 
-                    isRequired={true}
-                    placeholder="Please enter 10 digits"
-                />
-                {showHelp && (
-                    <Typography sx={styles.MobileNumber}>
-                        Provide your Mobile Number to receive SMS text notifications if a pharmacy has this medication in stock today.
-                    </Typography>
-                )}
-            </Box>
-
-            <Box sx={{textAlign: "center", width: "90%", marginTop: "2rem", marginBottom: "-2rem", marginX: "auto", display: "flex", flexDirection: "row", justifyContent: "center"}}>
-                <FormControlLabel
-                    disabled={!(userType === "patient" || userType === "health_care_provider")}
-                    labelPlacement='end'
-                    control={<Checkbox checked={checked} onChange={handleAgreementCheck}/>} 
-                    label={<Typography variant='h5' sx={{fontSize: "1.3rem", fontWeight: "bolder"}}>I AGREE TO KOW&apos;S TERMS OF USE AND PRIVACY POLICY</Typography>} 
-                />
-            </Box>
-            <Box sx={{textAlign: "center", width: "90%", margin: "0 auto"}}>
-                {status.map((e, index) => 
-                    <Typography key={index} sx={{color: status[0] === "Request successfully sent!"? "green" : "red"}}>{e}</Typography>)}
-            </Box>
-            <Box sx={styles.ButtonsContainer}>
-                <Button variant='contained' sx={{color: "white"}} size="large" type="submit" disabled={isAuthenticated? false : (!isDisabled || !checked)}>
-                    Send Request
-                </Button>
-                <Button variant='text' sx={{color: "#154161"}} size="medium" onClick={handleClear} >
-                    Reset Request
-                </Button>
-            </Box> */}
-        </div>   
+        </form>   
     </div>
   )
 }

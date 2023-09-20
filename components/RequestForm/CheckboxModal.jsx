@@ -5,9 +5,8 @@ import styles from './CheckboxModal.module.css';
 
 import ModalViewOnly from '../ModalViewOnly/ModalViewOnly';
 
-const CheckboxModal = ({ checkboxText, linkText, modalContent1, modalContent2 }) => {
+const CheckboxModal = ({ checkboxText, linkText, modalContent1, modalContent2, setisAcknowledged, isAcknowledged }) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [isChecked, setIsChecked] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
   
     const openModal = () => {
@@ -20,7 +19,9 @@ const CheckboxModal = ({ checkboxText, linkText, modalContent1, modalContent2 })
         window.scrollTo(0, scrollPosition); // Restore scroll position
     };
 
-    const handleCheckboxChange = () => setIsChecked(!isChecked);
+    const handleCheckboxChange = () => {
+        setisAcknowledged((isAcknowledged) => !isAcknowledged)
+    }
 
   return (
     <div>
@@ -28,7 +29,7 @@ const CheckboxModal = ({ checkboxText, linkText, modalContent1, modalContent2 })
             <input 
                 className={styles.checkbox} 
                 type="checkbox" 
-                checked={isChecked} 
+                checked={isAcknowledged} 
                 onChange={handleCheckboxChange} />
                     {checkboxText}
                     <Link legacyBehavior href="#">

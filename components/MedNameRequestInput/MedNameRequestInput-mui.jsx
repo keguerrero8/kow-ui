@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
 import OutsideClickHandler from 'react-outside-click-handler'
-import styles from './MedNameRequestInput.module.css'
+import { Box, TextField, Typography, List, ListItem } from '@mui/material'
+import { styles } from './MedNameRequestInput-styles'
 
 export default function MedNameRequestInput({ label, name, handleChange, isRequired = false, medications, setMedication, requestData, setRequestData, searchValue, setSearchValue }) {
   const [dropdown, setDropDown] = useState(false)
@@ -28,29 +29,29 @@ export default function MedNameRequestInput({ label, name, handleChange, isRequi
   const filteredMedications = medications.filter(m => m.name.toLocaleLowerCase().startsWith(searchValue.toLocaleLowerCase()))
 
   return (
-    <div className={styles.mainContainer}>
+    <Box sx={styles.MainContainter}>
       <OutsideClickHandler onOutsideClick={() => setDropDown(false)}>
-        <div style={{ width: "100%"}}>
-            <p className={styles.text}>
+        <Box sx={{width: "100%"}}>
+            <Typography color="black" component="h6" sx={styles.Text}>
               {label}{isRequired? <span style={{color: "red"}}> &#42;</span> : null}
-            </p>
-            <input className={styles.inputField} onChange={handleSearch} value={searchValue} name={name} onFocus={handleFocus} placeholder="Select a medication from the dropdown"/>
-        </div>
-        <div className={dropdown? `${styles.searchListDropDown}` : `${styles.searchListNoDropDown}`}>
-            <div >
+            </Typography>
+            <TextField sx={{width: "100%"}} onChange={handleSearch} value={searchValue} name={name} onFocus={handleFocus} placeholder="Select a medication from the dropdown"/>
+        </Box>
+        <Box sx={{...styles.SearchList, display: dropdown? "block" : "none"}}>
+            <List >
                 {filteredMedications.length > 0? filteredMedications.map((i) => 
-                  <p 
+                  <ListItem 
                     onClick={(e) => handleSelection(e, i)} 
-                    className={styles.searchListItems} 
+                    sx={{cursor: "pointer", '&:hover': {backgroundColor: "rgba(5, 5, 51, 0.5)"}}} 
                     key={i.id}
                   >
                     {i.name}
-                  </p>) : 
-                  <p className={styles.searchListItems}>No results found</p>
+                  </ListItem>) : 
+                  <ListItem>No results found</ListItem>
                 }
-            </div>
-        </div>
+            </List>
+        </Box>
       </OutsideClickHandler>
-    </div>
+    </Box>
   )
 }

@@ -1,0 +1,56 @@
+.mainContainer {
+    display: "flex";
+    flex-direction: column;
+    width: "100%";
+}
+
+.text {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+
+.inputField {
+    width: 100%;
+    height: fit-content;
+    border-radius: 2px;
+    border: 1px solid var(--brand-darkgrey);
+    padding: 6px 12px;
+    font-size: var(--font-small);
+    overflow-x: hidden;
+}
+.inputField::placeholder {
+    color: var(--brand-darkergrey);
+}
+
+.searchListDropDown {
+    max-height: 150px; 
+    width: 98%;
+    border: solid lightgrey 1px; 
+    overflow: auto;
+    border-top: none;
+    display: block;
+}
+
+.searchListNoDropDown {
+    max-height: 150px; 
+    width: 98%;
+    border: solid lightgrey 1px; 
+    overflow: auto;
+    border-top: none;
+    display: none;
+}
+
+.searchListItems {
+    cursor: pointer;
+    margin: 5px;
+}
+
+.searchListItems:hover {
+    background-color: rgba(5, 5, 51, 0.5);
+}
+
+@media screen and (max-width: 960px) {
+    .inputField {
+        font-size: var(--mobile-small);
+    }
+}

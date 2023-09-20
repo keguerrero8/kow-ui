@@ -27,6 +27,13 @@
     margin-left: 3rem;
 }
 
+.statusSuccess {
+    color: green;
+}
+
+.statusFail {
+    color: red;
+}
 .iconInfo {
     display: flex;
     flex-direction: row;
@@ -51,6 +58,12 @@
     font-weight: 100;
     font-style: italic;
     margin: 0.5rem 3rem;
+}
+
+.statusContainer {
+    text-align: center;
+    width: 90%;
+    margin: 1rem auto 3rem;
 }
 
 .radioButtonsContainer {
@@ -155,7 +168,7 @@
 }
 
 .agreements {
-    margin: 2rem 3rem;
+    margin: 1rem 3rem;
 }
 
 .checkbox {
@@ -172,6 +185,9 @@
     margin-right: 2rem;
     padding: 0.5rem 2rem;
     font-size: var(--font-medium);
+}
+.submitButton:hover {
+    cursor: pointer;
 }
 
 .resetButton {
