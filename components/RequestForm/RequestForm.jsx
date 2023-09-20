@@ -45,7 +45,6 @@ export default function RequestForm({ medications }) {
   const [userType, setUserType] = useState("")
   const [isPrivacyAcknowledged, setisPrivacyAcknowledged] = useState(false)
   const [isOptInAcknowledged, setisOptInAcknowledged] = useState(false)
-  // new stuff below
   const [providerToggled, setProviderToggled] = useState(false)
   const [patientToggled, setPatientToggled] = useState(false)
 //   const [singleMedToggled, setSingleMedToggled] = useState(true)
@@ -139,7 +138,6 @@ export default function RequestForm({ medications }) {
 
   async function handleSubmit (e) {
     e.preventDefault()
-    console.log("submitting")
     const payload = {
         ...requestData, 
         phone_number: "+1" + requestData["phone_number"], 
@@ -156,7 +154,7 @@ export default function RequestForm({ medications }) {
     }
   }
 
-  console.log(requestData)
+
   return (
     <div className={styles.background}>
         <form className={styles.container} onSubmit={handleSubmit}>
@@ -182,6 +180,7 @@ export default function RequestForm({ medications }) {
                 <div className={styles.radioButtonsContainer}>
                     <div className={styles.radioOption}>
                         <button 
+                            type='button'
                             value={userType} 
                             className={styles.iconToggle} 
                             onClick={handleProviderClick}
@@ -192,6 +191,7 @@ export default function RequestForm({ medications }) {
                     </div>
                     <div className={styles.radioOption}>
                         <button 
+                            type='button'
                             value={userType}
                             className={styles.iconToggle} 
                             onClick={handlePatientClick}
@@ -254,7 +254,6 @@ export default function RequestForm({ medications }) {
                     />
                     <MedStrengthRequestInput 
                         requestData={requestData} 
-                        flex={0.5} 
                         label="Medication Dose/Strength"
                         name="med_strength"
                         handleChange={handleChange} 
@@ -262,14 +261,8 @@ export default function RequestForm({ medications }) {
                         isRequired={medication.strength && medication.strength.length > 0? true : false} 
                         strengths={medication.strength? medication.strength : []} 
                     />
-                    {/* <h3>Medication Strength<span style={{color: "red"}}> &#42;</span></h3>
-                        <input
-                            name='med_strength'
-                            className={styles.inputField}
-                            required
-                            onChange={handleChange}
-                        />                 */}
-                    <h3>Prescribed Quantity<span style={{color: "red"}}> &#42;</span></h3>
+                    <div>
+                        <p style={{fontSize: "1rem"}}>Prescribed Quantity<span style={{color: "red"}}> &#42;</span></p>
                         <input
                             // type='text'
                             name='quantity'
@@ -279,7 +272,8 @@ export default function RequestForm({ medications }) {
                             value={requestData["quantity"]}
                             placeholder='Number values only'
                         />
-                    <p>Type the number of units (e.g., tablets, capsules, packs, tubes, boxes, inhalers, pens, grams, milliliters, etc.) prescribed.</p>
+                        <p>Type the number of units (e.g., tablets, capsules, packs, tubes, boxes, inhalers, pens, grams, milliliters, etc.) prescribed.</p>
+                    </div>
                 </div>
             </div>
             <div className={styles.sectionRadio}>
@@ -293,6 +287,7 @@ export default function RequestForm({ medications }) {
                             <button
                                 className={styles.iconToggle} 
                                 onClick={handleNoInsuranceClick}
+                                type='button'
                             >
                                 {insuranceValue !== "insurance" ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
                             </button>                    
@@ -302,6 +297,7 @@ export default function RequestForm({ medications }) {
                             <button
                                 className={styles.iconToggle} 
                                 onClick={handleYesInsuranceClick}
+                                type='button'
                             >
                                 {insuranceValue === "insurance" ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
                             </button>                    

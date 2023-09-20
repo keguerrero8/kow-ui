@@ -20,8 +20,6 @@ function Navbar() {
 
     const handleClick =() => setClick(!click);
     const closeMobileMenu = () => setClick(false);
-
-    // const isMobile = useMediaQuery('(max-width: 1160px)');
     
     const showButton = () => {
         if(window.innerWidth <= 1160) {
@@ -35,16 +33,21 @@ function Navbar() {
         logout(closeMobileMenu)
     };
 
-    useEffect(() => {
+    const handleScroll = () => {
+        setScrollY(window.scrollY);
+    };
+
+    const handleResize = () => {
         setWindowWidth(window.innerWidth);
-    
-        const handleScroll = () => {
-          setScrollY(window.scrollY);
-        };
-    
-        const handleResize = () => {
-          setWindowWidth(window.innerWidth);
-        };
+    };
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            window.addEventListener('resize', showButton);
+            showButton()   
+         }
+
+        setWindowWidth(window.innerWidth);
     
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleResize);
@@ -55,23 +58,6 @@ function Navbar() {
         };
     }, []);
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.addEventListener('resize', showButton);
-            showButton()   
-         }
-    }, []);
-
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-  
-    useEffect(() => {
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []); 
 
     return (
         <>
@@ -114,23 +100,18 @@ function Navbar() {
                                     Dashboard
                                 </Link>
                             </li>
-                            :
-                            null}
-                        {/* {!user && !button? <li className={styles.navItem}>
-                            <Link to='/login' className={styles.navLinks} onClick={closeMobileMenu}>
-                                Sign In
-                                </Link>
-                            </li>: null} */}
-                        {/* {button && !user ? <Button path='/login'>Sign In
-                            </Button> : null} */}
+                            : null}
                         {isAuthenticated && !button && <li className={styles.navItem}>
                             <Link href='/' className={styles.navLinks} onClick={handleLogOut}>
                                 Sign Out
                             </Link>
                         </li>}
+                        {isAuthenticated && button? (
+                                <Button path='/' onClick={handleLogOut} linkClassName={styles.signOutButton}>
+                                    Sign Out
+                                </Button>
+                        ) : null}
                     </ul>
-                    {isAuthenticated && button? <Button path='/' onClick={handleLogOut}>Sign Out
-                        </Button> : null}
                 </div>
             </div>
         </nav>
