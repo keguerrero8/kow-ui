@@ -143,7 +143,7 @@ export default function RequestForm({ medications }) {
         phone_number: "+1" + requestData["phone_number"], 
         isAdmin: isAuthenticated
     }
-
+    
     const response = await messagingService.createRequest(payload)
     if (!response.error) {
         setRequestStatus(["Request successfully sent!"])
@@ -152,6 +152,7 @@ export default function RequestForm({ medications }) {
         const errors = Object.entries(response.error).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
         setRequestStatus(errors)
     }
+
   }
 
 
