@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useEffect, useState } from 'react';
 
-import Button from '../Button/Button';
 import styles from './Navbar.module.css';
 import image from "../../public/images/icon-only-black.jpg"
 import { useUser } from '@/context/user'
@@ -13,25 +12,12 @@ import { useUser } from '@/context/user'
 function Navbar() {
     const { isAuthenticated, logout } = useUser()
     const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
     const [scrollY, setScrollY] = useState(0);
 
     const [windowWidth, setWindowWidth] = useState(0);
 
     const handleClick =() => setClick(!click);
     const closeMobileMenu = () => setClick(false);
-    
-    const showButton = () => {
-        if(window.innerWidth <= 1160) {
-            setButton(false)
-        } else {
-            setButton(true)
-        }
-    };
-
-    function handleLogOut () {
-        logout(closeMobileMenu)
-    };
 
     const handleScroll = () => {
         setScrollY(window.scrollY);
@@ -42,11 +28,6 @@ function Navbar() {
     };
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.addEventListener('resize', showButton);
-            showButton()   
-         }
-
         setWindowWidth(window.innerWidth);
     
         window.addEventListener('scroll', handleScroll);
@@ -101,16 +82,6 @@ function Navbar() {
                                 </Link>
                             </li>
                             : null}
-                        {isAuthenticated && !button && <li className={styles.navItem}>
-                            <Link href='/' className={styles.navLinks} onClick={handleLogOut}>
-                                Sign Out
-                            </Link>
-                        </li>}
-                        {isAuthenticated && button? (
-                                <Button path='/' onClick={handleLogOut} linkClassName={styles.signOutButton}>
-                                    Sign Out
-                                </Button>
-                        ) : null}
                     </ul>
                 </div>
             </div>

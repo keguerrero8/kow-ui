@@ -4,7 +4,7 @@ import styles from './Footer.module.css';
 import { useUser } from '@/context/user';
 
 export default function Footer() {
-    const { isAuthenticated } = useUser()
+    const { isAuthenticated, logout } = useUser()
     return (
         <div className={styles.footerContainer}>
             <section className={styles.footerLinks}>
@@ -40,6 +40,11 @@ export default function Footer() {
                             {!isAuthenticated? (
                                 <p className={styles.footerTermsText}>
                                     <Link className={styles.navLink} href="/login">Admin Login</Link>
+                                </p>
+                            ) : null}
+                            {isAuthenticated? (
+                                <p className={styles.footerTermsText}>
+                                    <Link className={styles.navLink} href="/" onClick={logout}>Log Out</Link>
                                 </p>
                             ) : null}
                             {/*<p className={styles.footerTermsText}>

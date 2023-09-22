@@ -65,7 +65,7 @@ const ContextProvider = ({ children }) => {
         })
     }
 
-    const logout = (closeMobileMenu) => {
+    const logout = () => {
         fetch(`${process.env.NEXT_PUBLIC_NEXT_API_URL}/api/logout`, {
             method: "POST",
             headers: {
@@ -75,11 +75,9 @@ const ContextProvider = ({ children }) => {
         })
         .then(r => {
             if (r.ok) {
-                closeMobileMenu()
                 setIsAuthenticated(false)
                 setUser(null)
             } else {
-                closeMobileMenu()
                 router.push('/505')
             }
         })
