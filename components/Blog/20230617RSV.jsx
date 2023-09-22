@@ -48,7 +48,7 @@ export default function RsvArticle(props) {
         </div>
         <div className={styles.section}>
             <h2>A Vaccine to Protect the Vulnerable</h2>
-            <p>The development of an RSV vaccine brings hope for protecting vulnerable populations, especially infants and young children. Several pharmaceutical companies, including Pfizer and GSK, are engaged in the race to develop effective RSV vaccines. Recently, the FDA approved Pfizer’s vaccine to be used for older adults. These vaccines aim to prevent severe RSV infections and related complications. Clinical trials and regulatory processes are underway to ensure the safety and efficacy of these vaccines for other age groups.</p>
+            <p>The development of an RSV vaccine brings hope for protecting vulnerable populations, especially infants and young children. Several pharmaceutical companies, including Pfizer and GSK, are engaged in the race to develop effective RSV vaccines. Recently, the FDA approved Pfizer&apos;s vaccine to be used for older adults. These vaccines aim to prevent severe RSV infections and related complications. Clinical trials and regulatory processes are underway to ensure the safety and efficacy of these vaccines for other age groups.</p>
             <p>It is important to note that until an RSV vaccine becomes widely available, taking preventive measures is crucial. This includes practicing good hand hygiene, avoiding close contact with individuals who are sick, and keeping infants away from crowded places during peak RSV season.</p>
         </div>
         <div className={styles.section}>

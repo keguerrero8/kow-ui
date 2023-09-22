@@ -1,8 +1,5 @@
 export const styles = {
     FormContainer: {
-        marginTop: "50px",
-        marginBottom: "50px",
-        padding: "50px 5px",
         width: {xs: "80%", sm: "80%", md: "90%"},
         backgroundColor: "rgba(255,255,255,1)", 
         borderRadius: "20px", 
@@ -46,7 +43,7 @@ export const styles = {
         flexDirection: {xs: "column", sm: "column", md: "row"}
     },
     FillableTitle: {
-        textAlign: "center",
+        paddingLeft: "3rem",
         fontWeight: "900",
         fontSize: {xs: "1rem", sm: "1rem", md: "1.4rem", lg: "3rem"},
         margin: "-2rem",

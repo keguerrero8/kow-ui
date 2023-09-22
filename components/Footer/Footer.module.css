@@ -1,8 +1,7 @@
 /* @import '../../styles.css'; */
 
 .footerContainer {
-    background-color: #050533;
-    padding: 5% 0 5%;
+    background-color: var(--brand-darkblue);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,32 +12,32 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
   }
   
   .footerTermsText {
-    margin-top: 16px;
+    margin-top: 1rem;
+    text-align: center;
     font-size: var(--font-small);
   }
 
   .helpLink {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin-top: 3rem;
   }
-
   .helpLink > p {
     font-size: var(--font-medium);
     color: var(--brand-white);
-    margin-right: 8px;
+    margin-right: 1rem;
   }
   
   .contactUs {
     color: var(--brand-white);
-    font-size: var(--font-medium);
+    font-size: var(--font-large);
     font-weight: 900;
     text-decoration: none;
-    margin-left: 20px;
-    margin-bottom: 40px;
+    margin-left: 1rem;
   }
 
   .contactUs:hover {
@@ -48,50 +47,78 @@
   .linkSection {
     display: flex;
     flex-direction: row;
-    margin-bottom: 48px;
+    justify-content: center;
+    margin-top: 1.5rem;
   }
 
   .linkColumn {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0 24px;
+    margin: 0 2rem;
   }
 
   .navLink {
     color: var(--brand-white);
     text-decoration: none;
-    padding-top: 12px;
   }
 
   .navLink:hover {
     color: var(--brand-primaryblue);
   }
   
+  .socialMedia {
+    margin: 3rem 0;
+  }
+
   .websiteRights {
     color: var(--brand-white);
   }
   
-  @media screen and (max-width: 820px) {
+  @media screen and (max-width: 700px) {
+    .footerContainer{
+      align-items: flex-start;
+      padding: 3rem;
+    }
+
     .helpLink {
       flex-direction: column;
-      padding-top: 2.5rem;
-      max-width: 80vw;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      margin-top: 0;
+    }
+    .helpLink > p {
+      font-size: var(--mobile-small);
     }
 
     .contactUs {
-      margin-top: 12px;
-      margin: 20px 0 40px;
-    }
-  
-    .linkSection {
-      flex-direction: column;
-      max-width: 80vw;
+      font-size: var(--mobile-large);
+      margin-top: 1rem;
+      margin-left: 0;
     }
 
     .footerTermsText {
-      align-self: center;
-      text-align: center;
-      margin-top: 20px;
+      font-size: var(--mobile-xsmall);
+      text-align: left;
+    }
+  
+    .linkSection {
+      margin: 0 0 3rem 0;
+      justify-content: flex-start;
+    }
+
+    .linkColumn {
+      margin: 0 2rem 0 0 ;
+    }
+
+    .socialMedia {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .websiteRights {
+      font-size: var(--mobile-xsmall);
     }
   }

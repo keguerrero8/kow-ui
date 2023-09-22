@@ -5,24 +5,24 @@ import styles from './FrequentRequests.module.css'
 export default function FrequentRequests() {
     const dataColumn1 = [
         { req: 1, name: 'Aprepitant 125mg-80mg' },
-        { req: 2, name: 'Exemestane 25mg' },
-        { req: 3, name: 'Lidocaine Viscous Solution 2%' },
+        { req: 2, name: 'Lidocaine-Prilocaine 2.5%-2.5%' },
+        { req: 3, name: 'Granisetron 1mg' },
       ];
     const dataColumn2 = [
-        { req: 1, name: 'Eliquis 5mg' },
-        { req: 2, name: 'Anastrozole 1mg' },
-        { req: 3, name: 'Deferasirox 360mg' },
+        { req: 1, name: 'Megestrol 40mg/mL' },
+        { req: 2, name: 'Tamoxifen 20mg' },
+        { req: 3, name: 'Anastrozole 1mg' },
       ];
     const dataColumn3 = [
-        { req: 1, name: 'Stimate 0.15mg' },
-        { req: 2, name: 'Zarxio 300mcg/0.5mL' },
-        { req: 3, name: 'Enoxaparin 30mg/0.3mL' },
+        { req: 1, name: 'Cefdinir 300mg' },
+        { req: 2, name: 'Lidocaine Viscous Solution 2%' },
+        { req: 3, name: 'Exemestane 25mg' },
       ];
 
     return (
             <div className={styles.recentContainer}>
                 <h2>Most Frequent Requests:</h2>
-                <h3>{"Week of 6/12/23"}</h3>
+                <h3>{"Week of 8/28/23"}</h3>
                 <div className={styles.requestGroups}>
                     <ReqList data={dataColumn1}/>
                     <ReqList data={dataColumn2}/>

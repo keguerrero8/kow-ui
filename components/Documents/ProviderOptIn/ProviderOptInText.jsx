@@ -7,15 +7,15 @@ export default function ProviderOptInText({ isModal = false }) {
             {isModal? null : <h2>Provider User Opt-In Agreement</h2>}
             <p>Effective Date: January 1, 2023</p>
             <p>Welcome to KOW, an online prescription management and intermediary company (the
-                “Services”) made available by Fillable, LLC, d/b/a FillableRx, a/k/a Kindly Oblige With (KOW)
-                (“KOW”, “the Company”, “we” “us”, or “our”). You can access our services (“Services”)
-                through our website www.KOWmeds.com (the “Site”) and via SMS text messaging. This
-                document creates an agreement between you, the licensed medical provider (“You”) and KOW.
+                &quot;Services&quot;) made available by Fillable, LLC, d/b/a FillableRx, a/k/a Kindly Oblige With (KOW)&trade;
+                (&quot;KOW&quot;, &quot;the Company&quot;, &quot;we&quot; &quot;us&quot;, or &quot;our&quot;). You can access our services (&quot;Services&quot;)
+                through our website www.KOWmeds.com (the &quot;Site&quot;) and via SMS text messaging. This
+                document creates an agreement between you, the licensed medical provider (&quot;You&quot;) and KOW.
                 Once accepted, the terms and conditions set forth herein become binding legal obligations,
                 representations, covenants, conditions, and responsibilities between You and KOW. This
-                agreement incorporates the terms of the terms of use agreement (“Terms of Use”) and privacy
-                policy (“Privacy Policy”), including all future amendments or modifications thereto (collectively,
-                the “Agreement”). To the extent the terms herein conflict with any terms of the Terms of Use or
+                agreement incorporates the terms of the terms of use agreement (&quot;Terms of Use&quot;) and privacy
+                policy (&quot;Privacy Policy&quot;), including all future amendments or modifications thereto (collectively,
+                the &quot;Agreement&quot;). To the extent the terms herein conflict with any terms of the Terms of Use or
                 Privacy Policy, this document shall control. If You do not agree to these terms, are not a licensed
                 medical provider, or are younger than eighteen (18) years old, do not use the Services.</p>
             <p>By using the Services in any way, including without limitation, browsing the Services, using any
@@ -41,8 +41,8 @@ export default function ProviderOptInText({ isModal = false }) {
                 You agree not to submit any controlled substance prescriptions through the Services.</p>
             <h3>(b) HIPAA Authorizations</h3>
             <p>To the extent applicable, if any, and to the extent the information which You disclose is
-                identified as an individual’s protected health information (“PHI”) as defined under the Health
-                Insurance Portability and Accountability Act’s Privacy Law (“HIPAA”), You hereby represent
+                identified as an individual&apos;s protected health information (&quot;PHI&quot;) as defined under the Health
+                Insurance Portability and Accountability Act&apos;s Privacy Law (&quot;HIPAA&quot;), You hereby represent
                 and warrant that You have full and express authority to disclose such information in connection
                 with access and use of the Services. By using the Services, and clicking below, You hereby so
                 represent.</p>
@@ -62,11 +62,11 @@ export default function ProviderOptInText({ isModal = false }) {
         <div className={styles.section3}>
             <h2>3. Proprietary Rights and Licenses</h2>
             <p>KOW, its affiliates, and licensors, if any, exclusively own all right, title and interest in and to the
-                Services, including all associated intellectual property rights (hereinafter, the “KOW Brand
-                Features”). You acknowledge that the Services and KOW Brand Features are protected by the
+                Services, including all associated intellectual property rights (hereinafter, the &quot;KOW Brand
+                Features&quot;). You acknowledge that the Services and KOW Brand Features are protected by the
                 laws of the United States and any applicable jurisdictions. You agree not to remove, alter or
                 obscure any copyright, trademark, service mark, or other proprietary rights notice, notice which
-                demonstrates KOW’s ownership of proprietary information, incorporated in or accompanying
+                demonstrates KOW&apos;s ownership of proprietary information, incorporated in or accompanying
                 the Services. Neither this Agreement nor Your use of the Services transfers any right, title or
                 interest in the Services, the of the Services, or intellectual property rights to You, and KOW and
                 its third-party licensors, if any, retain all respective right, title, and interest to the Services.</p>

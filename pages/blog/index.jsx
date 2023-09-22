@@ -17,6 +17,8 @@ import HeatWaveArticle from '@/components/Blog/20230708HeatWave';
 import OtcBirthControlArticle from '@/components/Blog/20230715OtcBirthControl';
 import LeqembiArticle from '@/components/Blog/20230722Leqembi';
 import SunVitaminArticle from '@/components/Blog/20230729SunVitamin';
+import MentalAppsArticle from '@/components/Blog/20230805MentalAppsArticle';
+import FluVaccineArticle from '@/components/Blog/20230819FluVaccineArticle';
 
 export default function BlogGrid() {
 
@@ -98,6 +100,18 @@ export default function BlogGrid() {
         subtitle: SunVitaminArticle.subtitle,
         image: SunVitaminArticle.image,
         postId: SunVitaminArticle.postId,
+    },
+    {
+        title: MentalAppsArticle.title,
+        subtitle: MentalAppsArticle.subtitle,
+        image: MentalAppsArticle.image,
+        postId: MentalAppsArticle.postId,
+    },
+    {
+        title: FluVaccineArticle.title,
+        subtitle: FluVaccineArticle.subtitle,
+        image: FluVaccineArticle.image,
+        postId: FluVaccineArticle.postId,
     },
   ];
 

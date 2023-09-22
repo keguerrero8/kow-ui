@@ -67,10 +67,10 @@ export default function UrgentCareArticle(props) {
                 organized and remember to take their medications as prescribed.</p>
             <p>Prescription refills: Ensuring an adequate supply of medications by timely refills helps avoid 
                 interruptions in treatment.</p>
-            <p>Know your resources: Talk to your doctor and pharmacist about your options if you’re ever faced with 
+            <p>Know your resources: Talk to your doctor and pharmacist about your options if you&apos;re ever faced with 
                 being without your medication.  There may be generic substitutions or alternative treatments you can 
                 try.  Pharmacists can also provide additional guidance on medication usage, potential interactions, 
-                and adherence strategies.  Kindly Oblige With (KOW) has pharmacists available who can either answer 
+                and adherence strategies.  Kindly Oblige With (KOW)&trade; has pharmacists available who can either answer 
                 some of the general question, or help you find a pharmacy to dispense your prescription.  As a last 
                 resort, know where the nearest urgent care and hospital are in the event you experience a 
                 health-related emergency.</p>

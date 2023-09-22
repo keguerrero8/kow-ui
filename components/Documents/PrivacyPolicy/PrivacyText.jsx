@@ -7,34 +7,34 @@ export default function PrivacyText({ isModal = false }) {
             {isModal? null : <h3>Privacy Policy</h3>}
             <p>Effective Date: January 1, 2023</p>
             <p>This Privacy Policy applies to information collected by Fillable, LLC, d/b/a FillableRx, a/k/a
-                Kindly Oblige With (KOW) and its parents, subsidiaries, and affiliates (collectively, “KOW,”
-                “we,” “our” or “us”), in connection with the services that KOW offers. This includes information
-                collected online through our website www.KOWmeds.com (the “Site”), mobile application(s), if
+                Kindly Oblige With (KOW)&trade; and its parents, subsidiaries, and affiliates (collectively, &quot;KOW,&quot;
+                &quot;we,&quot; &quot;our&quot; or &quot;us&quot;), in connection with the services that KOW offers. This includes information
+                collected online through our website www.KOWmeds.com (the &quot;Site&quot;), mobile application(s), if
                 any, SMS Text messaging, and any other online, or other communications (collectively, our
-                “Services”).</p>
+                &quot;Services&quot;).</p>
             <p>This Privacy Policy explains how information may be collected, used, or disclosed through our
                 Services. This Privacy Policy is incorporated into the Terms of Use of our Services. By using our
                 Services, You are accepting the Privacy Policy and Terms of Use. Additional terms may apply
-                depending on the user portal (“You” or “Your”) through which You elect to proceed.</p>
+                depending on the user portal (&quot;You&quot; or &quot;Your&quot;) through which You elect to proceed.</p>
             <p>We do not use Your information for direct marketing purposes. Yet, under the applicable privacy
                 laws of the States of California, Colorado, Connecticut, Utah, and Virginia, and any other
                 applicable state laws of which You are a resident, You are or may be, depending on your state of
-                residence, entitled to request a copy of all personally identifiable information (“PII”) disclosed
+                residence, entitled to request a copy of all personally identifiable information (&quot;PII&quot;) disclosed
                 for direct marketing purposes, have it deleted, and opt-out of such information being sold to third
                 parties. Send such requests to PO Box 505, Valley Stream, New York 11582.</p>
         </div>
         <div className={styles.section1}>
             <h2>1. What information do we collect about You?</h2>
             <p>The information we collect about You does not include PII, except Your phone number,
-                protected health information (“PHI”) or electronic protected health information (“ePHI”). To the
+                protected health information (&quot;PHI&quot;) or electronic protected health information (&quot;ePHI&quot;). To the
                 extent we collect PII, PHI or ePHI, we will seek the required waiver(s) and/or authorization(s) as
-                set forth in applicable laws, including the Health Insurance Portability and Accountability Act’s
-                Privacy Law (“HIPAA”).</p>
+                set forth in applicable laws, including the Health Insurance Portability and Accountability Act&apos;s
+                Privacy Law (&quot;HIPAA&quot;).</p>
             <p>The information may include the following categories:</p>
             <div className={styles.subtext1_0}>
                 <h3>Personal Identifier and Other Information:</h3>
                 <p>Your name, date of birth, postal and
-                    email address, phone number, driver’s license or other government identification
+                    email address, phone number, driver&apos;s license or other government identification
                     number, username, and password.</p>
                 <h3>Commercial Information:</h3>
                 <p>Your purchase and usage history, goods and service
@@ -54,7 +54,7 @@ export default function PrivacyText({ isModal = false }) {
                     content may include drug names and information and condition names and
                     information. In addition to other uses described herein, we and other companies may
                     use this information to, among other things, provide the Services, help diagnose
-                    problems with our servers, analyze trends, track users’ web page, email, and mobile
+                    problems with our servers, analyze trends, track users&apos; web page, email, and mobile
                     application movements/activities, help identify or gather demographic information,
                     and target and retarget online and mobile advertisements to You across computers or
                     devices You may use.</p>
@@ -64,7 +64,7 @@ export default function PrivacyText({ isModal = false }) {
                     services that may be of interest to You.</p>
                 <h3>Professional Information:</h3>
                 <p>For healthcare providers, your National Provider Number
-                    (“NPI”), medical specialty or other professional credential information.</p>
+                    (&quot;NPI&quot;), medical specialty or other professional credential information.</p>
             </div>
             <p>There are several ways we may obtain information about You, including from:</p>
             <p>(1) You, when You provide us information to use our Services;</p>
@@ -79,7 +79,7 @@ export default function PrivacyText({ isModal = false }) {
                 card information, specifically, the BIN, PCB, and RxGroup, as well as phone number at which to
                 receive SMS text notifications. We may also ask for information when You register to create an
                 account, update Your information, sign up for price alerts or promotions, email or text Yourself a
-                coupon, request a discount card or coupon, sign up for a pharmaceutical manufacturer’s copay
+                coupon, request a discount card or coupon, sign up for a pharmaceutical manufacturer&apos;s copay
                 card program, access healthcare provider services, purchase products or services, participate in
                 promotions, or otherwise communicate with us.</p>
             <h3>B. Information We Collect Automatically</h3>
@@ -99,12 +99,12 @@ export default function PrivacyText({ isModal = false }) {
                 usage data; and emails that You open, forward or click-through to our Services. In addition to
                 other uses described herein, we and other companies may use this information to, among other
                 things, provide the Services, help diagnose problems with our servers, analyze trends, track
-                users’ web page, email, and mobile application movements/activities, help identify or gather
+                users&apos; web page, email, and mobile application movements/activities, help identify or gather
                 demographic and interest information, and target and retarget online and mobile advertisements
                 to You across computers or devices You may use.</p>
             <div className={styles.subtext1b}>
                 <h3>Third-Party Technologies:</h3>
-                <p>We may use other companies’ analytics, tracking and
+                <p>We may use other companies&apos; analytics, tracking and
                     provided tools that receive information when You use our Services, including
                     technology from Google, Facebook and others, to help us track, segment, and analyze
                     usage of the Services, and to help us or those companies serve more targeted
@@ -118,17 +118,17 @@ export default function PrivacyText({ isModal = false }) {
             <h3>C. Information We Collect from Third Parties</h3>
             <p>We also may receive Your information and Your household information from third parties to
                 enhance our Services, either due to our intentional acquisition of such information, or as a result
-                of a third party’s automatic collection and storage of such information, to the extent such
+                of a third party&apos;s automatic collection and storage of such information, to the extent such
                 information is stored, and/or interacts with our server.</p>
             <div className={styles.subtext1c}>
                 <h3>Third-Party API:</h3>
                 <p>The KOW server interfaces with a third-party application
-                    programming interface company (“API”) in order to translate Your queries to enrolled
-                    pharmacies (“Enrolled Pharmacies”). The API may collect certain information,
+                    programming interface company (&quot;API&quot;) in order to translate Your queries to enrolled
+                    pharmacies (&quot;Enrolled Pharmacies&quot;). The API may collect certain information,
                     including without limitation information regarding IP address, device location, and
                     screens or pages viewed, etc.</p>
                 <h3>Healthcare Professionals:</h3>
-                <p>KOW may obtain patient information from a patient’s
+                <p>KOW may obtain patient information from a patient&apos;s
                     healthcare provider.</p>
                 <h3>Marketing Partners:</h3>
                 <p>We may work with third parties to conduct marketing
@@ -272,10 +272,10 @@ export default function PrivacyText({ isModal = false }) {
             <p>You may adjust Your device or Internet browser settings to limit certain tracking or to decline
                 cookies, but by doing so, the performance of Your device or browser may prevent You from 
                 being automatically recognized upon revisiting and You may not be able to use certain features
-                of the Service or take full advantage of all of our offerings. Please refer to Your device’s settings
-                or Your Internet browser’s “Help” section for more information on how to delete and/or disable
+                of the Service or take full advantage of all of our offerings. Please refer to Your device&apos;s settings
+                or Your Internet browser&apos;s &quot;Help&quot; section for more information on how to delete and/or disable
                 Your device or browser from receiving cookies or controlling Your tracking preferences.</p>
-            <p>At this time, we do not respond to browser “Do Not Track” signals.</p>
+            <p>At this time, we do not respond to browser &quot;Do Not Track&quot; signals.</p>
             <h3>B. Your Privacy Rights</h3>
             <p>You may choose to limit certain collection or disclosure of Your information as follows:</p>
             <div className={styles.subtext4b}>
@@ -290,10 +290,10 @@ export default function PrivacyText({ isModal = false }) {
             <h3>A. European Union Visitors</h3>
             <p>Please do not use the Services if You are not a resident of the United States. The Services are
                 intended for use only by residents of the United States. Use by visitors from the European
-                Economic Area (“EEA”) is prohibited.</p>
+                Economic Area (&quot;EEA&quot;) is prohibited.</p>
         </div>
         <div className={styles.section6}>
-            <h2>6. Children’s privacy</h2>
+            <h2>6. Children&apos;s privacy</h2>
             <p>The Services are only for users of the age of 18 or older. If You are under the age of 18, please
                 do not attempt to register with us or provide any personal or other information about Yourself to
                 us at any time for the Services. We do not knowingly collect personal information from

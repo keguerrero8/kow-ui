@@ -9,17 +9,17 @@ export default function TermsText({ isModal = false }) {
         <div className={styles.bodyText}>
             {isModal? null : <h1>Terms of Use</h1>}
             <p>Effective Date: January 1, 2023</p>
-            <p>Welcome to Kindly Oblige With (KOW), an online referral service and prescription management
-                company (the “Services”) made available by Fillable, LLC (“KOW”, “the Company”, and
-                collectively, “we”, “us”, or “our”). You, a patient end-user (the “Patient”), healthcare provider
-                end-user (the “Provider”), and/or enrolled pharmacy as hereinafter and in a separate subscription
-                agreement defined (the “Enrolled Pharmacy”) (individually and collectively, “You” or “Your”)
-                can access our Services through our website, www.KOWmeds.com (the “Site”) and text
-                messaging. Please read these Terms of Service (the “Terms”) carefully because they create an
+            <p>Welcome to Kindly Oblige With (KOW)&trade;, an online referral service and prescription management
+                company (the &quot;Services&quot;) made available by Fillable, LLC (&quot;KOW&quot;, &quot;the Company&quot;, and
+                collectively, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). You, a patient end-user (the &quot;Patient&quot;), healthcare provider
+                end-user (the &quot;Provider&quot;), and/or enrolled pharmacy as hereinafter and in a separate subscription
+                agreement defined (the &quot;Enrolled Pharmacy&quot;) (individually and collectively, &quot;You&quot; or &quot;Your&quot;)
+                can access our Services through our website, www.KOWmeds.com (the &quot;Site&quot;) and text
+                messaging. Please read these Terms of Service (the &quot;Terms&quot;) carefully because they create an
                 agreement between You and KOW. Once accepted, they become binding legal obligations,
                 covenants, warranties, conditions, and responsibilities between You and KOW. This document
-                incorporates the terms of the privacy policy (the “Privacy Policy”), including all future
-                amendments or modifications thereto (collectively, the “Agreement”). If You do not agree to
+                incorporates the terms of the privacy policy (the &quot;Privacy Policy&quot;), including all future
+                amendments or modifications thereto (collectively, the &quot;Agreement&quot;). If You do not agree to
                 these Terms or are younger than eighteen (18) years old, You are to immediately cease the use of
                 the Services.</p>
             <p>By accessing or using the Services in any way, including without limitation, browsing the
@@ -32,15 +32,15 @@ export default function TermsText({ isModal = false }) {
                 bound by these terms.</p>
             <h3>KOW is an Online Referral Service and Prescription Management Platform</h3>
             <p>KOW enables You, the Patient and/or Provider, to locate one (1) or more of Your prescription
-                medication needs by submitting a request for Your medication through our Site, (“Request”) and
-                acts as a prescription locator only. After submitting a Request, the Services reach out to KOW’s
-                network of pharmacies, (each an “Enrolled Pharmacy”, and collectively the “Enrolled
-                Pharmacies”), to identity which of the Enrolled Pharmacies carry the Requested Medication, as
+                medication needs by submitting a request for Your medication through our Site, (&quot;Request&quot;) and
+                acts as a prescription locator only. After submitting a Request, the Services reach out to KOW&apos;s
+                network of pharmacies, (each an &quot;Enrolled Pharmacy&quot;, and collectively the &quot;Enrolled
+                Pharmacies&quot;), to identity which of the Enrolled Pharmacies carry the Requested Medication, as
                 hereinafter defined, in stock in order to refer You to that Enrolled Pharmacy. Each medication
                 that You request through KOW must be based on a valid prescription issued for a legitimate
                 medical purpose by a medical professional acting in the usual course of his/her professional
                 practice. You understand that submitting a query for the Requested Medication only identifies
-                and locates an Enrolled Pharmacy which carries the Requested Medication. Following KOW’s
+                and locates an Enrolled Pharmacy which carries the Requested Medication. Following KOW&apos;s
                 referral, You understand that it is solely Your responsibility to ensure that the Enrolled Pharmacy
                 receives Your prescription, which it will then dispense accordingly. KOW in no way guarantees
                 that the Requested Medication will be prepared and ready for pickup by You. The Services are
@@ -51,7 +51,7 @@ export default function TermsText({ isModal = false }) {
                 procedures, opinions, or other information that may be mentioned on the Services or by any
                 other electronic means. Reliance on any information provided by KOW is solely at Your own
                 risk and is disseminated strictly for informational purposes. The information provided through
-                KOW’s Services is designed to support, not replace, the relationship that exists between
+                KOW&apos;s Services is designed to support, not replace, the relationship that exists between
                 patient/site-visitor and his/her physician. Never disregard professional medical or pharmaceutical
                 advice or delay in seeking it because of something You have read or seen on our Services. In the
                 event of any medical emergency, please cease using the Services and immediately dial 9-1-1 and
@@ -62,9 +62,9 @@ export default function TermsText({ isModal = false }) {
                 Privacy Policy and Terms of Use.</p>
             <h3>Order Fulfillment by Pharmacy</h3>
             <p>When You, the Patient and/or Provider, submit a Request through KOW, we transmit Your
-                Request to KOW’s network of Enrolled Pharmacies to enable You to ascertain the availability of
+                Request to KOW&apos;s network of Enrolled Pharmacies to enable You to ascertain the availability of
                 requested, prescribed medication in the amounts and dosages stated on Your valid prescription
-                (“Requested Medication”). Please note that You must have a valid, legal prescription for the
+                (&quot;Requested Medication&quot;). Please note that You must have a valid, legal prescription for the
                 Requested Medication that a licensed medical professional has provided to You. By utilizing the
                 Services, You are submitting a Request that is transmitted to the Enrolled Pharmacies to
                 determine if any of the Enrolled Pharmacies possess the Requested Medication in their
@@ -127,8 +127,8 @@ export default function TermsText({ isModal = false }) {
                 unsecured wi-fi encryption, security and the like.</p>
             <h3>Mobile Security</h3>
             <p>Most communication with the Company occurs through Your mobile device, computer, laptop,
-                tablet, or other similar device (“Devices”). Therefore, Your Devices likely contain Protected
-                Health Information (“PHI”), such as pictures of Your prescriptions, medical insurance cards, and
+                tablet, or other similar device (&quot;Devices&quot;). Therefore, Your Devices likely contain Protected
+                Health Information (&quot;PHI&quot;), such as pictures of Your prescriptions, medical insurance cards, and
                 other vulnerable information. As a result, it is of the utmost importance that You keep Your
                 Devices secure at all times. If You are using public Wi-Fi or email applications on Your Devices,
                 You are likely using unsecure networks, putting PHI at risk of interception.
@@ -142,19 +142,19 @@ export default function TermsText({ isModal = false }) {
                 from theft/misplacement or any third-party intervention with any and all of Your Devices.</p>
             <h3>Third-Party API</h3>
             <p>By using the Services, You agree with our use of a third party application programming interface
-                company (“API”) with which the KOW server will interact to submit Your Request to the
+                company (&quot;API&quot;) with which the KOW server will interact to submit Your Request to the
                 Enrolled Pharmacies and connect You to the Requested Medication. Services provided by the
                 Third-Party API are incorporated without limitation in the KOW Services, as defined above and
                 hereinafter. By utilizing the Services You consent to and agree to be bound by, to the extent
-                applicable, the Third-Party API provider’s terms and conditions of service to the extent the same
+                applicable, the Third-Party API provider&apos;s terms and conditions of service to the extent the same
                 are not in conflict with this Agreement.</p>
             <h3>Proprietary Rights and License</h3>
             <p>KOW, its affiliates, and licensors, if any, exclusively own all right, title and interest in and to the
-                Services, including all associated intellectual property rights (hereinafter, the “KOW Brand
-                Features”). You acknowledge that the Services and KOW Brand Features are protected by the
+                Services, including all associated intellectual property rights (hereinafter, the &quot;KOW Brand
+                Features&quot;). You acknowledge that the Services and KOW Brand Features are protected by the
                 laws of the United States and any applicable jurisdictions. You agree not to remove, alter or
                 obscure any copyright, trademark, service mark, or other proprietary rights notice, notice which
-                demonstrates KOW’s ownership of proprietary information, incorporated in or accompanying
+                demonstrates KOW&apos;s ownership of proprietary information, incorporated in or accompanying
                 the Services. Neither these Terms nor Your use of the Services transfers any right, title or interest
                 in the Services, or intellectual property rights to You, and KOW and its third-party licensors, if
                 any, retain all respective right, title, and interest to the Services.</p>
@@ -174,17 +174,17 @@ export default function TermsText({ isModal = false }) {
             <p>By using our Services, You agree not to do any of the following:</p>
             <div className={styles.rightsList}>
                 <p>1. Use, display, mirror or frame the Services, or any individual element within the Services,
-                    KOW’s names, any KOW trademark, logo or other proprietary information, or the layout
-                    and design of any page or form contained on a page, without KOW’s express written
+                    KOW&apos;s names, any KOW trademark, logo or other proprietary information, or the layout
+                    and design of any page or form contained on a page, without KOW&apos;s express written
                     consent;</p>
                 <p>2. Delete, modify, hack or attempt to change or alter any of the Services;</p>
-                <p>3. Attempt to access, tamper with, or use non-public areas of the Services, KOW’s
+                <p>3. Attempt to access, tamper with, or use non-public areas of the Services, KOW&apos;s
                     computer systems or networks connected to any of our servers, or the technical delivery
-                    systems of KOW’s providers;</p>
+                    systems of KOW&apos;s providers;</p>
                 <p>4. Attempt to probe, scan, or test the vulnerability of any KOW system or network or breach
                     any security or authentication measures;</p>
                 <p>5. Avoid, bypass, remove, deactivate, impair, descramble or otherwise circumvent any
-                    technological measure implemented by KOW or any of KOW’s providers, if any, or any
+                    technological measure implemented by KOW or any of KOW&apos;s providers, if any, or any
                     other third party (including another user) to protect the Services;</p>
                 <p>6. Attempt to access or search the Services through the use of any engine, software, tool,
                     agent, device or mechanism (including spiders, robots, crawlers, data mining tools or the
@@ -193,7 +193,7 @@ export default function TermsText({ isModal = false }) {
                 <p>7. Send any unsolicited or unauthorized advertising, promotional materials, email, junk
                     mail, spam, chain letters or other form of solicitation;</p>
                 <p>8. Use any meta tags or other hidden text or metadata utilizing any KOW names, service
-                    marks, trademarks, logos, URLs or product names without KOW’s express written
+                    marks, trademarks, logos, URLs or product names without KOW&apos;s express written
                     consent;</p>
                 <p>9. Use any material or information, including images or photographs, which are made
                     available through the Services in any manner that infringes any copyright, trademark,
@@ -250,11 +250,11 @@ export default function TermsText({ isModal = false }) {
                 />
                 and incorporated herein by reference, which Fee Schedule was negotiated and agreed
                 to between the Parties for good and valuable consideration pursuant to the terms of the
-                subscription agreement (“Subscription Agreement”) entered into by and between You and KOW,
+                subscription agreement (&quot;Subscription Agreement&quot;) entered into by and between You and KOW,
                 which is incorporated herein by reference.</p>
             <p>Pursuant to the Subscription Agreement, for a specified term beginning on the Effective Date of 
                 the Subscription Agreement and ending on Your receipt of the Termination and Fee Schedule 
-                Notice (as therein defined) (the “Initial Testing Period”), KOW will permit access to and 
+                Notice (as therein defined) (the &quot;Initial Testing Period&quot;), KOW will permit access to and 
                 enrollment in its Services at the agreed upon monthly rate of ($______) which shall be the 
                 Initial Rate. The Initial Rate represents a promotional rate based on the Enrolled Pharmacy&apos;s 
                 network selection at the time of enrollment and offered by KOW during KOW&apos;s Initial Testing 
@@ -264,12 +264,12 @@ export default function TermsText({ isModal = false }) {
             <div className={styles.subtextFee}>
                 <p>(i) the Initial Testing Period has ended; and</p>
                 <p>(ii) the Fee Schedule in the Agreement, will now be going into full force and effect (the
-                    “Termination and Fee Schedule Notice”).</p>
+                    &quot;Termination and Fee Schedule Notice&quot;).</p>
             </div>
             <p>You will have ten (10) days from receipt of the Termination and Fee Schedule Notice to provide
                 KOW written notice to legal@KOWmeds,com that You will be opting-out of and terminating
-                this Agreement and the Subscription Agreement (the period of time to respond being the “Opt-
-                Out Noticing Period” and the notice sent being the “Opt-Out Notice”). If You do not properly
+                this Agreement and the Subscription Agreement (the period of time to respond being the &quot;Opt-
+                Out Noticing Period&quot; and the notice sent being the &quot;Opt-Out Notice&quot;). If You do not properly
                 deliver and KOW does not receive the Opt-Out Notice within the Opt-Out Notice Period, the
                 Initial Rate will no longer be in effect and the Fee Schedule annexed hereto as
                 <ExhibitModal
@@ -290,12 +290,12 @@ export default function TermsText({ isModal = false }) {
                     frequency4="Monthly"
                 />
                 and additionally annexed to the Subscription Agreement as Exhibit A, which are one and the same,
-                (collectively, the “Fee Schedule”), shall immediately become operative. Any subsequent fees
+                (collectively, the &quot;Fee Schedule&quot;), shall immediately become operative. Any subsequent fees
                 that become due and owing, by way of Your subscription, or otherwise, shall be renewed
                 automatically on an annual basis in accordance with the terms in the Fee Schedule, this
                 Agreement and the Subscription Agreement.</p>
             <p>KOW shall have the right (but not the obligation) to amend or modify the Fee Schedule, from
-                time to time, in its sole yet reasonable discretion. KOW shall provide You thirty (30) days’
+                time to time, in its sole yet reasonable discretion. KOW shall provide You thirty (30) days&apos;
                 written notice of any such amendment or modification. Upon receipt of any such notice, You
                 will have ten (10) days to deliver written notice to KOW rejecting the Fee Schedule amendment
                 or modification and terminating this Agreement and the Subscription Agreement, which
@@ -325,11 +325,11 @@ export default function TermsText({ isModal = false }) {
                 notice, for any reason or no reason, in its sole and absolute discretion, including, but not limited
                 to if You use the Services in ways that KOW determines, in its sole discretion, to be
                 inappropriate, unapproved, or unwanted. Without limitation, any use of the Services that (i) is
-                competitive or inconsistent with KOW’s own services, (ii) aggregates, in any way with third
+                competitive or inconsistent with KOW&apos;s own services, (ii) aggregates, in any way with third
                 party content or (iii) fails to attribute the KOW Services appropriately to KOW is expressly
                 prohibited. KOW reserves the right to continually review and evaluate any and all uses of the
                 Services and will determine whether specific uses are permitted or not permitted in its sole
-                discretion. KOW’s failure to immediately terminate Your use of the Services shall in no way be
+                discretion. KOW&apos;s failure to immediately terminate Your use of the Services shall in no way be
                 construed as a waiver of its ability to terminate Your use of or access to the Services at some
                 future time. KOW reserves the right to receive and You provide it the right to demand and
                 receive information related to Your use of the Services and Your compliance with this
@@ -352,11 +352,11 @@ export default function TermsText({ isModal = false }) {
             <p>If you are an Enrolled Pharmacy, you are subject to the termination
                 provisions set forth in the Subscription Agreement, which are incorporated herein by reference
                 and made a part hereof. Either party may terminate this Agreement for failure to comply with its
-                terms, conditions, or obligations upon thirty (30) days’ written notice to the other, non-
+                terms, conditions, or obligations upon thirty (30) days&apos; written notice to the other, non-
                 terminating party. Additionally, either party may terminate this Agreement for convenience upon
-                ninety (90) days’ written notice to the other, non-terminating party. In the event the Enrolled
+                ninety (90) days&apos; written notice to the other, non-terminating party. In the event the Enrolled
                 Pharmacy wishes to terminate this Agreement for convenience or if KOW terminates this
-                Agreement due to Enrolled Pharmacy’s failure to comply with the terms of the Agreement, it
+                Agreement due to Enrolled Pharmacy&apos;s failure to comply with the terms of the Agreement, it
                 shall pay to KOW, as liquidated damages, an amount equal to six (6) months of the Fee. Lastly, 
                 either party may terminate this Agreement by giving written notice of the intent to terminate the
                 Agreement no more than one hundred twenty (120) and no less than thirty (30) days before the
@@ -369,9 +369,9 @@ export default function TermsText({ isModal = false }) {
                 of this Agreement.</p>
             <h3>HIPAA Waiver – Applicable to Patient User</h3>
             <p>To the extent applicable, if any, and to the extent the information herein collected and stored is
-                subject to the purview of the Health Insurance Portability and Accountability Act’s Privacy Law
-                (“HIPAA”), if any, You hereby give KOW authority to share Your information, which You
-                agree You have voluntarily provided on KOW’s Website, with Enrolled Pharmacies for the
+                subject to the purview of the Health Insurance Portability and Accountability Act&apos;s Privacy Law
+                (&quot;HIPAA&quot;), if any, You hereby give KOW authority to share Your information, which You
+                agree You have voluntarily provided on KOW&apos;s Website, with Enrolled Pharmacies for the
                 purpose of obtaining the Requested Medication, at Your request. This authorization to share
                 Your health information is valid for the limited duration of the transaction to obtain the
                 Requested Medication, and each time thereafter, You will use the Services. You hereby release
@@ -390,7 +390,7 @@ export default function TermsText({ isModal = false }) {
                 to this Agreement, and (i) Your access to or use of the Services, or (ii) Your violation of these
                 Terms, and any breach of Your representations and warranties, and Your failure to comply with
                 Your obligations under any and all laws, rules or regulations, and applicable governing and
-                regulatory bodies, including without limitation, the Drug Enforcement Administration (“DEA”) .
+                regulatory bodies, including without limitation, the Drug Enforcement Administration (&quot;DEA&quot;) .
                 You and the Company agree that this indemnification obligation clause shall be interpreted to
                 provide the Company the maximum amount of indemnification permitted under the law of the
                 applicable State.</p>
@@ -466,7 +466,7 @@ export default function TermsText({ isModal = false }) {
                 OR ANY FORCE MAJEURE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION
                 OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES,
                 SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.
-                IN NO EVENT WILL KOW’S TOTAL LIABILITY ARISING OUT OF OR IN
+                IN NO EVENT WILL KOW&apos;S TOTAL LIABILITY ARISING OUT OF OR IN
                 CONNECTION WITH THESE TERMS, FROM THE USE OF OR INABILITY TO USE THE
                 SERVICES, INCLUDING WITHOUT LIMITATION ANY HEALTH-RELATED CONTENT,
                 OR FROM ANY COMMUNICATIONS OR INTERACTIONS WITH ANY ENROLLED
@@ -498,15 +498,15 @@ export default function TermsText({ isModal = false }) {
             <h3>Agreement to Arbitrate</h3>
             <p>You and KOW agree that any dispute, claim or controversy arising out of or relating to these
                 Terms or the breach, termination, enforcement, interpretation or validity thereof or the use of the
-                Services (collectively, “Disputes”) will be settled by binding arbitration, except that each party
+                Services (collectively, &quot;Disputes&quot;) will be settled by binding arbitration, except that each party
                 retains the right: (i) to bring an individual action in small claims court and (ii) to seek injunctive
                 or other equitable relief in a court of competent jurisdiction to prevent the actual or threatened
-                infringement, misappropriation or violation of a party’s copyrights, trademarks, trade secrets,
+                infringement, misappropriation or violation of a party&apos;s copyrights, trademarks, trade secrets,
                 patents or other intellectual property rights (the action described in the foregoing clause (ii), an
-                “IP Protection Action”). Without limiting the preceding sentence, You will also have the right to
+                &quot;IP Protection Action&quot;). Without limiting the preceding sentence, You will also have the right to
                 litigate any other Dispute if You provide KOW with written notice of Your desire to do so by
                 email at legal@KOWmeds.com within thirty (30) days following the date You first accept these
-                Terms (such notice, an “Arbitration Opt-out Notice”) and KOW agrees. If You don’t provide
+                Terms (such notice, an &quot;Arbitration Opt-out Notice&quot;) and KOW agrees. If You don&apos;t provide
                 KOW with an Arbitration Opt-out Notice within the thirty (30) day period, You will be deemed
                 to have knowingly and intentionally waived Your right to litigate any Dispute except as
                 expressly set forth in clauses (i) and (ii) above. The exclusive jurisdiction and venue of any IP
@@ -516,26 +516,26 @@ export default function TermsText({ isModal = false }) {
                 Arbitration Opt-out Notice, You acknowledge and agree that You and KOW are each waiving
                 the right to a trial by jury or to participate as a plaintiff or class member in any purported class
                 action or representative proceeding. Further, unless both You and KOW otherwise agree in
-                writing, the arbitrator may not consolidate more than one person’s claims and may not otherwise
+                writing, the arbitrator may not consolidate more than one person&apos;s claims and may not otherwise
                 preside over any form of any class or representative proceeding. If this specific paragraph is held
-                unenforceable, then the entirety of this “Dispute Resolution” section will be deemed void.
-                Except as provided in the preceding sentence, this “Dispute Resolution” section will survive any
-                termination of these Terms. The preceding sentence, this “Dispute Resolution” section will
+                unenforceable, then the entirety of this &quot;Dispute Resolution&quot; section will be deemed void.
+                Except as provided in the preceding sentence, this &quot;Dispute Resolution&quot; section will survive any
+                termination of these Terms. The preceding sentence, this &quot;Dispute Resolution&quot; section will
                 survive any termination of these Terms. You agree that any claim You may have arising out of,
                 or related to Your use of our Services must be filed within one (1) year after such claim arose;
                 otherwise, Your claim is permanently barred.</p>
             <h3>Arbitration Rules</h3>
-            <p>The arbitration will be administered by the American Arbitration Association (“AAA”) in
+            <p>The arbitration will be administered by the American Arbitration Association (&quot;AAA&quot;) in
                 accordance with the Commercial Arbitration Rules and the Supplementary Procedures for
-                Consumer Related Disputes (the “AAA Rules”) then in effect, except as modified by this
-                “Dispute Resolution” section. (The AAA Rules are available at www.adr.org or by calling the
+                Consumer Related Disputes (the &quot;AAA Rules&quot;) then in effect, except as modified by this
+                &quot;Dispute Resolution&quot; section. (The AAA Rules are available at www.adr.org or by calling the
                 AAA at 1-800-778-7879.) The Federal Arbitration Act will govern the interpretation and
                 enforcement of this Section.</p>
             <h3>Arbitration Process</h3>
             <p>A party who desires to initiate arbitration must provide the other party with a written Demand for
                 Arbitration as specified in the AAA Rules. (The AAA provides a form Demand for Arbitration at
                 www.adr.org.) The arbitrator will be either a retired judge or an attorney licensed to practice law
-                and will be selected by the parties from the AAA’s roster of arbitrators. If the parties are unable
+                and will be selected by the parties from the AAA&apos;s roster of arbitrators. If the parties are unable
                 to agree upon an arbitrator within seven (7) days of delivery of the Demand for Arbitration, then
                 the AAA will appoint the arbitrator in accordance with the AAA Rules.</p>
             <h3>Arbitration Location and Procedure</h3>
@@ -546,26 +546,26 @@ export default function TermsText({ isModal = false }) {
                 Your right to a hearing will be determined by the AAA Rules. Subject to the AAA Rules, the
                 arbitrator will have the discretion to direct a reasonable exchange of information by the parties,
                 consistent with the expedited nature of the arbitration.</p>
-            <h3>Arbitrator’s Decision</h3>
+            <h3>Arbitrator&apos;s Decision</h3>
             <p>The arbitrator will render an award within the time frame specified in the AAA Rules. The
-                arbitrator’s decision will include the essential findings and conclusions upon which the arbitrator
+                arbitrator&apos;s decision will include the essential findings and conclusions upon which the arbitrator
                 based the award. Judgment on the arbitration award may be entered in any court having
-                jurisdiction thereof. The arbitrator’s award of damages must be consistent with the terms of the
-                “Limitation of Liability” section above as to the types and amounts of damages for which a party
+                jurisdiction thereof. The arbitrator&apos;s award of damages must be consistent with the terms of the
+                &quot;Limitation of Liability&quot; section above as to the types and amounts of damages for which a party
                 may be held liable. The arbitrator may award declaratory or injunctive relief only in favor of the
-                claimant and only to the extent necessary to provide relief warranted by the claimant’s individual
-                claim. KOW will be entitled to recover attorneys’ fees and expenses if it prevails in arbitration.</p>
+                claimant and only to the extent necessary to provide relief warranted by the claimant&apos;s individual
+                claim. KOW will be entitled to recover attorneys&apos; fees and expenses if it prevails in arbitration.</p>
             <h3>Fees</h3>
             <p>Your responsibility to pay any AAA filing, administrative and arbitrator fees will be solely as set
                 forth in the AAA Rules.</p>
             <h3>Changes</h3>
-            <p>Notwithstanding the provisions of the “Changes to Terms or Services” section above, if KOW
-                changes this “Dispute Resolution” section after the date You first accepted these Terms (or
+            <p>Notwithstanding the provisions of the &quot;Changes to Terms or Services&quot; section above, if KOW
+                changes this &quot;Dispute Resolution&quot; section after the date You first accepted these Terms (or
                 accepted any subsequent changes to these Terms), You may reject any such change by sending
                 us written notice by email to legal@KOWmeds.com within thirty (30) days of the date such
-                change became effective, as indicated in the date of KOW’s notice to You regarding such
+                change became effective, as indicated in the date of KOW&apos;s notice to You regarding such
                 change. By rejecting any change, You are agreeing that You will arbitrate any Dispute between
-                You and KOW in accordance with the provisions of this “Dispute Resolution” section as of the
+                You and KOW in accordance with the provisions of this &quot;Dispute Resolution&quot; section as of the
                 date You first accepted these Terms (or accepted any subsequent changes to these Terms).</p>
             <h3>Limited Relationship</h3>
             <p>Nothing in this Agreement will be construed as creating an employer-employee relationship,
