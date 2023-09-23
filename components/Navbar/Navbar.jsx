@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useEffect, useState } from 'react';
 
-import Button from '../Button/Button';
 import styles from './Navbar.module.css';
 import image from "../../public/images/icon-only-black.jpg"
 import { useUser } from '@/context/user'
@@ -13,7 +12,6 @@ import { useUser } from '@/context/user'
 function Navbar() {
     const { isAuthenticated, logout } = useUser()
     const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
     const [scrollY, setScrollY] = useState(0);
 
     const [windowWidth, setWindowWidth] = useState(0);
@@ -21,30 +19,16 @@ function Navbar() {
     const handleClick =() => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
-    // const isMobile = useMediaQuery('(max-width: 1160px)');
-    
-    const showButton = () => {
-        if(window.innerWidth <= 1160) {
-            setButton(false)
-        } else {
-            setButton(true)
-        }
+    const handleScroll = () => {
+        setScrollY(window.scrollY);
     };
 
-    function handleLogOut () {
-        logout(closeMobileMenu)
+    const handleResize = () => {
+        setWindowWidth(window.innerWidth);
     };
 
     useEffect(() => {
         setWindowWidth(window.innerWidth);
-    
-        const handleScroll = () => {
-          setScrollY(window.scrollY);
-        };
-    
-        const handleResize = () => {
-          setWindowWidth(window.innerWidth);
-        };
     
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleResize);
@@ -55,23 +39,6 @@ function Navbar() {
         };
     }, []);
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.addEventListener('resize', showButton);
-            showButton()   
-         }
-    }, []);
-
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-  
-    useEffect(() => {
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []); 
 
     return (
         <>
@@ -114,23 +81,8 @@ function Navbar() {
                                     Dashboard
                                 </Link>
                             </li>
-                            :
-                            null}
-                        {/* {!user && !button? <li className={styles.navItem}>
-                            <Link to='/login' className={styles.navLinks} onClick={closeMobileMenu}>
-                                Sign In
-                                </Link>
-                            </li>: null} */}
-                        {/* {button && !user ? <Button path='/login'>Sign In
-                            </Button> : null} */}
-                        {isAuthenticated && !button && <li className={styles.navItem}>
-                            <Link href='/' className={styles.navLinks} onClick={handleLogOut}>
-                                Sign Out
-                            </Link>
-                        </li>}
+                            : null}
                     </ul>
-                    {isAuthenticated && button? <Button path='/' onClick={handleLogOut}>Sign Out
-                        </Button> : null}
                 </div>
             </div>
         </nav>

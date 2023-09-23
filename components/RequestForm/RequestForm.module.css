@@ -27,6 +27,13 @@
     margin-left: 3rem;
 }
 
+.statusSuccess {
+    color: green;
+}
+
+.statusFail {
+    color: red;
+}
 .iconInfo {
     display: flex;
     flex-direction: row;
@@ -51,6 +58,12 @@
     font-weight: 100;
     font-style: italic;
     margin: 0.5rem 3rem;
+}
+
+.statusContainer {
+    text-align: center;
+    width: 90%;
+    margin: 1rem auto 3rem;
 }
 
 .radioButtonsContainer {
@@ -103,6 +116,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 }
 .sectionForm > h3 {
     font-size: var(--font-small);
@@ -155,7 +169,7 @@
 }
 
 .agreements {
-    margin: 2rem 3rem;
+    margin: 1rem 3rem;
 }
 
 .checkbox {
@@ -167,14 +181,33 @@
     justify-content: center;
 }
 
-.submitButton {
-    border-radius: 1rem;
+.submitButtonDisabled {
+    border-radius: 0.8rem;
     margin-right: 2rem;
     padding: 0.5rem 2rem;
     font-size: var(--font-medium);
 }
 
+.submitButtonEnabled {
+    border-radius: 0.8rem;
+    margin-right: 2rem;
+    padding: 0.5rem 2rem;
+    font-size: var(--font-medium);
+    background-color: var(--brand-white);
+    border: 2px solid var(--brand-primaryblue);
+    color: var(--brand-primaryblue);
+}
+
+.submitButtonEnabled:hover {
+    cursor: pointer;
+    background: var(--brand-primaryblue);
+    color: var(--brand-white);
+    transition: all 0.3s ease-out;
+}
+
 .resetButton {
+    border-radius: 0.8rem;
+    padding: 0.2rem 1rem;
     border: none;
     text-decoration: underline;
     font-size: var(--font-small);
@@ -244,7 +277,13 @@
         align-items: center;
     }
 
-    .submitButton {
+    .submitButtonEnabled {
+        font-size: var(--mobile-medium);
+        margin: 0 0 1rem 0;
+        width: 80%;
+    }
+
+    .submitButtonDisabled {
         font-size: var(--mobile-medium);
         margin: 0 0 1rem 0;
         width: 80%;
@@ -260,13 +299,21 @@
         margin: 1rem 0 2rem;
     }
     
-    .submitButton {
+    .submitButtonEnabled {
+        width: 100%;
+    }
+
+    .submitButtonDisabled {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 370px) {
-    .submitButton {
+    .submitButtonEnabled {
+        font-size: var(--mobile-small);
+    }
+
+    .submitButtonDisabled {
         font-size: var(--mobile-small);
     }
 }

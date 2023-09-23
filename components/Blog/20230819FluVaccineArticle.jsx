@@ -27,7 +27,7 @@ function FluVaccineArticle(props) {
         </div>
         <div className={styles.section}>
             <h2>The Importance of Yearly Flu Shots</h2>
-            <p>Getting a flu vaccine annually is a key step in safeguarding your health. The flu virus mutates each year, leading to the emergence of new strains that can cause illness. By receiving the flu vaccine, you enhance your body's immune response against these evolving strains, reducing the risk of contracting and spreading the flu. Moreover, a flu vaccine can help prevent severe illness, hospitalization, and even death, particularly in vulnerable populations such as the elderly, children, and those with underlying health conditions.</p>
+            <p>Getting a flu vaccine annually is a key step in safeguarding your health. The flu virus mutates each year, leading to the emergence of new strains that can cause illness. By receiving the flu vaccine, you enhance your body&apos;s immune response against these evolving strains, reducing the risk of contracting and spreading the flu. Moreover, a flu vaccine can help prevent severe illness, hospitalization, and even death, particularly in vulnerable populations such as the elderly, children, and those with underlying health conditions.</p>
         </div>
         <div className={styles.section}>
             <h2>What the Vaccine Does for Your Immune System</h2>
