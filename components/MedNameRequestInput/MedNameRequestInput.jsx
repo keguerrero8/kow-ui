@@ -34,7 +34,7 @@ export default function MedNameRequestInput({ label, name, handleChange, isRequi
             <p className={styles.text}>
               {label}{isRequired? <span style={{color: "red"}}> &#42;</span> : null}
             </p>
-            <input className={styles.inputField} onChange={handleSearch} value={searchValue} name={name} onFocus={handleFocus} placeholder="Select a medication from the dropdown"/>
+            <input className={styles.inputField} onChange={handleSearch} value={searchValue} name={name} onFocus={handleFocus} placeholder="Type or select a medication"/>
         </div>
         <div className={dropdown? `${styles.searchListDropDown}` : `${styles.searchListNoDropDown}`}>
             <div >

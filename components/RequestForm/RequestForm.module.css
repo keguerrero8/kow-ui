@@ -43,15 +43,15 @@
     margin-left: 1rem;
     font-size: var(--font-small);
     font-weight: 100;
+    margin-top: 2px;
 }
 
 .icon {
-    align-self: center;
     font-size: 2rem;
 }
 
 .sectionRadio {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .sectionRadio > p {
     font-size: var(--font-xsmall);
@@ -69,16 +69,19 @@
 .radioButtonsContainer {
     display: flex;
     flex-direction: column;
-    padding-left: 2rem;
+    padding-left: 3rem;
 }
 
 .sectionHeader {
     display: flex;
     flex-direction: row;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
 }
 .sectionHeader > h3 {
     font-size: var(--font-small);
-    margin: 0 0 0.5rem 1rem;
+    margin-left: 1rem;
 }
 
 .radioOption {
@@ -114,20 +117,27 @@
 .sectionForm {
     margin-top: 2rem;
     width: 100%;
+}
+
+.formContainer {
     display: flex;
     flex-direction: column;
+    padding-left: 3rem;
     gap: 1rem;
 }
-.sectionForm > h3 {
+.formContainer > h3 {
     font-size: var(--font-small);
     font-weight: 100;
-    margin: 0.5rem 0 0.25rem;
 }
-.sectionForm > p {
+.formContainer > p {
     font-size: var(--font-xsmall);
     font-weight: 100;
     font-style: italic;
-    margin: 0.5rem 0;
+    margin: 0.25rem 0;
+}
+
+.importComponent {
+    margin: 0 0 0.5rem;
 }
 
 .iconToggle {
@@ -173,7 +183,7 @@
 }
 
 .checkbox {
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 0.5rem 1.5rem;
 }
 
 .buttonContainer {
@@ -253,10 +263,10 @@
         font-size: var(--mobile-small);
     }
 
-    .sectionForm > h3 {
+    .formContainer > h3 {
         font-size: var(--mobile-small);
     }
-    .sectionForm > p {
+    .formContainer > p {
         font-size: var(--mobile-xsmall);
     }
 

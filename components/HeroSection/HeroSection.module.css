@@ -37,7 +37,7 @@
 }
 
 .heroBtns button {
-    margin: 8px 8px 2rem;
+    margin: 0 0.5rem 0.75rem;
 }
 
 .videoContainer {
@@ -48,7 +48,7 @@
 @media screen and (max-width:1160px) {
     .heroContainer {
         height: 100%;
-        padding-top: 6rem;
+        padding-top: 4rem;
     }
 
     .cta {
@@ -76,7 +76,13 @@
     }
 }
 
-@media screen and (max-width: 760px) { 
+@media screen and (max-width: 968px) { 
+    .heroContainer {
+        padding-top: 6rem;
+    }
+}
+
+@media screen and (max-width: 760px) {
     .cta {
         padding: 0 3rem;
     }

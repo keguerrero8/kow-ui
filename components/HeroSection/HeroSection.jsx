@@ -13,9 +13,8 @@ export default function HeroSection() {
     return ( 
         <div className={styles.heroContainer}>
             <div className={styles.cta}>
-                <h1>Find and Fill your prescription TODAY.</h1>
-                <h2>Don&apos;t risk delaying your medication.</h2>
-                <h3>If you need your medication today, we&apos;ll help you find a pharmacy that has it.</h3>
+                <h1>Find your prescription right away.</h1>
+                <h3>Don&apos;t stress when you're not feeling your best. Have it delivered to your door!</h3>
                 <div className={styles.heroBtns}>
                     <Button 
                     className={stylesButton.btn} 
@@ -43,7 +42,7 @@ export default function HeroSection() {
                 </div>
             </div>
             <HeroSuggestions/>
-            <FrequentRequests/>
+            {/* <FrequentRequests/> */}
             <HomePageCards/>
         </div>
     );

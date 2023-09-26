@@ -51,9 +51,9 @@ export default function ContactSection() {
                 <h1>Get in touch with us!</h1>
                 <h3>help@KOWmeds.com</h3>
                 <br/>
-                <h3>If you have a question, a comment, or need help using our services, leave us a message. We&apos;ll get back to you as soon as possible.</h3>
+                <h3>If you have a question, a comment, or need help using our services, leave us a message. We&apos;ll be in touch via phone or email right away!</h3>
                 <br/>
-                <h3>Are you a pharmacy looking to join our network? Please provide your contact information so that one of our executives can reach you to schedule a meeting.</h3>
+                <h3>Are you a pharmacy looking to fill our prescription referrals? Please provide your contact information so that one of our executives can reach you to schedule a meeting.</h3>
             </div>
                 <form className={styles.contactForm} onSubmit={handleSubmit} ref={form}>
                     <h2>Name*</h2>
