@@ -231,7 +231,7 @@ export default function PharmacyEnrollment({ pharmacy }) {
                 <FormControl sx={{margin: "10px auto", textAlign: "center"}}>
                     <FormLabel sx={{mb: "5px"}}>
                         <Typography color="black" variant="h6" sx={styles.UserType}>
-                            Does this pharmacy provide delivery options?<span style={{color: "red"}}> &#42;</span>
+                            Does this pharmacy offer delivery options?<span style={{color: "red"}}> &#42;</span>
                         </Typography>
                     </FormLabel>
                     <RadioGroup
