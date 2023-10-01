@@ -46,10 +46,10 @@ export default function PharmacyEnrollment({ pharmacy }) {
     if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated} />
 
     const networkMap = {
-        "Local Community ($30 Monthly)": "Local Community",
-        "Expanded Delivery ($50 Monthly)": "Expanded Delivery",
-        "DME Limited (N/A)": "DME Limited",
-        "Specialty (N/A)": "Specialty"
+        "Single Rx Referrals": "Single",
+        "Batch Rx Referrals (N/A)": "Batch",
+        "Compound Rx Referrals (N/A)": "Compound",
+        "Specialty Rx Referrals (N/A)": "Specialty"
     }
 
     const additionalLanguageMap = {
