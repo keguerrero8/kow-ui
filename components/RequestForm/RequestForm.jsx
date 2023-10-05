@@ -8,9 +8,10 @@ import styles from './RequestForm.module.css'
 import messagingService from '@/lib/messagingService'
 import { useUser } from '@/context/user'
 
-import PrivacyCheckbox from './PrivacyCheckbox'
-import ProviderTermsCheckbox from './ProviderTermsCheckbox'
-import TermsOnlyCheckbox from './TermsOnlyCheckbox.jsx'
+import CheckboxModal from '@/components/CheckboxModal/CheckboxModal';
+import TermsText from '@/components/Documents/TermsOfUse/TermsText';
+import PrivacyText from '@/components/Documents/PrivacyPolicy/PrivacyText';
+import ProviderOptInText from '@/components/Documents/ProviderOptIn/ProviderOptInText';
 // Icons
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
@@ -362,15 +363,34 @@ export default function RequestForm({ medications }) {
             </div>
             <div className={styles.agreements}>
                 <div className={styles.checkbox}>
-                    <PrivacyCheckbox setisPrivacyAcknowledged={setisPrivacyAcknowledged} isPrivacyAcknowledged={isPrivacyAcknowledged}/>
+                    <CheckboxModal
+                        checkboxText="I agree to KOW's "
+                        linkText='Privacy Policy'
+                        modalContent1={<PrivacyText/>}
+                        setisAcknowledged={setisPrivacyAcknowledged}
+                        isAcknowledged={isPrivacyAcknowledged}
+                    />
                 </div>
                 {providerToggled ? (
                     <div className={styles.checkbox}>
-                        <ProviderTermsCheckbox setisOptInAcknowledged={setisOptInAcknowledged} isOptInAcknowledged={isOptInAcknowledged}/>
+                        <CheckboxModal
+                            checkboxText="I agree to KOW's "
+                            linkText='Terms and Conditions'
+                            modalContent1={<TermsText/>}
+                            modalContent2={<ProviderOptInText/>}
+                            setisAcknowledged={setisOptInAcknowledged}
+                            isAcknowledged={isOptInAcknowledged}
+                        />
                     </div> 
                 ) : (
                     <div className={styles.checkbox}>
-                        <TermsOnlyCheckbox setisOptInAcknowledged={setisOptInAcknowledged} isOptInAcknowledged={isOptInAcknowledged}/>
+                        <CheckboxModal
+                            checkboxText="I agree to KOW's "
+                            linkText='Terms and Conditions'
+                            modalContent1={<TermsText/>}
+                            setisAcknowledged={setisOptInAcknowledged}
+                            isAcknowledged={isOptInAcknowledged}
+                        />
                     </div>
                 )}
             </div>

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 
 import './PharmacyConsent.css'
-import PharmacyConsentText from './PharmacyConsentText';
+import PharmacyConsentText from './PharmacyConsentText.jsx';
 
 function PharmacyConsent(props) {
     useEffect(() => {

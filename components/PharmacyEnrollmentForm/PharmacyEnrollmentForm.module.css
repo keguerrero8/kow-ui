@@ -1,0 +1,19 @@
+.agreements {
+    margin: 1rem 3rem;
+}
+
+.checkbox {
+    margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 960px) {
+    .agreements {
+        margin: 2rem 3rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .agreements {
+        margin: 1rem 0 2rem;
+    }
+}

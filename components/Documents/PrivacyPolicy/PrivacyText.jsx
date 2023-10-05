@@ -4,7 +4,7 @@ export default function PrivacyText({ isModal = false }) {
   return (
     <>  
         <div className={styles.intro}>
-            {isModal? null : <h3>Privacy Policy</h3>}
+            <h3>Privacy Policy</h3>
             <p>Effective Date: January 1, 2023</p>
             <p>This Privacy Policy applies to information collected by Fillable, LLC, d/b/a FillableRx, a/k/a
                 Kindly Oblige With (KOW)&trade; and its parents, subsidiaries, and affiliates (collectively, &quot;KOW,&quot;
