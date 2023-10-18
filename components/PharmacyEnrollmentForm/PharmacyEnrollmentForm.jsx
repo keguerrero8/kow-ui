@@ -44,10 +44,10 @@ export default function PharmacyEnrollment({ pharmacy }) {
     if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated} />
 
     const networkMap = {
-        "Local Community ($30 Monthly)": "Local Community",
-        "Expanded Delivery ($50 Monthly)": "Expanded Delivery",
-        "DME Limited (N/A)": "DME Limited",
-        "Specialty (N/A)": "Specialty"
+        "Single Rx Referrals": "Single",
+        "Batch Rx Referrals (N/A)": "Batch",
+        "Compound Rx Referrals (N/A)": "Compound",
+        "Specialty Rx Referrals (N/A)": "Specialty"
     }
 
     const additionalLanguageMap = {
@@ -190,8 +190,8 @@ export default function PharmacyEnrollment({ pharmacy }) {
                 />
                 <FormControl sx={{margin: "10px auto", textAlign: "center"}}>
                     <FormLabel sx={{mb: "5px"}}>
-                        <Typography color="black" variant="h6" sx={stylesMui.UserType}>
-                            Does this pharmacy provide delivery options?<span style={{color: "red"}}> &#42;</span>
+                        <Typography color="black" variant="h6" sx={styles.UserType}>
+                            Does this pharmacy offer delivery options?<span style={{color: "red"}}> &#42;</span>
                         </Typography>
                     </FormLabel>
                     <RadioGroup

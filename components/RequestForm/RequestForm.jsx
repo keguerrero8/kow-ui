@@ -147,7 +147,7 @@ export default function RequestForm({ medications }) {
     
     const response = await messagingService.createRequest(payload)
     if (!response.error) {
-        setRequestStatus(["Request successfully sent!"])
+        setRequestStatus(["Request submitted!"])
         setisRequestSuccessful(true)
     } else {
         const errors = Object.entries(response.error).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)
@@ -206,11 +206,11 @@ export default function RequestForm({ medications }) {
                 </div>
             </div>
             <div className={styles.sectionForm}>
-                {/* <div className={styles.sectionHeader}>
+                <div className={styles.sectionHeader}>
                     <MedicationOutlinedIcon className={styles.icon}/>
                     <h3>Requested Medication:</h3>
                 </div>
-                <div className={styles.radioButtonsContainer}>
+                {/*<div className={styles.radioButtonsContainer}>
                     <div className={styles.radioOption}>
                         <button className={styles.iconToggle} onClick={handleSingleMedClick}>
                             {singleMedToggled ? <RadioButtonCheckedIcon className={styles.radioIcon} /> : <RadioButtonUncheckedOutlinedIcon className={styles.radioIcon}/>}
@@ -242,30 +242,33 @@ export default function RequestForm({ medications }) {
                         />  
                     <p className={styles.optional}>Optional</p>
                 </div> */}
-                <div className={styles.sectionForm}>
-                    <MedNameRequestInput 
-                        requestData={requestData} 
-                        label="Medication Name" 
-                        name="med_name" 
-                        handleChange={handleChange} 
-                        isRequired={true} 
-                        medications={medications} 
-                        setMedication={setMedication}
-                        setRequestData={setRequestData}
-                        searchValue={searchValue}
-                        setSearchValue={setSearchValue}
-                    />
-                    <MedStrengthRequestInput 
-                        requestData={requestData} 
-                        label="Medication Dose/Strength"
-                        name="med_strength"
-                        handleChange={handleChange} 
-                        key="Strength"
-                        isRequired={medication.strength && medication.strength.length > 0? true : false} 
-                        strengths={medication.strength? medication.strength : []} 
-                    />
-                    <div>
-                        <p style={{fontSize: "1rem"}}>Prescribed Quantity<span style={{color: "red"}}> &#42;</span></p>
+                <div className={styles.formContainer}>
+                    <div className={styles.importComponent}>
+                        <MedNameRequestInput 
+                            requestData={requestData} 
+                            label="Medication Name" 
+                            name="med_name" 
+                            handleChange={handleChange} 
+                            isRequired={true} 
+                            medications={medications} 
+                            setMedication={setMedication}
+                            setRequestData={setRequestData}
+                            searchValue={searchValue}
+                            setSearchValue={setSearchValue}
+                        />
+                    </div>
+                    <div className={styles.importComponent}>
+                        <MedStrengthRequestInput 
+                            requestData={requestData} 
+                            label="Medication Dose/Strength"
+                            name="med_strength"
+                            handleChange={handleChange} 
+                            key="Strength"
+                            isRequired={medication.strength && medication.strength.length > 0? true : false} 
+                            strengths={medication.strength? medication.strength : []} 
+                        />
+                    </div>
+                    <h3>Prescribed Quantity<span style={{color: "red"}}> &#42;</span></h3>
                         <input
                             // type='text'
                             name='quantity'
@@ -275,8 +278,7 @@ export default function RequestForm({ medications }) {
                             value={requestData["quantity"]}
                             placeholder='Number values only'
                         />
-                        <p>Type the number of units (e.g., tablets, capsules, packs, tubes, boxes, inhalers, pens, grams, milliliters, etc.) prescribed.</p>
-                    </div>
+                    <p>Type the number of units (e.g., tablets, capsules, packs, tubes, boxes, inhalers, pens, grams, milliliters, etc.) prescribed.</p>
                 </div>
             </div>
             <div className={styles.sectionRadio}>
@@ -314,34 +316,36 @@ export default function RequestForm({ medications }) {
                         <MedicalInformationOutlinedIcon className={styles.icon}/>
                         <h3>Pharmacy Insurance Card:</h3>
                     </div>
-                    <h3>BIN<span style={{color: "red"}}> &#42;</span></h3>
-                        <input
-                        type='text'
-                        name='bin'
-                        className={styles.inputField}
-                        required
-                        onChange={handleChange}
-                        value={requestData["bin"]}
-                        />
-                    <h3>PCN<span style={{color: "red"}}> &#42;</span></h3>
-                        <input
-                        type='text'
-                        name='pcn'
-                        className={styles.inputField}
-                        required
-                        onChange={handleChange}
-                        value={requestData["pcn"]}
-                        />
-                    <h3>RxGroup<span style={{color: "red"}}> &#42;</span></h3>
-                        <input
-                        type='text'
-                        name='rxgroup'
-                        className={styles.inputField}
-                        required
-                        onChange={handleChange}
-                        value={requestData["rxgroup"]}
-                        />
-                    <p>If your card does not have a RxGroup or GRP, type &quot;N/A&quot;.</p>
+                    <div className={styles.formContainer}>
+                        <h3>BIN<span style={{color: "red"}}> &#42;</span></h3>
+                            <input
+                            type='text'
+                            name='bin'
+                            className={styles.inputField}
+                            required
+                            onChange={handleChange}
+                            value={requestData["bin"]}
+                            />
+                        <h3>PCN<span style={{color: "red"}}> &#42;</span></h3>
+                            <input
+                            type='text'
+                            name='pcn'
+                            className={styles.inputField}
+                            required
+                            onChange={handleChange}
+                            value={requestData["pcn"]}
+                            />
+                        <h3>RxGroup<span style={{color: "red"}}> &#42;</span></h3>
+                            <input
+                            type='text'
+                            name='rxgroup'
+                            className={styles.inputField}
+                            required
+                            onChange={handleChange}
+                            value={requestData["rxgroup"]}
+                            />
+                        <p>If your card does not have a RxGroup or GRP, type &quot;N/A&quot;.</p>              
+                    </div>
                 </div>
             ) : null}
             <div className={styles.sectionForm}>
@@ -349,17 +353,19 @@ export default function RequestForm({ medications }) {
                     <PhoneOutlinedIcon className={styles.icon}/>
                     <h3>Contact Information:</h3>
                 </div>
-                <h3>Mobile Number<span style={{color: "red"}}> &#42;</span></h3>
-                    <input
-                    type='text'
-                    name='phone_number'
-                    className={styles.inputField}
-                    required
-                    onChange={handleChange}
-                    placeholder='Please enter 10 digits'
-                    value={requestData["phone_number"]}
-                    />
-                <p>Provide your Mobile Number to receive SMS text notifications if a pharmacy has the requested medication available.</p>
+                <div className={styles.formContainer}>
+                    <h3>Mobile Number<span style={{color: "red"}}> &#42;</span></h3>
+                        <input
+                        type='text'
+                        name='phone_number'
+                        className={styles.inputField}
+                        required
+                        onChange={handleChange}
+                        placeholder='Please enter 10 digits'
+                        value={requestData["phone_number"]}
+                        />
+                    <p>Provide your Mobile Number to receive SMS text notifications if the requested medication is available.</p>
+                </div>
             </div>
             <div className={styles.agreements}>
                 <div className={styles.checkbox}>
@@ -396,7 +402,7 @@ export default function RequestForm({ medications }) {
             </div>
             <div className={styles.statusContainer}>
                 {status.map((e, index) => 
-                    <p key={index} className={status[0] === "Request successfully sent!"? `${styles.statusSuccess}` : `${styles.statusFail}`}>{e}</p>)}
+                    <p key={index} className={status[0] === "Request submitted!"? `${styles.statusSuccess}` : `${styles.statusFail}`}>{e}</p>)}
             </div>
             <div className={styles.buttonContainer}>
                 <button type='submit' disabled={isSubmitButtonDisabled} className={isSubmitButtonDisabled? `${styles.submitButtonDisabled}` : `${styles.submitButtonEnabled}`}>
@@ -406,7 +412,7 @@ export default function RequestForm({ medications }) {
                     Reset Request
                 </button>
             </div>
-        </form>   
+        </form>
     </div>
   )
 }

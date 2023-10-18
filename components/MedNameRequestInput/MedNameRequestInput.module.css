@@ -5,8 +5,8 @@
 }
 
 .text {
-    margin-bottom: 5px;
-    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: var(--font-small);
 }
 
 .inputField {
@@ -17,12 +17,14 @@
     padding: 6px 12px;
     font-size: var(--font-small);
     overflow-x: hidden;
+    margin-top: 0.75rem;
 }
 .inputField::placeholder {
     color: var(--brand-darkergrey);
 }
 
 .searchListDropDown {
+    background-color: var(--brand-white);
     max-height: 150px; 
     width: 98%;
     border: solid lightgrey 1px; 
@@ -51,6 +53,10 @@
 
 @media screen and (max-width: 960px) {
     .inputField {
+        font-size: var(--mobile-small);
+    }
+
+    .text {
         font-size: var(--mobile-small);
     }
 }

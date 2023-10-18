@@ -6,8 +6,8 @@
 }
 
 .text {
-    margin-bottom: 5px;
-    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: var(--font-small);
 }
 
 .strengthList {
@@ -26,18 +26,21 @@
     padding: 6px 12px;
     font-size: var(--font-small);
     overflow-x: hidden;
+    margin: 0.75rem 0 0 0.5rem;
 }
 .inputField::placeholder {
     color: var(--brand-darkergrey);
 }
 
 .inputFieldDisabled {
+    background-color: var(--brand-white);
     width: 100%;
     height: fit-content;
     border-radius: 2px;
     border: 1px solid var(--brand-darkgrey);
     padding: 6px 12px;
     background-color: rgba(5, 5, 51, 0.1);
+    margin-top: 0.75rem;
 }
 
 .searchListDropDown {
@@ -69,6 +72,10 @@
 
 @media screen and (max-width: 960px) {
     .inputField {
+        font-size: var(--mobile-small);
+    }
+
+    .text {
         font-size: var(--mobile-small);
     }
 }

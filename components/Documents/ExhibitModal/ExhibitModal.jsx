@@ -33,7 +33,6 @@ export default function Modal( props ) {
                   <p>{props.frequency3}</p>
               </div>
           </div>
-
           <div className={styles.feeFreqRow}>
               <div className={styles.row}>
                   <h3>{props.tier1} Network</h3>

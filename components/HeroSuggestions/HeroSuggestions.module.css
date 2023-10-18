@@ -19,6 +19,8 @@
     font-size: var(--font-large);
     margin-bottom: 2rem;
     padding-left: 3rem;
+    width: 100%;
+    text-align: center;
 }
 
 .medGroups {
@@ -120,5 +122,6 @@
     .sectionTwo > h2 {
         font-size: var(--mobile-large);
         padding-left: 3rem;
+        text-align: start;
     }
 }
