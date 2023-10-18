@@ -1,4 +1,4 @@
-export const styles = {
+export const stylesMui = {
     MainContainer: {
         margin: "5px auto", 
         width: {xs: "100%", sm: "100%", md: "90%"}, 

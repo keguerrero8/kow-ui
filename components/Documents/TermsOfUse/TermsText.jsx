@@ -23,7 +23,7 @@ export default function TermsText({ isModal = false }) {
 
     return (
         <div className={styles.bodyText}>
-            {isModal? null : <h1>Terms of Use</h1>}
+            <h1>Terms of Use</h1>
             <p>Effective Date: January 1, 2023</p>
             <p>Welcome to Kindly Oblige With (KOW)&trade;, an online referral service and prescription management
                 company (the &quot;Services&quot;) made available by Fillable, LLC (&quot;KOW&quot;, &quot;the Company&quot;, and

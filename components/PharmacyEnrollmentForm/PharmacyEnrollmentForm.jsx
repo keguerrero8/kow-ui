@@ -3,15 +3,19 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import pharmacyService from '@/lib/pharmacyService';
+import CheckboxModal from '@/components/CheckboxModal/CheckboxModal';
+import TermsText from '@/components/Documents/TermsOfUse/TermsText';
+import PrivacyText from '@/components/Documents/PrivacyPolicy/PrivacyText';
+import PharmacySubscriptionText from '@/components/Documents/PharmacySubscription/PharmacySubscriptionText'
+import PharmacyConsentText from '@/components/Documents/PharmacyOptIn/PharmacyConsentText.jsx'
 import RequestFormInput from '@/components/RequestFormInput/RequestFormInput.jsx'
 import FormGenericDropDown from '@/components/FormGenericDropDown/FormGenericDropDown.jsx';
-import PharmacyEnrollmentTermsModal from '@/components/PharmacyEnrollmentTermsModal/PharmacyEnrollmentTermsModal.jsx';
-import PharmacyEnrollmentOptInModal from '@/components/PharmacyEnrollmentOptInModal/PharmacyEnrollmentOptInModal.jsx';
 import { useUser } from '@/context/user';
 import Page404 from '@/pages/404';
 
-import { Box, Typography, TextField, Button, FormControlLabel, FormControl, FormLabel, RadioGroup, Radio, Checkbox } from '@mui/material'
-import { styles } from './PharmacyEnrollmentForm-styles'
+import { Box, Typography, TextField, Button, FormControlLabel, FormControl, FormLabel, RadioGroup, Radio } from '@mui/material'
+import { stylesMui } from './PharmacyEnrollmentForm-styles'
+import styles from './PharmacyEnrollmentForm.module.css'
 
 export default function PharmacyEnrollment({ pharmacy }) {
     const { isAuthenticated, user } = useUser()
@@ -29,19 +33,13 @@ export default function PharmacyEnrollment({ pharmacy }) {
         isDelivery: false
     }
 
-    const [checkedPrivacy, setCheckedPrivacy] = useState(false)
-    const [checkedOptIn, setCheckedOptIn] = useState(false)
     const [enrollmentData, setEnrollmentData] = useState(defaultEnrollmentData)
     const [isDisabled, setIsDisabled] = useState(false)
     const [status, setStatus] = useState([])
-    const [isAgreementTermsModal, setIsAgreementTermsModal] = useState(false)
-    const [isAgreementOptInModal, setIsAgreementOptInModal] = useState(false)
-    const [stepPrivacy, setStepPrivacy] = useState(1)
-    const [stepOptIn, setStepOptIn] = useState(1)
-    const [isPrivacyAcknowledged, setisPrivacyAcknowledged] = useState(false)
-    const [isOptInAcknowledged, setisOptInAcknowledged] = useState(false)
     const [networkSearchValue, setNetworkSearchValue] = useState("")
     const [languageSearchValue, setLanguageSearchValue] = useState("")
+    const [isTermsAcknowledged, setisTermsAcknowledged] = useState(false)
+    const [isPharmacySubscriptionAcknowledged, setisPharmacySubscriptionAcknowledged] = useState(false)
 
     if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated} />
 
@@ -99,32 +97,12 @@ export default function PharmacyEnrollment({ pharmacy }) {
         }
     }
 
-    const handlePrivacyCheck = (e) => {
-        if (e.target.checked) {
-            setIsAgreementTermsModal(true)
-        }
-  
-      setCheckedPrivacy(e.target.checked)
-    }
-
-    const handleOptInCheck = (e) => {
-        if (e.target.checked) {
-            setIsAgreementOptInModal(true)
-        }
-  
-      setCheckedOptIn(e.target.checked)
-    }
-
     function handleClear () {
         setStatus([])
         setEnrollmentData(defaultEnrollmentData)
         setIsDisabled(false)
-        setisPrivacyAcknowledged(false)
-        setisOptInAcknowledged(false)
-        setCheckedPrivacy(false)
-        setCheckedOptIn(false)
-        setStepPrivacy(1)
-        setStepOptIn(1)
+        setisTermsAcknowledged(false)
+        setisPharmacySubscriptionAcknowledged(false)
         setNetworkSearchValue("")
         setLanguageSearchValue("")
     }
@@ -142,25 +120,7 @@ export default function PharmacyEnrollment({ pharmacy }) {
     }
 
     return (
-        <Box sx={styles.MainContainer} component="form" onSubmit={handleSubmit}>
-            <PharmacyEnrollmentTermsModal 
-                setIsAgreementModal={setIsAgreementTermsModal} 
-                isAgreementModal={isAgreementTermsModal} 
-                step={stepPrivacy} 
-                setStep={setStepPrivacy} 
-                isPrivacyAcknowledged={isPrivacyAcknowledged}
-                setisPrivacyAcknowledged={setisPrivacyAcknowledged}
-                />
-            <PharmacyEnrollmentOptInModal 
-                setIsAgreementModal={setIsAgreementOptInModal} 
-                isAgreementModal={isAgreementOptInModal} 
-                step={stepOptIn} 
-                setStep={setStepOptIn} 
-                isOptInAcknowledged={isOptInAcknowledged}
-                setisOptInAcknowledged={setisOptInAcknowledged}
-                pharmacy={pharmacy}
-                enrollmentData={enrollmentData}
-            />
+        <Box sx={stylesMui.MainContainer} component="form" onSubmit={handleSubmit}>
             <Box sx={{my: "40px"}}>
                 <Link href={`/dashboard/pharmacies/${pharmacy.id}`} style={{color: "#154161"}}>
                 Return to Pharmacy Page
@@ -172,7 +132,7 @@ export default function PharmacyEnrollment({ pharmacy }) {
                 <Typography component="div" variant="h6" sx={{fontWeight: 400, my: "10px"}}>Zipcode: {pharmacy.zipcode}</Typography>
                 <Typography component="div" variant="h6" sx={{fontWeight: 400, my: "10px"}}>{pharmacy.phone_number? pharmacy.phone_number.replace("+", "") : null}</Typography>
             </Box>
-            <Box sx={styles.FieldsContainer}>
+            <Box sx={stylesMui.FieldsContainer}>
                 <Box>
                     <RequestFormInput 
                         requestData={enrollmentData} 
@@ -245,21 +205,28 @@ export default function PharmacyEnrollment({ pharmacy }) {
                         </Box>
                     </RadioGroup>
                 </FormControl>
-                <Box sx={{textAlign: "center", width: "100%", marginTop: "2rem", marginX: "auto", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
-                    <FormControlLabel
-                        labelPlacement='end'
-                        control={<Checkbox checked={checkedPrivacy} onChange={handlePrivacyCheck}/>} 
-                        label={<Typography variant='h5' sx={{fontSize: "1.1rem", fontWeight: "bolder", textAlign: "start"}}>I AGREE TO KOW&apos;S TERMS OF USE AND PRIVACY POLICY</Typography>} 
-                    />
-                </Box>
-                <Box sx={{textAlign: "center", width: "100%", marginTop: "-1rem", marginX: "auto", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
-                    <FormControlLabel
-                        disabled={enrollmentData["contact_name"] === "" || enrollmentData["contact_title"] === ""}
-                        labelPlacement='end'
-                        control={<Checkbox checked={checkedOptIn} onChange={handleOptInCheck}/>} 
-                        label={<Typography variant='h5' sx={{fontSize: "1.1rem", fontWeight: "bolder", textAlign: "start"}}>I AGREE TO KOW&apos;S PHARMACY SUBSCRIPTION AND OPT-IN AGREEMENTS</Typography>} 
-                    />
-                </Box>
+                <div className={styles.agreements}>
+                    <div>
+                        <CheckboxModal
+                            checkboxText="I agree to KOW's "
+                            linkText='Terms and Privacy Policy'
+                            modalContent1={<TermsText isModal={true}/>}
+                            modalContent2={<PrivacyText isModal={true}/>}
+                            setisAcknowledged={setisTermsAcknowledged}
+                            isAcknowledged={isTermsAcknowledged}
+                        />
+                    </div>
+                    <div>
+                        <CheckboxModal
+                            checkboxText="I agree to KOW's "
+                            linkText='Pharmacy Subscription and Opt-in Agreements'
+                            modalContent1={<PharmacySubscriptionText isModal={true} pharmacy={pharmacy} enrollmentData={enrollmentData}/>}
+                            modalContent2={<PharmacyConsentText isModal={true}/>}
+                            setisAcknowledged={setisPharmacySubscriptionAcknowledged}
+                            isAcknowledged={isPharmacySubscriptionAcknowledged}
+                        />
+                    </div>
+                </div>
                 <Box sx={{flex: 1, mt: "50px"}}>
                     <Typography color="black" component="" sx={{mt: "-2rem", mb: "2rem", fontSize: {xs: "0.5rem", sm: "0.8rem", md: "1rem"}}}>
                     You acknowledge and agree that the typed name You provided shall be deemed an original signature for purposes of this Agreement. By typing Your name below, You agree to be bound by the terms, conditions, covenants, and obligations of Your subscription, including without limitation those set forth in the Subscription Agreement, Opt-in, Privacy Policy, and Terms of Use. 
@@ -278,9 +245,8 @@ export default function PharmacyEnrollment({ pharmacy }) {
             {status.map((e, index) => 
                 <Typography key={index} sx={{color: status[0] === "Successfully enrolled the pharmacist!"? "green" : "red"}}>{e}</Typography>)}
             </Box>
-            <Box sx={styles.ButtonsContainer}>
-                <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={isDisabled || enrollmentData["signature"] === "" || !isPrivacyAcknowledged || !isOptInAcknowledged || !checkedPrivacy || !checkedOptIn}>
-                {/* <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={enrollmentData["signature"] === ""}>     */}
+            <Box sx={stylesMui.ButtonsContainer}>
+                <Button variant='contained' sx={{color: "white", width: "30%"}} size="large" type="submit" disabled={isDisabled || enrollmentData["signature"] === "" || !isTermsAcknowledged || !isPharmacySubscriptionAcknowledged}>
                     Submit
                 </Button>
                 <Button variant='text' sx={{color: "#154161", width: "40%"}} size="large" onClick={handleClear} >
