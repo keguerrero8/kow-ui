@@ -146,7 +146,7 @@ export default function RequestForm({ medications }) {
     
     const response = await messagingService.createRequest(payload)
     if (!response.error) {
-        setRequestStatus(["Request successfully sent!"])
+        setRequestStatus(["Request submitted!"])
         setisRequestSuccessful(true)
     } else {
         const errors = Object.entries(response.error).map(e => `${e[0].replace("_", " ")}: ${e[1]}`)

@@ -14,7 +14,7 @@ export default function HeroSection() {
         <div className={styles.heroContainer}>
             <div className={styles.cta}>
                 <h1>Find your prescription right away.</h1>
-                <h3>Don&apos;t stress when you're not feeling your best. Have it delivered to your door!</h3>
+                <h3>Don&apos;t stress when you&apos;re not feeling your best. Have it delivered to your door!</h3>
                 <div className={styles.heroBtns}>
                     <Button 
                     className={stylesButton.btn} 
