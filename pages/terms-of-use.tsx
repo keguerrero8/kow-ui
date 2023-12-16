@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
+import { NextPage } from 'next';
 
 import styles from '@/components/Documents/TermsOfUse/Terms.module.css'
-
 import TermsText from '@/components/Documents/TermsOfUse/TermsText.jsx';
 
-function Terms() {
+const Terms: NextPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
@@ -16,4 +16,4 @@ function Terms() {
     );
 }
 
-export default Terms;
+export default Terms

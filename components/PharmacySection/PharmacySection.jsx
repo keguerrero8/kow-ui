@@ -11,7 +11,7 @@ import pharmacistService from '@/lib/pharmacistService'
 import { Box, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Paper, Typography, Button, Card, CardContent } from '@mui/material'
 import { styles } from './PharmacySection-styles'
 
-export default function PharmacyPage({ pharmacy }) {    
+export default function PharmacySection({ pharmacy }) {    
     const { isAuthenticated } = useUser()
     const [pharmacists, setPharmacists] = useState([])
     const [pharmacistsUpdate, setPharmacistsUpdate] = useState(false)

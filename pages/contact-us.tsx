@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import Head from 'next/head'
+import { NextPage } from 'next';
 
 import ContactSection from '@/components/ContactSection/ContactSection.jsx';
 
-export default function ContactUsPage() {
+const ContactUsPage: NextPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -22,3 +23,5 @@ export default function ContactUsPage() {
     </>
   );
 }
+
+export default ContactUsPage

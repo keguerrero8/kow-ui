@@ -1,8 +1,9 @@
 import Head from 'next/head'
+import { NextPage } from 'next'
 
 import HeroSection from '@/components/HeroSection/HeroSection'
 
-export default function Home() {
+const HomePage: NextPage = () => {
   return (
     <>
       <Head>
@@ -17,3 +18,5 @@ export default function Home() {
     </>
   )
 }
+
+export default HomePage

@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
+import { NextPage } from 'next';
 
 import styles from '@/components/Documents/PrivacyPolicy/Privacy.module.css'
-
 import PrivacyText from '@/components/Documents/PrivacyPolicy/PrivacyText.jsx';
 
-function Privacy() {
+const Privacy: NextPage= () => {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);

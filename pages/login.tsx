@@ -1,9 +1,10 @@
 import Head from 'next/head'
+import { NextPage } from 'next';
 
 import LoginForm from '@/components/LoginForm/LoginForm.jsx';
 
 
-export default function LoginPage() {
+const LoginPage: NextPage = () => {
 
   return (
     <>
@@ -19,3 +20,5 @@ export default function LoginPage() {
     </>
   );
 }
+
+export default LoginPage

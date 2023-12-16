@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import Head from 'next/head'
+import { NextPage } from 'next';
 
 import HowSection from '@/components/HowSection/HowSection.jsx';
 
-export default function Home() {
+const HowItWorksPage: NextPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
@@ -19,3 +20,5 @@ export default function Home() {
         </>
     )
 }
+
+export default HowItWorksPage

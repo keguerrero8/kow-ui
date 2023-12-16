@@ -1,21 +1,31 @@
 import { useEffect } from 'react';
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Head from 'next/head'
 
 import RequestForm from '@/components/RequestForm/RequestForm.jsx';
 
 import { Box } from '@mui/material';
 
-export const getStaticProps = async () => {
+interface Medication {
+  name: string
+  brand_name: string
+  strength: string[]
+  isSpecialty: boolean
+}
+
+type MedicationPageProps = InferGetStaticPropsType<typeof getStaticProps>
+
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const res = await fetch(`${process.env.DJANGO_API_URL}/core/medications`)
-    const medications = await res.json()
+    const medications: Medication[] = await res.json()
     return { props: { medications } }
   } catch (error) {
     return { props: { medications: [] } }
   }
 }
 
-export default function FindMedicationPage({ medications }) {
+const FindMedicationPage: NextPage = ({ medications }: MedicationPageProps) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -36,3 +46,5 @@ export default function FindMedicationPage({ medications }) {
     </>
   );
 }
+
+export default FindMedicationPage

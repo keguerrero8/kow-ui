@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
+import { NextPage } from 'next';
 import { Box, Button, Typography } from '@mui/material';
 
 const styles = {
@@ -14,12 +15,16 @@ const styles = {
   },
 }
 
-export default function Page404({isAuthFailure = false}) {
+interface Page404Props {
+  isAuthFailure: boolean
+}
+
+const Page404: NextPage<Page404Props> = ({isAuthFailure = false}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const router = useRouter();
+  const router: NextRouter = useRouter();
   
   return (
     <Box sx={styles.MainContainer}>
@@ -33,3 +38,5 @@ export default function Page404({isAuthFailure = false}) {
     </Box>
   )
 }
+
+export default Page404

@@ -9,8 +9,8 @@ export default function PharmacistRow({ pharmacist, pharmacistsUpdate, setPharma
     const { name, phone_number, id, isEnrolled } = pharmacist
     const [checked, setChecked] = useState(isEnrolled)
 
-    const updatePharmacist = async (obj) => {
-        const updatedPharmacist = await pharmacistService.updatePharmacist(id, obj)
+    const updatePharmacist = async (pharmacistUpdateData) => {
+        const updatedPharmacist = await pharmacistService.updatePharmacist(id, pharmacistUpdateData)
         // FIXME add some logic here for error handling if the updatePharmacist call failed
         // and display an error message about the failure
         setChecked(updatedPharmacist.isEnrolled)

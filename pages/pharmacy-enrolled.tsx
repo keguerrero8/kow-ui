@@ -1,6 +1,7 @@
+import { NextPage } from 'next';
 import SplashPage from '@/components/SplashPage/SplashPage.jsx';
 
-export default function PharmacyEnrolledPage() {
+const PharmacyEnrolledPage: NextPage = () => {
 
   return (
     <>
@@ -8,3 +9,5 @@ export default function PharmacyEnrolledPage() {
     </>
   );
 }
+
+export default PharmacyEnrolledPage
