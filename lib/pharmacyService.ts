@@ -1,4 +1,4 @@
-interface GetPharmacyResponse {
+export interface GetPharmacyResponse {
     id: number
     name: string
     address: string

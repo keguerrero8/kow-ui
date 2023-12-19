@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { NextPage } from 'next';
+import { StaticImageData } from 'next/image';
 
 import styles from '@/components/Blog/BlogGrid.module.css'
 
@@ -20,9 +22,16 @@ import SunVitaminArticle from '@/components/Blog/20230729SunVitamin';
 import MentalAppsArticle from '@/components/Blog/20230805MentalAppsArticle';
 import FluVaccineArticle from '@/components/Blog/20230819FluVaccineArticle';
 
-export default function BlogGrid() {
+interface BlogArticle {
+    title: string
+    subtitle: string
+    image: StaticImageData
+    postId: string
+}
 
-    const blogArticles = [
+const BlogPage: NextPage = () => { 
+
+    const blogArticles: BlogArticle[] = [
     {
         title: SpecialtyDrugsArticle.title,
         subtitle: SpecialtyDrugsArticle.subtitle,
@@ -115,7 +124,7 @@ export default function BlogGrid() {
     },
   ];
 
-  const sortedArticles = blogArticles.sort((a, b) => b.postId - a.postId);
+  const sortedArticles = blogArticles.sort((a, b) => parseInt(b.postId) - parseInt(a.postId));
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -140,3 +149,4 @@ export default function BlogGrid() {
   );
 };
 
+export default BlogPage

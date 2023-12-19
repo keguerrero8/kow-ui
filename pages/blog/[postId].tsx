@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
+import { NextPage } from 'next';
 
 import styles from '@/components/Blog/BlogPost.module.css'
 
@@ -19,8 +20,8 @@ import SunVitaminArticle from '@/components/Blog/20230729SunVitamin';
 import MentalAppsArticle from '@/components/Blog/20230805MentalAppsArticle';
 import FluVaccineArticle from '@/components/Blog/20230819FluVaccineArticle';
 
-const ViewPost = () => {
-    const router = useRouter();
+const ViewPost: NextPage = () => {
+    const router: NextRouter = useRouter();
     const { postId } = router.query;
 
     useEffect(() => {
