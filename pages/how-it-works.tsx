@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Head from 'next/head'
 import { NextPage } from 'next';
 
-import HowSection from '@/components/HowSection/HowSection.jsx';
+import HowSection from '@/components/HowSection/HowSection';
 
 const HowItWorksPage: NextPage = () => {
     useEffect(() => {

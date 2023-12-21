@@ -12,7 +12,7 @@ import image3 from "../../public/images/how-img-three-v3.jpg"
 
 import tutorialvideo from "../../public/videos/tutorialv3.mp4"
 
-function HowSection() {
+const HowSection: React.FC = () => {
     return (
         <div className={styles.howContainer}>
             <h1>Need Your Prescription Today?</h1>

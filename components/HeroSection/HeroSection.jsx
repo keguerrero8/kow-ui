@@ -4,7 +4,7 @@ import stylesButton from '../Button/Button.module.css'
 import HeroSuggestions from '@/components/HeroSuggestions/HeroSuggestions.jsx';
 import FrequentRequests from '@/components/FrequentRequests/FrequentRequests.jsx';
 import HomePageCards from '@/components/Blog/HomePageCards.jsx';
-import Button from '@/components/Button/Button.jsx'
+import Button from '@/components/Button/Button.tsx'
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
 import welcome from "../../public/videos/welcome.mp4"

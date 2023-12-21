@@ -1,7 +1,7 @@
 import styles from './Banner.module.css';
 import Link from 'next/link'
 
-export default function Banner() {
+const Banner: React.FC = () => {
 
     const announcementPrimary = "Website Downtime scheduled for 5/30/23 11:00 pm - 7:00 am";
     const announcementSecondary = "BETA pharmacies now serving patients in select parts of Queens and Long Island, NY!";
@@ -27,3 +27,5 @@ export default function Banner() {
         </div>
     );
 }
+
+export default Banner
