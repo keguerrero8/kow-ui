@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { TableCell, TableRow } from '@mui/material';
 
-export default function PharmacyRow({ row }) {
-    const { id, name, address, zipcode, phone_number } = row
+const PharmacyRow: React.FC<PharmacyProps> = ({ pharmacy }) => {
+    const { id, name, address, zipcode, phone_number } = pharmacy
 
     return (
       <>
@@ -17,5 +17,7 @@ export default function PharmacyRow({ row }) {
           <TableCell align="center">{phone_number}</TableCell>
         </TableRow>
       </>
-    );
-  }
+  );
+}
+
+export default PharmacyRow

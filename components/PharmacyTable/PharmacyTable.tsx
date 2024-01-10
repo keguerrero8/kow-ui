@@ -1,8 +1,8 @@
-import PharmacyRow from '@/components/PharmacyRow/PharmacyRow.jsx'
+import PharmacyRow from '@/components/PharmacyRow/PharmacyRow'
 
 import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material'
 
-export default function PharmacyTable({ filteredPharmacies }) {
+const PharmacyTable: React.FC<PharmaciesProps> = ({ pharmacies }) => {
   return (
     <Box sx={{width: "90%", margin: "50px auto"}}>
         <TableContainer component={Paper}>
@@ -16,10 +16,12 @@ export default function PharmacyTable({ filteredPharmacies }) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {filteredPharmacies.map(pharmacy => <PharmacyRow key={pharmacy.id} row={pharmacy} /> )}
+                    {pharmacies.map(pharmacy => <PharmacyRow key={pharmacy.id} pharmacy={pharmacy} /> )}
                 </TableBody>
             </Table>
         </TableContainer>
     </Box>
   )
 }
+
+export default PharmacyTable

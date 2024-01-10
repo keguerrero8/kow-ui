@@ -1,6 +1,6 @@
 import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
-import pharmacyService, { GetPharmacyResponse } from '@/lib/pharmacyService';
-import DashboardSection from '@/components/DashboardSection/DashboardSection.jsx';
+import pharmacyService from '@/lib/pharmacyService';
+import DashboardSection from '@/components/DashboardSection/DashboardSection';
 
 import * as cookie from 'cookie'
 
@@ -15,7 +15,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       throw new Error('access token not found');
     }
 
-    const pharmacies: GetPharmacyResponse[] | [] = await pharmacyService.getPharmacies(access)
+    const pharmacies = await pharmacyService.getPharmacies(access)
     return { props: { pharmacies } }
   } catch (error) {
     return { props: { pharmacies: []}}
