@@ -5,25 +5,32 @@ import { Box, Button, Typography } from '@mui/material'
 
 import styles from './ContactSection.module.css';
 
-export default function ContactSection() {
+interface MessageData {
+    user_name: string
+    user_email: string
+    phone: string
+    message: string
+}
+
+const ContactSection: React.FC = () => {
     const form = useRef();
-    const [status, setMessageStatus] = useState("")
-    const [isDisabled, setDisabled] = useState(false)
-    const [messageData, setMessageData] = useState({
+    const [status, setMessageStatus] = useState<string>("")
+    const [isDisabled, setDisabled] = useState<boolean>(false)
+    const [messageData, setMessageData] = useState<MessageData>({
         user_name: "",
         user_email: "",
         phone: "",
         message: ""
     })
 
-    function handleChange (e) {
+    function handleChange (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         setMessageData({
             ...messageData,
             [e.target.name]: e.target.value
         })
     }
 
-    function handleSubmit (e) {
+    function handleSubmit (e: React.FormEvent) {
         e.preventDefault()
         if (!messageData.user_name) {
             setMessageStatus("Please provide a name")
@@ -113,3 +120,5 @@ export default function ContactSection() {
         </div>
     );
 }
+
+export default ContactSection

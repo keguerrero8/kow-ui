@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from './HeroSuggestions.module.css'
 import stylesButton from '../Button/Button.module.css'
 
-import Button from '@/components/Button/Button.tsx'
+import Button from '@/components/Button/Button'
 
 import image1 from "../../public/images/cold2.jpg"
 import image2 from "../../public/images/av2.jpg"
@@ -12,7 +12,7 @@ import image4 from "../../public/images/inh2.jpg"
 import image5 from "../../public/images/gluc3.jpg"
 import image6 from "../../public/images/vacc3.jpg"
 
-export default function HeroSuggestions() {
+const HeroSuggestions: React.FC = () => {
     return (
             <div className={styles.sectionTwo}>
                 <h2>Some medication can&apos;t wait...</h2>                
@@ -102,3 +102,5 @@ export default function HeroSuggestions() {
             </div>
     );
 }
+
+export default HeroSuggestions

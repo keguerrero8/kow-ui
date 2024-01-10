@@ -1,15 +1,15 @@
 import styles from './HeroSection.module.css'
 import stylesButton from '../Button/Button.module.css'
 
-import HeroSuggestions from '@/components/HeroSuggestions/HeroSuggestions.jsx';
-import FrequentRequests from '@/components/FrequentRequests/FrequentRequests.jsx';
+import HeroSuggestions from '@/components/HeroSuggestions/HeroSuggestions';
+import FrequentRequests from '@/components/FrequentRequests/FrequentRequests';
 import HomePageCards from '@/components/Blog/HomePageCards.jsx';
-import Button from '@/components/Button/Button.tsx'
+import Button from '@/components/Button/Button'
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
 import welcome from "../../public/videos/welcome.mp4"
 
-export default function HeroSection() {
+const HeroSection: React.FC = () => {
     return ( 
         <div className={styles.heroContainer}>
             <div className={styles.cta}>
@@ -47,3 +47,5 @@ export default function HeroSection() {
         </div>
     );
 }
+
+export default HeroSection

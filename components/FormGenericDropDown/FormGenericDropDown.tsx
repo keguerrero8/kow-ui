@@ -1,22 +1,32 @@
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 
 import OutsideClickHandler from 'react-outside-click-handler'
 import { Box, TextField, Typography, List, ListItem } from '@mui/material'
 import { styles } from './FormGenericDropDown-styles'
 
-export default function FormGenericDropDown({ label, name, handleChange, isRequired = false, options, searchValue, setSearchValue, placeholder }) {
-  const [dropdown, setDropDown] = useState(false)
+interface FormGenericDropDownProps {
+  label: string
+  name: string
+  handleChange: (e: React.SyntheticEvent, dropDownKey: string) => void
+  isRequired: boolean
+  options: string[]
+  searchValue: string
+  setSearchValue: Dispatch<SetStateAction<string>>
+  placeholder: string
+}
+
+const FormGenericDropDown: React.FC<FormGenericDropDownProps> = ({ label, name, handleChange, isRequired = false, options, searchValue, setSearchValue, placeholder }) => {
+  const [dropdown, setDropDown] = useState<boolean>(false)
 
   const handleFocus = () => setDropDown(true)
 
-  const handleSelection = (e, i) => {
+  const handleSelection = (e: React.MouseEvent<HTMLElement>) => {
     setDropDown(false)
     handleChange(e, name)
-    setSearchValue(e.target.innerText)
+    setSearchValue((e.target as HTMLElement).innerText)
   }
 
-  
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setSearchValue(e.target.value)
   }
   
@@ -35,7 +45,7 @@ export default function FormGenericDropDown({ label, name, handleChange, isRequi
             <List >
                 {filteredOptions.length > 0? filteredOptions.map((i) => 
                   <ListItem 
-                    onClick={(e) => handleSelection(e, i)} 
+                    onClick={(e) => handleSelection(e)} 
                     sx={{cursor: "pointer", '&:hover': {backgroundColor: "rgba(5, 5, 51, 0.5)"}}} 
                     key={i}
                   >
@@ -49,3 +59,5 @@ export default function FormGenericDropDown({ label, name, handleChange, isRequi
     </Box>
   )
 }
+
+export default FormGenericDropDown

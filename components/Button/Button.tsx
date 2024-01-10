@@ -9,22 +9,22 @@ const PAGES = [styles.btnDefault, styles.btnHome, styles.btnHow, styles.btnFind,
 
 interface ButtonProps {
     children: React.ReactNode
-    onClick: MouseEventHandler<HTMLButtonElement>
+    onClick?: MouseEventHandler<HTMLButtonElement>
     buttonStyle?: string
     buttonSize?: string
     buttonPage?: string
     path: string
-    linkClassName?: string
+    className?: string
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick, buttonStyle, buttonSize, buttonPage, path, linkClassName}) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick, buttonStyle, buttonSize, buttonPage, path, className}) => {
 
     const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0]
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
     const checkButtonPage = PAGES.includes(buttonPage) ? buttonPage : PAGES[0]
 
     return (
-        <Link href={path} className={linkClassName? linkClassName : ""}>
+        <Link href={path} className={className? className : ""}>
             <button
             className={`${styles.btn} ${checkButtonStyle} ${checkButtonSize} ${checkButtonPage}`}
             onClick={onClick}

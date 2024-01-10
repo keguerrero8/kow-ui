@@ -2,7 +2,16 @@ import Link from 'next/link'
 
 import styles from './FrequentRequests.module.css'
 
-export default function FrequentRequests() {
+interface DataColumn {
+  req: number
+  name: string
+}
+
+interface ReqListProps {
+  data: DataColumn[]
+}
+
+const FrequentRequests: React.FC = () => {
     const dataColumn1 = [
         { req: 1, name: 'Aprepitant 125mg-80mg' },
         { req: 2, name: 'Lidocaine-Prilocaine 2.5%-2.5%' },
@@ -36,12 +45,15 @@ export default function FrequentRequests() {
     );
 }
 
-function ReqList({ data }) {
-    return (
-      <ul>
-        {data.map(item => (
-          <li className={styles.requestList} key={item.req}>{item.name}</li>
-        ))}
-      </ul>
-    );
-  }
+const ReqList: React.FC<ReqListProps> = ({ data }) => {
+  return (
+    <ul>
+      {data.map(item => (
+        <li className={styles.requestList} key={item.req}>{item.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default FrequentRequests
+

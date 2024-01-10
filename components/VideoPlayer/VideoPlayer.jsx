@@ -1,4 +1,4 @@
-const VideoPlayer = ({ src, alt, height, width }) => {
+const VideoPlayer = ({ src, alt, height = null, width }) => {
     return (
         <div>
             <video 

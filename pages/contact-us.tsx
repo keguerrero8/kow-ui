@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Head from 'next/head'
 import { NextPage } from 'next';
 
-import ContactSection from '@/components/ContactSection/ContactSection.jsx';
+import ContactSection from '@/components/ContactSection/ContactSection';
 
 const ContactUsPage: NextPage = () => {
   useEffect(() => {

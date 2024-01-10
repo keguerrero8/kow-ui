@@ -14,7 +14,7 @@ const DashboardSection: React.FC<PharmaciesProps> = ({ pharmacies }) => {
     if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated}/>
 
     let filteredPharmacies = []
-    if (pharmacies.length >= 0) {
+    if (pharmacies.length > 0) {
         filteredPharmacies = pharmacies.filter(p => 
             p.name.toLocaleLowerCase().startsWith(search.toLocaleLowerCase()) || p.zipcode.startsWith(search))
     }
