@@ -6,13 +6,6 @@ import RequestForm from '@/components/RequestForm/RequestForm.jsx';
 
 import { Box } from '@mui/material';
 
-interface Medication {
-  name: string
-  brand_name: string
-  strength: string[]
-  isSpecialty: boolean
-}
-
 type MedicationPageProps = InferGetStaticPropsType<typeof getStaticProps>
 
 export const getStaticProps: GetStaticProps = async () => {

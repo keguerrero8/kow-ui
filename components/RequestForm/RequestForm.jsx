@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Link from 'next/link';
 
-import MedNameRequestInput from '@/components/MedNameRequestInput/MedNameRequestInput.jsx'
-import MedStrengthRequestInput from '@/components/MedStrengthRequestInput/MedStrengthRequestInput.jsx'
+import MedNameRequestInput from '@/components/MedNameRequestInput/MedNameRequestInput'
+import MedStrengthRequestInput from '@/components/MedStrengthRequestInput/MedStrengthRequestInput'
 
 import styles from './RequestForm.module.css'
 import messagingService from '@/lib/messagingService'

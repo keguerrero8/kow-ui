@@ -1,21 +1,34 @@
-import { useState } from 'react'
+import { useState, Dispatch, SetStateAction } from 'react'
 
 import OutsideClickHandler from 'react-outside-click-handler'
 import styles from './MedNameRequestInput.module.css'
 
-export default function MedNameRequestInput({ label, name, handleChange, isRequired = false, medications, setMedication, requestData, setRequestData, searchValue, setSearchValue }) {
-  const [dropdown, setDropDown] = useState(false)
+interface MedNameRequestInputProps {
+  label: string
+  name: string
+  handleChange: (e: React.SyntheticEvent, isAuto: boolean, name: string) => void
+  isRequired?: boolean
+  medications: Medication[]
+  setMedication: Dispatch<SetStateAction<Medication | {}>>
+  requestData: Request
+  setRequestData: Dispatch<SetStateAction<Request>>
+  searchValue: string
+  setSearchValue: Dispatch<SetStateAction<string>>
+}
+
+const MedNameRequestInput: React.FC<MedNameRequestInputProps> = ({ label, name, handleChange, isRequired = false, medications, setMedication, requestData, setRequestData, searchValue, setSearchValue }) => {
+  const [dropdown, setDropDown] = useState<boolean>(false)
 
   const handleFocus = () => setDropDown(true)
 
-  const handleSelection = (e, i) => {
+  const handleSelection = (e: React.MouseEvent<HTMLParagraphElement>, i: Medication) => {
     setDropDown(false)
     handleChange(e, true, "med_name")
     setMedication(i)
-    setSearchValue(e.target.innerText)
+    setSearchValue((e.target as HTMLParagraphElement).innerText)
   }
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMedication({})
     setSearchValue(e.target.value)
     setRequestData({
@@ -54,3 +67,5 @@ export default function MedNameRequestInput({ label, name, handleChange, isRequi
     </div>
   )
 }
+
+export default MedNameRequestInput

@@ -4,10 +4,19 @@ import styles from "./MedStrengthRequestInput.module.css"
 
 import OutsideClickHandler from 'react-outside-click-handler'
 
-export default function MedStrengthRequestInput({ label, name, handleChange, requestData, isRequired = false, strengths }) {
-  const [dropdown, setDropDown] = useState(false)
+interface MedStrengthRequestInputProps {
+  label: string
+  name: string
+  handleChange: (e: React.SyntheticEvent, isAuto: boolean, name: string) => void
+  requestData: Request
+  isRequired?: boolean
+  strengths: string[]
+}
 
-  function handleSelection (e, i) {
+const MedStrengthRequestInput: React.FC<MedStrengthRequestInputProps> = ({ label, name, handleChange, requestData, isRequired = false, strengths }) => {
+  const [dropdown, setDropDown] = useState<boolean>(false)
+
+  function handleSelection (e: React.MouseEvent<HTMLParagraphElement>) {
     setDropDown(false)
     handleChange(e, true, "med_strength")
   }
@@ -34,7 +43,7 @@ export default function MedStrengthRequestInput({ label, name, handleChange, req
             <div >
                 {strengths.length > 0? strengths.map((i) => 
                   <p 
-                    onClick={(e) => handleSelection(e, i)} 
+                    onClick={(e) => handleSelection(e)} 
                     className={styles.searchListItems} 
                     key={i}
                   >
@@ -48,3 +57,5 @@ export default function MedStrengthRequestInput({ label, name, handleChange, req
     </div>
   )
 }
+
+export default MedStrengthRequestInput

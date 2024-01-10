@@ -9,7 +9,7 @@ import PrivacyText from '@/components/Documents/PrivacyPolicy/PrivacyText';
 import PharmacySubscriptionText from '@/components/Documents/PharmacySubscription/PharmacySubscriptionText'
 import PharmacyConsentText from '@/components/Documents/PharmacyOptIn/PharmacyConsentText.jsx'
 import RequestFormInput from '@/components/RequestFormInput/RequestFormInput.jsx'
-import FormGenericDropDown from '@/components/FormGenericDropDown/FormGenericDropDown.jsx';
+import FormGenericDropDown from '@/components/FormGenericDropDown/FormGenericDropDown';
 import { useUser } from '@/context/user';
 import Page404 from '@/pages/404';
 
