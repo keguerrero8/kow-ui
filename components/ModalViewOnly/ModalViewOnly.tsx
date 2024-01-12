@@ -2,7 +2,14 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import styles from './ModalViewOnly.module.css';
 
-const ModalViewOnly = ({ contentInfo1, contentInfo2, clickBackground, clickIcon }) => {
+interface ModalViewOnlyProps {
+    contentInfo1: React.ReactNode
+    contentInfo2: React.ReactNode
+    clickBackground: () => void
+    clickIcon: () => void
+}
+
+const ModalViewOnly: React.FC<ModalViewOnlyProps> = ({ contentInfo1, contentInfo2, clickBackground, clickIcon }) => {
     
   return (
     <div className={styles.modalContainer}>

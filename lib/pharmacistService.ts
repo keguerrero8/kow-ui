@@ -10,15 +10,8 @@ interface GetPharmacistResponseSuccess {
 
 type GetPharmacistResponse = GetPharmacistResponseSuccess[] | []
 
-//perhaps centralize this since it gets used in PharmacistCreationModal
-interface CreatePharmacistData {
-    name: string
-    phone_number: string
-    isEnrolled: boolean
-}
-
 interface PostPharmacistResponseFail {
-    errors: string 
+    errors: string[] 
 }
 
 type PostPharmacistResponse = GetPharmacistResponseSuccess | PostPharmacistResponseFail
@@ -42,7 +35,7 @@ class PharmacistService {
         return response
     }
 
-    async createPharmacist (pharmacyId: number, pharmacistData: CreatePharmacistData): Promise<PostPharmacistResponse> {
+    async createPharmacist (pharmacyId: number, pharmacistData: PharmacistData): Promise<PostPharmacistResponse> {
         const createStatus: PostPharmacistResponse = await fetch(`${process.env.NEXT_PUBLIC_NEXT_API_URL}/api/pharmacists`, {
             method: "POST",
             headers: {

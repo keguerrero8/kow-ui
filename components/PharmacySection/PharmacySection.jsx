@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { useUser } from '@/context/user';
 import Page404 from '@/pages/404';
-import PharmacistCreationModal from '@/components/PharmacistCreationModal/PharmacistCreationModal.jsx'
+import PharmacistCreationModal from '@/components/PharmacistCreationModal/PharmacistCreationModal'
 import PharmacistRow from '@/components/PharmacistRow/PharmacistRow.jsx'
 import pharmacistService from '@/lib/pharmacistService'
 
@@ -39,6 +39,7 @@ export default function PharmacySection({ pharmacy }) {
     const pharmacySignedDate = new Date(pharmacy.signed_agreement_stamp)
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     
+    console.log(pharmacy)
     
     return (
         <Box sx={styles.MainContainer}>

@@ -1,14 +1,20 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 
 import pharmacistService from '@/lib/pharmacistService'
 import { styles } from './PharmacistCreationModal-styles';
 
 import { Box, Button, Typography, Modal, TextField } from "@mui/material"
 
-export default function PharmacistCreationModal({ pharmacyId, pharmacistsUpdate, setPharmacistsUpdate }) {
-  const [open, setOpen] = useState(false)
-  const [errors, setErrors] = useState([])
-  const [pharmacistData, setPharmacistData] = useState({name: "", phone_number: "", isEnrolled: false})
+interface PharmacistCreationModalProps {
+  pharmacyId: number
+  pharmacistsUpdate: boolean
+  setPharmacistsUpdate: Dispatch<SetStateAction<boolean>>
+}
+
+const PharmacistCreationModal: React.FC<PharmacistCreationModalProps> = ({ pharmacyId, pharmacistsUpdate, setPharmacistsUpdate }) => {
+  const [open, setOpen] = useState<boolean>(false)
+  const [errors, setErrors] = useState<string[] | []>([])
+  const [pharmacistData, setPharmacistData] = useState<PharmacistData>({name: "", phone_number: "", isEnrolled: false})
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
@@ -16,15 +22,15 @@ export default function PharmacistCreationModal({ pharmacyId, pharmacistsUpdate,
     setErrors([])
     setPharmacistData({name: "", phone_number: "", isEnrolled: false})
   }
-  const handleChange = (e) => setPharmacistData({...pharmacistData, [e.target.name]: e.target.value})
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => setPharmacistData({...pharmacistData, [e.target.name]: e.target.value})
 
   const createPharmacist = async () => {
     const response = await pharmacistService.createPharmacist(pharmacyId, pharmacistData)
-    if (!response.errors) {
-      setErrors([])
-      setPharmacistsUpdate(!pharmacistsUpdate)
+    if ("errors" in response) {
+      setErrors(response.errors);
     } else {
-      setErrors(response.errors)
+      setErrors([]);
+      setPharmacistsUpdate(!pharmacistsUpdate);
     }
   }
 
@@ -54,3 +60,5 @@ export default function PharmacistCreationModal({ pharmacyId, pharmacistsUpdate,
     </>
   );
 }
+
+export default PharmacistCreationModal
