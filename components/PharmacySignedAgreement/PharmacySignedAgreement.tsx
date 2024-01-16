@@ -9,9 +9,9 @@ import { styles } from './PharmacySignedAgreement-styles'
 import { Box, Button } from '@mui/material'
 import { useReactToPrint } from 'react-to-print';
 
-export default function PharmacySignedAgreement({ pharmacy }) {
+const PharmacySignedAgreement = ({ pharmacy }: PharmacyProps) => {
     const { isAuthenticated } = useUser()
-    const printableComponent = useRef();
+    const printableComponent = useRef<HTMLElement>();
 
     
     const handlePrint = useReactToPrint({
@@ -34,4 +34,6 @@ export default function PharmacySignedAgreement({ pharmacy }) {
         </Box>
   )
 }
+
+export default PharmacySignedAgreement
 

@@ -34,7 +34,7 @@ const PharmacistCreationModal: React.FC<PharmacistCreationModalProps> = ({ pharm
     }
   }
 
-  function handleSubmit (e) {
+  function handleSubmit (e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     createPharmacist()
   }

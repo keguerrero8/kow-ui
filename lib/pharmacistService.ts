@@ -1,24 +1,6 @@
-//same response for GET and POST
-interface GetPharmacistResponseSuccess {
-    id: number
-    pharmacy: number
-    name: string
-    phone_number: string
-    email: string | null
-    isEnrolled: boolean
-}
-
 type GetPharmacistResponse = GetPharmacistResponseSuccess[] | []
 
-interface PostPharmacistResponseFail {
-    errors: string[] 
-}
-
 type PostPharmacistResponse = GetPharmacistResponseSuccess | PostPharmacistResponseFail
-
-interface UpdatePharmacistData {
-    isEnrolled: boolean
-}
 
 type PutPharmacistResponse = GetPharmacistResponseSuccess | Record<string, never>
 

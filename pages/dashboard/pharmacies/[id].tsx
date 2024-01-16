@@ -2,7 +2,7 @@ import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next'
 import * as cookie from 'cookie'
 
 import pharmacyService from '@/lib/pharmacyService';
-import PharmacySection from '@/components/PharmacySection/PharmacySection.jsx';
+import PharmacySection from '@/components/PharmacySection/PharmacySection';
 
 
 type PharmacyPageProps = InferGetServerSidePropsType<typeof getServerSideProps>

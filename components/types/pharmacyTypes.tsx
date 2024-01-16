@@ -15,6 +15,7 @@ interface Pharmacy {
     initial_rate: string
     signature: string
     signed_agreement_admin: string  
+    signed_agreement_stamp: string
 }
 
 interface UpdatePharmacyValidationErrors {

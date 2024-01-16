@@ -1,26 +1,32 @@
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 
 import pharmacistService from '@/lib/pharmacistService'
 
 import { IconButton, TableCell, TableRow, Checkbox } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-export default function PharmacistRow({ pharmacist, pharmacistsUpdate, setPharmacistsUpdate }) {
-    const { name, phone_number, id, isEnrolled } = pharmacist
-    const [checked, setChecked] = useState(isEnrolled)
+interface PharmacistRowProps {
+    pharmacist: GetPharmacistResponseSuccess
+    pharmacistsUpdate: boolean
+    setPharmacistsUpdate: Dispatch<SetStateAction<boolean>>
+}
 
-    const updatePharmacist = async (pharmacistUpdateData) => {
+const PharmacistRow: React.FC<PharmacistRowProps> = ({ pharmacist, pharmacistsUpdate, setPharmacistsUpdate }) => {
+    const { name, phone_number, id, isEnrolled } = pharmacist
+    const [checked, setChecked] = useState<boolean>(isEnrolled)
+
+    const updatePharmacist = async (pharmacistUpdateData: UpdatePharmacistData) => {
         const updatedPharmacist = await pharmacistService.updatePharmacist(id, pharmacistUpdateData)
         // FIXME add some logic here for error handling if the updatePharmacist call failed
         // and display an error message about the failure
         setChecked(updatedPharmacist.isEnrolled)
     }
 
-    function handleChange (e) {
+    function handleChange (e: React.ChangeEvent<HTMLInputElement>) {
         updatePharmacist({ isEnrolled: e.target.checked })
     }
 
-    const deletePharmacist = async (pharmacist_id) => {
+    const deletePharmacist = async (pharmacist_id: number) => {
         const isDeleted = await pharmacistService.deletePharmacist(pharmacist_id)
         // FIXME add some logic here for error handling if the updatePharmacist call failed
         // and display an error message about the failure
@@ -49,3 +55,5 @@ export default function PharmacistRow({ pharmacist, pharmacistsUpdate, setPharma
     </TableRow>
   )
 }
+
+export default PharmacistRow

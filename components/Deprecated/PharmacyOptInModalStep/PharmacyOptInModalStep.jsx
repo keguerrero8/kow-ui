@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 
 import { styles } from './PharmacyOptInModalStep-styles';
-import PharmacyConsentText from '../Documents/PharmacyOptIn/PharmacyConsentText.js';
+import PharmacyConsentText from '../../Documents/PharmacyOptIn/PharmacyConsentText.jsx';
 
 import { Button, Box, Typography } from '@mui/material'
 

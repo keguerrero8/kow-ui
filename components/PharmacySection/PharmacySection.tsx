@@ -1,21 +1,29 @@
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router';
+import { useRouter, NextRouter } from 'next/router';
 import Link from 'next/link';
 
 import { useUser } from '@/context/user';
 import Page404 from '@/pages/404';
 import PharmacistCreationModal from '@/components/PharmacistCreationModal/PharmacistCreationModal'
-import PharmacistRow from '@/components/PharmacistRow/PharmacistRow.jsx'
+import PharmacistRow from '@/components/PharmacistRow/PharmacistRow'
 import pharmacistService from '@/lib/pharmacistService'
 
 import { Box, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Paper, Typography, Button, Card, CardContent } from '@mui/material'
 import { styles } from './PharmacySection-styles'
 
-export default function PharmacySection({ pharmacy }) {    
+interface PharmacySectionProps {
+    pharmacy: Pharmacy
+}
+
+const PharmacySection: React.FC<PharmacySectionProps> = ({ pharmacy }) => {    
     const { isAuthenticated } = useUser()
-    const [pharmacists, setPharmacists] = useState([])
-    const [pharmacistsUpdate, setPharmacistsUpdate] = useState(false)
-    const router = useRouter()
+    const [pharmacists, setPharmacists] = useState<GetPharmacistResponse>([])
+    const [pharmacistsUpdate, setPharmacistsUpdate] = useState<boolean>(false)
+    const router: NextRouter = useRouter()
+
+    if ("id" in pharmacy === false) {
+        router.push("/505")
+    }
     
     const loadPharmacists = async () => {
         const loadedPharmacists = await pharmacistService.getPharmacists(pharmacy.id)
@@ -37,9 +45,8 @@ export default function PharmacySection({ pharmacy }) {
     }
     
     const pharmacySignedDate = new Date(pharmacy.signed_agreement_stamp)
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     
-    console.log(pharmacy)
     
     return (
         <Box sx={styles.MainContainer}>
@@ -106,3 +113,5 @@ export default function PharmacySection({ pharmacy }) {
         </Box>
     )
 }
+
+export default PharmacySection
