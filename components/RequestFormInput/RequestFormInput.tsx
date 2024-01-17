@@ -1,6 +1,17 @@
 import { Box, TextField, Typography } from '@mui/material'
+import { ChangeEvent, Dispatch } from 'react'
 
-export default function RequestFormInput({ flex, label, name, handleChange, requestData, isRequired = false, placeholder="" }) {
+interface RequestFormInputProps {
+  flex: number
+  label: string
+  name: string
+  handleChange: Dispatch<ChangeEvent<HTMLTextAreaElement>>
+  requestData: RequestData
+  isRequired: boolean
+  placeholder: string
+}
+
+const RequestFormInput: React.FC<RequestFormInputProps> = ({ flex, label, name, handleChange, requestData, isRequired = false, placeholder="" }) => {
 
   return (
     <Box sx={{flex: flex}}>
@@ -11,3 +22,5 @@ export default function RequestFormInput({ flex, label, name, handleChange, requ
     </Box>
   )
 }
+
+export default RequestFormInput

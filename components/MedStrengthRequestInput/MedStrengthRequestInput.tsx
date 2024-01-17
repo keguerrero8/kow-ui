@@ -7,8 +7,8 @@ import OutsideClickHandler from 'react-outside-click-handler'
 interface MedStrengthRequestInputProps {
   label: string
   name: string
-  handleChange: (e: React.SyntheticEvent, isAuto: boolean, name: string) => void
-  requestData: Request
+  handleChange: (e: React.SyntheticEvent, name: string) => void
+  requestData: RequestData
   isRequired?: boolean
   strengths: string[]
 }
@@ -18,7 +18,7 @@ const MedStrengthRequestInput: React.FC<MedStrengthRequestInputProps> = ({ label
 
   function handleSelection (e: React.MouseEvent<HTMLParagraphElement>) {
     setDropDown(false)
-    handleChange(e, true, "med_strength")
+    handleChange(e, "med_strength")
   }
   
   const handleFocus = () => setDropDown(true)

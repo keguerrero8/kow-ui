@@ -1,4 +1,4 @@
-interface Request {
+interface RequestData {
     phone_number: string,
     med_name: string,
     med_strength: string,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import SearchBar from '@/components/SearchBar/SearchBar.jsx';
+import SearchBar from '@/components/SearchBar/SearchBar';
 import PharmacyTable from '@/components/PharmacyTable/PharmacyTable';
 import { useUser } from '@/context/user';
 
@@ -8,7 +8,7 @@ import { Box } from '@mui/material';
 import Page404 from '@/pages/404';
   
 const DashboardSection: React.FC<PharmaciesProps> = ({ pharmacies }) => {
-    const [search, setSearch] = useState("")
+    const [search, setSearch] = useState<string>("")
     const { isAuthenticated } = useUser()
 
     if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated}/>

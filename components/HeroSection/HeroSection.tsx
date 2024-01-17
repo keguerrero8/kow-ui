@@ -36,7 +36,6 @@ const HeroSection: React.FC = () => {
                 <div className={styles.videoContainer}>
                     <VideoPlayer 
                         src={welcome}
-                        alt="Welcome Video Player" 
                         width='100%'
                     />
                 </div>

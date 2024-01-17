@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
 import { Box, Button, Typography } from '@mui/material';
 
 import { useUser } from '@/context/user';
@@ -20,14 +20,14 @@ const styles = {
   },
 }
 
-export default function SplashPage() {
+const SplashPage: React.FC = () => {
   const { isAuthenticated } = useUser()
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
-  const router = useRouter();
+  const router: NextRouter = useRouter();
 
   if (!isAuthenticated) return <Page404 isAuthFailure={!isAuthenticated}/>
   
@@ -42,3 +42,5 @@ export default function SplashPage() {
     </Box>
   )
 }
+
+export default SplashPage

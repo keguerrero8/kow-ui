@@ -6,12 +6,12 @@ import styles from './MedNameRequestInput.module.css'
 interface MedNameRequestInputProps {
   label: string
   name: string
-  handleChange: (e: React.SyntheticEvent, isAuto: boolean, name: string) => void
+  handleChange: (e: React.SyntheticEvent, name: string) => void
   isRequired?: boolean
   medications: Medication[]
   setMedication: Dispatch<SetStateAction<Medication | {}>>
-  requestData: Request
-  setRequestData: Dispatch<SetStateAction<Request>>
+  requestData: RequestData
+  setRequestData: Dispatch<SetStateAction<RequestData>>
   searchValue: string
   setSearchValue: Dispatch<SetStateAction<string>>
 }
@@ -21,10 +21,10 @@ const MedNameRequestInput: React.FC<MedNameRequestInputProps> = ({ label, name, 
 
   const handleFocus = () => setDropDown(true)
 
-  const handleSelection = (e: React.MouseEvent<HTMLParagraphElement>, i: Medication) => {
+  const handleSelection = (e: React.MouseEvent<HTMLParagraphElement>, medication: Medication) => {
     setDropDown(false)
-    handleChange(e, true, "med_name")
-    setMedication(i)
+    handleChange(e, "med_name")
+    setMedication(medication)
     setSearchValue((e.target as HTMLParagraphElement).innerText)
   }
 
@@ -51,13 +51,13 @@ const MedNameRequestInput: React.FC<MedNameRequestInputProps> = ({ label, name, 
         </div>
         <div className={dropdown? `${styles.searchListDropDown}` : `${styles.searchListNoDropDown}`}>
             <div >
-                {filteredMedications.length > 0? filteredMedications.map((i) => 
+                {filteredMedications.length > 0? filteredMedications.map((medication) => 
                   <p 
-                    onClick={(e) => handleSelection(e, i)} 
+                    onClick={(e) => handleSelection(e, medication)} 
                     className={styles.searchListItems} 
-                    key={i.id}
+                    key={medication.id}
                   >
-                    {i.name}
+                    {medication.name}
                   </p>) : 
                   <p className={styles.searchListItems}>No results found</p>
                 }

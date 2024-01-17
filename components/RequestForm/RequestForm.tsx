@@ -23,9 +23,13 @@ import AddCardOutlinedIcon from '@mui/icons-material/AddCardOutlined';
 import MedicalInformationOutlinedIcon from '@mui/icons-material/MedicalInformationOutlined';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 
-export default function RequestForm({ medications }) {
+interface RequestFormProps {
+    medications: Medication[]
+}
+
+const RequestForm: React.FC<RequestFormProps> = ({ medications }) => {
   const { isAuthenticated } = useUser()
-  const defaultRequestData = {
+  const defaultRequestData: RequestData = {
     phone_number: "",
     med_name: "",
     med_strength: "",
@@ -37,17 +41,17 @@ export default function RequestForm({ medications }) {
     user_type: "",
     isAdmin: false
   }
-  const [medication, setMedication] = useState({})
-  const [insuranceValue, setInsuranceValue] = useState("insurance")
-  const [status, setRequestStatus] = useState([])
-  const [isRequestSuccessful, setisRequestSuccessful] = useState(false)
-  const [searchValue, setSearchValue] = useState("")
-  const [requestData, setRequestData] = useState(defaultRequestData)
-  const [userType, setUserType] = useState("")
-  const [isPrivacyAcknowledged, setisPrivacyAcknowledged] = useState(false)
-  const [isOptInAcknowledged, setisOptInAcknowledged] = useState(false)
-  const [providerToggled, setProviderToggled] = useState(false)
-  const [patientToggled, setPatientToggled] = useState(false)
+  const [medication, setMedication] = useState<Medication | {}>({})
+  const [insuranceValue, setInsuranceValue] = useState<"insurance" | "cash">("insurance")
+  const [status, setRequestStatus] = useState<string[] | []>([])
+  const [isRequestSuccessful, setisRequestSuccessful] = useState<boolean>(false)
+  const [searchValue, setSearchValue] = useState<string>("")
+  const [requestData, setRequestData] = useState<RequestData>(defaultRequestData)
+  const [userType, setUserType] = useState<string>("")
+  const [isPrivacyAcknowledged, setisPrivacyAcknowledged] = useState<boolean>(false)
+  const [isOptInAcknowledged, setisOptInAcknowledged] = useState<boolean>(false)
+  const [providerToggled, setProviderToggled] = useState<boolean>(false)
+  const [patientToggled, setPatientToggled] = useState<boolean>(false)
 //   const [singleMedToggled, setSingleMedToggled] = useState(true)
 //   const [compoundToggled, setCompoundToggled] = useState(false)
 
@@ -110,34 +114,34 @@ export default function RequestForm({ medications }) {
   }
 
 
-  function handleChange (e, isAuto = false, name) {
-    if (isAuto) {
-        if (name === "med_name") {
+  function handleMedicationChange (e: React.ChangeEvent<HTMLInputElement>, name: "med_name" | "med_strength") {
+    if (name === "med_name") {
+        setRequestData({
+            ...requestData,
+            "med_name": e.target.innerText
+        })
+        if ("strength" in medication && !medication.strength.includes(e.target.innerText)) {
             setRequestData({
                 ...requestData,
-                "med_name": e.target.innerText
-            })
-            if (medication.strength && !medication.strength.includes(e.target.innerText)) {
-                setRequestData({
-                    ...requestData,
-                    "med_strength": ""
-                })
-            }
-        } else {
-            setRequestData({
-                ...requestData,
-                "med_strength": e.target.innerText
+                "med_strength": ""
             })
         }
     } else {
         setRequestData({
             ...requestData,
-            [e.target.name]: e.target.value
+            "med_strength": e.target.innerText
         })
     }
   }
 
-  async function handleSubmit (e) {
+  function handleChange (e: React.ChangeEvent<HTMLInputElement>) {
+    setRequestData({
+        ...requestData,
+        [e.target.name]: e.target.value
+    })
+  }
+
+  async function handleSubmit (e: React.FormEvent) {
     e.preventDefault()
     const payload = {
         ...requestData, 
@@ -146,7 +150,7 @@ export default function RequestForm({ medications }) {
     }
     
     const response = await messagingService.createRequest(payload)
-    if (!response.error) {
+    if (!("error" in response)) {
         setRequestStatus(["Request submitted!"])
         setisRequestSuccessful(true)
     } else {
@@ -248,7 +252,7 @@ export default function RequestForm({ medications }) {
                             requestData={requestData} 
                             label="Medication Name" 
                             name="med_name" 
-                            handleChange={handleChange} 
+                            handleChange={handleMedicationChange} 
                             isRequired={true} 
                             medications={medications} 
                             setMedication={setMedication}
@@ -262,10 +266,10 @@ export default function RequestForm({ medications }) {
                             requestData={requestData} 
                             label="Medication Dose/Strength"
                             name="med_strength"
-                            handleChange={handleChange} 
+                            handleChange={handleMedicationChange} 
                             key="Strength"
-                            isRequired={medication.strength && medication.strength.length > 0? true : false} 
-                            strengths={medication.strength? medication.strength : []} 
+                            isRequired={"strength" in medication && medication.strength.length > 0? true : false} 
+                            strengths={"strength" in medication? medication.strength : []} 
                         />
                     </div>
                     <h3>Prescribed Quantity<span style={{color: "red"}}> &#42;</span></h3>
@@ -416,3 +420,5 @@ export default function RequestForm({ medications }) {
     </div>
   )
 }
+
+export default RequestForm

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Head from 'next/head'
 
-import RequestForm from '@/components/RequestForm/RequestForm.jsx';
+import RequestForm from '@/components/RequestForm/RequestForm';
 
 import { Box } from '@mui/material';
 

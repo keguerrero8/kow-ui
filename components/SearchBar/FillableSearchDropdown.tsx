@@ -2,22 +2,22 @@ import { useState } from 'react';
 
 import styles from './FillableSearchDropdown.module.css'
 
-const FillableSearchDropdown = () => {
-    const [searchValue, setSearchValue] = useState('');
-    const [showDropdown, setShowDropdown] = useState(false);
+const FillableSearchDropdown: React.FC = () => {
+    const [searchValue, setSearchValue] = useState<string>('');
+    const [showDropdown, setShowDropdown] = useState<boolean>(false);
     const handleFocus = () => setShowDropdown(true);
 
-    const handleSearch = (event) => {
+    const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         const {value} = event.target;
-        setSearchTerm(value);
+        setSearchValue(value);
     };
 
     const handleDropdownToggle = () => {
         setShowDropdown(!showDropdown);
     };
 
-    const handleDropdownItemClick = (item) => {
-        setSearchTerm(item);
+    const handleDropdownItemClick = (item: string) => {
+        setSearchValue(item);
         setShowDropdown(false);
     };
 

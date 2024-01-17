@@ -1,7 +1,13 @@
 import { TextField, InputAdornment, Box } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
+import { Dispatch, SetStateAction } from 'react'
 
-export default function SearchBar({ search, setSearch }) {
+interface SearchBarProps {
+  search: string
+  setSearch: Dispatch<SetStateAction<string>>
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ search, setSearch }) => {
 
   return (
     <Box sx={{width: "90%", margin: "100px auto 20px auto", textAlign: "center"}}>
@@ -20,3 +26,5 @@ export default function SearchBar({ search, setSearch }) {
     </Box>
   )
 }
+
+export default SearchBar

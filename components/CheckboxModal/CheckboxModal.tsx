@@ -9,7 +9,7 @@ interface CheckBoxModalProps {
     checkboxText: string
     linkText: string
     modalContent1: React.ReactNode
-    modalContent2: React.ReactNode
+    modalContent2?: React.ReactNode
     setisAcknowledged: Dispatch<SetStateAction<boolean>>
     isAcknowledged: boolean
 }

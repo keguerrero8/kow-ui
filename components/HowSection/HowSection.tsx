@@ -60,7 +60,6 @@ const HowSection: React.FC = () => {
                 </div>
                 <VideoPlayer 
                     src={tutorialvideo}
-                    alt="Tutorial Video Player" 
                     width='100%'
                 />
             </div>
