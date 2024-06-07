@@ -16,7 +16,7 @@ const DashboardSection: React.FC<PharmaciesProps> = ({ pharmacies }) => {
     let filteredPharmacies = []
     if (pharmacies.length > 0) {
         filteredPharmacies = pharmacies.filter(p => 
-            (p as Pharmacy).name.toLocaleLowerCase().startsWith(search.toLocaleLowerCase()) || p.zipcode.startsWith(search))
+            (p as Pharmacy).name.toLocaleLowerCase().startsWith(search.toLocaleLowerCase()) || (p as Pharmacy).zipcode.startsWith(search))
     }
 
     return (
