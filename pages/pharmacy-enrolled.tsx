@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import SplashPage from '@/components/SplashPage/SplashPage.jsx';
+import SplashPage from '@/components/SplashPage/SplashPage';
 
 const PharmacyEnrolledPage: NextPage = () => {
 

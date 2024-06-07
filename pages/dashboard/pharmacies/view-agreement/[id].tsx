@@ -2,7 +2,7 @@ import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next'
 import * as cookie from 'cookie'
 
 import pharmacyService from '@/lib/pharmacyService';
-import PharmacySignedAgreement from '@/components/PharmacySignedAgreement/PharmacySignedAgreement.jsx';
+import PharmacySignedAgreement from '@/components/PharmacySignedAgreement/PharmacySignedAgreement';
 
 type PharmacyViewAgreementPageProps = InferGetServerSidePropsType<typeof getServerSideProps>
 
